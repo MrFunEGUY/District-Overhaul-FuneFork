@@ -1,0 +1,48 @@
+﻿l_english:
+ exo_triiodide:0 "Triiodide"
+ exo_triiodide_desc:0 "§E§HTriiodide§! (£exo_triiodide£) is an extremely dangerous ionized substance, that explodes even through the slightest contact. It maxes for very effective munitions thanks to that.\n§!§YWe can gain more by extracting it from deposits.§!"
+ exo_triiodide_deficit:0 "$exo_triiodide$ Shortage"
+
+ exo_vantablack:0 "Vantablack"
+ exo_vantablack_desc:0 "§E§HVantablack§! (£exo_vantablack£) piques the interest of many scientists, as it absorbs most of the light that falls into it.\n§!§YWe can gain more by extracting it from deposits.§!"
+ exo_vantablack_deficit:0 "$exo_vantablack$ Shortage"
+
+ exo_gallium:0 "Gallium"
+ exo_gallium_desc:0 "§E§HGallium§! (£exo_gallium£) is a metal that melts at room temperature. It is very useful in the manufacturing of processors and other similar hardware.§!\n§YWe can gain more by extracting it from deposits.§!"
+ exo_gallium_deficit:0 "$exo_gallium$ Shortage"
+
+ exo_plutonium:0 "Plutonium"
+ exo_plutonium_desc:0 "§E§GPlutonium§! (£exo_plutonium£) is a highly energetic material that can be used in bombs or for power generation.\n§!§YWe can gain more by extracting it from deposits.§!"
+ exo_plutonium_deficit:0 "$exo_plutonium$ Shortage"
+
+ exo_adamantite:0 "Adamantite"
+ exo_adamantite_desc:0 "§E§HAdamantite§! (£exo_adamantite£) is a very sturdy metal.\n§!§YWe can gain more by extracting it from deposits.§!"
+ exo_adamantite_deficit:0 "$exo_admantite$ Shortage"
+
+ exo_administrantium:0 "Administrantium"
+ exo_administrantium_desc:0 "§E§HAdministrantium§! (£exo_administrantium£) turbocharges bureaucrats that come into contact with it.\n§!§YWe can gain more by extracting it from deposits.§!"
+ exo_administrantium_deficit:0 "$exo_administrantium$ Shortage"
+
+ exo_coaxium:0 "Coaxium"
+ exo_coaxium_desc:0 "§E§HCoaxium§! (£exo_coaxium£) is a potent source of fuel for spaceships.\n§!§YWe can gain more by extracting it from deposits.§!"
+ exo_coaxium_deficit:0 "$exo_coaxium$ Shortage"
+
+ exo_hyperion:0 "Hyperion"
+ exo_hyperion_desc:0 "§E§HHyperion§! (£exo_hyperion£) is a moving metal that captures the attention of any onlookers.\n§!§YWe can gain more by extracting it from deposits.§!"
+ exo_hyperion_deficit:0 "$exo_hyperion$ Shortage"
+
+ exo_dust:0 "Conscious Dust"
+ exo_dust_desc:0 "§E§HConscious Dust§! (£exo_dust£) isn't actually dust, but a neural connection that simulates consciousness. And it looks very much like dust.\n§!§YWe can gain more by extracting it from deposits.§!"
+ exo_dust_deficit:0 "$exo_dust$ Shortage"
+
+ exo_stalinium:0 "Stalinium"
+ exo_stalinium_desc:0 "§E§HStalinium§! (£exo_stalinium£) is an alloy that can be used for heavy industry, and for military vehicles.\n§!§YWe can gain more by extracting it from deposits.§!"
+ exo_stalinium_deficit:0 "$exo_stalinium$ Shortage"
+
+ exo_kruppstahl:0 "Kruppstahl"
+ exo_kruppstahl_desc:0 "§E§HKruppstahl§! (£exo_kruppstahl£) is similar to Stalinium in many ways, although better for military uses and less applicable to industry.\n§!§YWe can gain more by extracting it from deposits.§!"
+ exo_kruppstahl_deficit:0 "$exo_kruppstahl$ Shortage"
+
+ exo_tachyon:0 "Tachyon"
+ exo_tachyon_desc:0 "§E§HTachyons§! (£exo_tachyon£) are particles that move faster than light itself. They come in very handy for long distance communication.\n§!§YWe can gain more by extracting it from deposits.§!"
+ exo_tachyon_deficit:0 "$exo_tachyon$ Shortage"

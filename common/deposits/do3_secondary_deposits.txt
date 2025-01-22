@@ -1,0 +1,330 @@
+@high = 16
+
+d_hydroponic_bay = {
+	is_for_colonizable = yes
+	icon = d_fertile_lands
+
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_02_hydroponic_bay_max = 3
+	}
+
+	potential = {
+		has_planetary_ascension_tier >= 1
+	}
+
+	drop_weight = { weight = 0 }
+}
+
+d_local_stores = {
+	is_for_colonizable = yes
+	icon = d_tradestation_interior
+
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_02_local_stores_max = 3
+	}
+
+	potential = {
+		has_planetary_ascension_tier >= 1
+	}
+
+	drop_weight = { weight = 0 }
+}
+
+d_local_industry = {
+	is_for_colonizable = yes
+	icon = d_tradestation_interior
+
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_02_local_industry_max = 3
+	}
+
+	potential = {
+		has_planetary_ascension_tier >= 1
+	}
+
+	drop_weight = { weight = 0 }
+}
+
+d_production_hub = {
+	is_for_colonizable = yes
+	icon = d_tradestation_interior
+
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_02_production_hub_max = 3
+	}
+
+	potential = {
+		has_planetary_ascension_tier >= 1
+	}
+
+	drop_weight = { weight = 0 }
+}
+
+d_workshops = {
+	is_for_colonizable = yes
+	icon = d_tradestation_interior
+
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_02_workshops_max = 3
+	}
+
+	potential = {
+		has_planetary_ascension_tier >= 1
+	}
+
+	drop_weight = { weight = 0 }
+}
+
+d_university = {
+	is_for_colonizable = yes
+	icon = d_building_complex
+
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_02_university_max = 3
+	}
+
+	potential = {
+		has_planetary_ascension_tier >= 1
+	}
+
+	drop_weight = { weight = 0 }
+}
+
+d_spaceport = {
+	is_for_colonizable = yes
+	icon = d_ship_in_orbit
+
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_02_spaceport_max = 3
+	}
+
+	potential = {
+		has_planetary_ascension_tier >= 1
+	}
+
+	drop_weight = { weight = 0 }
+}
+
+d_academy = {
+	is_for_colonizable = yes
+	icon = d_building_complex
+
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_02_academy_max = 3
+	}
+
+	potential = {
+		has_planetary_ascension_tier >= 1
+	}
+
+	drop_weight = { weight = 0 }
+}
+
+d_logistics_hub = {
+	is_for_colonizable = yes
+	icon = d_building
+
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_02_logistics_hub_max = 3
+	}
+
+	potential = {
+		has_planetary_ascension_tier >= 1
+	}
+
+	drop_weight = { weight = 0 }
+}
+
+d_bureaucratic = {
+	is_for_colonizable = yes
+	icon = d_building
+
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_02_bureaucratic_max = 3
+	}
+
+	potential = {
+		has_planetary_ascension_tier >= 1
+	}
+
+	drop_weight = { weight = 0 }
+}
+
+d_entertainment = {
+	is_for_colonizable = yes
+	icon = d_tradestation_interior
+
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_02_entertainment_max = 3
+	}
+
+	potential = {
+		has_planetary_ascension_tier >= 1
+	}
+
+	drop_weight = { weight = 0 }
+}
+
+d_necrophage = {
+	is_for_colonizable = yes
+	icon = d_city_ruins
+
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_02_necrophage_max = 3
+	}
+
+	potential = {
+		has_planetary_ascension_tier >= 1
+	}
+
+	drop_weight = { weight = 0 }
+}
+
+d_relay_stations = {
+	is_for_colonizable = yes
+	icon = d_satellite_in_orbit
+
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_02_relay_stations_max = 3
+	}
+
+	potential = {
+		do3f_is_machine_planet = yes
+		has_planetary_ascension_tier >= 1
+	}
+
+	drop_weight = { weight = 0 }
+}
+
+d_tunnel_networks = {
+	is_for_colonizable = yes
+	icon = d_ore_rich_caverns
+
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_02_tunnel_networks_max = 3
+	}
+
+	potential = {
+		do3f_is_hive_planet = yes
+		has_planetary_ascension_tier >= 1
+	}
+
+	drop_weight = { weight = 0 }
+}
+
+d_lower_city_development = {
+	is_for_colonizable = yes
+	icon = d_city
+
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_02_lower_city_development_max = 3
+	}
+
+	potential = {
+		do3f_is_ecu_planet = yes
+		has_planetary_ascension_tier >= 1
+	}
+
+	drop_weight = { weight = 0 }
+}
+
+d_shipyards = {
+	is_for_colonizable = yes
+	icon = d_ship_in_orbit
+
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_02_shipyards_max = 3
+	}
+
+	potential = {
+		do3f_is_ecu_planet = yes
+		has_planetary_ascension_tier >= 1
+	}
+
+	drop_weight = { weight = 0 }
+}
+
+###
+
+d_asteroid_belt_mining = {
+	is_for_colonizable = yes
+	icon = d_mining_station
+
+	category = deposit_cat_rare
+
+	should_swap_deposit_on_terraforming = no
+
+	planet_modifier = {
+		district_m_asteroid_belt_mining_max = 3
+	}
+
+	potential = {
+		do3f_is_habitable_asteroid = yes
+	}
+
+	drop_weight = { weight = @high }
+}

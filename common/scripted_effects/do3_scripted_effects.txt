@@ -1,0 +1,42 @@
+do3f_002_spawn_underground_housing_deposits = {
+	add_deposit = d_city_cavesystem
+	if = {
+		limit = { planet_size < 10 }
+		while = { 
+			count = 3 
+			random_list = {
+				50 = { add_deposit = d_city_cavesystem }
+				50 = {	}
+			}
+		}
+	}
+	else_if = {
+		limit = { planet_size < 15 }
+		while = { 
+			count = 5 
+			random_list = {
+				50 = { add_deposit = d_city_cavesystem }
+				50 = {	}
+			}
+		}
+	}
+	else_if = {
+		limit = { planet_size < 20 }
+		while = { 
+			count = 7 
+			random_list = {
+				50 = { add_deposit = d_city_cavesystem }
+				50 = {	}
+			}
+		}
+	}
+	else = {
+		while = { 
+			count = 10 
+			random_list = {
+				50 = { add_deposit = d_city_cavesystem }
+				50 = {	}
+			}
+		}
+	}
+}

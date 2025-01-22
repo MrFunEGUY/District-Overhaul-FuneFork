@@ -1,0 +1,2655 @@
+namespace = xenosdisablefeaturesevents
+
+# 01- Main Menu
+# Choose what you want to disable
+country_event = {
+	id = xenosdisablefeaturesevents.01
+	title = "xenosdisablefeaturesevents.01.name"
+	desc = "xenosdisablefeaturesevents.01.desc"
+
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+	# Districts
+	option = {
+		name = xenosdisablefeaturesevents_districts_name
+		root = {
+			country_event = {
+				id = xenosdisablefeaturesevents.02
+			}
+		}
+	}
+	# Buildings
+	option = {
+		name = xenosdisablefeaturesevents_buildings_name
+		root = {
+			country_event = {
+				id = xenosdisablefeaturesevents.03
+			}
+		}
+	}
+	# Colony Designations
+	option = {
+		name = xenosdisablefeaturesevents_colony_types_name
+		root = {
+			country_event = {
+				id = xenosdisablefeaturesevents.05
+			}
+		}
+	}
+	# Different Mechanics
+	option = {
+		name = xenosdisablefeaturesevents_mechanics_name
+		root = {
+			country_event = {
+				id = xenosdisablefeaturesevents.06
+			}
+		}
+	}
+	# Packages, i.e. ticking DO3 for example disables anything that's in the DO3 part
+	option = {
+		name = xenosdisablefeaturesevents_package_name
+		root = {
+			country_event = {
+				id = xenosdisablefeaturesevents.07
+			}
+		}
+	}
+	option = {
+		name = "NEVERMIND"
+		hidden_effect = {
+			country_event = { id = xenosmenu.01 days = 0 }
+		}
+	}
+}
+
+# 02 - Districts
+# Choose the type of district
+country_event = {
+	id = xenosdisablefeaturesevents.02
+	title = "xenosdisable_districts.name"
+	desc = "xenosdisable_districts.desc"
+
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	# Housing
+	option = {
+		name = xenosdisablefeaturesevents_districts_housing_districts_name
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.021
+			}
+		}
+	}
+	# Ecu, Ring and hab
+	option = {
+		name = xenosdisablefeaturesevents_districts_artificial_districts_name
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.022
+			}
+		}
+	}
+	# Industrial
+	option = {
+		name = xenosdisablefeaturesevents_districts_indutrial_districts_name
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.028
+			}
+		}
+	}
+	# Energy
+	option = {
+		name = xenosdisablefeaturesevents_districts_energy_districts_name
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.023
+			}
+		}
+	}
+	# Minerals
+	option = {
+		name = xenosdisablefeaturesevents_districts_mining_districts_name
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.024
+			}
+		}
+	}
+	# Farming
+	option = {
+		name = xenosdisablefeaturesevents_districts_farming_districts_name
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.025
+			}
+		}
+	}
+	# Primary
+	option = {
+		name = xenosdisablefeaturesevents_districts_primary_districts_name
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	# Secondary
+	option = {
+		name = xenosdisablefeaturesevents_districts_secondary_districts_name
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	# Go back to choosing what you want to disable
+	option = {
+		name = "NEVERMIND"
+		custom_tooltip = disablefeatures_go_back_desc
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.01
+			}
+		}
+	}
+}
+# Housing districts
+country_event = {
+	id = xenosdisablefeaturesevents.021
+	title = "xenosdisable_districts_housing.name"
+	desc = "xenosdisable_districts_housing.desc"
+
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = xenosdisablefeaturesevents_districts_housing_suburban_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_housing_district_suburbs } }
+			set_global_flag = do3f_disable_housing_district_suburbs
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_housing_district_suburbs }
+			remove_global_flag = do3f_disable_housing_district_suburbs
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.021
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_housing_shelter_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_housing_district_shelters } }
+			set_global_flag = do3f_disable_housing_district_shelters
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_housing_district_shelters }
+			remove_global_flag = do3f_disable_housing_district_shelters
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.021
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_housing_slums_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_housing_district_slums } }
+			set_global_flag = do3f_disable_housing_district_slums
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_housing_district_slums }
+			remove_global_flag = do3f_disable_housing_district_slums
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.021
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_housing_ascended_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_housing_district_ascended } }
+			set_global_flag = do3f_disable_housing_district_ascended
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_housing_district_ascended }
+			remove_global_flag = do3f_disable_housing_district_ascended
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.021
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_housing_ocean_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_housing_district_ocean } }
+			set_global_flag = do3f_disable_housing_district_ocean
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_housing_district_ocean }
+			remove_global_flag = do3f_disable_housing_district_ocean
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.021
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_housing_underground_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_housing_district_underground } }
+			set_global_flag = do3f_disable_housing_district_underground
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_housing_district_underground }
+			remove_global_flag = do3f_disable_housing_district_underground
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.021
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_disable_all_name
+		set_global_flag = do3f_disable_housing_district_suburbs
+		set_global_flag = do3f_disable_housing_district_shelters
+		set_global_flag = do3f_disable_housing_district_slums
+		set_global_flag = do3f_disable_housing_district_ascended
+		set_global_flag = do3f_disable_housing_district_ocean
+		set_global_flag = do3f_disable_housing_district_underground
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.021
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_enable_all_name
+		remove_global_flag = do3f_disable_housing_district_suburbs
+		remove_global_flag = do3f_disable_housing_district_shelters
+		remove_global_flag = do3f_disable_housing_district_slums
+		remove_global_flag = do3f_disable_housing_district_ascended
+		remove_global_flag = do3f_disable_housing_district_ocean
+		remove_global_flag = do3f_disable_housing_district_underground
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.021
+			}
+		}
+	}
+	option = {
+		name = "NEVERMIND"
+		custom_tooltip = disablefeatures_go_back_desc
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.02
+			}
+		}
+	}
+
+	after = {
+		every_galaxy_planet = {
+			validate_planet_buildings_and_districts = yes
+		}
+	}
+}
+# Artificial Districts
+country_event = {
+	id = xenosdisablefeaturesevents.022
+	title = "xenosdisable_districts_artificial.name"
+	desc = "xenosdisable_districts_artificial.desc"
+
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = xenosdisablefeaturesevents_districts_artificial_hab_external_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_external } }
+			set_global_flag = do3f_disable_artificial_districts_hab_external
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_artificial_districts_hab_external }
+			remove_global_flag = do3f_disable_artificial_districts_hab_external
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.022
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_artificial_hab_alloy_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_alloy } }
+			set_global_flag = do3f_disable_artificial_districts_hab_alloy
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_artificial_districts_hab_alloy }
+			remove_global_flag = do3f_disable_artificial_districts_hab_alloy
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.022
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_artificial_hab_consumer_goods_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_consumer_goods } }
+			set_global_flag = do3f_disable_artificial_districts_hab_consumer_goods
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_artificial_districts_hab_consumer_goods }
+			remove_global_flag = do3f_disable_artificial_districts_hab_consumer_goods
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.022
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_artificial_hab_motes_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_motes } }
+			set_global_flag = do3f_disable_artificial_districts_hab_motes
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_artificial_districts_hab_alloy }
+			remove_global_flag = do3f_disable_artificial_districts_hab_motes
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.022
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_artificial_hab_gas_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_gas } }
+			set_global_flag = do3f_disable_artificial_districts_hab_gas
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_artificial_districts_hab_gas }
+			remove_global_flag = do3f_disable_artificial_districts_hab_gas
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.022
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_artificial_hab_crystal_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_crystal } }
+			set_global_flag = do3f_disable_artificial_districts_hab_crystal
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_artificial_districts_hab_crystal }
+			remove_global_flag = do3f_disable_artificial_districts_hab_crystal
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.022
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_artificial_hab_dark_matter_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_dark_matter } }
+			set_global_flag = do3f_disable_artificial_districts_hab_dark_matter
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_artificial_districts_hab_dark_matter }
+			remove_global_flag = do3f_disable_artificial_districts_hab_dark_matter
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.022
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_artificial_hab_zro_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_zro } }
+			set_global_flag = do3f_disable_artificial_districts_hab_zro
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_artificial_districts_hab_zro }
+			remove_global_flag = do3f_disable_artificial_districts_hab_zro
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.022
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_artificial_hab_living_metal_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_living_metal } }
+			set_global_flag = do3f_disable_artificial_districts_hab_living_metal
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_artificial_districts_hab_living_metal }
+			remove_global_flag = do3f_disable_artificial_districts_hab_living_metal
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.022
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_artificial_hab_nanites_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_nanites } }
+			set_global_flag = do3f_disable_artificial_districts_hab_nanites
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_artificial_districts_hab_nanites }
+			remove_global_flag = do3f_disable_artificial_districts_hab_nanites
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.022
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_artificial_ring_uni_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_artificial_districts_ring_uni } }
+			set_global_flag = do3f_disable_artificial_districts_ring_uni
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_artificial_districts_ring_uni }
+			remove_global_flag = do3f_disable_artificial_districts_ring_uni
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.022
+			}
+		}
+	}
+
+
+	option = {
+		name = xenosdisablefeaturesevents_disable_all_name
+		set_global_flag = do3f_disable_artificial_districts_hab_external
+		set_global_flag = do3f_disable_artificial_districts_hab_alloy
+		set_global_flag = do3f_disable_artificial_districts_hab_gas
+		set_global_flag = do3f_disable_artificial_districts_hab_crystal
+		set_global_flag = do3f_disable_artificial_districts_hab_dark_matter
+		set_global_flag = do3f_disable_artificial_districts_hab_zro
+		set_global_flag = do3f_disable_artificial_districts_hab_living_metal
+		set_global_flag = do3f_disable_artificial_districts_hab_nanites
+		set_global_flag = do3f_disable_artificial_districts_ring_uni
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.022
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_enable_all_name
+		remove_global_flag = do3f_disable_artificial_districts_hab_external
+		remove_global_flag = do3f_disable_artificial_districts_hab_alloy
+		remove_global_flag = do3f_disable_artificial_districts_hab_gas
+		remove_global_flag = do3f_disable_artificial_districts_hab_crystal
+		remove_global_flag = do3f_disable_artificial_districts_hab_dark_matter
+		remove_global_flag = do3f_disable_artificial_districts_hab_zro
+		remove_global_flag = do3f_disable_artificial_districts_hab_living_metal
+		remove_global_flag = do3f_disable_artificial_districts_hab_nanites
+		remove_global_flag = do3f_disable_artificial_districts_ring_uni
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.022
+			}
+		}
+	}
+	option = {
+		name = "NEVERMIND"
+		custom_tooltip = disablefeatures_go_back_desc
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.02
+			}
+		}
+	}
+
+	after = {
+		every_galaxy_planet = {
+			validate_planet_buildings_and_districts = yes
+		}
+	}
+}
+# Industrial Districts
+country_event = {
+	id = xenosdisablefeaturesevents.028
+	title = "xenosdisable_districts_industrial.name"
+	desc = "xenosdisable_districts_industrial.desc"
+
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = xenosdisablefeaturesevents_districts_industrial_bio_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_industrial_district_bio } }
+			set_global_flag = do3f_disable_industrial_district_bio
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_industrial_district_bio }
+			remove_global_flag = do3f_disable_industrial_district_bio
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.028
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_industrial_infra_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_industrial_district_infra } }
+			set_global_flag = do3f_disable_industrial_district_infra
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_industrial_district_infra }
+			remove_global_flag = do3f_disable_industrial_district_infra
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.028
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_disable_all_name
+		set_global_flag = do3f_disable_industrial_district_bio
+		set_global_flag = do3f_disable_industrial_district_infra
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.028
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_enable_all_name
+		remove_global_flag = do3f_disable_industrial_district_bio
+		remove_global_flag = do3f_disable_industrial_district_infra
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.028
+			}
+		}
+	}
+	option = {
+		name = "NEVERMIND"
+		custom_tooltip = disablefeatures_go_back_desc
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.02
+			}
+		}
+	}
+
+	after = {
+		every_galaxy_planet = {
+			validate_planet_buildings_and_districts = yes
+		}
+	}
+}
+# Energy Districts
+country_event = {
+	id = xenosdisablefeaturesevents.023
+	title = "xenosdisable_districts_energy.name"
+	desc = "xenosdisable_districts_energy.desc"
+
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = xenosdisablefeaturesevents_districts_energy_fusion_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_energy_districts_fusion } }
+			set_global_flag = do3f_disable_energy_districts_fusion
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_energy_districts_fusion }
+			remove_global_flag = do3f_disable_energy_districts_fusion
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.023
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_energy_fossil_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_energy_districts_fossil } }
+			set_global_flag = do3f_disable_energy_districts_fossil
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_energy_districts_fossil }
+			remove_global_flag = do3f_disable_energy_districts_fossil
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.023
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_energy_wind_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_energy_districts_wind } }
+			set_global_flag = do3f_disable_energy_districts_wind
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_energy_districts_wind }
+			remove_global_flag = do3f_disable_energy_districts_wind
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.023
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_energy_geo_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_energy_districts_geo } }
+			set_global_flag = do3f_disable_energy_districts_geo
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_energy_districts_geo }
+			remove_global_flag = do3f_disable_energy_districts_geo
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.023
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_energy_solar_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_energy_districts_solar } }
+			set_global_flag = do3f_disable_energy_districts_solar
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_energy_districts_solar }
+			remove_global_flag = do3f_disable_energy_districts_solar
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.023
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_energy_tidal_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_energy_districts_tidal } }
+			set_global_flag = do3f_disable_energy_districts_tidal
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_energy_districts_tidal }
+			remove_global_flag = do3f_disable_energy_districts_tidal
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.023
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_energy_bio_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_energy_districts_bio } }
+			set_global_flag = do3f_disable_energy_districts_bio
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_energy_districts_bio }
+			remove_global_flag = do3f_disable_energy_districts_bio
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.023
+			}
+		}
+	}
+
+
+	option = {
+		name = xenosdisablefeaturesevents_disable_all_name
+		set_global_flag = do3f_disable_energy_districts_fusion
+		set_global_flag = do3f_disable_energy_districts_fossil
+		set_global_flag = do3f_disable_energy_districts_wind
+		set_global_flag = do3f_disable_energy_districts_geo
+		set_global_flag = do3f_disable_energy_districts_solar
+		set_global_flag = do3f_disable_energy_districts_tidal
+		set_global_flag = do3f_disable_energy_districts_bio
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.023
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_enable_all_name
+		remove_global_flag = do3f_disable_energy_districts_fusion
+		remove_global_flag = do3f_disable_energy_districts_fossil
+		remove_global_flag = do3f_disable_energy_districts_wind
+		remove_global_flag = do3f_disable_energy_districts_geo
+		remove_global_flag = do3f_disable_energy_districts_solar
+		remove_global_flag = do3f_disable_energy_districts_tidal
+		remove_global_flag = do3f_disable_energy_districts_bio
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.023
+			}
+		}
+	}
+	option = {
+		name = "NEVERMIND"
+		custom_tooltip = disablefeatures_go_back_desc
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.02
+			}
+		}
+	}
+
+	after = {
+		every_galaxy_planet = {
+			validate_planet_buildings_and_districts = yes
+		}
+	}
+}
+# Mining Districts
+country_event = {
+	id = xenosdisablefeaturesevents.024
+	title = "xenosdisable_districts_mining.name"
+	desc = "xenosdisable_districts_mining.desc"
+
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = xenosdisablefeaturesevents_districts_mining_unstable_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_mining_districts_unstable } }
+			set_global_flag = do3f_disable_mining_districts_unstable
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_mining_districts_unstable }
+			remove_global_flag = do3f_disable_mining_districts_unstable
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.024
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_mining_stable_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_mining_districts_stable } }
+			set_global_flag = do3f_disable_mining_districts_stable
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_mining_districts_stable }
+			remove_global_flag = do3f_disable_mining_districts_stable
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.024
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_mining_surface_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_mining_districts_surface } }
+			set_global_flag = do3f_disable_mining_districts_surface
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_mining_districts_surface }
+			remove_global_flag = do3f_disable_mining_districts_surface
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.024
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_mining_deep_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_mining_districts_deep } }
+			set_global_flag = do3f_disable_mining_districts_deep
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_mining_districts_deep }
+			remove_global_flag = do3f_disable_mining_districts_deep
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.024
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_mining_mountain_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_mining_districts_mountain } }
+			set_global_flag = do3f_disable_mining_districts_mountain
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_mining_districts_mountain }
+			remove_global_flag = do3f_disable_mining_districts_mountain
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.024
+			}
+		}
+	}
+	
+	option = {
+		name = xenosdisablefeaturesevents_disable_all_name
+		set_global_flag = do3f_disable_mining_districts_unstable
+		set_global_flag = do3f_disable_mining_districts_stable
+		set_global_flag = do3f_disable_mining_districts_surface
+		set_global_flag = do3f_disable_mining_districts_deep
+		set_global_flag = do3f_disable_mining_districts_mountain
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.024
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_enable_all_name
+		remove_global_flag = do3f_disable_mining_districts_unstable
+		remove_global_flag = do3f_disable_mining_districts_stable
+		remove_global_flag = do3f_disable_mining_districts_surface
+		remove_global_flag = do3f_disable_mining_districts_deep
+		remove_global_flag = do3f_disable_mining_districts_mountain
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.024
+			}
+		}
+	}
+	option = {
+		name = "NEVERMIND"
+		custom_tooltip = disablefeatures_go_back_desc
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.02
+			}
+		}
+	}
+
+	after = {
+		every_galaxy_planet = {
+			validate_planet_buildings_and_districts = yes
+		}
+	}
+}
+# Farming Districts
+country_event = {
+	id = xenosdisablefeaturesevents.025
+	title = "xenosdisable_districts_farming.name"
+	desc = "xenosdisable_districts_farming.desc"
+
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = xenosdisablefeaturesevents_districts_farming_nature_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_farming_districts_nature } }
+			set_global_flag = do3f_disable_farming_districts_nature
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_farming_districts_nature }
+			remove_global_flag = do3f_disable_farming_districts_nature
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.025
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_farming_ocean_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_farming_districts_ocean } }
+			set_global_flag = do3f_disable_farming_districts_ocean
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_farming_districts_ocean }
+			remove_global_flag = do3f_disable_farming_districts_ocean
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.025
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_farming_exotic_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_farming_districts_exotic } }
+			set_global_flag = do3f_disable_farming_districts_exotic
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_farming_districts_exotic }
+			remove_global_flag = do3f_disable_farming_districts_exotic
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.025
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_farming_oasis_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_farming_districts_oasis } }
+			set_global_flag = do3f_disable_farming_districts_oasis
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_farming_districts_oasis }
+			remove_global_flag = do3f_disable_farming_districts_oasis
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.025
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_farming_cave_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_farming_districts_cave } }
+			set_global_flag = do3f_disable_farming_districts_cave
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_farming_districts_cave }
+			remove_global_flag = do3f_disable_farming_districts_cave
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.025
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_farming_industrial_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_farming_districts_industrial } }
+			set_global_flag = do3f_disable_farming_districts_industrial
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_farming_districts_industrial }
+			remove_global_flag = do3f_disable_farming_districts_industrial
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.025
+			}
+		}
+	}
+	
+	option = {
+		name = xenosdisablefeaturesevents_disable_all_name
+		set_global_flag = do3f_disable_farming_districts_nature
+		set_global_flag = do3f_disable_farming_districts_ocean
+		set_global_flag = do3f_disable_farming_districts_exotic
+		set_global_flag = do3f_disable_farming_districts_oasis
+		set_global_flag = do3f_disable_farming_districts_cave
+		set_global_flag = do3f_disable_farming_districts_industrial
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.025
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_enable_all_name
+		remove_global_flag = do3f_disable_farming_districts_nature
+		remove_global_flag = do3f_disable_farming_districts_ocean
+		remove_global_flag = do3f_disable_farming_districts_exotic
+		remove_global_flag = do3f_disable_farming_districts_oasis
+		remove_global_flag = do3f_disable_farming_districts_cave
+		remove_global_flag = do3f_disable_farming_districts_industrial
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.025
+			}
+		}
+	}
+	option = {
+		name = "NEVERMIND"
+		custom_tooltip = disablefeatures_go_back_desc
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.02
+			}
+		}
+	}
+
+	after = {
+		every_galaxy_planet = {
+			validate_planet_buildings_and_districts = yes
+		}
+	}
+}
+# Primary Districts
+country_event = {
+	id = xenosdisablefeaturesevents.026
+	title = "xenosdisable_districts_primary.name"
+	desc = "xenosdisable_districts_primary.desc"
+
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = xenosdisablefeaturesevents_districts_primary_chemistry_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_primary_districts_chemistry } }
+			set_global_flag = do3f_disable_primary_districts_chemistry
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_primary_districts_chemistry }
+			remove_global_flag = do3f_disable_primary_districts_chemistry
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_primary_gas_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_primary_districts_gas } }
+			set_global_flag = do3f_disable_primary_districts_gas
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_primary_districts_gas }
+			remove_global_flag = do3f_disable_primary_districts_gas
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_primary_crystals_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_primary_districts_crystals } }
+			set_global_flag = do3f_disable_primary_districts_crystals
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_primary_districts_crystals }
+			remove_global_flag = do3f_disable_primary_districts_crystals
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_primary_nature_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_primary_districts_nature } }
+			set_global_flag = do3f_disable_primary_districts_nature
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_primary_districts_nature }
+			remove_global_flag = do3f_disable_primary_districts_nature
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_primary_research_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_primary_districts_research } }
+			set_global_flag = do3f_disable_primary_districts_research
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_primary_districts_research }
+			remove_global_flag = do3f_disable_primary_districts_research
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_primary_tourism_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_primary_districts_tourism } }
+			set_global_flag = do3f_disable_primary_districts_tourism
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_primary_districts_tourism }
+			remove_global_flag = do3f_disable_primary_districts_tourism
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_primary_gardens_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_primary_districts_gardens } }
+			set_global_flag = do3f_disable_primary_districts_gardens
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_primary_districts_gardens }
+			remove_global_flag = do3f_disable_primary_districts_gardens
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_primary_ecogardens_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_primary_districts_ecogardens } }
+			set_global_flag = do3f_disable_primary_districts_ecogardens
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_primary_districts_ecogardens }
+			remove_global_flag = do3f_disable_primary_districts_ecogardens
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_primary_assembly_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_primary_districts_assembly } }
+			set_global_flag = do3f_disable_primary_districts_assembly
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_primary_districts_assembly }
+			remove_global_flag = do3f_disable_primary_districts_assembly
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_primary_archeology_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_primary_districts_archeology } }
+			set_global_flag = do3f_disable_primary_districts_archeology
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_primary_districts_archeology }
+			remove_global_flag = do3f_disable_primary_districts_archeology
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_primary_scrap_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_primary_districts_scrap } }
+			set_global_flag = do3f_disable_primary_districts_scrap
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_primary_districts_scrap }
+			remove_global_flag = do3f_disable_primary_districts_scrap
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+
+	option = {
+		name = xenosdisablefeaturesevents_districts_primary_ring_alloys_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_primary_districts_ring_alloy } }
+			set_global_flag = do3f_disable_primary_districts_ring_alloy
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_primary_districts_ring_alloy }
+			remove_global_flag = do3f_disable_primary_districts_ring_alloy
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_primary_ring_gas_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_primary_districts_ring_gas } }
+			set_global_flag = do3f_disable_primary_districts_ring_gas
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_primary_districts_ring_gas }
+			remove_global_flag = do3f_disable_primary_districts_ring_gas
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_primary_ring_motes_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_primary_districts_ring_motes } }
+			set_global_flag = do3f_disable_primary_districts_ring_motes
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_primary_districts_ring_motes }
+			remove_global_flag = do3f_disable_primary_districts_ring_motes
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_primary_ring_crystals_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_primary_districts_ring_crystals } }
+			set_global_flag = do3f_disable_primary_districts_ring_crystals
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_primary_districts_ring_crystals }
+			remove_global_flag = do3f_disable_primary_districts_ring_crystals
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_primary_ring_mining_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_primary_districts_ring_mining } }
+			set_global_flag = do3f_disable_primary_districts_ring_mining
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_primary_districts_ring_mining }
+			remove_global_flag = do3f_disable_primary_districts_ring_mining
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	
+	option = {
+		name = xenosdisablefeaturesevents_disable_all_name
+		set_global_flag = do3f_disable_primary_districts_chemistry
+		set_global_flag = do3f_disable_primary_districts_gas
+		set_global_flag = do3f_disable_primary_districts_crystals
+
+		set_global_flag = do3f_disable_primary_districts_nature
+		set_global_flag = do3f_disable_primary_districts_research
+		set_global_flag = do3f_disable_primary_districts_scrap
+
+		set_global_flag = do3f_disable_primary_districts_tourism
+		set_global_flag = do3f_disable_primary_districts_gardens
+		set_global_flag = do3f_disable_primary_districts_ecogardens
+
+		set_global_flag = do3f_disable_primary_districts_assembly
+		set_global_flag = do3f_disable_primary_districts_archeology
+
+		set_global_flag = do3f_disable_primary_districts_ring_alloy
+		set_global_flag = do3f_disable_primary_districts_ring_gas
+		set_global_flag = do3f_disable_primary_districts_ring_motes
+		set_global_flag = do3f_disable_primary_districts_ring_crystals
+		set_global_flag = do3f_disable_primary_districts_ring_mining
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_enable_all_name
+		remove_global_flag = do3f_disable_primary_districts_chemistry
+		remove_global_flag = do3f_disable_primary_districts_gas
+		remove_global_flag = do3f_disable_primary_districts_crystals
+
+		remove_global_flag = do3f_disable_primary_districts_nature
+		remove_global_flag = do3f_disable_primary_districts_research
+		remove_global_flag = do3f_disable_primary_districts_scrap
+
+		remove_global_flag = do3f_disable_primary_districts_tourism
+		remove_global_flag = do3f_disable_primary_districts_gardens
+		remove_global_flag = do3f_disable_primary_districts_ecogardens
+
+		remove_global_flag = do3f_disable_primary_districts_assembly
+		remove_global_flag = do3f_disable_primary_districts_archeology
+
+		remove_global_flag = do3f_disable_primary_districts_ring_alloy
+		remove_global_flag = do3f_disable_primary_districts_ring_gas
+		remove_global_flag = do3f_disable_primary_districts_ring_motes
+		remove_global_flag = do3f_disable_primary_districts_ring_crystals
+		remove_global_flag = do3f_disable_primary_districts_ring_mining
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.026
+			}
+		}
+	}
+	option = {
+		name = "NEVERMIND"
+		custom_tooltip = disablefeatures_go_back_desc
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.02
+			}
+		}
+	}
+
+	after = {
+		every_galaxy_planet = {
+			validate_planet_buildings_and_districts = yes
+		}
+	}
+}
+# Secondary Districts
+country_event = {
+	id = xenosdisablefeaturesevents.027
+	title = "xenosdisable_districts_secondary.name"
+	desc = "xenosdisable_districts_secondary.desc"
+
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = xenosdisablefeaturesevents_districts_secondary_food_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_secondary_districts_food } }
+			set_global_flag = do3f_disable_secondary_districts_food
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_secondary_districts_food }
+			remove_global_flag = do3f_disable_secondary_districts_food
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_secondary_stores_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_secondary_districts_stores } }
+			set_global_flag = do3f_disable_secondary_districts_stores
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_secondary_districts_stores }
+			remove_global_flag = do3f_disable_secondary_districts_stores
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_secondary_industry_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_secondary_districts_industry } }
+			set_global_flag = do3f_disable_secondary_districts_industry
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_secondary_districts_industry }
+			remove_global_flag = do3f_disable_secondary_districts_industry
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_secondary_production_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_secondary_districts_production } }
+			set_global_flag = do3f_disable_secondary_districts_production
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_secondary_districts_production }
+			remove_global_flag = do3f_disable_secondary_districts_production
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_secondary_workshop_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_secondary_districts_workshop } }
+			set_global_flag = do3f_disable_secondary_districts_workshop
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_secondary_districts_workshop }
+			remove_global_flag = do3f_disable_secondary_districts_workshop
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_secondary_uni_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_secondary_districts_uni } }
+			set_global_flag = do3f_disable_secondary_districts_uni
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_secondary_districts_uni }
+			remove_global_flag = do3f_disable_secondary_districts_uni
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_secondary_spaceport_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_secondary_districts_spaceport } }
+			set_global_flag = do3f_disable_secondary_districts_spaceport
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_secondary_districts_spaceport }
+			remove_global_flag = do3f_disable_secondary_districts_spaceport
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_secondary_academy_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_secondary_districts_academy } }
+			set_global_flag = do3f_disable_secondary_districts_academy
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_secondary_districts_academy }
+			remove_global_flag = do3f_disable_secondary_districts_academy
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_secondary_logistics_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_secondary_districts_logistics } }
+			set_global_flag = do3f_disable_secondary_districts_logistics
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_secondary_districts_logistics }
+			remove_global_flag = do3f_disable_secondary_districts_logistics
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_secondary_bureaucratic_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_secondary_districts_bureaucratic } }
+			set_global_flag = do3f_disable_secondary_districts_bureaucratic
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_secondary_districts_bureaucratic }
+			remove_global_flag = do3f_disable_secondary_districts_bureaucratic
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_secondary_entertainment_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_secondary_districts_entertainment } }
+			set_global_flag = do3f_disable_secondary_districts_entertainment
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_secondary_districts_entertainment }
+			remove_global_flag = do3f_disable_secondary_districts_entertainment
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_secondary_necro_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_secondary_districts_necro } }
+			set_global_flag = do3f_disable_secondary_districts_necro
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_secondary_districts_necro }
+			remove_global_flag = do3f_disable_secondary_districts_necro
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_secondary_mac_relay_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_secondary_districts_mac_relay } }
+			set_global_flag = do3f_disable_secondary_districts_mac_relay
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_secondary_districts_mac_relay }
+			remove_global_flag = do3f_disable_secondary_districts_mac_relay
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_secondary_hiv_tunnels_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_secondary_districts_hiv_tunnels } }
+			set_global_flag = do3f_disable_secondary_districts_hiv_tunnels
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_secondary_districts_hiv_tunnels }
+			remove_global_flag = do3f_disable_secondary_districts_hiv_tunnels
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_secondary_ecu_development_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_secondary_districts_ecu_development } }
+			set_global_flag = do3f_disable_secondary_districts_ecu_development
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_secondary_districts_ecu_development }
+			remove_global_flag = do3f_disable_secondary_districts_ecu_development
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_districts_secondary_ecu_shipyard_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_secondary_districts_ecu_shipyard } }
+			set_global_flag = do3f_disable_secondary_districts_ecu_shipyard
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_secondary_districts_ecu_shipyard }
+			remove_global_flag = do3f_disable_secondary_districts_ecu_shipyard
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	
+	option = {
+		name = xenosdisablefeaturesevents_disable_all_name
+		set_global_flag = do3f_disable_secondary_districts_food
+		set_global_flag = do3f_disable_secondary_districts_stores
+
+		set_global_flag = do3f_disable_secondary_districts_industry
+		set_global_flag = do3f_disable_secondary_districts_production
+
+		set_global_flag = do3f_disable_secondary_districts_workshop
+		set_global_flag = do3f_disable_secondary_districts_uni
+
+		set_global_flag = do3f_disable_secondary_districts_spaceport
+		set_global_flag = do3f_disable_secondary_districts_academy
+
+		set_global_flag = do3f_disable_secondary_districts_logistics
+		set_global_flag = do3f_disable_secondary_districts_bureaucratic
+		set_global_flag = do3f_disable_secondary_districts_entertainment
+		set_global_flag = do3f_disable_secondary_districts_necro
+
+		set_global_flag = do3f_disable_secondary_districts_mac_relay
+		set_global_flag = do3f_disable_secondary_districts_hiv_tunnels
+		set_global_flag = do3f_disable_secondary_districts_ecu_development
+		set_global_flag = do3f_disable_secondary_districts_ecu_shipyard
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_enable_all_name
+		remove_global_flag = do3f_disable_secondary_districts_food
+		remove_global_flag = do3f_disable_secondary_districts_stores
+
+		remove_global_flag = do3f_disable_secondary_districts_industry
+		remove_global_flag = do3f_disable_secondary_districts_production
+
+		remove_global_flag = do3f_disable_secondary_districts_workshop
+		remove_global_flag = do3f_disable_secondary_districts_uni
+
+		remove_global_flag = do3f_disable_secondary_districts_spaceport
+		remove_global_flag = do3f_disable_secondary_districts_academy
+
+		remove_global_flag = do3f_disable_secondary_districts_logistics
+		remove_global_flag = do3f_disable_secondary_districts_bureaucratic
+		remove_global_flag = do3f_disable_secondary_districts_entertainment
+		remove_global_flag = do3f_disable_secondary_districts_necro
+
+		remove_global_flag = do3f_disable_secondary_districts_mac_relay
+		remove_global_flag = do3f_disable_secondary_districts_hiv_tunnels
+		remove_global_flag = do3f_disable_secondary_districts_ecu_development
+		remove_global_flag = do3f_disable_secondary_districts_ecu_shipyard
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.027
+			}
+		}
+	}
+	option = {
+		name = "NEVERMIND"
+		custom_tooltip = disablefeatures_go_back_desc
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.02
+			}
+		}
+	}
+
+	after = {
+		every_galaxy_planet = {
+			validate_planet_buildings_and_districts = yes
+		}
+	}
+}
+
+# 03 - Buildings
+# Choose type of building
+country_event = {
+	id = xenosdisablefeaturesevents.03
+	title = "xenosdisable_buildings.name"
+	desc = "xenosdisable_buildings.desc"
+
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	# Resource Buildings
+	option = {
+		name = xenosdisablefeaturesevents_buildings_resource_name
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.033
+			}
+		}
+	}
+	# Unique Buildings
+	option = {
+		name = xenosdisablefeaturesevents_buildings_unique_name
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.0301
+			}
+		}
+	}
+	# Go back to choosing what you want to disable
+	option = {
+		name = "NEVERMIND"
+		custom_tooltip = disablefeatures_go_back_desc
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.01
+			}
+		}
+	}
+}
+# Unique Buildings
+country_event = {
+	id = xenosdisablefeaturesevents.0301
+	title = "xenosdisable_buildings_unique.name"
+	desc = "xenosdisable_buildings_unique.desc"
+
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = xenosdisablefeaturesevents_buildings_unique_tunnel_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_building_unique_tunnel } }
+			set_global_flag = do3f_disable_building_unique_tunnel
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_building_unique_tunnel }
+			remove_global_flag = do3f_disable_building_unique_tunnel
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.0301
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_buildings_unique_tree_temple_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_building_unique_tree_temple } }
+			set_global_flag = do3f_disable_building_unique_tree_temple
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_building_unique_tree_temple }
+			remove_global_flag = do3f_disable_building_unique_tree_temple
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.0301
+			}
+		}
+	}
+	
+	option = {
+		name = xenosdisablefeaturesevents_disable_all_name
+		set_global_flag = do3f_disable_building_unique_tunnel
+		set_global_flag = do3f_disable_building_unique_tree_temple
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.0301
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_enable_all_name
+		remove_global_flag = do3f_disable_building_unique_tunnel
+		remove_global_flag = do3f_disable_building_unique_tree_temple
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.0301
+			}
+		}
+	}
+	option = {
+		name = "NEVERMIND"
+		custom_tooltip = disablefeatures_go_back_desc
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.03
+			}
+		}
+	}
+
+	after = {
+		every_galaxy_planet = {
+			validate_planet_buildings_and_districts = yes
+		}
+	}
+}
+# Resource Buildings
+country_event = {
+	id = xenosdisablefeaturesevents.033
+	title = "xenosdisable_buildings_resource.name"
+	desc = "xenosdisable_buildings_resource.desc"
+
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = xenosdisablefeaturesevents_buildings_resource_lavender_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_building_resource_lavender } }
+			set_global_flag = do3f_disable_building_resource_lavender
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_building_resource_lavender }
+			remove_global_flag = do3f_disable_building_resource_lavender
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.033
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_buildings_resource_tea_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_building_resource_tea } }
+			set_global_flag = do3f_disable_building_resource_tea
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_building_resource_tea }
+			remove_global_flag = do3f_disable_building_resource_tea
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.033
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_buildings_resource_spices_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_building_resource_spices } }
+			set_global_flag = do3f_disable_building_resource_spices
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_building_resource_spices }
+			remove_global_flag = do3f_disable_building_resource_spices
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.033
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_buildings_resource_drugs_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_building_resource_drugs } }
+			set_global_flag = do3f_disable_building_resource_drugs
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_building_resource_drugs }
+			remove_global_flag = do3f_disable_building_resource_drugs
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.033
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_buildings_resource_algae_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_building_resource_algae } }
+			set_global_flag = do3f_disable_building_resource_algae
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_building_resource_algae }
+			remove_global_flag = do3f_disable_building_resource_algae
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.033
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_buildings_resource_lichen_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_building_resource_lichen } }
+			set_global_flag = do3f_disable_building_resource_lichen
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_building_resource_lichen }
+			remove_global_flag = do3f_disable_building_resource_lichen
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.033
+			}
+		}
+	}
+	
+	option = {
+		name = xenosdisablefeaturesevents_disable_all_name
+		set_global_flag = do3f_disable_building_resource_lavender
+		set_global_flag = do3f_disable_building_resource_tea
+		set_global_flag = do3f_disable_building_resource_spices
+		set_global_flag = do3f_disable_building_resource_drugs
+		set_global_flag = do3f_disable_building_resource_algae
+		set_global_flag = do3f_disable_building_resource_lichen
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.033
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_enable_all_name
+		remove_global_flag = do3f_disable_building_resource_lavender
+		remove_global_flag = do3f_disable_building_resource_tea
+		remove_global_flag = do3f_disable_building_resource_spices
+		remove_global_flag = do3f_disable_building_resource_drugs
+		remove_global_flag = do3f_disable_building_resource_algae
+		remove_global_flag = do3f_disable_building_resource_lichen
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.033
+			}
+		}
+	}
+	option = {
+		name = "NEVERMIND"
+		custom_tooltip = disablefeatures_go_back_desc
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.03
+			}
+		}
+	}
+
+	after = {
+		every_galaxy_planet = {
+			validate_planet_buildings_and_districts = yes
+		}
+	}
+}
+
+# 05 - Colony Designations
+# Choose which
+country_event = {
+	id = xenosdisablefeaturesevents.05
+	title = "xenosdisable_colony_types.name"
+	desc = "xenosdisable_colony_types.desc"
+
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	# Housing Policy
+	option = {
+		name = xenosdisablefeaturesevents_colony_types_frontier_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_colony_type_frontier } }
+			set_global_flag = do3f_disable_colony_type_frontier
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_colony_type_frontier }
+			remove_global_flag = do3f_disable_colony_type_frontier
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.05
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_colony_types_trade_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_colony_type_trade } }
+			set_global_flag = do3f_disable_colony_type_trade
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_colony_type_trade }
+			remove_global_flag = do3f_disable_colony_type_trade
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.05
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_colony_types_plantation_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_colony_type_plantation } }
+			set_global_flag = do3f_disable_colony_type_plantation
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_colony_type_plantation }
+			remove_global_flag = do3f_disable_colony_type_plantation
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.05
+			}
+		}
+	}
+
+	option = {
+		name = xenosdisablefeaturesevents_disable_all_name
+		set_global_flag = do3f_disable_colony_type_frontier
+		set_global_flag = do3f_disable_colony_type_trade
+		set_global_flag = do3f_disable_colony_type_plantation
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.05
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_enable_all_name
+		remove_global_flag = do3f_disable_colony_type_frontier
+		remove_global_flag = do3f_disable_colony_type_trade
+		remove_global_flag = do3f_disable_colony_type_plantation
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.05
+			}
+		}
+	}
+	# Go back to choosing what you want to disable
+	option = {
+		name = "NEVERMIND"
+		custom_tooltip = disablefeatures_go_back_desc
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.01
+			}
+		}
+	}
+}
+
+# 06 - Mechanics
+# Choose whcih mechanic
+country_event = {
+	id = xenosdisablefeaturesevents.06
+	title = "xenosdisable_mechanics.name"
+	desc = "xenosdisable_mechanics.desc"
+
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+# Garden Worlds
+	option = {
+		name = xenosdisablefeaturesevents_mechanics_garden_worlds_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_mechanics_garden_worlds } }
+			set_global_flag = do3f_disable_mechanics_garden_worlds
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_mechanics_garden_worlds }
+			remove_global_flag = do3f_disable_mechanics_garden_worlds
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.06
+			}
+		}
+	}
+# Asteroid and other uninhabitable planets colonization
+	option = {
+		name = xenosdisablefeaturesevents_mechanics_asteroid_colonizing_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_mechanics_asteroid_colonizing } }
+			set_global_flag = do3f_disable_mechanics_asteroid_colonizing
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_mechanics_asteroid_colonizing }
+			remove_global_flag = do3f_disable_mechanics_asteroid_colonizing
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.06
+			}
+		}
+	}
+# Primary Districts
+	option = {
+		name = xenosdisablefeaturesevents_mechanics_primary_districts_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_mechanics_primary_districts } }
+			set_global_flag = do3f_disable_mechanics_primary_districts
+
+			set_global_flag = do3f_disable_primary_districts_chemistry
+			set_global_flag = do3f_disable_primary_districts_gas
+			set_global_flag = do3f_disable_primary_districts_crystals
+
+			set_global_flag = do3f_disable_primary_districts_nature
+			set_global_flag = do3f_disable_primary_districts_research
+			set_global_flag = do3f_disable_primary_districts_scrap
+
+			set_global_flag = do3f_disable_primary_districts_tourism
+			set_global_flag = do3f_disable_primary_districts_gardens
+			set_global_flag = do3f_disable_primary_districts_ecogardens
+
+			set_global_flag = do3f_disable_primary_districts_assembly
+			set_global_flag = do3f_disable_primary_districts_archeology
+
+			set_global_flag = do3f_disable_primary_districts_ring_alloy
+			set_global_flag = do3f_disable_primary_districts_ring_gas
+			set_global_flag = do3f_disable_primary_districts_ring_motes
+			set_global_flag = do3f_disable_primary_districts_ring_crystals
+			set_global_flag = do3f_disable_primary_districts_ring_mining
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_mechanics_primary_districts }
+			remove_global_flag = do3f_disable_mechanics_primary_districts
+
+			remove_global_flag = do3f_disable_primary_districts_chemistry
+			remove_global_flag = do3f_disable_primary_districts_gas
+			remove_global_flag = do3f_disable_primary_districts_crystals
+
+			remove_global_flag = do3f_disable_primary_districts_nature
+			remove_global_flag = do3f_disable_primary_districts_research
+			remove_global_flag = do3f_disable_primary_districts_scrap
+
+			remove_global_flag = do3f_disable_primary_districts_tourism
+			remove_global_flag = do3f_disable_primary_districts_gardens
+			remove_global_flag = do3f_disable_primary_districts_ecogardens
+
+			remove_global_flag = do3f_disable_primary_districts_assembly
+			remove_global_flag = do3f_disable_primary_districts_archeology
+
+			remove_global_flag = do3f_disable_primary_districts_ring_alloy
+			remove_global_flag = do3f_disable_primary_districts_ring_gas
+			remove_global_flag = do3f_disable_primary_districts_ring_motes
+			remove_global_flag = do3f_disable_primary_districts_ring_crystals
+			remove_global_flag = do3f_disable_primary_districts_ring_mining
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.06
+			}
+		}
+	}
+# Secondary Districts
+	option = {
+		name = xenosdisablefeaturesevents_mechanics_secondary_districts_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_mechanics_secondary_districts } }
+			set_global_flag = do3f_disable_mechanics_secondary_districts
+
+			set_global_flag = do3f_disable_secondary_districts_food
+			set_global_flag = do3f_disable_secondary_districts_stores
+
+			set_global_flag = do3f_disable_secondary_districts_industry
+			set_global_flag = do3f_disable_secondary_districts_production
+
+			set_global_flag = do3f_disable_secondary_districts_workshop
+			set_global_flag = do3f_disable_secondary_districts_uni
+
+			set_global_flag = do3f_disable_secondary_districts_spaceport
+			set_global_flag = do3f_disable_secondary_districts_academy
+
+			set_global_flag = do3f_disable_secondary_districts_logistics
+			set_global_flag = do3f_disable_secondary_districts_bureaucratic
+			set_global_flag = do3f_disable_secondary_districts_entertainment
+			set_global_flag = do3f_disable_secondary_districts_necro
+
+			set_global_flag = do3f_disable_secondary_districts_mac_relay
+			set_global_flag = do3f_disable_secondary_districts_hiv_tunnels
+			set_global_flag = do3f_disable_secondary_districts_ecu_development
+			set_global_flag = do3f_disable_secondary_districts_ecu_shipyard
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_mechanics_secondary_districts }
+			remove_global_flag = do3f_disable_mechanics_secondary_districts
+			
+			remove_global_flag = do3f_disable_secondary_districts_food
+			remove_global_flag = do3f_disable_secondary_districts_stores
+
+			remove_global_flag = do3f_disable_secondary_districts_industry
+			remove_global_flag = do3f_disable_secondary_districts_production
+
+			remove_global_flag = do3f_disable_secondary_districts_workshop
+			remove_global_flag = do3f_disable_secondary_districts_uni
+
+			remove_global_flag = do3f_disable_secondary_districts_spaceport
+			remove_global_flag = do3f_disable_secondary_districts_academy
+
+			remove_global_flag = do3f_disable_secondary_districts_logistics
+			remove_global_flag = do3f_disable_secondary_districts_bureaucratic
+			remove_global_flag = do3f_disable_secondary_districts_entertainment
+			remove_global_flag = do3f_disable_secondary_districts_necro
+
+			remove_global_flag = do3f_disable_secondary_districts_mac_relay
+			remove_global_flag = do3f_disable_secondary_districts_hiv_tunnels
+			remove_global_flag = do3f_disable_secondary_districts_ecu_development
+			remove_global_flag = do3f_disable_secondary_districts_ecu_shipyard
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.06
+			}
+		}
+	}
+# Colony Designation Rework
+	option = {
+		name = xenosdisablefeaturesevents_mechanics_coltypere_name
+		if = {
+			limit = { NOT = { has_global_flag = do3f_disable_mechanics_coltypere } }
+			set_global_flag = do3f_disable_mechanics_coltypere
+		}
+		else_if = {
+			limit = { has_global_flag = do3f_disable_mechanics_coltypere }
+			remove_global_flag = do3f_disable_mechanics_coltypere
+		}
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.06
+			}
+		}
+	}
+# Go back to choosing what you want to disable
+	option = {
+		name = "NEVERMIND"
+		custom_tooltip = disablefeatures_go_back_desc
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.01
+			}
+		}
+	}
+	after = {
+		every_galaxy_planet = {
+			validate_planet_buildings_and_districts = yes
+		}
+	}
+}
+
+# 07 - Packages
+# Choose
+country_event = {
+	id = xenosdisablefeaturesevents.07
+	title = "xenosdisable_packages.name"
+	desc = "xenosdisable_packages.desc"
+
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	# DO3
+	option = {
+		name = xenosdisablefeaturesevents_packages_do3_disable_name
+		# Housing
+		set_global_flag = do3f_disable_housing_district_suburbs
+		set_global_flag = do3f_disable_housing_district_shelters
+		set_global_flag = do3f_disable_housing_district_slums
+		set_global_flag = do3f_disable_housing_district_ascended
+		set_global_flag = do3f_disable_housing_district_ocean
+		set_global_flag = do3f_disable_housing_district_underground
+		# Artificial
+		set_global_flag = do3f_disable_artificial_districts_hab_external
+		set_global_flag = do3f_disable_artificial_districts_hab_alloy
+		set_global_flag = do3f_disable_artificial_districts_hab_gas
+		set_global_flag = do3f_disable_artificial_districts_hab_crystal
+		set_global_flag = do3f_disable_artificial_districts_hab_dark_matter
+		set_global_flag = do3f_disable_artificial_districts_hab_zro
+		set_global_flag = do3f_disable_artificial_districts_hab_living_metal
+		set_global_flag = do3f_disable_artificial_districts_hab_nanites
+		set_global_flag = do3f_disable_artificial_districts_ring_uni
+		# Energy
+		set_global_flag = do3f_disable_energy_districts_fusion
+		set_global_flag = do3f_disable_energy_districts_fossil
+		set_global_flag = do3f_disable_energy_districts_wind
+		set_global_flag = do3f_disable_energy_districts_geo
+		set_global_flag = do3f_disable_energy_districts_solar
+		set_global_flag = do3f_disable_energy_districts_tidal
+		set_global_flag = do3f_disable_energy_districts_bio
+		# Mining
+		set_global_flag = do3f_disable_mining_districts_unstable
+		set_global_flag = do3f_disable_mining_districts_stable
+		set_global_flag = do3f_disable_mining_districts_surface
+		set_global_flag = do3f_disable_mining_districts_deep
+		set_global_flag = do3f_disable_mining_districts_mountain
+		# Farming
+		set_global_flag = do3f_disable_farming_districts_nature
+		set_global_flag = do3f_disable_farming_districts_ocean
+		set_global_flag = do3f_disable_farming_districts_exotic
+		set_global_flag = do3f_disable_farming_districts_oasis
+		set_global_flag = do3f_disable_farming_districts_cave
+		set_global_flag = do3f_disable_farming_districts_industrial
+		# Primary
+		set_global_flag = do3f_disable_mechanics_primary_districts
+
+		set_global_flag = do3f_disable_primary_districts_chemistry
+		set_global_flag = do3f_disable_primary_districts_gas
+		set_global_flag = do3f_disable_primary_districts_crystals
+
+		set_global_flag = do3f_disable_primary_districts_nature
+		set_global_flag = do3f_disable_primary_districts_research
+		set_global_flag = do3f_disable_primary_districts_scrap
+
+		set_global_flag = do3f_disable_primary_districts_tourism
+		set_global_flag = do3f_disable_primary_districts_gardens
+		set_global_flag = do3f_disable_primary_districts_ecogardens
+
+		set_global_flag = do3f_disable_primary_districts_assembly
+		set_global_flag = do3f_disable_primary_districts_archeology
+
+		set_global_flag = do3f_disable_primary_districts_ring_alloy
+		set_global_flag = do3f_disable_primary_districts_ring_gas
+		set_global_flag = do3f_disable_primary_districts_ring_motes
+		set_global_flag = do3f_disable_primary_districts_ring_crystals
+		set_global_flag = do3f_disable_primary_districts_ring_mining
+		# Secondary
+		set_global_flag = do3f_disable_mechanics_secondary_districts
+
+		set_global_flag = do3f_disable_secondary_districts_food
+		set_global_flag = do3f_disable_secondary_districts_stores
+
+		set_global_flag = do3f_disable_secondary_districts_industry
+		set_global_flag = do3f_disable_secondary_districts_production
+
+		set_global_flag = do3f_disable_secondary_districts_workshop
+		set_global_flag = do3f_disable_secondary_districts_uni
+
+		set_global_flag = do3f_disable_secondary_districts_spaceport
+		set_global_flag = do3f_disable_secondary_districts_academy
+
+		set_global_flag = do3f_disable_secondary_districts_logistics
+		set_global_flag = do3f_disable_secondary_districts_bureaucratic
+		set_global_flag = do3f_disable_secondary_districts_entertainment
+		set_global_flag = do3f_disable_secondary_districts_necro
+
+		set_global_flag = do3f_disable_secondary_districts_mac_relay
+		set_global_flag = do3f_disable_secondary_districts_hiv_tunnels
+		set_global_flag = do3f_disable_secondary_districts_ecu_development
+		set_global_flag = do3f_disable_secondary_districts_ecu_shipyard
+
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.07
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_packages_do3_enable_name
+		# Housing
+		remove_global_flag = do3f_disable_housing_district_suburbs
+		remove_global_flag = do3f_disable_housing_district_shelters
+		remove_global_flag = do3f_disable_housing_district_slums
+		remove_global_flag = do3f_disable_housing_district_ascended
+		remove_global_flag = do3f_disable_housing_district_ocean
+		remove_global_flag = do3f_disable_housing_district_underground
+		# Artificial
+		remove_global_flag = do3f_disable_artificial_districts_hab_external
+		remove_global_flag = do3f_disable_artificial_districts_hab_alloy
+		remove_global_flag = do3f_disable_artificial_districts_hab_gas
+		remove_global_flag = do3f_disable_artificial_districts_hab_crystal
+		remove_global_flag = do3f_disable_artificial_districts_hab_dark_matter
+		remove_global_flag = do3f_disable_artificial_districts_hab_zro
+		remove_global_flag = do3f_disable_artificial_districts_hab_living_metal
+		remove_global_flag = do3f_disable_artificial_districts_hab_nanites
+		remove_global_flag = do3f_disable_artificial_districts_ring_uni
+		# Energy
+		remove_global_flag = do3f_disable_energy_districts_fusion
+		remove_global_flag = do3f_disable_energy_districts_fossil
+		remove_global_flag = do3f_disable_energy_districts_wind
+		remove_global_flag = do3f_disable_energy_districts_geo
+		remove_global_flag = do3f_disable_energy_districts_solar
+		remove_global_flag = do3f_disable_energy_districts_tidal
+		remove_global_flag = do3f_disable_energy_districts_bio
+		# Mining
+		remove_global_flag = do3f_disable_mining_districts_unstable
+		remove_global_flag = do3f_disable_mining_districts_stable
+		remove_global_flag = do3f_disable_mining_districts_surface
+		remove_global_flag = do3f_disable_mining_districts_deep
+		remove_global_flag = do3f_disable_mining_districts_mountain
+		# Farming
+		remove_global_flag = do3f_disable_farming_districts_nature
+		remove_global_flag = do3f_disable_farming_districts_ocean
+		remove_global_flag = do3f_disable_farming_districts_exotic
+		remove_global_flag = do3f_disable_farming_districts_oasis
+		remove_global_flag = do3f_disable_farming_districts_cave
+		remove_global_flag = do3f_disable_farming_districts_industrial
+		# Primary
+		remove_global_flag = do3f_disable_mechanics_primary_districts
+
+		remove_global_flag = do3f_disable_primary_districts_chemistry
+		remove_global_flag = do3f_disable_primary_districts_gas
+		remove_global_flag = do3f_disable_primary_districts_crystals
+
+		remove_global_flag = do3f_disable_primary_districts_nature
+		remove_global_flag = do3f_disable_primary_districts_research
+		remove_global_flag = do3f_disable_primary_districts_scrap
+
+		remove_global_flag = do3f_disable_primary_districts_tourism
+		remove_global_flag = do3f_disable_primary_districts_gardens
+		remove_global_flag = do3f_disable_primary_districts_ecogardens
+
+		remove_global_flag = do3f_disable_primary_districts_assembly
+		remove_global_flag = do3f_disable_primary_districts_archeology
+
+		remove_global_flag = do3f_disable_primary_districts_ring_alloy
+		remove_global_flag = do3f_disable_primary_districts_ring_gas
+		remove_global_flag = do3f_disable_primary_districts_ring_motes
+		remove_global_flag = do3f_disable_primary_districts_ring_crystals
+		remove_global_flag = do3f_disable_primary_districts_ring_mining
+		# Secondary
+		remove_global_flag = do3f_disable_mechanics_secondary_districts
+
+		remove_global_flag = do3f_disable_secondary_districts_food
+		remove_global_flag = do3f_disable_secondary_districts_stores
+
+		remove_global_flag = do3f_disable_secondary_districts_industry
+		remove_global_flag = do3f_disable_secondary_districts_production
+
+		remove_global_flag = do3f_disable_secondary_districts_workshop
+		remove_global_flag = do3f_disable_secondary_districts_uni
+
+		remove_global_flag = do3f_disable_secondary_districts_spaceport
+		remove_global_flag = do3f_disable_secondary_districts_academy
+
+		remove_global_flag = do3f_disable_secondary_districts_logistics
+		remove_global_flag = do3f_disable_secondary_districts_bureaucratic
+		remove_global_flag = do3f_disable_secondary_districts_entertainment
+		remove_global_flag = do3f_disable_secondary_districts_necro
+
+		remove_global_flag = do3f_disable_secondary_districts_mac_relay
+		remove_global_flag = do3f_disable_secondary_districts_hiv_tunnels
+		remove_global_flag = do3f_disable_secondary_districts_ecu_development
+		remove_global_flag = do3f_disable_secondary_districts_ecu_shipyard
+
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.07
+			}
+		}
+	}
+	# Interplanetary Agriculture
+	option = {
+		name = xenosdisablefeaturesevents_packages_intplan_agri_disable_name
+		# Buildings
+		set_global_flag = do3f_disable_building_resource_lavender
+		set_global_flag = do3f_disable_building_resource_tea
+		set_global_flag = do3f_disable_building_resource_spices
+		set_global_flag = do3f_disable_building_resource_drugs
+		set_global_flag = do3f_disable_building_resource_algae
+		set_global_flag = do3f_disable_building_resource_lichen
+		set_global_flag = do3f_disable_building_unique_tree_temple
+		# Colony Designation
+		set_global_flag = do3f_disable_colony_type_plantation
+		# Garden Worlds
+		set_global_flag = do3f_disable_mechanics_garden_worlds
+
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.07
+			}
+		}
+	}
+	option = {
+		name = xenosdisablefeaturesevents_packages_intplan_agri_enable_name
+		# Buildings
+		remove_global_flag = do3f_disable_building_resource_lavender
+		remove_global_flag = do3f_disable_building_resource_tea
+		remove_global_flag = do3f_disable_building_resource_spices
+		remove_global_flag = do3f_disable_building_resource_drugs
+		remove_global_flag = do3f_disable_building_resource_algae
+		remove_global_flag = do3f_disable_building_resource_lichen
+		remove_global_flag = do3f_disable_building_unique_tree_temple
+		# Colony Designation
+		remove_global_flag = do3f_disable_colony_type_plantation
+		# Garden Worlds
+		remove_global_flag = do3f_disable_mechanics_garden_worlds
+
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.07
+			}
+		}
+	}
+	# Other stuff
+	option = {
+		name = xenosdisablefeaturesevents_packages_other_stuff_enable_name
+		# Buildings
+		remove_global_flag = do3f_disable_building_unique_tunnel
+		# Colony Designation
+		remove_global_flag = do3f_disable_colony_type_frontier
+		remove_global_flag = do3f_disable_colony_type_trade
+		# Deposit
+		remove_global_flag = do3f_disable_deposit_ringcity
+		# Districts
+		remove_global_flag = do3f_disable_industrial_district_bio
+		remove_global_flag = do3f_disable_industrial_district_infra
+
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.07
+			}
+		}
+	}
+	# Go back to choosing what you want to disable
+	option = {
+		name = "NEVERMIND"
+		custom_tooltip = disablefeatures_go_back_desc
+		owner = {
+			country_event = {
+				id = xenosdisablefeaturesevents.01
+			}
+		}
+	}
+	after = {
+		every_galaxy_planet = {
+			validate_planet_buildings_and_districts = yes
+		}
+	}
+}
+
+# 08 - Other stuff

@@ -1,0 +1,452 @@
+﻿l_english:
+##################################################
+# Urban Districts:                               #
+##################################################
+  # Suburban City
+  district_01_suburbs:0 "Suburban Housing District"
+  mod_district_01_suburbs_max:0 "Suburban Housing Districts"
+  district_01_suburbs_plural:0 "Suburban Housing Districts"
+  district_01_suburbs_desc:0 "Suburban housing districts provide a welcoming housing enviroment to your planet."
+  mod_planet_district_01_suburbs_build_speed_mult:0 "Suburbs Build Speed"
+  # Shelters
+  district_01_shelters:0 "Shelters"
+  mod_district_01_shelters_max:0 "Shelters"
+  district_01_shelters_plural:0 "Shelters"
+  district_01_shelters_desc:0 "Shelters are highly protected housing areas with protected life support systems, to allow housing on less hospitable planets."
+  mod_planet_district_01_shelters_build_speed_mult:0 "Shelters Build Speed"
+  # Underground City
+  district_01_underground_city:0 "Underground City"
+  mod_district_01_underground_city_max:0 "Underground Citys"
+  district_01_underground_city_plural:0 "Underground Cities"
+  district_01_underground_city_desc:0 "Underground Cities will provide living-space without reducing the planets surface area."
+  mod_planet_district_01_underground_city_build_speed_mult:0 "Underground City Build Speed"
+  # Slums
+  district_01_slums:0 "Slums"
+  mod_district_01_slums_max:0 "Slums"
+  district_01_slums_plural:0 "Slums"
+  district_01_slums_desc:0 "Slums are cheap high-density housing, although reduced control and poverty in those areas will increase crime rates."
+  mod_planet_district_01_slums_build_speed_mult:0 "Slums Build Speed"
+  # Ocean Housing
+  district_01_ocean_housing:0 "Ocean Housing"
+  mod_district_01_ocean_housing_max:0 "Ocean Housing"
+  district_01_ocean_housing_plural:0 "Ocean Housing"
+  district_01_ocean_housing_desc:0 "These districts are gigantic buildings floating on the ocean."
+  mod_planet_district_01_ocean_housing_build_speed_mult:0 "Ocean Housing Build Speed"
+  # Ascended Housing
+  district_01_ascended_housing:0 "Ascended Housing"
+  mod_district_01_ascended_housing_max:0 "Ascended Housing"
+  district_01_ascended_housing_plural:0 "Ascended Housing"
+  district_01_ascended_housing_desc:0 "This district uses restored precursor gravity-modifying technology to allow construction of ridiculously tall and spacious housing."
+  mod_planet_district_01_ascended_housing_build_speed_mult:0 "Ascended Housing Build Speed"
+##################################################
+# Industrial Districts:                          #
+##################################################
+
+  district_01_biological_industries:0 "Biological Industries"
+  district_01_biological_industries_desc:0 "The plantlife and our machines are no longer distinguishable from one another."
+  do3f_bio_industry_district_effect:0 "§YAdds a Ranger job for every farming district§ "
+  district_01_biological_industries_plural:0 "$district_01_biological_industries$"
+  mod_planet_district_01_biological_industries_build_speed_mult:0 "Biological Industries Build Speed"
+
+##################################################
+# Energy Districts:                              #
+##################################################
+  # Wind Turbines
+  district_e_wind_turbines:0 "Wind Park"
+  mod_district_e_wind_turbines_max:0 "Wind Parks"
+  district_e_wind_turbines_plural:0 "Wind Parks"
+  district_e_wind_turbines_desc:0 "Intense winds on this part of the planet can be efficiently converted into energy."
+  mod_planet_district_e_wind_turbines_build_speed_mult:0 "Wind Park Build Speed"
+  # Geothermal Generator
+  district_e_geothermal_generator:0 "Geothermal Powerplant"
+  mod_district_e_geothermal_generator_max:0 "Geothermal Powerplants"
+  district_e_geothermal_generator_plural:0 "Geothermal Powerplants"
+  district_e_geothermal_generator_desc:0 "A geothermal powerplant uses the planets natural geothermal activity and converts it to energy, while producing a small amount of minerals as a byproduct."
+  mod_planet_district_e_geothermal_generator_build_speed_mult:0 "Geothermal Powerplant Build Speed"
+  # Solar Generator
+  district_e_solar_generator:0 "Solar Array"
+  mod_district_e_solar_generator_max:0 "Solar Arrays"
+  district_e_solar_generator_plural:0 "Solar Arrays"
+  district_e_solar_generator_desc:0 "Solar Arrays will put the nearly endless supply of energy from the planets star into your energy grid."
+  mod_planet_district_e_solar_generator_build_speed_mult:0 "Solar Array Build Speed"
+  # Tidal Generator
+  district_e_tidal_generator:0 "Tidal Generator"
+  mod_district_e_tidal_generator_max:0 "Tidal Generators"
+  district_e_tidal_generator_plural:0 "Tidal Generators"
+  district_e_tidal_generator_desc:0 "These Tidal Generators are installed in the ocean and use the planets tidal forces and currents to produce energy."
+  mod_planet_district_e_tidal_generator_build_speed_mult:0 "Tidal Generator Build Speed"
+  # Biomass Generator
+  district_e_biomass_generator:0 "Biomass Generator"
+  mod_district_e_biomass_generator_max:0 "Biomass Generators"
+  district_e_biomass_generator_plural:0 "Biomass Generators"
+  district_e_biomass_generator_desc:0 "Biomass generators will help you efficiently turn food into energy."
+  mod_planet_district_e_biomass_generator_build_speed_mult:0 "Biomass Generator Build Speed"
+  # Fusion Generator
+  district_e_fusion_generator:0 "Fusion Powerplant"
+  mod_district_e_fusion_generator_max:0 "Fusion Powerplants"
+  district_e_fusion_generator_plural:0 "Fusion Powerplants"
+  district_e_fusion_generator_desc:0 "Fusion powerplants merge suitable particles and harness the released energy."
+  mod_planet_district_e_fusion_generator_build_speed_mult:0 "Fusion Powerplant Build Speed"
+  # Fossil Fuel Generator
+  district_e_fossil_fuel_generator:0 "Fossil Fuel Powerplant"
+  mod_district_e_fossil_fuel_generator_max:0 "Fossil Fuel Powerplants"
+  district_e_fossil_fuel_generator_plural:0 "Fossil Fuel Powerplants"
+  district_e_fossil_fuel_generator_desc:0 "Fossil fuel powerplants burn fossil fuels found in the planet to produce energy."
+  mod_planet_district_e_fossil_fuel_generator_build_speed_mult:0 "Fossil Fuel Powerplant Build Speed"
+##################################################
+# Mining Districts:                              #
+##################################################
+  # Unstable Mining
+  district_m_unstable_mining:0 "Unstable Mines"
+  mod_district_m_unstable_mining_max:0 "Unstable Mines"
+  district_m_unstable_mining_plural:0 "Unstable Mines"
+  district_m_unstable_mining_desc:0 "A less stable surface in the planets crust will increase the danger for your miners and will make them more likly to rebell against you."
+  mod_planet_district_m_unstable_mining_build_speed_mult:0 "Unstable Mines Build Speed"
+  # Stable Mining
+  district_m_stable_mining:0 "Stable Mines"
+  mod_district_m_stable_mining_max:0 "Stable Mines"
+  district_m_stable_mining_plural:0 "Stable Mines"
+  district_m_stable_mining_desc:0 "A very stable planet crust provides an extremly safe work enviroment for miners, which will make them more likly to support you in your efforts."
+  mod_planet_district_m_stable_mining_build_speed_mult:0 "Stable Mines Build Speed"
+  # Surface Mining
+  district_m_surface_mining:0 "Surface Mines"
+  mod_district_m_surface_mining_max:0 "Surface Mines"
+  district_m_surface_mining_plural:0 "Surface Mines"
+  district_m_surface_mining_desc:0 "A large supply of minerals near the planets surface provide an extremly cheap way to employ miners."
+  mod_planet_district_m_surface_mining_build_speed_mult:0 "Surface Mines Build Speed"
+  # Mountain Mining
+  district_m_mountain_mining:0 "Mountain Mines"
+  mod_district_m_mountain_mining_max:0 "Mountain Mines"
+  district_m_mountain_mining_plural:0 "Mountain Mines"
+  district_m_mountain_mining_desc:0 "Excavating large mountains will be costly to maintain, but also allow many workers to produce minerals."
+  mod_planet_district_m_mountain_mining_build_speed_mult:0 "Mountain Mines Build Speed"
+  # Deep Mining
+  district_m_deep_mining:0 "Deep Mines"
+  mod_district_m_deep_mining_max:0 "Deep Mines"
+  district_m_deep_mining_plural:0 "Deep Mines"
+  district_m_deep_mining_desc:0 "Deep in the planets crust there is a large abundance of minerals. Although it is very expensive, few miners will be able to collect many minerals."
+  mod_planet_district_m_deep_mining_build_speed_mult:0 "Deep Mines Build Speed"
+##################################################
+# Farming Districts:                             #
+##################################################
+  # Oasis Farm
+  district_f_oasis_farms:0 "Oasis Farm"
+  mod_district_f_oasis_farms_max:0 "Oasis Farms"
+  district_f_oasis_farms_plural:0 "Oasis Farms"
+  district_f_oasis_farms_desc:0 "Natural Oasises will provide the possiblity to grow food in otherwise less nature rich areas."
+  mod_planet_district_f_oasis_farms_build_speed_mult:0 "Oasis Farm Build Speed"
+  # Nature Farm
+  district_f_nature_farms:0 "Nature Farm"
+  mod_district_f_nature_farms_max:0 "Nature Farms"
+  district_f_nature_farms_plural:0 "Nature Farms"
+  district_f_nature_farms_desc:0 "Sending Farmers into functioning ecosystems might not be as efficient as regular farms, but will be much cheaper and possible to provide more jobs with an additional unity bonus."
+  mod_planet_district_f_nature_farms_build_speed_mult:0 "Nature Farm Build Speed"
+  # Ocean Farm
+  district_f_ocean_farms:0 "Ocean Farm"
+  mod_district_f_ocean_farms_max:0 "Ocean Farms"
+  district_f_ocean_farms_plural:0 "Ocean Farms"
+  district_f_ocean_farms_desc:0 "These aquatic farms use the planets natural underwater ecosystem to farm very nutritious food."
+  mod_planet_district_f_ocean_farms_build_speed_mult:0 "Ocean Farm Build Speed"
+  # Lush Cave Farm
+  district_f_cave_farms:0 "Lush Cave Farm"
+  mod_district_f_cave_farms_max:0 "Lush Cave Farms"
+  district_f_cave_farms_plural:0 "Lush Cave Farms"
+  district_f_cave_farms_desc:0 "Underground ecosystems are used to grow food with an additional bonus of unity."
+  mod_planet_district_f_cave_farms_build_speed_mult:0 "Cave Farm Build Speed"
+  # Exotic Farm
+  district_f_exotic_farms:0 "Exotic Farm"
+  mod_district_f_exotic_farms_max:0 "Exotic Farm"
+  district_f_exotic_farms_plural:0 "Exotic Farms"
+  district_f_exotic_farms_desc:0 "A wide variety of strange foods can be grown and researched on such farm."
+  mod_planet_district_f_exotic_farms_build_speed_mult:0 "Exotic Farm Build Speed"
+  # Efficient Farms
+  district_f_industrial_farms:0 "Industrial Farm"
+  mod_district_f_industrial_farms_max:0 "Industrial Farm"
+  district_f_industrial_farms_plural:0 "Industrial Farms"
+  district_f_industrial_farms_desc:0 "Space efficient Farms use more productive workers to produce more food, albeit at the cost of habitability."
+
+##################################################
+# Primary Districts:                             #
+##################################################
+  # Chemistry Industry
+  district_do3f_chemistry_industry:0 "Chemical Industry"
+  mod_district_do3f_chemistry_industry_max:0 "Chemical Industries"
+  district_do3f_chemistry_industry_plural:0 "Chemical Industries"
+  district_do3f_chemistry_industry_desc:0 "It might not be that good for the environment, but you can always just colonize another planet."
+  mod_planet_district_do3f_chemistry_industry_build_speed_mult:0 "Chemical Industry Build Speed"
+  # Gas Refinery
+  district_do3f_gas_refinery:0 "Gas Refinery"
+  mod_district_do3f_gas_refinery_max:0 "Gas Refineries"
+  district_do3f_gas_refinery_plural:0 "Gas Refineries"
+  district_do3f_gas_refinery_desc:0 "Trace amounts of exotic gases can be found in the planets deposits. This district-wide facility is dedicated to extracting and refining them into usable concentrations."
+  mod_planet_district_do3f_gas_refinery_build_speed_mult:0 "Gas Refinery Build Speed"
+  # Crystal Mines
+  district_do3f_crystal_mines:0 "Crystal Mines"
+  mod_district_do3f_crystal_mines_max:0 "Crystal Mines"
+  district_do3f_crystal_mines_plural:0 "Crystal Mines"
+  district_do3f_crystal_mines_desc:0 "Rare crystals can be found in this planets crust. It takes a district-wide facility to dig deep enough for them."
+  mod_planet_district_do3f_crystal_mines_build_speed_mult:0 "Crystal Mines Build Speed"
+
+  # Nature Reserve
+  district_do3f_nature_reserve:0 "Nature Reserve"
+  mod_district_do3f_nature_reserve_max:0 "Nature Reserves"
+  district_do3f_nature_reserve_plural:0 "Nature Reserves"
+  district_do3f_nature_reserve_desc:0 "A patch of natural planetary environment free from industrial activity, maintained and guarded by the rangers."
+  mod_planet_district_do3f_nature_reserve_build_speed_mult:0 "Nature Reserve Build Speed"
+  # Anomaly
+  district_do3f_research_complex:0 "Anomaly Research Complex"
+  mod_district_do3f_research_complex_max:0 "Anomaly Research Complexes"
+  district_do3f_research_complex_plural:0 "Anomaly Research Complexes"
+  district_do3f_research_complex_desc:0 "Anomaly research complexes will bring groundbreaking (sometimes literally) research to your empire."
+  mod_planet_district_do3f_research_complex_build_speed_mult:0 "Anomaly Research Complex Build Speed"
+
+  # Tourism
+  district_do3f_tourism:0 "Tourism District"
+  mod_district_do3f_tourism_max:0 "Tourism Districts"
+  district_do3f_tourism_plural:0 "Tourism Districts"
+  district_do3f_tourism_desc:0 "The number one holiday destination in the Galaxy!"
+  mod_planet_district_do3f_tourism_build_speed_mult:0 "Tourism District Build Speed"
+  # Gardens
+  district_do3f_gardens:0 "Garden"
+  mod_district_do3f_gardens_max:0 "Gardens"
+  district_do3f_gardens_plural:0 "Gardens"
+  district_do3f_gardens_desc:0 "Beautiful flora and fauna of this world is gathered here to create a perfect harmony of life."
+  mod_planet_district_do3f_gardens_build_speed_mult:0 "Gardens Build Speed"
+  # Ecogardens
+  district_do3f_ecogardens:0 "Ecogarden"
+  mod_district_do3f_ecogardens_max:0 "Ecogardens"
+  district_do3f_ecogardens_plural:0 "Ecogardens"
+  district_do3f_ecogardens_desc:0 "Beautiful flora and fauna of this world is gathered here to create a perfect harmony of life. Additionally some of the planets can regularly be harvested for food."
+  mod_planet_district_do3f_ecogardens_build_speed_mult:0 "Ecogardens Build Speed"
+
+  # Robot Assembly
+  district_do3f_robot_assembly:0 "Robot Assembly"
+  mod_district_do3f_robot_assembly_max:0 "Robot Assembly"
+  district_do3f_robot_assembly_plural:0 "Robot Assembly"
+  district_do3f_robot_assembly_desc:0 "This ancient robot assembly station can be used to assemble vast amounts of robots."
+  mod_planet_district_do3f_robot_assembly_build_speed_mult:0 "Robot Assembly Build Speed"
+  # Drone Lab
+  district_do3f_drone_lab:0 "Drone Lab"
+  mod_district_do3f_drone_lab_max:0 "Drone Lab"
+  district_do3f_drone_lab_plural:0 "Drone Lab"
+  district_do3f_drone_lab_desc:0 "This ancient drone lab can be used to efficiently grow vast amounts of drones."
+  mod_planet_district_do3f_drone_lab_build_speed_mult:0 "Drone Lab Build Speed"
+  # Cloning Facility
+  district_do3f_cloning_facility:0 "Cloning Facility"
+  mod_district_do3f_cloning_facility_max:0 "Cloning Facility"
+  district_do3f_cloning_facility_plural:0 "Cloning Facility"
+  district_do3f_cloning_facility_desc:0 "This ancient cloning facility can be used to quickly grow out population."
+  mod_planet_district_do3f_cloning_facility_build_speed_mult:0 "Cloning Facility Build Speed"
+  # Archeology
+  district_do3f_archeology:0 "Archeology District"
+  mod_district_do3f_archeology_max:0 "Archeology Districts"
+  district_do3f_archeology_plural:0 "Archeology Districts"
+  district_do3f_archeology_desc:0 "Remenenats of an ancient precursor can be found here. Archeologists can find minor relics for usage in your empire."
+  mod_planet_district_do3f_archeology_build_speed_mult:0 "Archeology District Build Speed"
+  # Scrapyard
+  district_do3f_scrapyard:0 "Scrapyard District"
+  mod_district_do3f_scrapyard_max:0 "Scrapyard Districts"
+  district_do3f_scrapyard_plural:0 "Scrapyard Districts"
+  district_do3f_scrapyard_desc:0 "Some alien civilization has used parts of the planet as an scrapyard. It is possible to gain knowledge from it through reverse-engineering."
+  mod_planet_district_do3f_scrapyard_build_speed_mult:0 "Scrapyard District Build Speed"
+
+# RW Primaries
+  # Neutronium Forge
+  district_do3f_rw_neutronium_forge:0 "Neutronium Forge"
+  mod_district_do3f_rw_neutronium_forge_max:0 "Neutronium Forges"
+  district_do3f_rw_neutronium_forge_plural:0 "Neutronium Forges"
+  district_do3f_rw_neutronium_forge_desc:0 ""
+  mod_planet_district_do3f_rw_neutronium_forge_build_speed_mult:0 "Neutronium Forge Build Speed"
+  # Exotic Resource Collector
+  district_do3f_rw_exotic_resource_collector:0 "Exotic Resource Collector"
+  mod_district_do3f_rw_exotic_resource_collector_max:0 "Exotic Resource Collectors"
+  district_do3f_rw_exotic_resource_collector_plural:0 "Exotic Resource Collectors"
+  district_do3f_rw_exotic_resource_collector_desc:0 ""
+  mod_planet_district_do3f_rw_exotic_resource_collector_build_speed_mult:0 "Exotic Reource Collector Build Speed"
+  # Siphon Port
+  district_do3f_rw_siphon_ports:0 "Siphon Port"
+  mod_district_do3f_rw_siphon_ports_max:0 "Siphon Ports"
+  district_do3f_rw_siphon_ports_plural:0 "Siphon Ports"
+  district_do3f_rw_siphon_ports_desc:0 ""
+  mod_planet_district_do3f_rw_siphon_ports_build_speed_mult:0 "Siphon Port Build Speed"
+  # Crystalization Facility
+  district_do3f_rw_crystalization_facilities:0 "Crystalization Facility"
+  mod_district_do3f_rw_crystalization_facilities_max:0 "Crystalization Facilities"
+  district_do3f_rw_crystalization_facilities_plural:0 "Crystalization Facilities"
+  district_do3f_rw_crystalization_facilities_desc:0 ""
+  mod_planet_district_do3f_rw_crystalization_facilities_build_speed_mult:0 "Crystalization Facility Build Speed"
+  # Asteroid Mining
+  district_do3f_rw_asteroid_belt_mining:0 "Asteroid Belt Mining"
+  mod_district_do3f_rw_asteroid_belt_mining_max:0 "Asteroid Belt Mining"
+  district_do3f_rw_asteroid_belt_mining_plural:0 "Asteroid Belt Mining"
+  district_do3f_rw_asteroid_belt_mining_desc:0 ""
+  mod_planet_district_do3f_rw_asteroid_belt_mining_build_speed_mult:0 "Asteroid Belt Mining District Build Speed"
+##################################################
+# Secondary Districts:                           #
+##################################################
+  # Workshops
+  district_02_workshops:0 "Workshop"
+  mod_district_02_workshops_max:0 "Workshops"
+  district_02_workshops_plural:0 "Workshops"
+  district_02_workshops_desc:0 "Workshops are used to provide machines and goods to your specialists."
+  mod_planet_district_02_workshops_build_speed_mult:0 "Workshop Build Speed"
+  # University
+  district_02_university:0 "University"
+  mod_district_02_university_max:0 "Universities"
+  district_02_university_plural:0 "Universities"
+  district_02_university_desc:0 "University will better educate your specialists and provide a forum of discussion."
+  mod_planet_district_02_university_build_speed_mult:0 "University Build Speed"
+  # Local Industry
+  district_02_local_industry:0 "Local Industry"
+  mod_district_02_local_industry_max:0 "Local Industries"
+  district_02_local_industry_plural:0 "Local Industries"
+  district_02_local_industry_desc:0 "Local Industrys will be the backbone of your empires alloy production."
+  mod_planet_district_02_local_industry_build_speed_mult:0 "Local Industries Build Speed"
+  # Production Hub
+  district_02_production_hub:0 "Production Hub"
+  mod_district_02_production_hub_max:0 "Production Hubs"
+  district_02_production_hub_plural:0 "Production Hubs"
+  district_02_production_hub_desc:0 "A production hub manufactures everything your population may require."
+  mod_planet_district_02_production_hub_build_speed_mult:0 "Production Hub Build Speed"
+  # Local Stores
+  district_02_local_stores:0 "Local Stores"
+  mod_district_02_local_stores_max:0 "Local Stores"
+  district_02_local_stores_plural:0 "Local Stores"
+  district_02_local_stores_desc:0 "Local Stores will grant clerk jobs to both increase your trade and provide to your pops needs."
+  mod_planet_district_02_local_stores_build_speed_mult:0 "Local Stores Build Speed"
+  # Spaceport
+  district_02_spaceport:0 "Spaceport"
+  mod_district_02_spaceport_max:0 "Spaceports"
+  district_02_spaceport_plural:0 "Spaceports"
+  district_02_spaceport_desc:0 "A spaceport has hangers for your ships and will also train pilots to fly them."
+  mod_planet_district_02_spaceport_build_speed_mult:0 "Spaceport Build Speed"
+  # Academy
+  district_02_academy:0 "Military Academy"
+  mod_district_02_academy_max:0 "Military Academies"
+  district_02_academy_plural:0 "Military Academies"
+  district_02_academy_desc:0 "Military Academys are an important aspect to quickly train the best soldiers in the galaxy."
+  mod_planet_district_02_academy_build_speed_mult:0 "Academy Build Speed"
+  # Logistics Hub
+  district_02_logistics_hub:0 "Logistics Hub"
+  mod_district_02_logistics_hub_max:0 "Logistics Hubs"
+  district_02_logistics_hub_plural:0 "Logistics Hubs"
+  district_02_logistics_hub_desc:0 "Logistic Hubs will take care of the transportation of goods on the planet, so that your workers can focus on doing their primary job."
+  mod_planet_district_02_logistics_hub_build_speed_mult:0 "Logistics Hub Build Speed"
+  # Bureaucratic
+  district_02_bureaucratic:0 "Bureaucratic Complex"
+  mod_district_02_bureaucratic_max:0 "Bureaucratic Complexes"
+  district_02_bureaucratic_plural:0 "Bureaucratic Complexes"
+  district_02_bureaucratic_desc:0 "Bureaucratic Complexes will help you to complete as much paperwork as possible."
+  mod_planet_district_02_bureaucratic_build_speed_mult:0 "Bureaucratic Complex Build Speed"
+  # Hydroponic Bay
+  district_02_hydroponic_bay:0 "Hydroponic Bay"
+  mod_district_02_hydroponic_bay_max:0 "Hydroponic Bays"
+  district_02_hydroponic_bay_plural:0 "Hydroponic Bays"
+  district_02_hydroponic_bay_desc:0 "Hydroponic Bays require a lot of energy, but will produce food even on otherwise less hospitable planets."
+  mod_planet_district_02_hydroponic_bay_build_speed_mult:0 "Hydroponic Bay Build Speed"
+  # Entertainment
+  district_02_entertainment:0 "Entertainment District"
+  mod_district_02_entertainment_max:0 "Entertainment Districts"
+  district_02_entertainment_plural:0 "Entertainment Districts"
+  district_02_entertainment_desc:0 "Entertainment Districts will become the center of your planets nightlife."
+  mod_planet__build_speed_mult:0 ""
+  # Necrophage
+  district_02_necrophage:0 "Necrophage District"
+  mod_district_02_necrophage_max:0 "Necrophage Districts"
+  district_02_necrophage_plural:0 "Necrophage Districts"
+  district_02_necrophage_desc:0 "Necrophage Districts will help you convert your pops to a higher level."
+  mod_planet_district_02_necrophage_build_speed_mult:0 "Necrophage District Build Speed"
+# Arcology Secondaries
+  # Relay Station
+  district_02_relay_stations:0 "Relay Station"
+  mod_district_02_relay_stations_max:0 "Relay Stations"
+  district_02_relay_stations_plural:0 "Relay Stations"
+  district_02_relay_stations_desc:0 ""
+  mod_planet_district_02_relay_stations_build_speed_mult:0 "Relay Station Build speed"
+  # Tunnel Network
+  district_02_tunnel_networks:0 "Tunnel Network"
+  mod_district_02_tunnel_networks_max:0 "Tunnel Networks"
+  district_02_tunnel_networks_plural:0 "Tunnel Networks"
+  district_02_tunnel_networks_desc:0 ""
+  mod_planet_district_02_tunnel_networks_build_speed_mult:0 "Tunnel Network Build Speed"
+  # Lower City Infrastructure
+  district_02_lower_city_development:0 "Lower City Infrastructure"
+  mod_district_02_lower_city_development_max:0 "Lower City Infrastructure"
+  district_02_lower_city_development_plural:0 "Lower City Infrastructure"
+  district_02_lower_city_development_desc:0 ""
+  mod_planet_district_02_lower_city_development_build_speed_mult:0 "Lower City Infrastructure Build Speed"
+  # Planetary Shipyard
+  district_02_shipyards:0 "Planetary Shipyard"
+  mod_district_02_shipyards_max:0 "Planetary Shipyards"
+  district_02_shipyards_plural:0 "Planetary Shipyards"
+  district_02_shipyards_desc:0 ""
+  mod_planet_district_02_shipyards_build_speed_mult:0 "Planetary Shipyard Build Speed"
+# Universal RW District
+  district_rw_universal:0 "Universal District"
+  mod_district_rw_universal_max:0 "Universal District"
+  district_rw_universal_plural:0 "Universal Districts"
+  district_rw_universal_desc:0 ""
+  mod_planet_district_rw_universal_build_speed_mult:0 "Universal District Build Speed"
+
+##################################################
+# Hab Districts:                             
+##################################################
+  district_hab_external_habitat:0 "External Habitation Module"
+  mod_district_hab_external_habitat_max:0 "Max $district_hab_external_habitat_plural$"
+  district_hab_external_habitat_desc:0 "A habitation compartment grafted on to an already finished habitat. It allows us to keep expanding our living space for a long, long time."
+  district_hab_external_habitat_plural:0 "External Habitation Modules"
+  mod_planet_district_hab_external_habitat_build_speed_mult:0 "External Habitation Module Build Speed"
+  # Alloy
+  district_hab_alloys:0 "Orbital Alloy Mine"
+  mod_district_hab_alloys_max:0 "Max $district_hab_alloys_plural$"
+  district_hab_alloys_plural:0 "Orbital Alloy Mines"
+  district_hab_alloys_desc:0 ""
+  mod_planet_district_hab_alloys_build_speed_mult:0 "Orbital Alloy Mine Build Speed"
+  # Consumer Goods
+  district_hab_consumer_goods:0 "Orbital Factory"
+  mod_district_hab_consumer_goods_max:0 "Max $district_hab_alloys_plural$"
+  district_hab_consumer_goods_plural:0 "Orbital Factories"
+  district_hab_consumer_goods_desc:0 ""
+  mod_planet_district_hab_consumer_goods_build_speed_mult:0 "Orbital Factory Build Speed"
+  # Volatile Motes
+  district_hab_volatile_motes:0 "Orbital Volatile Motes Mine"
+  mod_district_hab_volatile_motes_max:0 "Max $district_hab_volatile_motes_plural$"
+  district_hab_volatile_motes_plural:0 "Orbital Volatile Motes Mines"
+  district_hab_volatile_motes_desc:0 ""
+  mod_planet_district_hab_volatile_motes_build_speed_mult:0 "Orbital Volatile Motes Mine Build Speed"
+  # Exotic Gases
+  district_hab_exotic_gases:0 "Orbital Exotic Gas Mine"
+  mod_district_hab_exotic_gases_max:0 "Max $district_hab_exotic_gases_plural$"
+  district_hab_exotic_gases_plural:0 "Orbital Exotic Gas Mines"
+  district_hab_exotic_gases_desc:0 ""
+  mod_planet_district_hab_exotic_gases_build_speed_mult:0 "Orbital Exotic Gas Mine Build Speed"
+  # Rare Crystals
+  district_hab_rare_crystals:0 "Orbital Rare Crystal Mine"
+  mod_district_hab_rare_crystals_max:0 "Max $district_hab_rare_crystals_plural$"
+  district_hab_rare_crystals_plural:0 "Orbital Rare Crystal Mines"
+  district_hab_rare_crystals_desc:0 ""
+  mod_planet_district_hab_rare_crystals_build_speed_mult:0 "Orbital Rare Crystal Mine Build Speed"
+  # Dark Matter
+  district_hab_dark_matter:0 "Orbital Dark Matter Mine"
+  mod_district_hab_dark_matter_max:0 "Max $district_hab_dark_matter_plural$"
+  district_hab_dark_matter_plural:0 "Orbital Dark Matter Mines"
+  district_hab_dark_matter_desc:0 ""
+  mod_planet_district_hab_dark_matter_build_speed_mult:0 "Orbital Dark Matter Mine Build Speed"
+  # Zro
+  district_hab_zro:0 "Orbital Zro Mine"
+  mod_district_hab_zro_max:0 "Max $district_hab_zro_plural$"
+  district_hab_zro_plural:0 "Orbital Zro Mines"
+  district_hab_zro_desc:0 ""
+  mod_planet_district_hab_zro_build_speed_mult:0 "Orbital Zro Mine Build Speed"
+  # Living Metal
+  district_hab_living_metal:0 "Orbital Living Metal Mine"
+  mod_district_hab_living_metal_max:0 "Max $district_hab_living_metal_plural$"
+  district_hab_living_metal_plural:0 "Orbital Living Metal Mines"
+  district_hab_living_metal_desc:0 ""
+  mod_planet_district_hab_living_metal_build_speed_mult:0 "Orbital Living Metal Mine Build Speed"
+  # Nanites
+  district_hab_nanites:0 "Orbital Nanites Mine"
+  mod_district_hab_nanites_max:0 "Max $district_hab_nanites_plural$"
+  district_hab_nanites_plural:0 "Orbital Nanites Mines"
+  district_hab_nanites_desc:0 ""
+  mod_planet_district_hab_nanites_build_speed_mult:0 "Orbital Nanite Mine Build Speed"

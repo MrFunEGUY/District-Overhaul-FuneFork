@@ -1,0 +1,58 @@
+003_planetary_shipyard_uplink = {
+	icon = "GFX_sm_planetary_shipyard_uplink"
+	construction_days = 360
+
+	potential = {
+		solar_system = {
+			any_system_planet = {
+				has_district = district_02_shipyards
+			}
+		}
+		NOT = {
+			has_global_flag = do3f_disable_secondary_districts_ecu_shipyard
+		}
+	}
+
+	possible = {
+		has_starbase_module = shipyard
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 500
+		}
+
+		upkeep = {
+			energy = 25
+			alloys = 15
+		}
+	}
+	
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 1 } } } } } starbase_shipyard_capacity_add = 3 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 2 } } } } } starbase_shipyard_capacity_add = 6 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 3 } } } } } starbase_shipyard_capacity_add = 9 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 4 } } } } } starbase_shipyard_capacity_add = 12 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 5 } } } } } starbase_shipyard_capacity_add = 15 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 6 } } } } } starbase_shipyard_capacity_add = 18 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 7 } } } } } starbase_shipyard_capacity_add = 21 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 8 } } } } } starbase_shipyard_capacity_add = 24 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 9 } } } } } starbase_shipyard_capacity_add = 27 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 10 } } } } } starbase_shipyard_capacity_add = 30 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 11 } } } } } starbase_shipyard_capacity_add = 33 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 12 } } } } } starbase_shipyard_capacity_add = 36 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 13 } } } } } starbase_shipyard_capacity_add = 39 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 14 } } } } } starbase_shipyard_capacity_add = 42 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 15 } } } } } starbase_shipyard_capacity_add = 45 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 16 } } } } } starbase_shipyard_capacity_add = 48 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 17 } } } } } starbase_shipyard_capacity_add = 51 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 18 } } } } } starbase_shipyard_capacity_add = 54 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 19 } } } } } starbase_shipyard_capacity_add = 57 }
+	triggered_station_modifier = { potential = { hidden_trigger =  { solar_system = { any_system_planet = { num_districts = { type = district_02_shipyards value = 20 } } } } } starbase_shipyard_capacity_add = 60 }
+
+	custom_tooltip = sm_003_planetary_shipyard_uplink_desc_modifier
+
+	ai_weight = {
+		weight = 1000
+	}
+}

@@ -1,0 +1,1308 @@
+#e Energy Jobs
+e_fusion_technician = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_power_plant
+	clothes_texture_index = 2
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 12
+		}
+		produces = {
+			trigger = { 
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			energy = 6
+		}
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+
+	weight = {
+		weight = @worker_job_weight
+		mult = value:job_weights_modifier|JOB|technician|RESOURCE|energy|
+		modifier = {
+			factor = 100
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+			can_fill_specialist_job_trigger = no
+		}
+		modifier = {
+			factor = 8
+			is_enslaved = yes
+			can_take_servant_job = no
+			OR = {
+				has_trait = trait_syncretic_proles
+				has_trait = trait_robot_superconductive
+				has_trait = trait_ingenious
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 0.25
+			can_take_servant_job = yes
+		}
+		# low income modifier
+		modifier = {
+			factor = 250
+			exists = planet
+			planet = {
+				has_available_jobs = "e_fusion_technician"
+			}
+			exists = owner
+			owner = {
+				is_ai = yes
+				has_monthly_income = {
+					resource = energy
+					value < 20
+				}
+			}
+		}
+	}
+}
+e_fossil_fuel_technician = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_power_plant
+	clothes_texture_index = 2
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 10
+		}
+		produces = {
+			trigger = { 
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			energy = 5
+		}
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+
+	weight = {
+		weight = @worker_job_weight
+		mult = value:job_weights_modifier|JOB|technician|RESOURCE|energy|
+		modifier = {
+			factor = 100
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+			can_fill_specialist_job_trigger = no
+		}
+		modifier = {
+			factor = 8
+			is_enslaved = yes
+			can_take_servant_job = no
+			OR = {
+				has_trait = trait_syncretic_proles
+				has_trait = trait_robot_superconductive
+				has_trait = trait_ingenious
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 0.25
+			can_take_servant_job = yes
+		}
+		# low income modifier
+		modifier = {
+			factor = 250
+			exists = planet
+			planet = {
+				has_available_jobs = "e_fossil_fuel_technician"
+			}
+			exists = owner
+			owner = {
+				is_ai = yes
+				has_monthly_income = {
+					resource = energy
+					value < 20
+				}
+			}
+		}
+	}
+}
+e_wind_turbine_technician = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_power_plant
+	clothes_texture_index = 2
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 6
+		}
+		produces = {
+			trigger = { 
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			energy = 3
+		}
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+
+	weight = {
+		weight = @worker_job_weight
+		mult = value:job_weights_modifier|JOB|technician|RESOURCE|energy|
+		modifier = {
+			factor = 100
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+			can_fill_specialist_job_trigger = no
+		}
+		modifier = {
+			factor = 8
+			is_enslaved = yes
+			can_take_servant_job = no
+			OR = {
+				has_trait = trait_syncretic_proles
+				has_trait = trait_robot_superconductive
+				has_trait = trait_ingenious
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 0.25
+			can_take_servant_job = yes
+		}
+		# low income modifier
+		modifier = {
+			factor = 250
+			exists = planet
+			planet = {
+				has_available_jobs = "e_wind_turbine_technician"
+			}
+			exists = owner
+			owner = {
+				is_ai = yes
+				has_monthly_income = {
+					resource = energy
+					value < 20
+				}
+			}
+		}
+	}
+}
+e_geothermal_technician = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_power_plant
+	clothes_texture_index = 2
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 4
+			minerals = 2
+		}
+		produces = {
+			trigger = { 
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			energy = 2
+			minerals = 1
+		}
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+
+	weight = {
+		weight = @worker_job_weight
+		mult = value:job_weights_modifier|JOB|technician|RESOURCE|energy|
+		modifier = {
+			factor = 100
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+			can_fill_specialist_job_trigger = no
+		}
+		modifier = {
+			factor = 8
+			is_enslaved = yes
+			can_take_servant_job = no
+			OR = {
+				has_trait = trait_syncretic_proles
+				has_trait = trait_robot_superconductive
+				has_trait = trait_ingenious
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 0.25
+			can_take_servant_job = yes
+		}
+		# low income modifier
+		modifier = {
+			factor = 250
+			exists = planet
+			planet = {
+				has_available_jobs = "e_geothermal_technician"
+			}
+			exists = owner
+			owner = {
+				is_ai = yes
+				has_monthly_income = {
+					resource = energy
+					value < 20
+				}
+			}
+		}
+	}
+}
+e_solar_technician = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_power_plant
+	clothes_texture_index = 2
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 8
+		}
+		produces = {
+			trigger = { 
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			energy = 4
+		}
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+
+	weight = {
+		weight = @worker_job_weight
+		mult = value:job_weights_modifier|JOB|technician|RESOURCE|energy|
+		modifier = {
+			factor = 100
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+			can_fill_specialist_job_trigger = no
+		}
+		modifier = {
+			factor = 8
+			is_enslaved = yes
+			can_take_servant_job = no
+			OR = {
+				has_trait = trait_syncretic_proles
+				has_trait = trait_robot_superconductive
+				has_trait = trait_ingenious
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 0.25
+			can_take_servant_job = yes
+		}
+		# low income modifier
+		modifier = {
+			factor = 250
+			exists = planet
+			planet = {
+				has_available_jobs = "e_solar_technician"
+			}
+			exists = owner
+			owner = {
+				is_ai = yes
+				has_monthly_income = {
+					resource = energy
+					value < 20
+				}
+			}
+		}
+	}
+}
+e_tidal_technician = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_power_plant
+	clothes_texture_index = 2
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 6
+		}
+		produces = {
+			trigger = { 
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			energy = 3
+		}
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+
+	weight = {
+		weight = @worker_job_weight
+		mult = value:job_weights_modifier|JOB|technician|RESOURCE|energy|
+		modifier = {
+			factor = 100
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+			can_fill_specialist_job_trigger = no
+		}
+		modifier = {
+			factor = 8
+			is_enslaved = yes
+			can_take_servant_job = no
+			OR = {
+				has_trait = trait_syncretic_proles
+				has_trait = trait_robot_superconductive
+				has_trait = trait_ingenious
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 0.25
+			can_take_servant_job = yes
+		}
+		# low income modifier
+		modifier = {
+			factor = 250
+			exists = planet
+			planet = {
+				has_available_jobs = "e_tidal_technician"
+			}
+			exists = owner
+			owner = {
+				is_ai = yes
+				has_monthly_income = {
+					resource = energy
+					value < 20
+				}
+			}
+		}
+	}
+}
+e_biomass_technician = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_energy_grid
+	clothes_texture_index = 2
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_worker_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 6
+		}
+		produces = {
+			trigger = {
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			energy = 2
+		}
+		# produces = {
+		# 	trigger = {
+		# 		planet = {
+		# 			planet_resource_compare = {
+		# 				resource = food
+		# 				value > 0
+		# 			}
+		# 		}
+		# 	}
+		# 	energy = 2
+		# }
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+
+	weight = {
+		weight = @worker_job_weight
+		mult = value:job_weights_modifier|JOB|technician|RESOURCE|energy|
+		modifier = {
+			factor = 100
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+			can_fill_specialist_job_trigger = no
+		}
+		modifier = {
+			factor = 8
+			is_enslaved = yes
+			can_take_servant_job = no
+			OR = {
+				has_trait = trait_syncretic_proles
+				has_trait = trait_robot_superconductive
+				has_trait = trait_ingenious
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 0.25
+			can_take_servant_job = yes
+		}
+		# low income modifier
+		modifier = {
+			factor = 250
+			exists = planet
+			planet = {
+				has_available_jobs = "e_biomass_technician"
+			}
+			exists = owner
+			owner = {
+				is_ai = yes
+				has_monthly_income = {
+					resource = energy
+					value < 20
+				}
+			}
+		}
+	}
+}
+
+e_fusion_drone = {
+	category = simple_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_power_plant
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 12
+		}
+		produces = {
+			trigger = { 
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			energy = 6
+		}
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+	
+	weight = {
+		weight = @simple_drone_job_weight
+		mult = value:job_weights_modifier|JOB|technician_drone|RESOURCE|energy|
+		modifier = {
+			factor = 0.9
+			NOT = { has_job = e_fusion_drone }
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value > 50
+				}
+			}
+		}
+		modifier = {
+			factor = 1.2
+			has_job = e_fusion_drone
+		}
+		modifier = {
+			factor = 1.1
+			exists = owner
+			years_passed < 1
+			owner = { has_valid_civic = civic_machine_assimilator }
+			has_trait = trait_cybernetic
+		}
+	}
+}
+e_fossil_fuel_drone = {
+	category = simple_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_power_plant
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 10
+		}
+		produces = {
+			trigger = { 
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			energy = 5
+		}
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+	
+	weight = {
+		weight = @simple_drone_job_weight
+		mult = value:job_weights_modifier|JOB|technician_drone|RESOURCE|energy|
+		modifier = {
+			factor = 0.9
+			NOT = { has_job = e_fossil_fuel_drone }
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value > 50
+				}
+			}
+		}
+		modifier = {
+			factor = 1.2
+			has_job = e_fossil_fuel_drone
+		}
+		modifier = {
+			factor = 1.1
+			exists = owner
+			years_passed < 1
+			owner = { has_valid_civic = civic_machine_assimilator }
+			has_trait = trait_cybernetic
+		}
+	}
+}
+e_wind_turbine_drone = {
+	category = simple_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_power_plant
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 8
+		}
+		produces = {
+			trigger = { 
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			energy = 4
+		}
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+	
+	weight = {
+		weight = @simple_drone_job_weight
+		mult = value:job_weights_modifier|JOB|technician_drone|RESOURCE|energy|
+		modifier = {
+			factor = 0.9
+			NOT = { has_job = e_wind_turbine_drone }
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value > 50
+				}
+			}
+		}
+		modifier = {
+			factor = 1.2
+			has_job = e_wind_turbine_drone
+		}
+		modifier = {
+			factor = 1.1
+			exists = owner
+			years_passed < 1
+			owner = { has_valid_civic = civic_machine_assimilator }
+			has_trait = trait_cybernetic
+		}
+	}
+}
+e_geothermal_drone = {
+	category = simple_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_power_plant
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 4
+			minerals = 2
+		}
+		produces = {
+			trigger = { 
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			energy = 2
+			minerals = 1
+		}
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+	
+	weight = {
+		weight = @simple_drone_job_weight
+		mult = value:job_weights_modifier|JOB|technician_drone|RESOURCE|energy|
+		modifier = {
+			factor = 0.9
+			NOT = { has_job = e_geothermal_drone }
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value > 50
+				}
+			}
+		}
+		modifier = {
+			factor = 1.2
+			has_job = e_geothermal_drone
+		}
+		modifier = {
+			factor = 1.1
+			exists = owner
+			years_passed < 1
+			owner = { has_valid_civic = civic_machine_assimilator }
+			has_trait = trait_cybernetic
+		}
+	}
+}
+e_solar_drone = {
+	category = simple_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_power_plant
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 8
+		}
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+	
+	weight = {
+		weight = @simple_drone_job_weight
+		mult = value:job_weights_modifier|JOB|technician_drone|RESOURCE|energy|
+		modifier = {
+			factor = 0.9
+			NOT = { has_job = e_solar_drone }
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value > 50
+				}
+			}
+		}
+		modifier = {
+			factor = 1.2
+			has_job = e_solar_drone
+		}
+		modifier = {
+			factor = 1.1
+			exists = owner
+			years_passed < 1
+			owner = { has_valid_civic = civic_machine_assimilator }
+			has_trait = trait_cybernetic
+		}
+	}
+}
+e_tidal_technician_drone = {
+	category = simple_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_power_plant
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 6
+		}
+		produces = {
+			trigger = { 
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			energy = 3
+		}
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+
+	weight = {
+		weight = @simple_drone_job_weight
+		mult = value:job_weights_modifier|JOB|technician_drone|RESOURCE|energy|
+		modifier = {
+			factor = 0.9
+			NOT = { has_job = e_tidal_technician_drone }
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value > 50
+				}
+			}
+		}
+		modifier = {
+			factor = 1.2
+			has_job = e_tidal_technician_drone
+		}
+		modifier = {
+			factor = 1.1
+			exists = owner
+			years_passed < 1
+			owner = { has_valid_civic = civic_machine_assimilator }
+			has_trait = trait_cybernetic
+		}
+	}
+}
+e_biomass_technician_drone = {
+	category = simple_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_energy_grid
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	resources = {
+		category = planet_technician
+		produces = {
+			energy = 6
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_robot_empire = yes
+				}
+			}
+			energy = 2
+		}
+		# produces = {
+		# 	trigger = {
+		# 		planet = {
+		# 			planet_resource_compare = {
+		# 				resource = food
+		# 				value > 0
+		# 			}
+		# 		}
+		# 	}
+		# 	energy = 2
+		# }
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_reduction
+		}
+	}
+
+	overlord_resources = {
+		category = planet_requisitioned_energy
+		produces = {
+			trigger = {
+				planet = {
+					has_planet_flag = has_energy_requisitorium
+				}
+			}
+			energy = @requisitorium_energy_overlord
+		}
+	}
+
+	weight = {
+		weight = @simple_drone_job_weight
+		mult = value:job_weights_modifier|JOB|technician_drone|RESOURCE|energy|
+		modifier = {
+			factor = 0.9
+			NOT = { has_job = technician_drone }
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value > 50
+				}
+			}
+		}
+		modifier = {
+			factor = 1.2
+			has_job = e_biomass_technician_drone
+		}
+		modifier = {
+			factor = 1.1
+			exists = owner
+			years_passed < 1
+			owner = { has_valid_civic = civic_machine_assimilator }
+			has_trait = trait_cybernetic
+		}
+	}
+}

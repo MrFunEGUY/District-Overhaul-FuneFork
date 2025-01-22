@@ -1,0 +1,150 @@
+## Possible Deposit Variables ##
+# resources, resource and amount
+# potential trigger (planet scope)
+# blocked_modifier - applied to planet only when deposit blocker has been cleared
+# constant_modifier - applied to planet always
+# blocker = <key/any/none> - default any
+# station = station class in orbit to gather
+
+# Legendary Leader
+d_volcanic_active_planet = { #Unstable Planet
+	is_for_colonizable = yes
+	icon = d_mineral_striations
+	category = deposit_cat_rare
+
+	planet_modifier = {
+		district_mining_max = 1
+		district_m_unstable_mining_max = 2
+		planet_miners_volatile_motes_produces_add = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_mining_max = 1
+		district_m_unstable_mining_max = 2
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	potential = { always = no }
+}
+d_fallen_orbital_shipyard = { #Ship Graveyard
+	is_for_colonizable = yes
+	icon = d_station_junk
+	category = deposit_cat_rare
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_housing_add = 8
+		district_generator_max = 3
+		district_m_surface_mining_max = 2
+		district_do3f_scrapyard_max = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_generator_max = 3
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_m_surface_mining_max = 2
+		district_do3f_scrapyard_max = 1
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_scrap_miner_per_pop = 0.25
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_scrap_miner_drone_per_pop = 0.25
+		}
+	}
+}
+
+d_pulsar_scarred = {
+	is_for_colonizable = yes
+	icon = d_nanite_corpses
+	category = deposit_cat_rare
+
+	potential = { always = no }
+
+
+	planet_modifier = {
+		planet_technician_energy_produces_add = 2
+		district_e_solar_generator_max = 1
+	}
+}
+
+d_ancient_facilities = {
+	is_for_colonizable = yes
+	icon = d_nanite_corpses
+	category = deposit_cat_rare
+
+	potential = { always = no }
+
+	planet_modifier = {
+		district_generator_max = 1
+		district_e_solar_generator_max = 1
+		district_e_geothermal_generator_max = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_generator_max = 1
+		district_e_solar_generator_max = 1
+		district_e_geothermal_generator_max = 1
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_researcher_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_calculator_add = 2
+		}
+	}
+}

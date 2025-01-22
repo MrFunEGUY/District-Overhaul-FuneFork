@@ -1,0 +1,3077 @@
+@base_cost = 300
+@city_cost = 500
+@pdarcjobs = 6
+@pdarcsplit = 3
+@hab_cost = 500
+@hab_maintenance = 2
+@archive_cost = 500
+@archive_maintenance = 2
+####- Arcos -####
+#Industrial
+district_corp_industrial = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		uses_district_set = pdcorpoarc
+	}
+
+	potential = {
+		uses_district_set = pdcorpoarc
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_arcology_arms_industry
+	}
+
+	resources = {
+		category = planet_districts_industrial
+		cost = {
+			minerals = 1000
+			rare_crystals = 50
+		}
+		upkeep = {
+			energy = 5
+			rare_crystals = 1
+		}
+
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = industrial_maintenance
+				}
+			}
+			energy = 2
+		}
+		cost = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			minerals = 1500
+			rare_crystals = 100
+		}
+		upkeep = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			energy = 10
+			rare_crystals = 1
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			planet_housing_add = 20
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = no
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_artisan_add = 3
+			job_foundry_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_artificer_add = 3
+			job_foundry_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = no
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_artisan_add = 3
+			job_catalytic_technician_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = yes
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_artificer_add = 3
+			job_catalytic_technician_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_alloy_drone_add = @pdarcjobs
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_fabricator_add = @pdarcjobs
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_catalytic_drone_add = @pdarcjobs
+		}
+	}
+
+	##### High Density Arc Edict #####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = no
+				is_catalytic_empire = no
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_artisan_add = 6
+			job_foundry_add = 6
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = yes
+				is_catalytic_empire = no
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_artificer_add = 6
+			job_foundry_add = 6
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = no
+				is_catalytic_empire = yes
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_artisan_add = 6
+			job_catalytic_technician_add = 6
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = yes
+				is_catalytic_empire = yes
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_artificer_add = 6
+			job_catalytic_technician_add = 6
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				is_catalytic_empire = no
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_alloy_drone_add = 12
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = no
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_fabricator_add = 12
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_catalytic_empire = yes
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_catalytic_drone_add = 12
+		}
+	}
+
+	# Designation Job Changes
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_foundry
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = no
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_artisan_add = -1
+			job_foundry_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_foundry
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_artificer_add = -1
+			job_foundry_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_foundry
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = no
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_artisan_add = 1
+			job_foundry_add = -1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_foundry
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_artificer_add = 1
+			job_foundry_add = -1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_foundry
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = yes
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_artisan_add = -1
+			job_catalytic_technician_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_foundry
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = yes
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_artificer_add = -1
+			job_catalytic_technician_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_factory
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = no
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_artisan_add = 1
+			job_catalytic_technician_add = -1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_factory
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = yes
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_artificer_add = 1
+			job_catalytic_technician_add = -1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_factory
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				country_uses_consumer_goods = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_artisan_drone_add = 2
+			job_fabricator_add = -2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_factory
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				country_uses_consumer_goods = yes
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_artisan_drone_add = 2
+			job_catalytic_drone_add = -2
+		}
+	}
+
+	##### High Density Arcology Edict #####
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_foundry
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = no
+				is_catalytic_empire = no
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_artisan_add = -2
+			job_foundry_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_foundry
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = yes
+				is_catalytic_empire = no
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_artificer_add = -2
+			job_foundry_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_foundry
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = no
+				is_catalytic_empire = no
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_artisan_add = 2
+			job_foundry_add = -2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_foundry
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = yes
+				is_catalytic_empire = no
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_artificer_add = 2
+			job_foundry_add = -2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_foundry
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = yes
+				is_catalytic_empire = yes
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_artisan_add = -2
+			job_catalytic_technician_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_foundry
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = yes
+				is_catalytic_empire = yes
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_artificer_add = -2
+			job_catalytic_technician_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_factory
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = no
+				is_catalytic_empire = yes
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_artisan_add = 2
+			job_catalytic_technician_add = -2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_factory
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_crafter_empire = yes
+				is_catalytic_empire = yes
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_artificer_add = 2
+			job_catalytic_technician_add = -2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_factory
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				country_uses_consumer_goods = yes
+				is_catalytic_empire = no
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_artisan_drone_add = 4
+			job_fabricator_add = -4
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_designation = col_ecu_factory
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				country_uses_consumer_goods = yes
+				is_catalytic_empire = yes
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_artisan_drone_add = 4
+			job_catalytic_drone_add = -4
+		}
+	}
+
+
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				has_valid_civic = civic_machine_servitor
+			}
+		}
+		text = job_artisan_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_crafter_empire = yes
+			}
+		}
+		text = job_artificer_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		text = job_foundry_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				is_catalytic_empire = yes
+			}
+		}
+		text = job_catalytic_technician_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		text = job_fabricator_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		text = job_alloy_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_catalytic_empire = yes
+			}
+		}
+		text = job_catalytic_drone_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				has_edict = industrial_maintenance
+			}
+		}
+		modifier = {
+			job_02_maintenance_drone_add = 1
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				has_edict = industrial_maintenance
+			}
+		}
+		text = job_02_maintenance_drone_effect_desc
+	}
+}
+#Alloys
+district_mf_alloy = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		OR = {
+			uses_district_set = pdmachinefactory
+			uses_district_set = pdmachinefort 
+		}
+	}
+	
+	potential = {
+		OR = {
+			uses_district_set = pdmachinefactory
+			uses_district_set = pdmachinefort
+		}
+		owner = { 
+			exists = owner
+			is_machine_empire = yes
+		}
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+		district_arcology_housing
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			volatile_motes = 50
+		}
+		upkeep = {
+			energy = 5
+			volatile_motes = 1
+		}
+		cost = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			minerals = 1500
+			volatile_motes = 100
+		}
+		upkeep = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			energy = 10
+			volatile_motes = 1
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			planet_housing_add = 20
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_fabricator_add = @pdarcjobs
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_catalytic_drone_add = @pdarcjobs
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = no
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_fabricator_add = 12
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = yes
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_catalytic_drone_add = 12
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		text = job_fabricator_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = yes
+			}
+		}
+		text = job_catalytic_drone_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				has_edict = industrial_maintenance
+			}
+		}
+		modifier = {
+			job_02_maintenance_drone_add = 1
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				has_edict = industrial_maintenance
+			}
+		}
+		text = job_02_maintenance_drone_effect_desc
+	}
+}
+district_bioforge_stomach = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		OR = {
+			uses_district_set = pdbioforge
+			uses_district_set = pdfloraforge
+			uses_district_set = pdnecrohive
+			uses_district_set = pdbiofort
+			uses_district_set = pdflorafort
+		}
+	}
+	
+	potential = {
+		OR = {
+			uses_district_set = pdbioforge
+			uses_district_set = pdfloraforge
+			uses_district_set = pdnecrohive
+			uses_district_set = pdbiofort
+			uses_district_set = pdflorafort
+		}
+		owner = { 
+			exists = owner
+			is_hive_empire = yes
+		}
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+		district_arcology_housing
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			volatile_motes = 50
+		}
+		upkeep = {
+			energy = 5
+			volatile_motes = 1
+		}
+		cost = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			minerals = 1500
+			volatile_motes = 100
+		}
+		upkeep = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			energy = 10
+			volatile_motes = 1
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			planet_housing_add = 20
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		modifier = {
+			job_alloy_drone_add = @pdarcjobs
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				is_catalytic_empire = yes
+			}
+		}
+		modifier = {
+			job_catalytic_drone_add = @pdarcjobs
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				is_catalytic_empire = no
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_alloy_drone_add = 12
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				is_catalytic_empire = yes
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_catalytic_drone_add = 12
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				is_catalytic_empire = no
+			}
+		}
+		text = job_alloy_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				is_catalytic_empire = yes
+			}
+		}
+		text = job_catalytic_drone_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				has_edict = industrial_maintenance
+			}
+		}
+		modifier = {
+			job_02_maintenance_drone_add = 1
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				has_edict = industrial_maintenance
+			}
+		}
+		text = job_02_maintenance_drone_effect_desc
+	}
+}
+#Bureaucratic
+district_mf_replicator = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		exists = from
+		from = { 
+			is_machine_empire = yes 
+			NOT =  { has_valid_civic = civic_machine_servitor }
+		}
+		OR = {
+			uses_district_set = pdmachinefactory
+			uses_district_set = pdmachinefort
+			uses_district_set = pdecocity
+		}
+		from = {
+			is_machine_empire = yes
+		}
+	}
+	
+	potential = {
+		OR = {
+			uses_district_set = pdmachinefactory
+			uses_district_set = pdmachinefort
+			uses_district_set = pdecocity
+		}
+		owner = { 
+			exists = owner
+			is_machine_empire = yes
+			NOT = { has_valid_civic = civic_machine_servitor }
+		}
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+		district_arcology_housing
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			rare_crystals = 50
+		}
+		upkeep = {
+			energy = 5
+			rare_crystals = 1
+		}	
+		cost = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			minerals = 1500
+			rare_crystals = 100
+		}
+		upkeep = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			energy = 10
+			rare_crystals = 1
+		}	
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			planet_housing_add = 20
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_coordinator_add = @pdarcjobs
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_coordinator_add = 12
+		}
+	}
+
+	triggered_desc = {
+		text = job_coordinator_effect_desc
+	}
+}
+district_bioforge_maintenance = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		OR = {
+			uses_district_set = pdbioforge
+			uses_district_set = pdbiofort
+			uses_district_set = pdfloraforge
+			uses_district_set = pdflorafort
+		}
+	}
+	
+	potential = {
+		OR = {
+			uses_district_set = pdbioforge
+			uses_district_set = pdbiofort
+			uses_district_set = pdfloraforge
+			uses_district_set = pdflorafort
+		}
+		owner = { 
+			exists = owner
+			is_hive_empire = yes
+		}
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			planet_housing_add = 20
+		}
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+		district_arcology_housing
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			exotic_gases = 50
+		}
+		upkeep = {
+			energy = 5
+			exotic_gases = 1
+		}
+		cost = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			minerals = 1500
+			exotic_gases = 100
+		}
+		upkeep = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			energy = 10
+			exotic_gases = 1
+		}		
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_synapse_drone_add = @pdarcjobs
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_synapse_drone_add = 12
+		}
+	}
+
+	triggered_desc = {
+		text = job_synapse_drone_effect_desc
+	}
+}
+#Military Support
+district_pdmilarc_naval = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+
+
+	show_on_uncolonized = {
+		uses_district_set = pdmilarc
+	}
+
+	potential = {
+		uses_district_set = pdmilarc
+		owner = { 
+			exists = owner
+			is_regular_empire = yes
+		}
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			rare_crystals = 50
+		}
+		upkeep = {
+			energy = 5
+			rare_crystals = 1
+		}
+		cost = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			minerals = 1500
+			rare_crystals = 100
+		}
+		upkeep = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			energy = 10
+			rare_crystals = 1
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			planet_housing_add = 20
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_regular_empire = yes
+			}
+		}
+		modifier = {
+			job_naval_admin_add = @pdarcjobs
+		}
+	}	
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_naval_admin_hive_add = @pdarcjobs
+		}
+	}	
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_naval_admin_hive_add = @pdarcjobs
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_regular_empire = yes
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_naval_admin_add = 12
+		}
+	}	
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_naval_admin_hive_add = 12
+		}
+	}	
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_naval_admin_hive_add = 12
+		}
+	}	
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_regular_empire = yes
+			}
+		}
+		text = job_naval_admin_effect_desc
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = job_naval_admin_hive_effect_desc
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = job_naval_admin_hive_effect_desc
+	}
+}
+district_pdbiofort_naval = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		OR = {
+			uses_district_set = pdbiofort
+			uses_district_set = pdflorafort
+		}
+	}
+	
+	potential = {
+		OR = {
+			uses_district_set = pdbiofort
+			uses_district_set = pdflorafort
+		}
+		owner = { 
+			exists = owner
+			is_hive_empire = yes
+		}
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			volatile_motes = 50
+		}
+		upkeep = {
+			energy = 5
+			volatile_motes = 1
+		}
+		cost = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			minerals = 1500
+			volatile_motes = 100
+		}
+		upkeep = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			energy = 10
+			volatile_motes = 1
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			planet_housing_add = 20
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_naval_admin_hive_add = @pdarcjobs
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_naval_admin_hive_add = 12
+		}
+	}	
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = job_naval_admin_hive_effect_desc
+	}
+}
+district_pdmachinefort_naval = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		OR = {
+		uses_district_set = pdmachinefort
+		uses_district_set = pdmachinecapital
+		uses_district_set = pdmilarc
+		}
+	}
+	
+	potential = {
+		OR = {
+		uses_district_set = pdmachinefort
+		uses_district_set = pdmachinecapital
+		uses_district_set = pdmilarc
+		}
+		owner = { 
+			exists = owner
+			is_machine_empire = yes
+		}
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			volatile_motes = 50
+		}
+		upkeep = {
+			energy = 5
+			volatile_motes = 1
+		}
+		cost = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			minerals = 1500
+			volatile_motes = 100
+		}
+		upkeep = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			energy = 10
+			volatile_motes = 1
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			planet_housing_add = 20
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_naval_admin_hive_add = @pdarcjobs
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_naval_admin_hive_add = 12
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = job_naval_admin_hive_effect_desc
+	}	
+}
+#Research
+district_arcology_research_complex = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = { 
+		OR = {
+			uses_district_set = pdecocity 
+			uses_district_set = pdtechnoarch
+		}
+	}
+	
+	potential = { 
+		OR = {
+			uses_district_set = pdecocity 
+			uses_district_set = pdtechnoarch
+		}
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			exotic_gases = 50
+		}
+		upkeep = {
+			energy = 5
+			exotic_gases = 1
+		}
+		cost = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			minerals = 1500
+			exotic_gases = 100
+		}
+		upkeep = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			energy = 10
+			exotic_gases = 1
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			planet_housing_add = 20
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = @pdarcjobs
+		}
+	}	
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_researcher_add = @pdarcjobs
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_calculator_add = @pdarcjobs
+		}
+	}	
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_brain_drone_add = 12
+		}
+	}	
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_researcher_add = 12
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_calculator_add = 12
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_researcher_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = job_brain_drone_effect_desc
+	}	
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = job_calculator_effect_desc
+	}
+}
+district_machine_research_district = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = { uses_district_set = pdmachinefactory }
+	
+	potential = { uses_district_set = pdmachinefactory }
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			exotic_gases = 50
+		}
+		upkeep = {
+			energy = 5
+			exotic_gases = 1
+		}	
+		cost = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			minerals = 1500
+			exotic_gases = 100
+		}
+		upkeep = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			energy = 10
+			exotic_gases = 1
+		}	
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			planet_housing_add = 20
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_calculator_add = @pdarcjobs
+		}
+	}	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_calculator_add = 12
+		}
+	}	
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = job_calculator_effect_desc
+	}	
+}
+district_bioforge_brain = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		OR = {
+			uses_district_set = pdbioforge
+			uses_district_set = pdfloraforge
+			uses_district_set = pdnecrohive
+		}
+	}
+	
+	potential = {
+		OR = {
+			uses_district_set = pdbioforge
+			uses_district_set = pdfloraforge
+			uses_district_set = pdnecrohive
+		}
+		owner = { 
+			exists = owner
+			is_hive_empire = yes
+		}
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+		district_arcology_housing
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			exotic_gases = 50
+		}
+		upkeep = {
+			energy = 5
+			exotic_gases = 1
+		}	
+		cost = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			minerals = 1500
+			exotic_gases = 100
+		}
+		upkeep = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			energy = 10
+			exotic_gases = 1
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			planet_housing_add = 20
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = @pdarcjobs
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_brain_drone_add = 12
+		}
+	}
+
+	triggered_desc = {
+		text = job_brain_drone_effect_desc
+	}
+}
+#Trade
+district_arcology_pdtrade = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		OR= {
+			uses_district_set = pdecocity
+			uses_district_set = pdcorpoarc
+		}
+		from = {
+			is_regular_empire = yes
+		}
+	}
+
+	potential = {
+		OR= {
+			uses_district_set = pdecocity
+			uses_district_set = pdcorpoarc
+		}
+		owner = {
+			exists = owner
+			is_regular_empire = yes
+		}
+	}
+
+	conversion_ratio = 1
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			rare_crystals = 50
+		}
+		upkeep = {
+			energy = 5
+			rare_crystals = 1
+		}
+		cost = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			minerals = 1500
+			rare_crystals = 100
+		}
+		upkeep = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			energy = 10
+			rare_crystals = 1
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			planet_housing_add = 20
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+			}
+		}
+		modifier = {
+			job_merchant_add = 2
+			job_clerk_add =  4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+			}
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_merchant_add = 4
+			job_clerk_add =  8
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { NOT = { is_gestalt = yes } }
+		}
+		text = job_merchant_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { NOT = { is_gestalt = yes } }
+		}
+		text = job_clerk_effect_desc
+	}
+}
+#Leisure/Maintence/Temple/Culture
+district_pdhivefort_synapse = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		OR = {
+			uses_district_set = pdbiofort
+			uses_district_set = pdbioforge
+			uses_district_set = pdflorafort
+			uses_district_set = pdfloraforge
+		}
+	}
+	
+	potential = {
+		OR = {
+			uses_district_set = pdbiofort
+			uses_district_set = pdbioforge
+			uses_district_set = pdflorafort
+			uses_district_set = pdfloraforge
+		}
+		owner = { 
+			exists = owner
+			is_hive_empire = yes
+		}
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			rare_crystals = 50
+		}
+		upkeep = {
+			energy = 5
+			rare_crystals = 1
+		}
+		cost = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			minerals = 1500
+			rare_crystals = 100
+		}
+		upkeep = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			energy = 10
+			rare_crystals = 1
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			planet_housing_add = 20
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_02_maintenance_drone_add = 4
+			job_patrol_drone_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_02_maintenance_drone_add = 8
+			job_patrol_drone_add = 4
+		}
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = job_02_maintenance_drone_effect_desc
+	}		
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = job_02_maintenance_drone_effect_desc
+	}	
+}
+district_pdmachinefort_synapse = {
+	base_buildtime = 600
+	is_capped_by_modifier = no
+	
+	show_on_uncolonized = {
+		OR = {
+			uses_district_set = pdmachinefactory
+			uses_district_set = pdmachinefort
+			uses_district_set = pdmachinecapital
+			uses_district_set = pdecocity
+			uses_district_set = pdmilarc
+			uses_district_set = city_world
+		}
+		from = {
+			is_machine_empire = yes
+		}
+	}
+	
+	potential = {
+		OR = {
+			uses_district_set = pdmachinefactory
+			uses_district_set = pdmachinefort
+			uses_district_set = pdmachinecapital
+			uses_district_set = pdecocity
+			uses_district_set = pdmilarc
+			uses_district_set = city_world
+		}
+		owner = { 
+			exists = owner
+			is_machine_empire = yes
+		}
+	}
+	
+	conversion_ratio = 1
+	convert_to = {
+		district_city
+		district_nexus
+		district_hive
+	}	
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 1000
+			rare_crystals = 50
+		}
+		upkeep = {
+			energy = 5
+			rare_crystals = 1
+		}
+		cost = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			minerals = 1500
+			rare_crystals = 100
+		}
+		upkeep = {
+			trigger = { has_global_flag = do3f_high_density_arcologies }
+			energy = 10
+			rare_crystals = 1
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			planet_housing_add = 20
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_02_maintenance_drone_add = 6
+			job_patrol_drone_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			has_global_flag = do3f_high_density_arcologies
+		}
+		modifier = {
+			job_02_maintenance_drone_add = 12
+			job_patrol_drone_add = 4
+		}
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = job_02_maintenance_drone_effect_desc
+	}
+}
+
+####- Hab -####
+# district_pdhab_housing = {
+# 	base_buildtime = 240
+# 	is_capped_by_modifier = no
+# 	exempt_from_ai_planet_specialization = yes
+
+# 	show_on_uncolonized = {
+# 		uses_district_set = pdplanethab
+# 		#NOT = { is_planet_class = pc_pd_asteroid_hab }
+# 	}
+
+# 	potential = {
+# 		uses_district_set = pdplanethab
+# 		#NOT = { is_planet_class = pc_pd_asteroid_hab }
+# 	}
+
+# 	conversion_ratio = 1
+# 	convert_to = {
+# 		district_city
+# 		district_nexus
+# 		district_hive
+# 	}
+
+# 	allow = {
+# 		NOT = { has_modifier = resort_colony }
+# 		NOT = { has_modifier = resort_colony_pd_hab }
+# 		NOT = { has_modifier = military_pd_habitat_reg }
+# 		NOT = { has_modifier = military_pd_habitat_ges }
+# 		NOT = { has_modifier = military_pd_habitat_reg_asteroid }
+# 		NOT = { has_modifier = military_pd_habitat_ges_asteroid }
+# 	}
+
+# 	resources = {
+# 		category = planet_districts
+# 		cost = {
+# 			minerals = @hab_cost
+# 		}
+# 		upkeep = {
+# 			energy = @hab_maintenance
+# 		}
+# 	}
+
+# 	planet_modifier = {
+# 		planet_housing_add = 8
+# 	}
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			has_global_flag = do3f_better_districts
+# 		}
+# 		modifier = {
+# 			planet_max_buildings_add = 2
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			has_designation = col_habitat_farming
+# 		}
+# 		modifier = {
+# 			planet_housing_add = -2
+# 			job_farmer_add = 1
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			has_designation = col_habitat_gestalt_farming
+# 		}
+# 		modifier = {
+# 			planet_housing_add = -2
+# 			job_agri_drone_add = 1
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_gestalt = yes }
+# 		}
+# 		modifier = {
+# 			job_02_maintenance_drone_add = 2
+# 		}
+# 	}
+
+# 	triggered_desc = {
+# 		trigger = {
+# 			has_designation = col_habitat_farming
+# 		}
+# 		text = job_farmer_effect_desc
+# 	}
+
+# 	triggered_desc = {
+# 		trigger = {
+# 			has_designation = col_habitat_gestalt_farming
+# 		}
+# 		text = job_agri_drone_effect_desc
+# 	}
+
+# 	triggered_desc = {
+# 		trigger = {
+# 			exists = owner
+# 			owner = { is_gestalt = yes }
+# 		}
+# 		text = job_02_maintenance_drone_effect_desc
+# 	}
+# }
+
+####- Special -####
+## The Archive
+# district_archive_housing = {
+# 	base_buildtime = 240
+# 	is_capped_by_modifier = no
+	
+# 	show_on_uncolonized = {
+# 		uses_district_set = pdarchive
+# 	}
+	
+# 	potential = {
+# 		uses_district_set = pdarchive
+# 	}
+	
+# 	resources = {
+# 		category = planet_districts
+# 		cost = {
+# 			minerals = @archive_cost
+# 		}
+# 		upkeep = {
+# 			energy = @archive_maintenance
+# 		}		
+# 	}
+	
+# 	planet_modifier = {
+# 		planet_housing_add = 8
+# 	}
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			has_global_flag = do3f_better_districts
+# 		}
+# 		modifier = {
+# 			planet_max_buildings_add = 2
+# 		}
+# 	}
+	
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_gestalt = yes }
+# 		}
+# 		modifier = {
+# 			job_02_maintenance_drone_add = 2
+# 		}
+# 	}
+	
+# 	triggered_desc = {
+# 		trigger = { 
+# 			exists = owner
+# 			owner = { is_gestalt = yes }
+# 		}
+# 		text = job_02_maintenance_drone_effect_desc
+# 	}	
+# }
+## The Crucible
+# district_crucible_city = {
+# 	base_buildtime = 480
+# 	is_capped_by_modifier = no
+
+# 	show_on_uncolonized = {
+# 		exists = from
+# 		uses_district_set = pdcrucible
+# 	}
+
+# 	potential = {
+# 		exists = owner
+# 		uses_district_set = pdcrucible
+# 	}
+
+# 	allow = {
+# 		NOT = { has_modifier = resort_colony }
+# 		NOT = { has_modifier = slave_colony }
+# 	}
+
+# 	resources = {
+# 		category = planet_districts
+# 		cost = {
+# 			minerals = @hab_cost
+# 		}
+# 		upkeep = {
+# 			energy = @hab_maintenance
+# 		}
+# 	}
+
+# 	planet_modifier = {
+# 		planet_housing_add = 8
+# 	}
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			has_global_flag = do3f_better_districts
+# 		}
+# 		modifier = {
+# 			planet_max_buildings_add = 2
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_gestalt = yes }
+# 		}
+# 		modifier = {
+# 			job_02_maintenance_drone_add = 2
+# 		}
+# 	}
+
+# 	triggered_desc = {
+# 		trigger = {
+# 			exists = owner
+# 			owner = { is_gestalt = yes }
+# 		}
+# 		text = job_02_maintenance_drone_effect_desc
+# 	}
+# }
+## The Scrapyard
+# district_scrapyard_mining = {
+# 	base_buildtime = 240
+# 	icon = district_mining
+# 	is_capped_by_modifier = no
+
+# 	show_on_uncolonized = {
+# 		uses_district_set = pdscrapyard
+# 	}
+
+# 	potential = {
+# 		uses_district_set = pdscrapyard
+# 	}
+
+# 	allow = {
+# 		NOT = { has_modifier = resort_colony }
+# 	}
+
+# 	conversion_ratio = 1
+# 	convert_to = {
+# 		district_mining
+# 	}
+
+# 	resources = {
+# 		category = planet_districts
+# 		cost = {
+# 			minerals = @base_cost
+# 		}
+# 		upkeep = {
+# 			energy = 1
+# 		}
+# 	}
+
+# 	planet_modifier = {
+# 		planet_housing_add = 2
+# 	}
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			has_global_flag = do3f_better_districts
+# 		}
+# 		modifier = {
+# 			planet_max_buildings_add = 1
+# 			planet_housing_add = 1
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_hive_empire = yes }
+# 		}
+# 		modifier = {
+# 			job_pd_scrap_miner_drone_add = 3
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_machine_empire = yes }
+# 		}
+# 		modifier = {
+# 			job_pd_scrap_miner_drone_add = 2
+# 			planet_housing_add = 1
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_gestalt = no
+# 			}
+# 		}
+# 		modifier = {
+# 			job_pd_scrap_miner_add = 2
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_gestalt = yes }
+# 			has_global_flag = do3f_better_districts
+# 		}
+# 		modifier = {
+# 			job_pd_scrap_miner_drone_add = 1
+# 		}
+# 	}
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_gestalt = no }
+# 			has_global_flag = do3f_better_districts
+# 		}
+# 		modifier = {
+# 			job_pd_scrap_miner_add = 1
+# 		}
+# 	}
+
+# 	triggered_desc = {
+# 		trigger = {
+# 			exists = owner
+# 			owner = { is_gestalt = yes }
+# 			NOT = { owner = { has_origin = origin_subterranean } }
+# 		}
+# 		text = job_scrap_miner_drone_effect_desc
+# 	}
+# 	triggered_desc = {
+# 		trigger = {
+# 			exists = owner
+# 			owner = { is_regular_empire = yes }
+# 			NOT = { owner = { has_origin = origin_subterranean } }
+# 		}
+# 		text = job_scrap_miner_effect_desc
+# 	}
+
+# 	prerequisites = {
+# 	}
+# }
+# district_scrapyard_energy = {
+# 	base_buildtime = 240
+# 	icon = district_generator
+# 	is_capped_by_modifier = no
+
+# 	show_on_uncolonized = {
+# 		uses_district_set = pdscrapyard
+# 	}
+
+# 	potential = {
+# 		uses_district_set = pdscrapyard
+# 	}
+
+# 	allow = {
+# 		NOT = { has_modifier = resort_colony }
+# 	}
+
+# 	conversion_ratio = 1
+# 	convert_to = {
+# 		district_mining
+# 	}
+
+# 	resources = {
+# 		category = planet_districts
+# 		cost = {
+# 			minerals = @base_cost
+# 		}
+# 		upkeep = {
+# 			energy = 1
+# 		}
+# 	}
+
+# 	planet_modifier = {
+# 		planet_housing_add = 2
+# 	}
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			has_global_flag = do3f_better_districts
+# 		}
+# 		modifier = {
+# 			planet_max_buildings_add = 1
+# 			planet_housing_add = 1
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_hive_empire = yes }
+# 		}
+# 		modifier = {
+# 			job_pd_scrap_tech_drone_add = 3
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_machine_empire = yes }
+# 		}
+# 		modifier = {
+# 			job_pd_scrap_tech_drone_add = 2
+# 			planet_housing_add = 1
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_gestalt = no
+# 			}
+# 		}
+# 		modifier = {
+# 			job_pd_scrap_tech_add = 2
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_gestalt = no
+# 			}
+# 			has_global_flag = do3f_better_districts
+# 		}
+# 		modifier = {
+# 			job_pd_scrap_tech_add = 1
+# 		}
+# 	}
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_gestalt = yes
+# 			}
+# 			has_global_flag = do3f_better_districts
+# 		}
+# 		modifier = {
+# 			job_pd_scrap_tech_drone_add = 1
+# 		}
+# 	}
+
+# 	triggered_desc = {
+# 		trigger = {
+# 			exists = owner
+# 			owner = { is_gestalt = yes }
+# 		}
+# 		text = job_pd_scrap_tech_drone_effect_desc
+# 	}
+# 	triggered_desc = {
+# 		trigger = {
+# 			exists = owner
+# 			owner = { is_regular_empire = yes }
+# 		}
+# 		text = job_pd_scrap_tech_effect_desc
+# 	}
+
+# 	prerequisites = {
+# 	}
+# }
+# district_scrapyard_recyclers = {
+# 	base_buildtime = 240
+# 	icon = district_research
+# 	is_capped_by_modifier = no
+
+# 	show_on_uncolonized = {
+# 		uses_district_set = pdscrapyard
+# 	}
+
+# 	potential = {
+# 		uses_district_set = pdscrapyard
+# 	}
+
+# 	allow = {
+# 		NOT = { has_modifier = resort_colony }
+# 	}
+
+# 	conversion_ratio = 1
+# 	convert_to = {
+# 		district_mining
+# 	}
+
+# 	resources = {
+# 		category = planet_districts
+# 		cost = {
+# 			minerals = @base_cost
+# 		}
+# 		upkeep = {
+# 			energy = 1
+# 		}
+# 	}
+
+# 	planet_modifier = {
+# 		planet_housing_add = 2
+# 	}
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			has_global_flag = do3f_better_districts
+# 		}
+# 		modifier = {
+# 			planet_max_buildings_add = 1
+# 			planet_housing_add = 1
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_hive_empire = yes }
+# 		}
+# 		modifier = {
+# 			job_pd_scrap_recycler_drone_add = 3
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = { is_machine_empire = yes }
+# 		}
+# 		modifier = {
+# 			job_pd_scrap_recycler_drone_add = 2
+# 			planet_housing_add = 1
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_gestalt = no
+# 			}
+# 		}
+# 		modifier = {
+# 			job_pd_scrap_recycler_add = 2
+# 		}
+# 	}
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_gestalt = no
+# 			}
+# 			has_global_flag = do3f_better_districts
+# 		}
+# 		modifier = {
+# 			job_pd_scrap_recycler_add = 1
+# 		}
+# 	}
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_gestalt = yes
+# 			}
+# 			has_global_flag = do3f_better_districts
+# 		}
+# 		modifier = {
+# 			job_pd_scrap_recycler_drone_add = 1
+# 		}
+# 	}
+
+# 	triggered_desc = {
+# 		trigger = {
+# 			exists = owner
+# 			owner = { is_gestalt = yes }
+# 		}
+# 		text = job_pd_scrap_recycler_drone_effect_desc
+# 	}
+# 	triggered_desc = {
+# 		trigger = {
+# 			exists = owner
+# 			owner = { is_regular_empire = yes }
+# 		}
+# 		text = job_pd_scrap_recycler_effect_desc
+# 	}
+
+# 	prerequisites = {
+# 	}
+# }
+## Techno Arch
+# district_techno_industrial = {
+# 	base_buildtime = 600
+# 	is_capped_by_modifier = no
+
+# 	show_on_uncolonized = {
+# 		uses_district_set = pdtechnoarch
+# 	}
+
+# 	potential = {
+# 		uses_district_set = pdtechnoarch
+# 		exists = owner
+# 	}
+
+# 	allow = {
+# 		NOT = { has_modifier = resort_colony }
+# 		NOT = { has_modifier = slave_colony }
+# 	}
+
+# 	conversion_ratio = 1
+# 	convert_to = {
+# 		district_arcology_arms_industry
+# 		district_corp_industrial
+# 	}
+
+# 	resources = {
+# 		category = planet_districts_industrial
+# 		cost = {
+# 			minerals = 1000
+# 			rare_crystals = 50
+# 		}
+# 		upkeep = {
+# 			energy = 5
+# 			rare_crystals = 1
+# 		}
+
+# 		upkeep = {
+# 			trigger = {
+# 				exists = owner
+# 				owner = {
+# 					has_edict = industrial_maintenance
+# 				}
+# 			}
+# 			energy = 2
+# 		}
+# 		cost = {
+# 			trigger = { has_global_flag = do3f_high_density_arcologies }
+# 			minerals = 1500
+# 			rare_crystals = 100
+# 		}
+# 		upkeep = {
+# 			trigger = { has_global_flag = do3f_high_density_arcologies }
+# 			energy = 10
+# 			rare_crystals = 1
+# 		}
+# 	}
+
+# 	planet_modifier = {
+# 		planet_housing_add = 10
+# 	}
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			has_global_flag = do3f_high_density_arcologies
+# 		}
+# 		modifier = {
+# 			planet_housing_add = 20
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_regular_empire = yes
+# 				is_crafter_empire = no
+# 				is_catalytic_empire = no
+# 			}
+# 		}
+# 		modifier = {
+# 			job_artisan_add = 3
+# 			job_foundry_add = 3
+# 			job_techno_eng_add = 0.5
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_regular_empire = yes
+# 				is_crafter_empire = yes
+# 				is_catalytic_empire = no
+# 			}
+# 		}
+# 		modifier = {
+# 			job_artificer_add = 3
+# 			job_foundry_add = 3
+# 			job_techno_eng_add = 0.5
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_regular_empire = yes
+# 				is_crafter_empire = no
+# 				is_catalytic_empire = yes
+# 			}
+# 		}
+# 		modifier = {
+# 			job_artisan_add = 3
+# 			job_catalytic_technician_add = 3
+# 			job_techno_eng_add = 0.5
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_regular_empire = yes
+# 				is_crafter_empire = yes
+# 				is_catalytic_empire = yes
+# 			}
+# 		}
+# 		modifier = {
+# 			job_artificer_add = 3
+# 			job_catalytic_technician_add = 3
+# 			job_techno_eng_add = 0.5
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_hive_empire = yes
+# 				is_catalytic_empire = no
+# 			}
+# 		}
+# 		modifier = {
+# 			job_alloy_drone_add = @pdarcjobs
+# 			job_techno_drone_add = 0.5
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_machine_empire = yes
+# 				is_catalytic_empire = no
+# 			}
+# 		}
+# 		modifier = {
+# 			job_fabricator_add = @pdarcjobs
+# 			job_techno_eng_add = 0.5
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_gestalt = yes
+# 				is_catalytic_empire = yes
+# 			}
+# 		}
+# 		modifier = {
+# 			job_catalytic_drone_add = @pdarcjobs
+# 			job_techno_drone_add = 0.5
+# 		}
+# 	}
+
+# 	#####- High Density Arcologies -#####
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_regular_empire = yes
+# 				is_crafter_empire = no
+# 				is_catalytic_empire = no
+# 			}
+# 			has_global_flag = do3f_high_density_arcologies
+# 		}
+# 		modifier = {
+# 			job_artisan_add = 6
+# 			job_foundry_add = 6
+# 			job_techno_eng_add = 1
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_regular_empire = yes
+# 				is_crafter_empire = yes
+# 				is_catalytic_empire = no
+# 			}
+# 			has_global_flag = do3f_high_density_arcologies
+# 		}
+# 		modifier = {
+# 			job_artificer_add = 6
+# 			job_foundry_add = 6
+# 			job_techno_eng_add = 1
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_regular_empire = yes
+# 				is_crafter_empire = no
+# 				is_catalytic_empire = yes
+# 			}
+# 			has_global_flag = do3f_high_density_arcologies
+# 		}
+# 		modifier = {
+# 			job_artisan_add = 6
+# 			job_catalytic_technician_add = 6
+# 			job_techno_eng_add = 1
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_regular_empire = yes
+# 				is_crafter_empire = yes
+# 				is_catalytic_empire = yes
+# 			}
+# 			has_global_flag = do3f_high_density_arcologies
+# 		}
+# 		modifier = {
+# 			job_artificer_add = 6
+# 			job_catalytic_technician_add = 6
+# 			job_techno_eng_add = 1
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_hive_empire = yes
+# 				is_catalytic_empire = no
+# 			}
+# 			has_global_flag = do3f_high_density_arcologies
+# 		}
+# 		modifier = {
+# 			job_alloy_drone_add = 12
+# 			job_techno_drone_add = 1
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_machine_empire = yes
+# 				is_catalytic_empire = no
+# 			}
+# 			has_global_flag = do3f_high_density_arcologies
+# 		}
+# 		modifier = {
+# 			job_fabricator_add = 12
+# 			job_techno_eng_add = 1
+# 		}
+# 	}
+
+# 	triggered_planet_modifier = {
+# 		potential = {
+# 			exists = owner
+# 			owner = {
+# 				is_gestalt = yes
+# 				is_catalytic_empire = yes
+# 			}
+# 			has_global_flag = do3f_high_density_arcologies
+# 		}
+# 		modifier = {
+# 			job_catalytic_drone_add = 12
+# 			job_techno_drone_add = 1
+# 		}
+# 	}
+# }

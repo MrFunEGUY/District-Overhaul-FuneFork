@@ -1,0 +1,26 @@
+@do3f_base_cost = 300
+@do3f_city_cost = 500
+@do3f_hab_cost = 500
+@do3f_arcology_cost = 1000
+@do3f_arcology_strategic_cost = 50
+@do3f_rw_cost = 2000
+@do3f_rw_strategic_cost = 100
+
+@do3f_base_build_time = 360
+@do3f_city_build_time = 480
+@do3f_hab_build_time = 240
+@do3f_arcology_build_time = 600
+@do3f_rural_build_time = 240
+@do3f_rw_build_time = 600
+
+@do3f_base_upkeep = 1
+@do3f_city_upkeep = 3
+@do3f_hab_upkeep = 2
+@do3f_arcology_upkeep = 5
+@do3f_arcology_strategic_upkeep = 2
+@do3f_rw_upkeep = 10
+@do3f_rw_strategic_upkeep = 2
+
+###
+
+@has_do3f_mod = 1

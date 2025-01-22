@@ -1,0 +1,1086 @@
+##### Check active mods #####
+	defined_text = {
+		name = GetXENOSHasDO3
+		text = {
+			localization_key = "do3f_disabled"
+			trigger = { is_do3_active = no }
+		}
+		text = {
+			localization_key = "do3f_enabled"
+			trigger = { is_do3_active = yes }
+		}
+	}
+	defined_text = {
+		name = GetXENOSHasIntplanAgri
+		text = {
+			localization_key = "do3f_disabled"
+			trigger = { is_intplan_agri_active = no }
+		}
+		text = {
+			localization_key = "do3f_enabled"
+			trigger = { is_intplan_agri_active = yes }
+		}
+	}
+	defined_text = {
+		name = GetXENOSHasBDOE
+		text = {
+			localization_key = "do3f_disabled"
+			trigger = { is_active = no }
+		}
+		text = {
+			localization_key = "do3f_enabled"
+			trigger = { is_active = yes }
+		}
+	}
+	defined_text = {
+		name = GetXENOSHasTheBelt
+		text = {
+			localization_key = "do3f_disabled"
+			trigger = { is_the_belt_active = no }
+		}
+		text = {
+			localization_key = "do3f_enabled"
+			trigger = { is_the_belt_active = yes }
+		}
+	}
+##### Compat Checks #####
+	defined_text = {
+		name = GetXENOSCompatIssues
+		text = {
+			localization_key = "do3f_no_issues"
+			trigger = {
+				NAND = {
+					is_active = yes
+					OR = {
+						is_do3_active = yes
+						is_intplan_agri_active = yes
+					}
+				}
+			}
+		}
+		# text = {
+		# 	localization_key = "do3f_issues"
+		# 	trigger = {
+		# 		is_active = yes
+		# 		OR = {
+		# 			is_do3_active = yes
+		# 			is_intplan_agri_active = yes
+		# 		}
+		# 	}
+		# }
+	}
+	defined_text = {
+		name = GetXENOSCompatBDOEDO3
+		text = {
+			localization_key = "do3f_issues_and_do3_or_intplan"
+			trigger = {
+				AND = {
+					is_active = yes
+					OR = {
+						is_do3_active = yes
+						is_intplan_agri_active = yes
+					}
+				}
+			}
+		}
+	}
+#####- Disable Features Loc -#####
+###- Districts -###
+# Housing
+	defined_text = {
+		name = GetXENOSDisableDistrictHousingSuburbs
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_housing_district_suburbs } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_housing_district_suburbs }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictHousingShelters
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_housing_district_shelters } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_housing_district_shelters }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictHousingSlums
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_housing_district_slums } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_housing_district_slums }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictHousingAscended
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_housing_district_ascended } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_housing_district_ascended }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictHousingOcean
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_housing_district_ocean } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_housing_district_ocean }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictHousingUnderground
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_housing_district_underground } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_housing_district_underground }
+		}
+	}
+#
+# Artificial Districts
+	defined_text = {
+		name = GetXENOSDisableDistrictArtificialHabExternal
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_external } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_artificial_districts_hab_external }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictArtificialHabAlloy
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_alloy } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_artificial_districts_hab_alloy }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictArtificialHabConsumerGoods
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_consumer_goods } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_artificial_districts_hab_consumer_goods }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictArtificialHabMotes
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_motes } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_artificial_districts_hab_motes }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictArtificialHabGas
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_gas } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_artificial_districts_hab_gas }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictArtificialHabCrystal
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_crystal } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_artificial_districts_hab_crystal }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictArtificialHabDarkMatter
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_dark_matter } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_artificial_districts_hab_dark_matter }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictArtificialHabZro
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_zro } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_artificial_districts_hab_zro }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictArtificialHabLivingMetal
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_living_metal } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_artificial_districts_hab_living_metal }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictArtificialHabNanites
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_artificial_districts_hab_nanites } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_artificial_districts_hab_nanites }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictArtificialRingUni
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_artificial_districts_ring_uni } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_artificial_districts_ring_uni }
+		}
+	}
+#
+# Industrial Districts
+	defined_text = {
+		name = GetXENOSDisableDistrictIndustrialBio
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_industrial_district_bio } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_industrial_district_bio }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictIndustrialInfra
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_industrial_district_infra } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_industrial_district_infra }
+		}
+	}
+#
+# Energy Districts
+	defined_text = {
+		name = GetXENOSDisableDistrictEneryFusion
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_energy_districts_fusion } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_energy_districts_fusion }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictEneryFossil
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_energy_districts_fossil } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_energy_districts_fossil }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictEneryWind
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_energy_districts_wind } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_energy_districts_wind }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictEneryGeo
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_energy_districts_geo } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_energy_districts_geo }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictEnerySolar
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_energy_districts_solar } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_energy_districts_solar }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictEneryTidal
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_energy_districts_tidal } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_energy_districts_tidal }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictEneryBio
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_energy_districts_bio } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_energy_districts_bio }
+		}
+	}
+#
+# Mining Districts
+	defined_text = {
+		name = GetXENOSDisableDistrictMiningUnstable
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_mining_districts_unstable } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_mining_districts_unstable }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictMiningStable
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_mining_districts_stable } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_mining_districts_stable }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictMiningSurface
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_mining_districts_surface } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_mining_districts_surface }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictMiningDeep
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_mining_districts_deep } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_mining_districts_deep }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictMiningMountain
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_mining_districts_mountain } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_mining_districts_mountain }
+		}
+	}
+#
+# Farming Districts
+	defined_text = {
+		name = GetXENOSDisableDistrictFarmingNature
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_farming_districts_nature } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_farming_districts_nature }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictFarmingOcean
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_farming_districts_ocean } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_farming_districts_ocean }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictFarmingExotic
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_farming_districts_exotic } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_farming_districts_exotic }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictFarmingOasis
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_farming_districts_oasis } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_farming_districts_oasis }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictFarmingCave
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_farming_districts_cave } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_farming_districts_cave }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictFarmingIndustrial
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_farming_districts_industrial } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_farming_districts_industrial }
+		}
+	}
+#
+# Primary Districts
+	defined_text = {
+		name = GetXENOSDisableDistrictPrimaryMotes
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_primary_districts_chemistry } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_primary_districts_chemistry }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictPrimaryGas
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_primary_districts_gas } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_primary_districts_gas }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictPrimaryCrystals
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_primary_districts_crystals } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_primary_districts_crystals }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictPrimaryNature
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_primary_districts_nature } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_primary_districts_nature }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictPrimaryResearch
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_primary_districts_research } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_primary_districts_research }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictPrimaryScrap
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_primary_districts_scrap } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_primary_districts_scrap }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictPrimaryTourism
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_primary_districts_tourism } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_primary_districts_tourism }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictPrimaryGardens
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_primary_districts_gardens } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_primary_districts_gardens }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictPrimaryEcoGardens
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_primary_districts_ecogardens } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_primary_districts_ecogardens }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictPrimaryAssembly
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_primary_districts_assembly } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_primary_districts_assembly }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictPrimaryArcheology
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_primary_districts_archeology } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_primary_districts_archeology }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictPrimaryRingAlloy
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_primary_districts_ring_alloy } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_primary_districts_ring_alloy }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictPrimaryRingGas
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_primary_districts_ring_gas } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_primary_districts_ring_gas }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictPrimaryRingMotes
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_primary_districts_ring_motes } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_primary_districts_ring_motes }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictPrimaryRingCrystals
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_primary_districts_ring_crystals } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_primary_districts_ring_crystals }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictPrimaryRingMining
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_primary_districts_ring_mining } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_primary_districts_ring_mining }
+		}
+	}
+#
+# Secondary Districts
+	defined_text = {
+		name = GetXENOSDisableDistrictSecondaryFood
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_secondary_districts_food } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_secondary_districts_food }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictSecondaryStores
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_secondary_districts_stores } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_secondary_districts_stores }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictSecondaryIndustry
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_secondary_districts_industry } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_secondary_districts_industry }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictSecondaryProduction
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_secondary_districts_production } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_secondary_districts_production }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictSecondaryWorkshop
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_secondary_districts_workshop } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_secondary_districts_workshop }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictSecondaryUni
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_secondary_districts_uni } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_secondary_districts_uni }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictSecondaryAcademy
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_secondary_districts_academy } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_secondary_districts_academy }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictSecondarySpaceport
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_secondary_districts_spaceport } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_secondary_districts_spaceport }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictSecondaryLogistics
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_secondary_districts_logistics } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_secondary_districts_logistics }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictSecondaryBureaucratic
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_secondary_districts_bureaucratic } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_secondary_districts_bureaucratic }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictSecondaryEntertainment
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_secondary_districts_entertainment } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_secondary_districts_entertainment }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictSecondaryNecro
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_secondary_districts_necro } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_secondary_districts_necro }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictSecondaryMacRelay
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_secondary_districts_mac_relay } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_secondary_districts_mac_relay }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictSecondaryHivTunnels
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_secondary_districts_hiv_tunnels } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_secondary_districts_hiv_tunnels }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictSecondaryEcuDevelopment
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_secondary_districts_ecu_development } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_secondary_districts_ecu_development }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableDistrictSecondaryEcuShipyard
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_secondary_districts_ecu_shipyard } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_secondary_districts_ecu_shipyard }
+		}
+	}
+#
+
+###- Buildings -###
+# Unique Buildings
+	defined_text = {
+		name = GetXENOSDisableBuildingsUniqueTunnel
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_building_unique_tunnel } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_building_unique_tunnel }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableBuildingsUniqueTreeTemple
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_building_unique_tree_temple } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_building_unique_tree_temple }
+		}
+	}
+# Resource Buildings
+	defined_text = {
+		name = GetXENOSDisableBuildingsResourceLavender
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_building_resource_lavender } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_building_resource_lavender }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableBuildingsResourceTea
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_building_resource_tea } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_building_resource_tea }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableBuildingsResourceSpices
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_building_resource_spices } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_building_resource_spices }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableBuildingsResourceDrugs
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_building_resource_drugs } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_building_resource_drugs }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableBuildingsResourceAlgae
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_building_resource_algae } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_building_resource_algae }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableBuildingsResourceLichen
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_building_resource_lichen } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_building_resource_lichen }
+		}
+	}
+#
+###- Colony Designation -###
+	defined_text = {
+		name = GetXENOSDisableColonyTypeFrontier
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_colony_type_frontier } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_colony_type_frontier }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableColonyTypeTrade
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_colony_type_trade } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_colony_type_trade }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableColonyTypePlantation
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_colony_type_plantation } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_colony_type_plantation }
+		}
+	}
+#
+###- Mechanics -###
+	defined_text = {
+		name = GetXENOSDisableMechanicsGardenWorlds
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_mechanics_garden_worlds } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_mechanics_garden_worlds }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableMechanicsAsteroidColonies
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_mechanics_asteroid_colonizing } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_mechanics_asteroid_colonizing }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableMechanicsPrimaryDistricts
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_mechanics_primary_districts } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_mechanics_primary_districts }
+		}
+	}
+	defined_text = {
+		name = GetXENOSDisableMechanicsSecondaryDistricts
+		text = {
+			localization_key = "do3f_disable"
+			trigger = { NOT = { has_global_flag = do3f_disable_mechanics_secondary_districts } }
+		}
+		text = {
+			localization_key = "do3f_enable"
+			trigger = { has_global_flag = do3f_disable_mechanics_secondary_districts }
+		}
+	}
+#
+
+# Menu Stuff
+defined_text = {
+	name = GetXenosSecondaryDistrictBuffLevel
+	text = {
+		localization_key = "xenos.secondary_district_buff.level_0"
+		trigger = {
+			check_variable = {
+				which = do3f_secondary_district_buff
+				value = 0
+			}
+		}
+	}
+	text = {
+		localization_key = "xenos.secondary_district_buff.level_1"
+		trigger = {
+			check_variable = {
+				which = do3f_secondary_district_buff
+				value = 1
+			}
+		}
+	}
+	text = {
+		localization_key = "xenos.secondary_district_buff.level_2"
+		trigger = {
+			check_variable = {
+				which = do3f_secondary_district_buff
+				value = 2
+			}
+		}
+	}
+}
+defined_text = {
+	name = GetXenosImprovedDistricts
+	text = {
+		localization_key = "xenos.imrpoved_districts.disable"
+		trigger = {
+			has_global_flag = do3f_better_districts
+		}
+	}
+	text = {
+		localization_key = "xenos.imrpoved_districts.enable"
+		trigger = {
+			NOT = {
+				has_global_flag = do3f_better_districts
+			}
+		}
+	}
+}

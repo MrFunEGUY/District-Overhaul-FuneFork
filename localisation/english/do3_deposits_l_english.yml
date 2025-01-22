@@ -1,0 +1,194 @@
+﻿l_english:
+ ##################################################
+ # Housing Deposits:
+ ##################################################
+ # Underground City
+ d_city_cavesystem:0 "City-sized Cave System"
+ d_city_cavesystem_desc:0 "This enourmos cave can be used to construct underground cities."
+ # Ocean Housing
+ d_underwater_foundation:0 "Underwater Foundation"
+ d_underwater_foundation_desc:0 "This strong underwater foundation is able to support oceanic cities."
+ # Ascended Housing
+ d_precurser_city:0 "Precurser City"
+ d_precurser_city_desc:0 "This ancient precurser city can be reconstructed to provide an imensily powerful housing skyscraper skyline."
+ ##################################################
+ # Energy Deposits:                               #
+ ##################################################
+ # Wind Turbines
+ d_stormy_highlands:0 "Stormy Highlands"
+ d_stormy_highlands_desc:0 "Stormy highlands might be a little chilly, but perfect for wind turbines."
+ d_stormy_flats:0 "Stormy Flats"
+ d_stormy_flats_desc:0 "Stormy flats might be a little chilly, but perfect for wind turbines."
+ # Solar Generators
+ d_open_space:0 "Open Space"
+ d_open_space_desc:0 "A wide area of space, which has an optimal position for solar energy generation."
+ d_low_athmosphere_zone:0 "Low Atmosphere Zone"
+ d_low_athmosphere_zone_desc:0 "A atmospheric anomaly decreases the amount of photon-reflectiv molecules around this area, so that more energy from the sun reaches the surface."
+ # Geothermal Generators
+ d_boiling_lake:0 "Boiling Lake"
+ d_boiling_lake_desc:0 "Geothermal steam-vents make nearby lakes boil, which can be used to produce energy."
+ d_hot_volcano:0 "Hot Volcano"
+ d_hot_volcano_desc:0 "An active volcano that is stable enought to be utilized for energy generation."
+ # Tidal Generators
+ d_underwater_hill:0 "Underwater Hill"
+ d_underwater_hill_desc:0 "An underwater hill creates strong underwater currents, which yield a large amount of energy."
+ d_underwater_mountain:0 "Underwater Mountain"
+ d_underwater_mountain_desc:0 "An underwater mountain creates very powerful underwater currents, which yield a large amount of energy."
+ # Biomass Generators
+ d_small_crop_field:0 "Biological Coumpounds"
+ d_small_crop_field_desc:0 "The local plantlife can store large amounts solar energy. Those plants can be forced to release that energy, which can be harvested."
+ d_biofuel_crops:0 "Large Plant Ecosystem"
+ d_biofuel_crops_desc:0 "The large amount of nearby plants can be used to produce energy."
+ d_small_forest:0 "Small Forest"
+ d_small_forest_desc:0 "Wood from the nearby forest can be burned to produce energy."
+ d_large_forest:0 "Large Forest"
+ d_large_forest_desc:0 "Large quantities of local wood can be burned to produce energy."
+ # Fusion
+ d_small_deuterium_deposit:0 "Small Deuterium Deposit"
+ d_small_deuterium_deposit_desc:0 "An unusually high concentration of Deuterium can be found in the waters of this planet. It can be utilized in fusion power plants to produce energy."
+ d_deuterium_deposit:0 "Medium Deuterium Deposit"
+ d_deuterium_deposit_desc:0 "An unusually high concentration of Deuterium can be found in the waters of this planet. It can be utilized in fusion power plants to produce energy."
+ d_large_deuterium_deposit:0 "Large Deuterium Deposit"
+ d_large_deuterium_deposit_desc:0 "An unusually high concentration of Deuterium can be found in the waters of this planet. It can be utilized in fusion power plants to produce energy."
+ d_small_boron11_deposit:0 "Small Boron Deposit"
+ d_small_boron11_deposit_desc:0 "An unusually high concentration of Boron can be found on this planet. It can be refined utilized in fusion power plants to produce energy."
+ d_boron11_deposit:0 "Medium Boron Deposit"
+ d_boron11_deposit_desc:0 "An unusually high concentration of Boron can be found on this planet. It can be refined utilized in fusion power plants to produce energy."
+ d_large_boron11_deposit:0 "Large Boron Deposit"
+ d_large_boron11_deposit_desc:0 "An unusually high concentration of Boron can be found on this planet. It can be refined utilized in fusion power plants to produce energy."
+ # Fossil Fuel
+ d_coal_deposit:0 "Medium-sized Coal Reserves"
+ d_coal_deposit_desc:0 "The coal found on this planet can be burned to produce energy."
+ d_small_coal_deposit:0 "Small Coal Reserves"
+ d_small_coal_deposit_desc:0 "The coal found on this planet can be burned to produce energy."
+ d_large_coal_deposit:0 "Large Coal Reserves"
+ d_large_coal_deposit_desc:0 "The coal found on this planet can be burned to produce energy."
+ d_natural_gas_deposit:0 "Medium-sized Natural Gas Reserves"
+ d_natural_gas_deposit_desc:0 "The natural gas found on this planet can be burned to produce energy."
+ d_small_natural_gas_deposit:0 "Small Natural Gas Reserves"
+ d_small_natural_gas_deposit_desc:0 "The natural gas found on this planet can be burned to produce energy."
+ d_large_natural_gas_deposit:0 "Large Natural Gas Reserves"
+ d_large_natural_gas_deposit_desc:0 "The natural gas found on this planet can be burned to produce energy."
+ d_oil_deposit:0 "Medium-sized Oil Reserves"
+ d_oil_deposit_desc:0 "The oil found on this planet can be burned to produce energy."
+ d_small_oil_deposit:0 "Small Oil Reserves"
+ d_small_oil_deposit_desc:0 "The oil found on this planet can be burned to produce energy."
+ d_large_oil_deposit:0 "Large Oil Reserves"
+ d_large_oil_deposit_desc:0 "The oil found on this planet can be burned to produce energy."
+ ##################################################
+ # Mining Deposits:                               #
+ ##################################################
+ # Unstable Mining
+ d_loose_rock:0 "Loose Rocks"
+ d_loose_rock_desc:0 "The rocks in this area have cracks in them which increase chances for caves or holes to break in."
+ d_loose_rock_formation:0 "Unstable Ground"
+ d_loose_rock_formation_desc:0 "The ground in this area has been found to be unstable, which could pose dangers when it is mined."
+ # Stable Mining
+ d_stable_ground:0 "Stable Ground"
+ d_stable_ground_desc:0 "The ground in this area has benefitial properties which increase it's stability."
+ d_ultra_stable_ground:0 "Ultra Stable Ground"
+ d_ultra_stable_ground_desc:0 "The ground in this area has benefitial properties which increase it's stability drastically."
+ # Surface Mining
+ d_small_rock_formation:0 "Small Rock Formation"
+ d_small_rock_formation_desc:0 "Small amounts of minerals have been found on the surface."
+ d_large_rock_formation:0 "Large Rock Formation"
+ d_large_rock_formation_desc:0 "Large amounts of minerals have been found on the surface."
+ # Mountain Mining
+ d_exposed_mountain_resources:0 "Mineral based Mountains"
+ d_exposed_mountain_resources_desc:0 "This mountain has large amounts of minerals close to the minerals sides."
+ # Deep Mining
+ d_deep_minerals:0 "Deep Mineral Deposits"
+ d_deep_minerals_desc:0 "Deep in the planets crust there are vast mineral deposits."
+ ##################################################
+ # Food Deposits:                                 #
+ ##################################################
+ # Oasis Farms
+ d_blooming_oasis:0 "Blooming Oasis"
+ d_blooming_oasis_desc:0 "A local blooming oasis is able to produce a lot of fresh food."
+ # Nature Farms
+ d_berries_hedge:0 "Berries Hedge"
+ d_berries_hedge_desc:0 "Large amounts of berrie hedges are able to produce berries."
+ d_fruit_fields:0 "Fruit Fields"
+ d_fruit_fields_desc:0 "Large fields of fruit trees can be harvested to produce vast sums of fruits."
+ # Ocean Farms
+ d_underwater_reef:0 "Underwater Reef"
+ d_underwater_reef_desc:0 "An underwater reef is able to produce large amounts of exotic food."
+ d_underwater_ecosystem:0 "Underwater Ecosystem"
+ d_underwater_ecosystem_desc:0 "A large underwater ecosystem is able to be utilized to harveste large amounts of algee and other underwater plants."
+ # Lush Cave Farms
+ d_lush_caves:0 "Lush Caves"
+ d_lush_caves_desc:0 "These lush underground caves produces large amounts of extremly nutritious mossy plants."
+ d_lush_cave_complex:0 "Lush Cave Complex"
+ d_lush_cave_complex_desc:0 "These lush underground caves produces large amounts of extremly nutritious mossy plants."
+ # Exotic Farms
+ d_exotic_fauna:0 "Exotic Fauna"
+ d_exotic_fauna_desc:0 "These unusually strange plants can be studied extensively."
+ d_mushrooms:0 "Mushroom Fields"
+ d_mushrooms_desc:0 "A large area filled with mushrooms can be used to harveste them."
+ d_mushroom_ecosystem:0 "Mushroom Ecosystem"
+ d_mushroom_ecosystem_desc:0 "A hugh mushroom ecosystem is able to produce a large sum of mushrooms."
+ ##################################################
+ # Primary Deposits:                              #
+ ##################################################
+ # Chemistry Industry
+ d_carbon_compounds:0 "Carbon Compounds"
+ d_carbon_compounds_desc:0 "Amino acids and other carbon based substances can be found here."
+ d_complex_carbon_compounds:0 "Complex Carbon Compounds"
+ d_complex_carbon_compounds_desc:0 "Large amounts of amino acids and very complex carbon compunds can be found here."
+ # Gas Refinery
+ d_bubbling_lake:0 "Bubbling Lake"
+ d_bubbling_lake_desc:0 "Underwater gas deposits regularly release gas bubbles into this lake, which can extracted."
+ d_bubbling_ocean:0 "Bubbling Ocean"
+ d_bubbling_ocean_desc:0 "Large underwater gas deposits release gas bubbles which can be extracted."
+ # Crystal Mines
+ d_luminescent_cave:0 "Luminescent Cave"
+ d_luminescent_cave_desc:0 "Rare crystals in nearby caves give them a fantastic look and can be harvested."
+ d_luminescent_cave_system:0 "Luminescent Cave System"
+ d_luminescent_cave_system_desc:0 "Large amounts of caves filled with rare crystals can be found close by."
+ # Nature Reserve
+ d_interesting_wildlife:0 "Interesting Wildlife"
+ d_interesting_wildlife_desc:0 "The local wildlife is very unique, so there is a lot of biology to learn from them."
+ d_complex_ecosystem:0 "Complex Ecosystem"
+ d_complex_ecosystem_desc:0 "The planets complex ecosystem has many interesting plants and wildlife."
+ # Anomaly
+ d_small_anomaly:0 "Small Anomaly"
+ d_small_anomaly_desc:0 "A unusual anomaly reduces the density of the atmosphere around this area, which can't be explained yet."
+ d_medium_anomaly:0 "Medium Anomaly"
+ d_medium_anomaly_desc:0 "A large gravitational anomaly can be found here, which currently can't be explained."
+ # Scrapyard
+ d_ancient_scrap:0 "Ancient Scrap"
+ d_ancient_scrap_desc:0 "Large sums of ancient scrap can be found here."
+ # Tourism
+ d_relaxing_location:0 "Relaxing Location"
+ d_relaxing_location_desc:0 "An beautiful oasis is an amazing area to relax at."
+ d_super_relaxing_location:0 "Super Relaxing Location"
+ d_super_relaxing_location_desc:0 "This paradise island has a very relaxing climate."
+ # Gardens
+ d_flower_fields:0 "Flower Fields"
+ d_flower_fields_desc:0 "Flower Fields provide a nice location suitable to cronstruct large gardens."
+ # Ecogardens
+ d_eatable_flower_fields:0 "Edible Flower Fields"
+ d_eatable_flower_fields_desc:0 "The flowers in these fields have a unique propertie, that they are edible."
+ # Assembly
+ d_ancient_technology:0 "Ancient Construction Technology"
+ d_ancient_technology_desc:0 "These ancient construction technologys can be used to construct machine and bioparts."
+ # Archeology
+ d_ancient_structure:0 "Ancient Structures"
+ d_ancient_structure_desc:0 "These ancient structures possibly house some minor relics from ancient civilizations."
+ ##################################################
+ # Special Deposits:                              #
+ ##################################################
+ d_ringcity:0 "Ring-city"
+ d_ringcity_desc:0 "This small city is built into the hull of the ringworld, providing a unique living enviroment."
+ d_district_f_industrial_farms:0 "Large Agricultural Space"
+ d_district_f_industrial_farms_desc:0 "A huge amount of space has been reserved for massive farmers to work on."
+ ##################################################
+ # Blockers:
+ ##################################################
+ d_nuclear_waste:0 "Nuclear Waste Storage"
+ d_nuclear_waste_desc:0 "A place where the nuclear waste is stored. Unless it is cleared up and brought somewhere else or destroyed, the surrounding area is unusable."
+ d_irradiated_field:0 "Irradiated Field"
+ d_irradiated_field_desc:0 "A region where some nuclear material got spilled. Though the radiation in this area has gone down since the accident, it is still unfit for habitation barring a major clean-up effort."
+
+ d_industrial_bio_waste:0 "Industrial Bio Waste"
+ d_industrial_bio_waste_desc:0 "While this large heap of waste does take up considerable space, it can also be used in biomass generators."

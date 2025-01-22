@@ -1,0 +1,243 @@
+## Possible Deposit Variables ##
+# resources, resource and amount
+# potential trigger (planet scope)
+# blocked_modifier - applied to planet only when deposit blocker has been cleared
+# constant_modifier - applied to planet always
+# blocker = <key/any/none> - default any
+# station = station class in orbit to gather
+
+@rw_maintenance = 5
+@rw_maintenance_sr = 2
+
+############################
+#	Federations Deposits	#
+############################
+
+
+# tree of life origin
+# home world
+
+d_tree_of_life_home = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+
+	icon = d_huge_tree
+
+	potential = {
+		exists = owner
+		owner = {
+			has_origin = origin_tree_of_life
+		}
+	}
+
+	planet_modifier = {
+		pop_growth_speed = 0.15
+		planet_jobs_society_research_produces_mult = 0.10
+		planet_housing_add = 10
+		district_farming_max = 2
+		district_f_nature_farms_max = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_farming_max = 2
+		district_f_nature_farms_max = 2
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	resources = {
+		category = planet_deposits
+		upkeep = {
+			food = 4
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#colony
+d_tree_of_life_colony = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+
+	icon = d_huge_tree
+
+	potential = {
+		exists = owner
+		planet = {
+			owner = {
+				has_origin = origin_tree_of_life
+			}
+		}
+	}
+
+	planet_modifier = {
+		pop_growth_speed = 0.1
+		planet_jobs_society_research_produces_mult = 0.10
+		planet_housing_add = 5
+		district_farming_max = 1
+		district_f_nature_farms_max = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_farming_max = 1
+		district_f_nature_farms_max = 1
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	resources = {
+		category = planet_deposits
+		upkeep = {
+			food = 2
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#Lithoid origin
+
+d_lithoid_crater = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+
+	icon = d_crater
+
+	potential = {
+		exists = owner
+		owner = {
+			has_origin = origin_lithoid
+		}
+	}
+
+	planet_modifier = {
+		planet_max_districts_add = 6
+		district_farming_max = -6
+		pop_growth_speed = 0.25
+		district_mining_max = 2
+		district_m_surface_mining_max = 4
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_mining_max = 2
+		district_m_surface_mining_max = 4
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	custom_tooltip = d_lithoid_crater_custom_tooltip
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+###machine origin
+d_machine_minerals = {
+	is_for_colonizable = yes
+	icon = "d_veiny_cliffs"
+	category = deposit_cat_rare
+
+	potential = { always = no }
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			minerals = 25
+		}
+	}
+
+	planet_modifier = {
+		district_m_mountain_mining_max = 1
+	}
+}
+
+d_organic_slurry = {
+	is_for_colonizable = yes
+	icon = "d_bubbling_swamp"
+	category = deposit_cat_rare
+
+	potential = { always = no }
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			food = 15
+		}
+	}
+
+	planet_modifier = {
+		district_f_ocean_farms_max = 1
+	}
+}
+
+d_project_cornucopia = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+
+	icon = d_mining_tunnels
+
+	potential = { always = no }
+
+	planet_modifier = {
+		district_mining_max = 1
+		district_m_surface_mining_max = 2
+		district_m_deep_mining_max = 2
+		planet_jobs_minerals_produces_mult = 0.05
+		pop_environment_tolerance = -0.2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_mining_max = 1
+		district_m_surface_mining_max = 2
+		district_m_deep_mining_max = 2
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#Left over only if the lab was supported in some way
+d_crater_bluelotus = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	icon = d_crater
+
+	planet_modifier = {
+		district_m_surface_mining_max = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_m_surface_mining_max = 1
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+	resources = {
+		category = planet_deposits
+		produces = {
+			alloys = 2
+		}
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}

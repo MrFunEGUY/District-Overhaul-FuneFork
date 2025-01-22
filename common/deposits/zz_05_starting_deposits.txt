@@ -1,0 +1,240 @@
+## Possible Deposit Variables ##
+# resources, resource and amount
+# potential trigger (planet scope)
+# planet_modifier - applied to planet only when deposit blocker has been cleared
+# constant_modifier - applied to planet always
+# blocker = <key/any/none> - default any
+# station = station class in orbit to gather
+
+@high = 16
+@med = 8
+@low = 4
+
+@high_rare = 2
+@med_rare = 1
+@low_rare = 0.5
+
+# Earth Deposits
+d_scandinavian_reclamation_sector = {
+	is_for_colonizable = yes
+	icon = d_radioactive_wasteland
+
+	planet_modifier = {
+		district_f_exotic_farms_max = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_f_exotic_farms_max = 1
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_pacific_algae_tracts = {
+	is_for_colonizable = yes
+	icon = d_toxic_kelp
+
+	planet_modifier = {
+		district_f_ocean_farms_max = 3
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_f_ocean_farms_max = 3
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_saharan_irrigation_project = {
+	is_for_colonizable = yes
+	icon = d_green_hills
+
+	planet_modifier = {
+		district_farming_max = 2
+		district_f_oasis_farms_max = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_farming_max = 2
+		district_f_oasis_farms_max = 2
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_mesopotamian_urban_corridor = {
+	is_for_colonizable = yes
+	icon = d_marvelous_oasis
+
+	planet_modifier = {
+		district_m_surface_mining_max = 1
+		district_m_stable_mining_max = 1
+		district_m_deep_mining_max = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_m_surface_mining_max = 1
+		district_m_stable_mining_max = 1
+		district_m_deep_mining_max = 1
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_delhi_sprawl = {
+	is_for_colonizable = yes
+	icon = d_city
+
+	planet_modifier = {
+		district_e_solar_generator_max = 1
+		district_e_fossil_fuel_generator_max = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_e_solar_generator_max = 1
+		district_e_fossil_fuel_generator_max = 1
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_boswash_metropolitan_axis = {
+	is_for_colonizable = yes
+	icon = d_city
+
+	planet_modifier = {
+		district_generator_max = 1
+		district_e_geothermal_generator_max = 1
+		district_e_fusion_generator_max = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_generator_max = 1
+		district_e_geothermal_generator_max = 1
+		district_e_fusion_generator_max = 1
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_pearl_river_agglomerate = {
+	is_for_colonizable = yes
+	icon = d_building_complex
+
+	planet_modifier = {
+		district_e_tidal_generator_max = 3
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_e_tidal_generator_max = 3
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_mauritanian_security_zone = {
+	is_for_colonizable = yes
+	icon = d_quarantine_zone
+
+	planet_modifier = {
+		district_m_surface_mining_max = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_m_surface_mining_max = 1
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_great_albertan_crater = {
+	is_for_colonizable = yes
+	icon = d_crater
+
+	planet_modifier = {
+		district_mining_max = 1
+		district_m_surface_mining_max_max = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_mining_max = 1
+		district_m_surface_mining_max_max = 2
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+# Exotic Metablism Deposit
+d_exotic_mountain = {
+	is_for_colonizable = yes
+	icon = d_radioactive_wasteland
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			exotic_gases = 4
+		}
+	}
+
+	planet_modifier = {
+		district_m_mountain_mining_max = 1
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}

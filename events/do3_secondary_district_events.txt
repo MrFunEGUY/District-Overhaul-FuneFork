@@ -1,0 +1,327 @@
+namespace = do3fdistrictevents
+
+planet_event = {
+	id = do3fdistrictevents.01
+	title = "do3fdistrictevents.01.name"
+	desc = "do3fdistrictevents.01.desc"
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_ship_bridge
+	location = FROM
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "do3f_02_WORKSHOPS"
+		custom_tooltip = do3f_02_WORKSHOPS_tooltip
+		trigger = {
+			owner = {
+				has_technology = tech_advanced_metallurgy_1
+				#has_technology = tech_engineering_2
+			}
+		}
+		from = { add_deposit = d_workshops }
+		ai_chance = {
+			weight = 1
+			modifier = {
+				add = 10
+				owner = { should_invest_into_research = yes }
+			}
+			modifier = {
+				add = 1.5
+				positive_engineering_modifier_low = yes
+			}
+			modifier = {
+				add = 2.5
+				positive_engineering_modifier_medium = yes
+			}
+			modifier = {
+				add = 4
+				positive_engineering_modifier_large = yes
+			}
+			modifier = {
+				factor = 0
+				owner = { can_invest_into_research = no }
+			}
+		}
+	}
+	option = {
+		name = "do3f_02_UNIVERSITY"
+		custom_tooltip = do3f_02_UNIVERSITY_tooltip
+		trigger = {
+			owner = { has_technology = tech_basic_science_lab_2 }
+		}
+		from = { add_deposit = d_university }
+		ai_chance = {
+			weight = 1
+			modifier = {
+				factor = 100
+				has_many_specialists = yes
+			}
+			modifier = {
+				factor = 10
+				owner = { should_invest_into_research = yes }
+			}
+			modifier = {
+				factor = 0
+				owner = { can_invest_into_research = no }
+			}
+			modifier = {
+				factor = 0
+				has_many_specialists = no
+			}
+		}
+	}
+	option = {
+		name = "do3f_02_LOCAL_INDUSTRY"
+		custom_tooltip = do3f_02_LOCAL_INDUSTRY_tooltip
+		trigger = {
+			owner = { has_technology = tech_alloys_2 }
+		}
+		from = { add_deposit = d_local_industry }
+		ai_chance = {
+			weight = 1
+			modifier = {
+				factor = 1.5
+				low_alloy_storage = yes
+			}
+			modifier = {
+				factor = 15
+				owner = { bad_alloy_economy = yes }
+			}
+			modifier = {
+				factor = 0.1
+				empire_has_eucomenopolis = yes
+			}
+		}
+	}
+	option = {
+		name = "do3f_02_PRODUCTION_HUB"
+		custom_tooltip = do3f_02_PRODUCTION_HUB_tooltip
+		trigger = {
+			owner = { has_technology = tech_luxuries_2 }
+		}
+		from = { add_deposit = d_production_hub }
+		ai_chance = {
+			weight = 1
+			modifier = {
+				factor = 5
+				need_consumer_goods = yes
+			}
+			modifier = {
+				factor = 1.5
+				low_consumer_goods_storage = yes
+			}
+			modifier = {
+				factor = 15
+				owner = { bad_consumer_goods_economy = yes }
+			}
+			modifier = {
+				factor = 0
+				consumer_goods_not_needed = yes
+			}
+			modifier = {
+				factor = 0.1
+				empire_has_eucomenopolis = yes
+			}
+		}
+	}
+	option = {
+		name = "do3f_02_LOCAL_STORES"
+		custom_tooltip = do3f_02_LOCAL_STORES_tooltip
+		trigger = {
+			owner = { has_technology = tech_interstellar_economics }
+		}
+		from = { add_deposit = d_local_stores }
+		ai_chance = {
+			weight = 1
+			modifier = {
+				factor = 5
+				need_energy = yes
+			}
+			modifier = {
+				factor = 1.4
+				low_energy_storage = yes
+			}
+			modifier = {
+				factor = 12
+				bad_energy_economy = yes
+			}
+			modifier = {
+				factor = 4
+				is_megacorp = yes
+			}
+			modifier = {
+				factor = 0
+				energy_not_needed = yes
+				is_megacorp = no
+			}
+		}
+	}
+	option = {
+		name = "do3f_02_SPACEPORT"
+		custom_tooltip = do3f_02_SPACEPORT_tooltip
+		trigger = {
+			owner = { has_technology = tech_centralized_command }
+		}
+		from = { add_deposit = d_spaceport }
+		ai_chance = {
+			weight = 1
+			modifier = {
+				factor = 100
+				should_increase_naval_capacity = yes
+			}
+			modifier = {
+				factor = 4
+				wants_more_naval_capacity = yes
+			}
+			modifier = {
+				factor = 4
+				naval_increase_due_to_war = yes
+				should_increase_naval_capacity = yes
+			}
+			modifier = {
+				factor = 2
+				is_megacorp = yes
+			}
+		}
+	}
+	option = {
+		name = "do3f_02_ACADEMY"
+		custom_tooltip = do3f_02_ACADEMY_tooltip
+		trigger = {
+			owner = { has_technology = tech_combat_training }
+		}
+		from = { add_deposit = d_academy }
+		ai_chance = {
+			weight = 1
+			modifier = {
+				factor = 5
+				naval_increase_due_to_war = yes
+			}
+			# Militarist Government
+			modifier = {
+				factor = 10
+				wants_more_naval_capacity = yes
+			}
+		}
+	}
+	option = {
+		name = "do3f_02_LOGISTICS_HUB"
+		custom_tooltip = do3f_02_LOGISTICS_HUB_tooltip
+		trigger = {
+			owner = { has_technology = tech_global_production_strategy }
+		}
+		from = { add_deposit = d_logistics_hub }
+		ai_chance = {
+			weight = 1
+			modifier = {
+				factor = 20
+				has_many_workers = yes
+			}
+			modifier = {
+				factor = 10
+				owner = { can_invest_into_research = no }
+				has_many_workers = yes
+			}
+			modifier = {
+				factor = 0.1
+				owner = { should_invest_into_research = yes }
+			}
+			modifier = {
+				factor = 0
+				has_many_workers = no
+			}
+		}
+	}
+	option = {
+		name = "do3f_02_BUREAUCRATIC"
+		custom_tooltip = do3f_02_BUREAUCRATIC_tooltip
+		trigger = {
+			owner = { has_technology = tech_colonial_bureaucracy }
+		}
+		from = { add_deposit = d_bureaucratic }
+		ai_chance = {
+			weight = 1
+			modifier = {
+				weight = 20
+				owner = { empire_sprawl_over_cap > 20 }
+			}
+			modifier = {
+				factor = 5
+				owner = { empire_sprawl_over_cap > 40 }
+			}
+			modifier = {
+				factor = 2
+				owner = { has_valid_civic = civic_byzantine_bureaucracy }
+			}
+		}
+	}
+	option = { # Disabled
+		name = "do3f_02_HYDROPONIC_BAY"
+		custom_tooltip = do3f_02_HYDROPONIC_BAY_tooltip
+		trigger = {
+			always = no
+			owner = { has_technology = tech_hydroponics }
+		}
+		from = { add_deposit = d_hydroponic_bay }
+		ai_chance = {
+			weight = 1
+			modifier = {
+				add = 10
+				owner = {
+					country_uses_food = yes
+					has_monthly_income = {
+						resource = food
+						value < 0
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "do3f_02_ENTERTAINMENT"
+		custom_tooltip = do3f_02_ENTERTAINMENT_tooltip
+		trigger = {
+			owner = { has_technology = tech_hyper_entertainment_forum }
+		}
+		from = { add_deposit = d_entertainment }
+		ai_chance = {
+			weight = 1
+			modifier = {
+				weight = 50
+				planet = { free_amenities < 0 }
+			}
+			modifier = {
+				factor = 0
+				AND = {
+					free_jobs > 1
+					has_unemployed_workers = no
+				}
+			}
+		}
+	}
+	option = {
+		name = "do3f_02_NECROPHAGE"
+		custom_tooltip = do3f_02_NECROPHAGE_tooltip
+		trigger = {
+			owner = { has_origin = origin_necrophage }
+		}
+		from = { add_deposit = d_necrophage }
+		ai_chance = {
+			weight = 4
+		}
+	}
+
+	option = {
+		name = "NEVERMIND"
+		trigger = {
+			always = yes
+		}
+		ai_chance = {
+			weight = 2.5
+		}
+	}
+	after = {
+		validate_planet_buildings_and_districts = yes
+	}
+}

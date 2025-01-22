@@ -1,0 +1,388 @@
+spriteTypes = {
+### Ruler ###
+	spriteType = {
+		name = "GFX_job_01_energy_manager"
+		textureFile = "gfx/interface/icons/jobs/job_01_energy_manager.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_energy_manager_drone"
+		textureFile = "gfx/interface/icons/jobs/job_01_energy_manager.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_01_mining_manager"
+		textureFile = "gfx/interface/icons/jobs/job_01_mining_manager.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_mining_manager_drone"
+		textureFile = "gfx/interface/icons/jobs/job_01_mining_manager.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_01_farming_manager"
+		textureFile = "gfx/interface/icons/jobs/job_01_farming_manager.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_farming_manager_drone"
+		textureFile = "gfx/interface/icons/jobs/job_01_farming_manager.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_01_foreman"
+		textureFile = "gfx/interface/icons/jobs/job_01_foreman.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_foreman_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_foreman_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_01_factory_overseer"
+		textureFile = "gfx/interface/icons/jobs/job_01_factory_overseer.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_factory_overseer_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_factory_overseer.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_03_factory_worker"
+		textureFile = "gfx/interface/icons/jobs/job_03_factory_worker.dds"
+	}
+	spriteType = {
+		name = "GFX_job_03_factory_worker_drone"
+		textureFile = "gfx/interface/icons/jobs/job_03_factory_worker.dds"
+	}
+### Maintenance ###
+	spriteType = {
+		name = "GFX_job_02_maintenance_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_maintenance_drone.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_maintenance_worker"
+		textureFile = "gfx/interface/icons/jobs/job_02_maintenance_worker.dds"
+	}
+
+### Energy
+	spriteType = {
+		name = "GFX_job_e_fusion_drone"
+		textureFile = "gfx/interface/icons/jobs/job_e_fusion_drone.dds"
+	}
+	spriteType = {
+		name = "GFX_job_e_fusion_technician"
+		textureFile = "gfx/interface/icons/jobs/job_e_fusion_technician.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_e_fossil_fuel_technician"
+		textureFile = "gfx/interface/icons/jobs/job_e_fossil_fuel_technician.dds"
+	}
+	spriteType = {
+		name = "GFX_job_e_fossil_fuel_drone"
+		textureFile = "gfx/interface/icons/jobs/job_e_fossil_fuel_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_e_geothermal_drone"
+		textureFile = "gfx/interface/icons/jobs/job_e_geothermal_drone.dds"
+	}
+	spriteType = {
+		name = "GFX_job_e_geothermal_technician"
+		textureFile = "gfx/interface/icons/jobs/job_e_geothermal_technician.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_job_e_solar_drone"
+		textureFile = "gfx/interface/icons/jobs/job_e_solar_drone.dds"
+	}
+	spriteType = {
+		name = "GFX_job_e_solar_technician"
+		textureFile = "gfx/interface/icons/jobs/job_e_solar_technician.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_job_e_tidal_technician"
+		textureFile = "gfx/interface/icons/jobs/job_e_tidal_technician.dds"
+	}
+	spriteType = {
+		name = "GFX_job_e_tidal_technician_drone"
+		textureFile = "gfx/interface/icons/jobs/job_e_tidal_technician_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_e_wind_turbine_drone"
+		textureFile = "gfx/interface/icons/jobs/job_e_wind_turbine_drone.dds"
+	}
+	spriteType = {
+		name = "GFX_job_e_wind_turbine_technician"
+		textureFile = "gfx/interface/icons/jobs/job_e_wind_turbine_technician.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_e_biomass_technician"
+		textureFile = "gfx/interface/icons/jobs/job_e_biomass_technician.dds"
+	}
+	spriteType = {
+		name = "GFX_job_e_biomass_technician_drone"
+		textureFile = "gfx/interface/icons/jobs/job_e_biomass_technician_drone.dds"
+	}
+
+### Mining
+	spriteType = {
+		name = "GFX_job_m_deep_miner"
+		textureFile = "gfx/interface/icons/jobs/job_m_deep_miner.dds"
+	}
+	spriteType = {
+		name = "GFX_job_m_deep_mining_drone"
+		textureFile = "gfx/interface/icons/jobs/job_m_deep_mining_drone.dds"
+	}
+
+### Farming
+	spriteType = {
+		name = "GFX_job_f_industrial_farmer"
+		textureFile = "gfx/interface/icons/jobs/job_f_industrial_farmer.dds"
+	}
+	spriteType = {
+		name = "GFX_job_f_industrial_agri_drone"
+		textureFile = "gfx/interface/icons/jobs/job_f_industrial_agri_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_f_nature_farmer"
+		textureFile = "gfx/interface/icons/jobs/job_f_nature_farmer.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_f_aquatic_agri_drone"
+		textureFile = "gfx/interface/icons/jobs/job_f_aquatic_agri_drone.dds"
+	}
+	spriteType = {
+		name = "GFX_job_f_aquatic_farmer"
+		textureFile = "gfx/interface/icons/jobs/job_f_aquatic_farmer.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_f_cave_agri_drone"
+		textureFile = "gfx/interface/icons/jobs/job_f_cave_agri_drone.dds"
+	}
+	spriteType = {
+		name = "GFX_job_f_cave_farmer"
+		textureFile = "gfx/interface/icons/jobs/job_f_cave_farmer.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_f_fungi_agri_drone"
+		textureFile = "gfx/interface/icons/jobs/job_f_fungi_agri_drone.dds"
+	}
+	spriteType = {
+		name = "GFX_job_f_fungi_farmer"
+		textureFile = "gfx/interface/icons/jobs/job_f_fungi_farmer.dds"
+	}
+	
+### Primary
+	spriteType = {
+		name = "GFX_job_02_park_ranger"
+		textureFile = "gfx/interface/icons/jobs/job_02_park_ranger.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_nature_research_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_nature_research_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_02_physicist"
+		textureFile = "gfx/interface/icons/jobs/job_02_physicist.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_experimental_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_experimental_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_02_clone_scientist"
+		textureFile = "gfx/interface/icons/jobs/job_02_clone_scientist.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_02_gardener"
+		textureFile = "gfx/interface/icons/jobs/job_02_gardener.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_job_archaelogist"
+		textureFile = "gfx/interface/icons/jobs/job_02_archaeologist.dds"
+	}
+	spriteType = {
+		name = "GFX_job_archaelogist_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_archaeologist_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_02_neutronium_miner"
+		textureFile = "gfx/interface/icons/jobs/job_02_neutronium_miner.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_neutronium_mining_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_neutronium_mining_drone.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_job_02_exotic_resource_collector"
+		textureFile = "gfx/interface/icons/jobs/job_02_exotic_resource_collector.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_exotic_resource_collection_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_exotic_resource_collection_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_02_siphon_pilot"
+		textureFile = "gfx/interface/icons/jobs/job_02_siphon_pilot.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_siphon_pilot_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_siphon_pilot_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_02_crystal_grower"
+		textureFile = "gfx/interface/icons/jobs/job_02_crystal_grower.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_crystal_growing_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_crystal_growing_drone.dds"
+	}
+
+### Secondary
+	spriteType = {
+		name = "GFX_job_02_teacher"
+		textureFile = "gfx/interface/icons/jobs/job_02_teacher.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_do_engineer"
+		textureFile = "gfx/interface/icons/jobs/job_02_engineer.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_engineering_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_engineering_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_03_pilot"
+		textureFile = "gfx/interface/icons/jobs/job_03_pilot.dds"
+	}
+	spriteType = {
+		name = "GFX_job_03_pilot_drone"
+		textureFile = "gfx/interface/icons/jobs/job_03_pilot_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_02_officer"
+		textureFile = "gfx/interface/icons/jobs/job_02_officer.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_officer_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_officer_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_02_logistic_worker"
+		textureFile = "gfx/interface/icons/jobs/job_02_logistic_worker.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_logistic_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_logistic_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_m_asteroid_miner"
+		textureFile = "gfx/interface/icons/jobs/job_m_asteroid_miner.dds"
+	}
+	spriteType = {
+		name = "GFX_job_m_asteroid_mining_drone"
+		textureFile = "gfx/interface/icons/jobs/job_m_asteroid_mining_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_02_component_manufacturer"
+		textureFile = "gfx/interface/icons/jobs/job_02_component_manufacturer.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_component_manufacturing_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_component_manufacturing_drone.dds"
+	}
+
+### Habs
+	spriteType = {
+		name = "GFX_job_m_alloy_miner"
+		textureFile = "gfx/interface/icons/jobs/job_m_alloy_miner.dds"
+	}
+	spriteType = {
+		name = "GFX_job_m_alloy_mining_drone"
+		textureFile = "gfx/interface/icons/jobs/job_m_alloy_mining_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_02_dark_matter_researcher"
+		textureFile = "gfx/interface/icons/jobs/job_02_dark_matter_researcher.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_dark_matter_brain_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_dark_matter_brain_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_02_dark_matter_researcher"
+		textureFile = "gfx/interface/icons/jobs/job_02_dark_matter_researcher.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_zro_brain_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_zro_brain_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_02_dark_matter_researcher"
+		textureFile = "gfx/interface/icons/jobs/job_02_dark_matter_researcher.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_living_metal_brain_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_living_metal_brain_drone.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_02_nanites_researcher"
+		textureFile = "gfx/interface/icons/jobs/job_02_nanites_researcher.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_nanites_brain_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_nanites_brain_drone.dds"
+	}
+
+### Special
+	spriteType = {
+		name = "GFX_job_02_biolumen_researcher"
+		textureFile = "gfx/interface/icons/jobs/job_02_biolumen_researcher.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_ecosystem_researcher"
+		textureFile = "gfx/interface/icons/jobs/job_02_ecosystem_researcher.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_technoorganic_researcher"
+		textureFile = "gfx/interface/icons/jobs/job_02_technoorganic_researcher.dds"
+	}
+
+	spriteType = {
+		name = "GFX_job_02_biolumen_researcher_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_biolumen_researcher_drone.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_ecosystem_researcher_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_ecosystem_researcher_drone.dds"
+	}
+	spriteType = {
+		name = "GFX_job_02_technoorganic_researcher_drone"
+		textureFile = "gfx/interface/icons/jobs/job_02_technoorganic_researcher_drone.dds"
+	}
+}

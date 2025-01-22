@@ -1,0 +1,43 @@
+########################
+# Industrial Farming   #
+########################
+d_district_f_industrial_farms = {
+	category = deposit_cat_food
+	is_for_colonizable = yes
+
+	should_swap_deposit_on_terraforming = no
+	
+	planet_modifier = {
+		district_f_industrial_farms_max = 3
+	}
+
+	potential = {
+		always = no
+	}
+}
+
+##############################
+# Special Ringworld Buff     #
+##############################
+d_ringcity = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = no
+	use_weights_for_terraforming_swap_types = no
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	planet_modifier = {
+		planet_amenities_add = 20
+		planet_housing_add = 20
+	}
+
+	potential = {
+		do3f_is_ringworld = yes
+		NOT = { has_deposit = d_ringcity }
+	}
+
+	drop_weight = {
+		weight = 100000000
+	}
+}

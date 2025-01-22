@@ -1,0 +1,5226 @@
+@high = 16
+@med = 8
+@low = 4
+
+@high_rare = 0.5
+@mid_rare = 0.25
+@low_rare = 0.1
+
+@planet_type_bonus = 1.5
+###########################################################################
+# Urban Districts
+# Housing
+d_underwater_foundation = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	planet_modifier = {
+		district_01_ocean_housing_max = 2
+		planet_max_districts_add = -1
+	}
+
+	potential = {
+		do3f_can_have_random_housing_districts = yes
+		do3f_can_have_random_primary_districts = yes
+		is_wet = yes
+	}
+
+	drop_weight = {
+		weight = @high_rare
+		modifier = {
+			factor = 5
+			OR = {
+				AND = {
+					# Not a subclass in Real Space: New Frontiers
+					NOT = {
+						has_global_flag = has_new_frontiers_mod
+						is_planet_subclass = yes
+					}
+					# Vanilla
+					is_planet_class = pc_ocean
+				}
+				# Real Space: New Frontiers
+				AND = {
+					has_global_flag = has_new_frontiers_mod
+					OR = {
+						# Subclasses
+						has_modifier = panthalassic_world
+						has_modifier = atoll_world
+						has_modifier = storm_world
+						has_modifier = reef_world
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 8
+			has_deposit = d_underwater_foundation
+		}
+	}
+}
+
+d_precurser_city = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	planet_modifier = {
+		district_01_ascended_housing_max = 1
+	}
+
+	potential = {
+		do3f_can_have_random_housing_districts = yes
+		do3f_can_have_random_primary_districts = yes
+	}
+
+	drop_weight = {
+		weight = @high_rare
+		modifier = {
+			factor = 50
+			OR = {
+				# Not a subclass in Real Space: New Frontiers
+				AND = {
+					NOT = {
+						has_global_flag = has_new_frontiers_mod
+						is_planet_subclass = yes
+					}
+					# Vanilla
+					OR = {
+						is_planet_class = pc_relic
+						is_planet_class = pc_city
+					}
+				}
+				# Real Space: New Frontiers
+				AND = {
+					has_global_flag = has_new_frontiers_mod
+					OR = {
+						# Subclasses
+						has_modifier = forgotten_world
+						has_modifier = ancient_world
+						has_modifier = depleted_world
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 8
+			has_deposit = d_precurser_city
+		}
+	}
+}
+
+d_city_cavesystem = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_energy
+
+	planet_modifier = {
+		district_01_underground_city_max = 1
+	}
+
+	potential = {
+		do3f_can_have_random_housing_districts = yes
+		do3f_can_have_random_primary_districts = yes
+	}
+
+	drop_weight = {
+		weight = @high_rare
+		modifier = {
+			factor = 5
+			OR = {
+				# Not a subclass in Real Space: New Frontiers
+				AND = {
+					NOT = {
+						has_global_flag = has_new_frontiers_mod
+						is_planet_subclass = yes
+					}
+					# Vanilla
+					OR = {
+						is_planet_class = pc_alpine
+						is_planet_class = pc_arctic
+					}
+				}
+				# Real Space: New Frontiers
+				AND = {
+					has_global_flag = has_new_frontiers_mod
+					OR = {
+						# Subclasses
+						has_modifier = karst_world
+						has_modifier = primal_world
+						has_modifier = snow_world
+						has_modifier = mineral_world
+						has_modifier = geothermal_world
+						has_modifier = frigid_world
+						# Planets
+						is_planet_class = pc_hollow
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 8
+			has_deposit = d_city_cavesystem
+		}
+	}
+}
+###########################################################################
+# Rural Districts
+# Energy
+# Wind
+d_stormy_highlands = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_wind }
+		modifier = { district_e_wind_turbines_max = -1 district_generator_max = 1 }
+	}
+	planet_modifier = {
+		district_e_wind_turbines_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_wind_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_planet_class = pc_arid
+					is_planet_class = pc_desert
+					is_planet_class = pc_savannah
+					is_planet_class = pc_tundra
+					is_planet_class = pc_continental
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					has_modifier = dust_world
+					has_modifier = mesa_world
+					has_modifier = aeolian_world
+					has_modifier = steppe_world
+					has_modifier = mesocyclonic_world
+					has_modifier = dune_world
+					has_modifier = salt_world
+					has_modifier = storm_world
+					has_modifier = supercontinental_world
+				}
+			}
+			# Planetary Diversity
+			OR = {
+				is_planet_class = pc_tropical
+				is_planet_class = pc_wettidallylocked
+				is_planet_class = pc_alpine
+				is_planet_class = pc_pd_cold_cave
+				is_planet_class = pc_highland
+				is_planet_class = pc_duneforest
+				pd_is_planet_class_gaia = yes
+				pd_aw_is_shroud_planet = yes
+				is_planet_class = pc_relic
+				is_planet_class = pc_nuked_relic
+				is_planet_class = pc_milarc_relic
+				is_planet_class = pc_continental
+				is_planet_class = pc_cascadian
+				is_planet_class = pc_hajungle
+				is_planet_class = pc_cenote
+				is_planet_class = pc_biolumen
+				is_planet_class = pc_mesa
+				is_planet_class = pc_badlands
+				is_planet_class = pc_med
+				is_planet_class = pc_hadesert
+				is_planet_class = pc_pd_dry_cave
+				is_planet_class = pc_boreal
+				is_planet_class = pc_snow
+				is_planet_class = pc_tidallylocked
+				is_planet_class = pc_supercon
+				is_planet_class = pc_pd_sinkhole
+				is_planet_class = pc_crystal
+				is_planet_class = pc_technoorganic
+				is_planet_class = pc_ammonia
+				is_planet_class = pc_acid
+				is_planet_class = pc_methane
+				is_planet_class = pc_graveyard
+				is_planet_class = pc_antarctic
+				is_planet_class = pc_aeolian
+				is_planet_class = pc_retinal
+				is_planet_class = pc_forest	
+				is_planet_class = pc_lake	
+				is_planet_class = pc_tepid	
+				is_planet_class = pc_pd_petrified	
+				is_planet_class = pc_ash	
+				is_pd_megaflora_hive = yes		
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "hazardous_weather"
+		}
+		modifier = {
+			factor = 3
+			has_modifier = "monsoon_world"
+		}
+		modifier = {
+			factor = 0.25
+			has_modifier = "mineral_world"
+		}
+		modifier = {
+			factor = @planet_type_bonus
+			is_pd_exotic = yes
+		}
+	}
+}
+d_stormy_flats = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_wind }
+		modifier = { district_e_wind_turbines_max = -2 district_generator_max = 2 }
+	}
+	planet_modifier = {
+		district_e_wind_turbines_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_wind_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_planet_class = pc_arid
+					is_planet_class = pc_desert
+					is_planet_class = pc_savannah
+					is_planet_class = pc_tundra
+					is_planet_class = pc_continental
+				}
+				
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					has_modifier = dust_world
+					has_modifier = mesa_world
+					has_modifier = aeolian_world
+					has_modifier = steppe_world
+					has_modifier = mesocyclonic_world
+					has_modifier = dune_world
+					has_modifier = salt_world
+					has_modifier = storm_world
+					has_modifier = supercontinental_world
+				}
+			}
+			# Planetary Diversity
+			OR = {
+				is_planet_class = pc_tropical
+				is_planet_class = pc_wettidallylocked
+				is_planet_class = pc_alpine
+				is_planet_class = pc_pd_cold_cave
+				is_planet_class = pc_highland
+				is_planet_class = pc_duneforest
+				pd_is_planet_class_gaia = yes
+				pd_aw_is_shroud_planet = yes
+				is_planet_class = pc_relic
+				is_planet_class = pc_nuked_relic
+				is_planet_class = pc_milarc_relic
+				is_planet_class = pc_continental
+				is_planet_class = pc_cascadian
+				is_planet_class = pc_hajungle
+				is_planet_class = pc_cenote
+				is_planet_class = pc_biolumen
+				is_planet_class = pc_mesa
+				is_planet_class = pc_badlands
+				is_planet_class = pc_med
+				is_planet_class = pc_hadesert
+				is_planet_class = pc_pd_dry_cave
+				is_planet_class = pc_boreal
+				is_planet_class = pc_snow
+				is_planet_class = pc_tidallylocked
+				is_planet_class = pc_supercon
+				is_planet_class = pc_pd_sinkhole
+				is_planet_class = pc_crystal
+				is_planet_class = pc_technoorganic
+				is_planet_class = pc_ammonia
+				is_planet_class = pc_acid
+				is_planet_class = pc_methane
+				is_planet_class = pc_graveyard
+				is_planet_class = pc_antarctic
+				is_planet_class = pc_aeolian
+				is_planet_class = pc_retinal
+				is_planet_class = pc_forest	
+				is_planet_class = pc_lake	
+				is_planet_class = pc_tepid	
+				is_planet_class = pc_pd_petrified	
+				is_planet_class = pc_ash	
+				is_pd_megaflora_hive = yes		
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @med
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "hazardous_weather"
+		}
+		modifier = {
+			factor = 3
+			has_modifier = "monsoon_world"
+		}
+		modifier = {
+			factor = 0.25
+			has_modifier = "mineral_world"
+		}
+		modifier = {
+			factor = @planet_type_bonus
+			is_pd_exotic = yes
+		}
+	}
+}
+
+# Geothermal
+d_boiling_lake = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_geo }
+		modifier = { district_e_geothermal_generator_max = -1 district_generator_max = 1 }
+	}
+	planet_modifier = {
+		district_e_geothermal_generator_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_geothermal_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				is_cold = yes
+				is_wet = yes
+				is_planet_class = pc_nuked
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					is_cold = yes
+					is_wet = yes
+					has_modifier = "meridiem_world"
+					has_modifier = "effusive_world"
+					# Planet Classes
+					is_planet_class = pc_sterile
+					is_planet_class = pc_nuked
+				}
+				NOR = {
+					has_modifier = "supercontinental_world"
+					has_modifier = "mediterranean_world"
+					has_modifier = "panthalassic_world"
+					has_modifier = "iceberg_world"
+					has_modifier = "atoll_world"
+					has_modifier = "storm_world"
+				}
+			}
+			# Planetary Diversity
+			OR = {
+				is_cold = yes
+				is_wet = yes
+				pd_is_planet_class_nuked = yes
+				is_pd_radiotrophic_world = yes
+				is_planet_class = pc_superhabitable
+				is_planet_class = pc_technoorganic
+				is_planet_class = pc_crystal
+				is_planet_class = pc_ammonia
+				is_planet_class = pc_acid
+				is_planet_class = pc_methane
+				is_planet_class = pc_geothermal
+				is_planet_class = pc_biolumen
+				is_planet_class = pc_karst
+				is_planet_class = pc_primal	
+				is_planet_class = pc_storm
+				is_planet_class = pc_pd_iceberg
+				pd_is_planet_class_gaia = yes
+				pd_aw_is_shroud_planet = yes
+				is_planet_class = pc_relic
+				is_planet_class = pc_nuked_relic
+				is_planet_class = pc_milarc_relic
+				is_cold = yes
+				is_planet_class = pc_ammonia
+				is_planet_class = pc_acid
+				is_planet_class = pc_methane
+				is_planet_class = pc_graveyard
+				is_planet_class = pc_crystal
+				is_planet_class = pc_technoorganic
+				is_planet_class = pc_geothermal
+				is_planet_class = pc_arctic
+				is_planet_class = pc_tundra
+				is_planet_class = pc_pd_cold_superhab
+				is_planet_class = pc_cryoflora
+				is_planet_class = pc_rogue
+				is_planet_class = pc_lichen
+				is_planet_class = pc_eyeball
+				is_planet_class = pc_glacio
+				is_planet_class = pc_lanthanide
+				is_planet_class = pc_savannah
+				is_planet_class = pc_desert
+				is_planet_class = pc_pd_dry_cave
+				is_planet_class = pc_salt
+				is_planet_class = pc_aquifer
+				is_planet_class = pc_coral
+				is_planet_class = pc_storm
+				is_planet_class = pc_pd_iceberg
+				is_planet_class = pc_arid
+				is_planet_class = pc_pd_dry_superhab
+				is_planet_class = pc_outback
+				is_planet_class = pc_coastal
+				is_planet_class = pc_steppe
+				is_planet_class = pc_prairie
+				is_planet_class = pc_veld
+				is_planet_class = pc_semiarid
+				is_planet_class = pc_med
+				is_planet_class = pc_sandsea
+				is_planet_class = pc_oasis
+				is_planet_class = pc_swamp
+				is_planet_class = pc_mud
+				is_planet_class = pc_basalt
+				is_planet_class = pc_frozen_desert
+				is_planet_class = pc_mushroom
+				is_planet_class = pc_graveyard
+				is_planet_class = pc_geothermal
+				is_planet_class = pc_karst
+				is_planet_class = pc_primal
+				is_planet_class = pc_wetswamp
+				is_planet_class = pc_fog
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 1.5
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				has_modifier = "unstable_tectonics"
+			}
+		}
+		modifier = {
+			factor = 2
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					has_modifier = "young_world"
+					has_modifier = "primal_world"
+					has_modifier = "geothermal_world"
+					has_modifier = "lava_world"
+					has_modifier = "effusive_world"
+				}
+			}
+		}
+		modifier = {
+			factor = 0.25
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				has_modifier = "mineral_world"
+			}
+		}
+		modifier = {
+			factor = @planet_type_bonus
+			is_pd_exotic = yes
+		}
+	}
+}
+d_hot_volcano = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_geo }
+		modifier = { district_e_geothermal_generator_max = -2 district_generator_max = 2 }
+	}
+	planet_modifier = {
+		district_e_geothermal_generator_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_geothermal_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				is_cold = yes
+				is_wet = yes
+				is_planet_class = pc_nuked
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					is_cold = yes
+					is_wet = yes
+					has_modifier = "meridiem_world"
+					has_modifier = "effusive_world"
+					# Planet Classes
+					is_planet_class = pc_sterile
+					is_planet_class = pc_nuked
+				}
+				NOR = {
+					has_modifier = "supercontinental_world"
+					has_modifier = "mediterranean_world"
+					has_modifier = "panthalassic_world"
+					has_modifier = "iceberg_world"
+					has_modifier = "atoll_world"
+					has_modifier = "storm_world"
+				}
+			}
+			# Planetary Diversity
+			OR = {
+				is_cold = yes
+				is_wet = yes
+				pd_is_planet_class_nuked = yes
+				is_pd_radiotrophic_world = yes
+				is_planet_class = pc_superhabitable
+				is_planet_class = pc_technoorganic
+				is_planet_class = pc_crystal
+				is_planet_class = pc_ammonia
+				is_planet_class = pc_acid
+				is_planet_class = pc_methane
+				is_planet_class = pc_geothermal
+				is_planet_class = pc_biolumen
+				is_planet_class = pc_karst
+				is_planet_class = pc_primal	
+				is_planet_class = pc_storm
+				is_planet_class = pc_pd_iceberg
+				pd_is_planet_class_gaia = yes
+				pd_aw_is_shroud_planet = yes
+				is_planet_class = pc_relic
+				is_planet_class = pc_nuked_relic
+				is_planet_class = pc_milarc_relic
+				is_cold = yes
+				is_planet_class = pc_ammonia
+				is_planet_class = pc_acid
+				is_planet_class = pc_methane
+				is_planet_class = pc_graveyard
+				is_planet_class = pc_crystal
+				is_planet_class = pc_technoorganic
+				is_planet_class = pc_geothermal
+				is_planet_class = pc_arctic
+				is_planet_class = pc_tundra
+				is_planet_class = pc_pd_cold_superhab
+				is_planet_class = pc_cryoflora
+				is_planet_class = pc_rogue
+				is_planet_class = pc_lichen
+				is_planet_class = pc_eyeball
+				is_planet_class = pc_glacio
+				is_planet_class = pc_lanthanide
+				is_planet_class = pc_savannah
+				is_planet_class = pc_desert
+				is_planet_class = pc_pd_dry_cave
+				is_planet_class = pc_salt
+				is_planet_class = pc_aquifer
+				is_planet_class = pc_coral
+				is_planet_class = pc_storm
+				is_planet_class = pc_pd_iceberg
+				is_planet_class = pc_arid
+				is_planet_class = pc_pd_dry_superhab
+				is_planet_class = pc_outback
+				is_planet_class = pc_coastal
+				is_planet_class = pc_steppe
+				is_planet_class = pc_prairie
+				is_planet_class = pc_veld
+				is_planet_class = pc_semiarid
+				is_planet_class = pc_med
+				is_planet_class = pc_sandsea
+				is_planet_class = pc_oasis
+				is_planet_class = pc_swamp
+				is_planet_class = pc_mud
+				is_planet_class = pc_basalt
+				is_planet_class = pc_frozen_desert
+				is_planet_class = pc_mushroom
+				is_planet_class = pc_graveyard
+				is_planet_class = pc_geothermal
+				is_planet_class = pc_karst
+				is_planet_class = pc_primal
+				is_planet_class = pc_wetswamp
+				is_planet_class = pc_fog
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 1.5
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				has_modifier = "unstable_tectonics"
+			}
+		}
+		modifier = {
+			factor = 2
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					has_modifier = "young_world"
+					has_modifier = "primal_world"
+					has_modifier = "geothermal_world"
+					has_modifier = "lava_world"
+					has_modifier = "effusive_world"
+				}
+			}
+		}
+		modifier = {
+			factor = 0.25
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				has_modifier = "mineral_world"
+			}
+		}
+		modifier = {
+			factor = @planet_type_bonus
+			is_pd_exotic = yes
+		}
+	}
+}
+
+# Solar
+d_open_space = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_solar }
+		modifier = { district_e_solar_generator_max = -1 district_generator_max = 1 }
+	}
+	planet_modifier = {
+		district_e_solar_generator_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_solar_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_nuked
+					is_planet_class = pc_relic
+					is_dry = yes
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					has_modifier = mediterranean_world
+					has_modifier = supercontinental_world
+					is_dry = yes
+					is_planet_class = pc_tidallylocked
+					is_planet_class = pc_gaia
+					is_planet_class = pc_nuked
+					is_planet_class = pc_relic
+				}
+			}
+			# Planetary Diversity
+			OR = {
+				is_dry = yes
+				is_planet_class = pc_tidallylocked
+				is_planet_class = pc_supercon
+				is_planet_class = pc_pd_sinkhole
+				is_planet_class = pc_graveyard		
+				pd_is_planet_class_gaia = yes
+				pd_aw_is_shroud_planet = yes
+				pd_is_planet_class_nuked = yes
+				is_planet_class = pc_relic
+				is_planet_class = pc_milarc_relic
+				is_pd_radiotrophic_world = yes
+				is_planet_class = pc_tidallylocked
+				is_planet_class = pc_supercon
+				is_planet_class = pc_pd_sinkhole
+				is_planet_class = pc_graveyard
+				is_planet_class = pc_crystal
+				is_planet_class = pc_technoorganic
+				is_dry = yes
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 10
+			OR = {
+				AND = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_class = pc_tidallylocked
+				}
+				is_planet_class = pc_nuked
+			}
+		}
+		modifier = {
+			factor = 2
+			is_planet_class = pc_arid
+		}
+		modifier = {
+			factor = 2
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					has_modifier = "veld_world"
+					has_modifier = "flaming_world"
+				}
+			}
+			
+		}
+		modifier = {
+			factor = 0.5
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					has_modifier = "salt_world"
+					has_modifier = "mesocyclonic_world"
+				}
+			}
+		}
+		modifier = {
+			factor = 0.25
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				has_modifier = "aeolian_world"
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				has_modifier = "effusive_world"
+			}
+		}
+	}
+}
+d_low_athmosphere_zone = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_solar }
+		modifier = { district_e_solar_generator_max = -2 district_generator_max = 2 }
+	}
+	planet_modifier = {
+		district_e_solar_generator_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_solar_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_planet_class = pc_gaia
+					is_planet_class = pc_nuked
+					is_planet_class = pc_relic
+					is_dry = yes
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					has_modifier = mediterranean_world
+					has_modifier = supercontinental_world
+					is_dry = yes
+					is_planet_class = pc_tidallylocked
+					is_planet_class = pc_gaia
+					is_planet_class = pc_nuked
+					is_planet_class = pc_relic
+				}
+			}
+			# Planetary Diversity
+			OR = {
+				is_dry = yes
+				is_planet_class = pc_tidallylocked
+				is_planet_class = pc_supercon
+				is_planet_class = pc_pd_sinkhole
+				is_planet_class = pc_graveyard		
+				pd_is_planet_class_gaia = yes
+				pd_aw_is_shroud_planet = yes
+				pd_is_planet_class_nuked = yes
+				is_planet_class = pc_relic
+				is_planet_class = pc_milarc_relic
+				is_pd_radiotrophic_world = yes
+				is_planet_class = pc_tidallylocked
+				is_planet_class = pc_supercon
+				is_planet_class = pc_pd_sinkhole
+				is_planet_class = pc_graveyard
+				is_planet_class = pc_crystal
+				is_planet_class = pc_technoorganic
+				is_dry = yes
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @med
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 10
+			OR = {
+				AND = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_class = pc_tidallylocked
+				}
+				is_planet_class = pc_nuked
+			}			
+		}
+		modifier = {
+			factor = 2
+			is_planet_class = pc_arid
+		}
+		modifier = {
+			factor = 2
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					has_modifier = "veld_world"
+					has_modifier = "flaming_world"
+				}
+			}
+			
+		}
+		modifier = {
+			factor = 0.5
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					has_modifier = "salt_world"
+					has_modifier = "mesocyclonic_world"
+				}
+			}
+		}
+		modifier = {
+			factor = 0.25
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				has_modifier = "aeolian_world"
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				has_modifier = "effusive_world"
+			}
+		}
+	}
+}
+
+# Tidal
+d_underwater_hill = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_tidal }
+		modifier = { district_e_tidal_generator_max = -1 district_generator_max = 1 planet_max_districts_add = 1 }
+	}
+	planet_modifier = {
+		district_e_tidal_generator_max = 1
+		planet_max_districts_add = -1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_tidal_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_wet = yes
+					is_planet_class = pc_gaia
+					is_planet_class = pc_relic
+					is_planet_class = pc_nuked
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					has_modifier = oasis_world
+					is_planet_class = pc_ocean
+				}
+			}
+			# Planetary Diversity
+			OR = {
+				is_wet = yes
+				is_planet_class = pc_superhabitable
+				is_planet_class = pc_crystal
+				is_planet_class = pc_technoorganic
+				is_planet_class = pc_biolumen
+				is_planet_class = pc_karst
+				is_planet_class = pc_storm
+				is_planet_class = pc_pd_iceberg
+				pd_is_planet_class_gaia = yes
+				pd_aw_is_shroud_planet = yes
+				is_planet_class = pc_relic
+				is_planet_class = pc_nuked_relic
+				is_planet_class = pc_milarc_relic
+				is_planet_class = pc_ocean
+				is_planet_class = pc_reef
+				is_planet_class = pc_pd_archipelago
+				pd_is_planet_class_nuked = yes
+				is_pd_radiotrophic_world = yes
+				is_planet_class = pc_desertislands
+				is_planet_class = pc_subarctic
+				is_planet_class = pc_mangrove
+				is_planet_class = pc_glacial
+				is_planet_class = pc_superhabitable
+				is_planet_class = pc_graveyard
+				is_planet_class = pc_crystal
+				is_planet_class = pc_technoorganic
+				is_planet_class = pc_storm
+				is_planet_class = pc_pd_iceberg
+				pd_is_planet_for_aqua_trait = yes
+				is_planet_class = pc_pd_hycean	
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 10
+			is_planet_class = pc_ocean		
+		}
+	}
+}
+d_underwater_mountain = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_tidal }
+		modifier = { district_e_tidal_generator_max = -2 district_generator_max = 2 planet_max_districts_add = 1 }
+	}
+	planet_modifier = {
+		district_e_tidal_generator_max = 2
+		planet_max_districts_add = -1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_tidal_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_wet = yes
+					is_planet_class = pc_gaia
+					is_planet_class = pc_relic
+					is_planet_class = pc_nuked
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					has_modifier = oasis_world
+					is_planet_class = pc_ocean
+				}
+			}
+			# Planetary Diversity
+			OR = {
+				is_wet = yes
+				is_planet_class = pc_superhabitable
+				is_planet_class = pc_crystal
+				is_planet_class = pc_technoorganic
+				is_planet_class = pc_biolumen
+				is_planet_class = pc_karst
+				is_planet_class = pc_storm
+				is_planet_class = pc_pd_iceberg
+				pd_is_planet_class_gaia = yes
+				pd_aw_is_shroud_planet = yes
+				is_planet_class = pc_relic
+				is_planet_class = pc_nuked_relic
+				is_planet_class = pc_milarc_relic
+				is_planet_class = pc_ocean
+				is_planet_class = pc_reef
+				is_planet_class = pc_pd_archipelago
+				pd_is_planet_class_nuked = yes
+				is_pd_radiotrophic_world = yes
+				is_planet_class = pc_desertislands
+				is_planet_class = pc_subarctic
+				is_planet_class = pc_mangrove
+				is_planet_class = pc_glacial
+				is_planet_class = pc_superhabitable
+				is_planet_class = pc_graveyard
+				is_planet_class = pc_crystal
+				is_planet_class = pc_technoorganic
+				is_planet_class = pc_storm
+				is_planet_class = pc_pd_iceberg
+				pd_is_planet_for_aqua_trait = yes
+				is_planet_class = pc_pd_hycean	
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @med
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 10
+			is_planet_class = pc_ocean		
+		}
+	}
+}
+
+# Biomass
+d_small_crop_field = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_bio }
+		modifier = { district_e_biomass_generator_max = -1 district_generator_max = 1 }
+	}
+	planet_modifier = {
+		district_e_biomass_generator_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_bio_compound_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_planet_class = pc_continental
+					is_planet_class = pc_tropical
+					is_planet_class = pc_arid
+					is_planet_class = pc_savannah	
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					has_modifier = steppe_world
+					has_modifier = veld_world
+					has_modifier = atoll_world
+					has_modifier = reef_world
+					has_modifier = boreal_world
+					has_modifier = primal_world
+				}
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 10
+			OR = {
+				AND = {
+					has_global_flag = has_new_frontiers_mod
+					OR = {
+						has_modifier = veld_world
+						has_modifier = primal_world
+					}
+				}
+				AND = {
+					NOT = {
+						has_global_flag = has_new_frontiers_mod
+					}
+					is_planet_class = pc_continental
+				}
+			}		
+		}
+	}
+}
+d_biofuel_crops = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_bio }
+		modifier = { district_e_biomass_generator_max = -2 district_generator_max = 2 }
+	}
+	planet_modifier = {
+		district_e_biomass_generator_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_bio_compound_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_planet_class = pc_continental
+					is_planet_class = pc_tropical
+					is_planet_class = pc_arid
+					is_planet_class = pc_savannah	
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					has_modifier = steppe_world
+					has_modifier = veld_world
+					has_modifier = atoll_world
+					has_modifier = reef_world
+					has_modifier = boreal_world
+					has_modifier = primal_world
+				}
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @med
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 10
+			OR = {
+				AND = {
+					has_global_flag = has_new_frontiers_mod
+					OR = {
+						has_modifier = veld_world
+						has_modifier = primal_world
+					}
+				}
+				AND = {
+					NOT = {
+						has_global_flag = has_new_frontiers_mod
+					}
+					is_planet_class = pc_continental
+				}
+			}		
+		}
+	}
+}
+d_small_forest = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_bio }
+		modifier = { district_e_biomass_generator_max = -2 district_generator_max = 2 }
+	}
+	planet_modifier = {
+		district_e_biomass_generator_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_bio_compound_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_planet_class = pc_continental
+					is_planet_class = pc_tropical
+					is_planet_class = pc_tundra
+					is_planet_class = pc_savannah	
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					has_modifier = steppe_world
+					has_modifier = veld_world
+					has_modifier = boreal_world
+					has_modifier = primal_world
+					has_modifier = forest_world
+					has_modifier = taiga_world
+				}
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @med
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 10
+			OR = {
+				AND = {
+					has_global_flag = has_new_frontiers_mod
+					OR = {
+						has_modifier = boreal_world
+						has_modifier = forest_world
+					}
+				}
+				AND = {
+					NOT = {
+						has_global_flag = has_new_frontiers_mod
+					}
+					is_planet_class = pc_continental
+				}
+			}		
+		}
+	}
+}
+d_large_forest = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_bio }
+		modifier = { district_e_biomass_generator_max = -3 district_generator_max = 3 }
+	}
+	planet_modifier = {
+		district_e_biomass_generator_max = 3
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_bio_compound_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_planet_class = pc_continental
+					is_planet_class = pc_tropical
+					is_planet_class = pc_tundra
+					is_planet_class = pc_savannah	
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					has_modifier = steppe_world
+					has_modifier = veld_world
+					has_modifier = boreal_world
+					has_modifier = primal_world
+					has_modifier = forest_world
+					has_modifier = taiga_world
+				}
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @low
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 10
+			OR = {
+				AND = {
+					has_global_flag = has_new_frontiers_mod
+					OR = {
+						has_modifier = boreal_world
+						has_modifier = forest_world
+					}
+				}
+				AND = {
+					NOT = {
+						has_global_flag = has_new_frontiers_mod
+					}
+					is_planet_class = pc_continental
+				}
+			}		
+		}
+	}
+}
+d_industrial_bio_waste = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_energy
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_bio }
+		modifier = { district_e_biomass_generator_max = -2 district_generator_max = 2 }
+	}
+	planet_modifier = {
+		district_e_biomass_generator_max = 2
+	}
+
+	potential = {
+		always = no
+		# can_have_habitable_deposits = yes
+		# NOR = {
+		# 	do3f_002_fusion_deposits = yes
+		# 	do3f_002_geothermal_deposits = yes
+		# 	do3f_002_fossil_deposits = yes
+		# 	do3f_002_wind_deposits = yes
+		# 	do3f_002_solar_deposits = yes
+		# 	do3f_002_tidal_deposits = yes
+		# }
+	}
+}
+# Fusion
+
+d_small_deuterium_deposit = {
+	icon = "d_deuterium_deposit"
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_fusion }
+		modifier = { district_e_fusion_generator_max = -1 district_generator_max = 1 }
+	}
+	planet_modifier = {
+		district_e_fusion_generator_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_fusion_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		is_wet = yes
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 3
+			is_planet_class = pc_ocean
+		}
+	}
+}
+d_deuterium_deposit = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_fusion }
+		modifier = { district_e_fusion_generator_max = -2 district_generator_max = 2 }
+	}
+	planet_modifier = {
+		district_e_fusion_generator_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_fusion_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		is_wet = yes
+	}
+
+	drop_weight = {
+		weight = @med
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 3
+			is_planet_class = pc_ocean
+		}
+	}
+}
+d_large_deuterium_deposit = {
+	icon = "d_deuterium_deposit"
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_fusion }
+		modifier = { district_e_fusion_generator_max = -3 district_generator_max = 3 }
+	}
+	planet_modifier = {
+		district_e_fusion_generator_max = 3
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_fusion_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		is_wet = yes
+	}
+
+	drop_weight = {
+		weight = @low
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 3
+			is_planet_class = pc_ocean
+		}
+	}
+}
+
+d_small_boron11_deposit = {
+	icon = "d_boron11_deposit"
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_fusion }
+		modifier = { district_e_fusion_generator_max = -1 district_generator_max = 1 }
+	}
+	planet_modifier = {
+		district_e_fusion_generator_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_fusion_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_dry = yes
+					is_planet_class = pc_continental
+					is_planet_class = pc_tropical
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					is_dry = yes
+					has_modifier = atoll_world
+					has_modifier = reef_world
+					has_modifier = boreal_world
+					has_modifier = primal_world
+					# Planet Classes
+					is_planet_class = pc_sterile
+				}
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @high_rare
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+	}
+}
+d_boron11_deposit = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_fusion }
+		modifier = { district_e_fusion_generator_max = -2 district_generator_max = 2 }
+	}
+	planet_modifier = {
+		district_e_fusion_generator_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_fusion_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_dry = yes
+					is_planet_class = pc_continental
+					is_planet_class = pc_tropical
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					is_dry = yes
+					has_modifier = atoll_world
+					has_modifier = reef_world
+					has_modifier = boreal_world
+					has_modifier = primal_world
+					# Planet Classes
+					is_planet_class = pc_sterile
+				}
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @med
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+	}
+}
+d_large_boron11_deposit = {
+	icon = "d_boron11_deposit"
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_fusion }
+		modifier = { district_e_fusion_generator_max = -3 district_generator_max = 3 }
+	}
+	planet_modifier = {
+		district_e_fusion_generator_max = 3
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_fusion_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_dry = yes
+					is_planet_class = pc_continental
+					is_planet_class = pc_tropical
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					is_dry = yes
+					has_modifier = atoll_world
+					has_modifier = reef_world
+					has_modifier = boreal_world
+					has_modifier = primal_world
+					# Planet Classes
+					is_planet_class = pc_sterile
+				}
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @low
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+	}
+}
+# Fossil Fuel
+d_small_coal_deposit = {
+	icon = "d_coal_deposit"
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
+		modifier = { district_e_fossil_fuel_generator_max = -1 district_generator_max = 1 }
+	}
+	planet_modifier = {
+		district_e_fossil_fuel_generator_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_fossil_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			is_cold = yes
+			is_planet_class = pc_continental
+			is_planet_class = pc_tropical
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+	}
+}
+d_coal_deposit = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
+		modifier = { district_e_fossil_fuel_generator_max = -2 district_generator_max = 2 }
+	}
+	planet_modifier = {
+		district_e_fossil_fuel_generator_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_fossil_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			is_cold = yes
+			is_planet_class = pc_continental
+			is_planet_class = pc_tropical
+		}
+	}
+
+	drop_weight = {
+		weight = @med
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+	}
+}
+d_large_coal_deposit = {
+	icon = "d_coal_deposit"
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
+		modifier = { district_e_fossil_fuel_generator_max = -3 district_generator_max = 3 }
+	}
+	planet_modifier = {
+		district_e_fossil_fuel_generator_max = 3
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_fossil_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			is_cold = yes
+			is_planet_class = pc_continental
+			is_planet_class = pc_tropical
+		}
+	}
+
+	drop_weight = {
+		weight = @low
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+	}
+}
+
+d_small_natural_gas_deposit = {
+	icon = "d_natural_gas_deposit"
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
+		modifier = { district_e_fossil_fuel_generator_max = -1 district_generator_max = 1 }
+	}
+	planet_modifier = {
+		district_e_fossil_fuel_generator_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_fossil_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			is_dry = yes
+			is_wet = yes
+			is_cold = yes
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+	}
+}
+d_natural_gas_deposit = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
+		modifier = { district_e_fossil_fuel_generator_max = -2 district_generator_max = 2 }
+	}
+	planet_modifier = {
+		district_e_fossil_fuel_generator_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_fossil_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			is_dry = yes
+			is_wet = yes
+			is_cold = yes
+		}
+	}
+
+	drop_weight = {
+		weight = @med
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+	}
+}
+d_large_natural_gas_deposit = {
+	icon = "d_natural_gas_deposit"
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
+		modifier = { district_e_fossil_fuel_generator_max = -3 district_generator_max = 3 }
+	}
+	planet_modifier = {
+		district_e_fossil_fuel_generator_max = 3
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_fossil_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			is_dry = yes
+			is_wet = yes
+			is_cold = yes
+		}
+	}
+
+	drop_weight = {
+		weight = @low
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+	}
+}
+
+d_small_oil_deposit = {
+	icon = "d_oil_deposit"
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
+		modifier = { district_e_fossil_fuel_generator_max = -1 district_generator_max = 1 }
+	}
+	planet_modifier = {
+		district_e_fossil_fuel_generator_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_fossil_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			is_dry = yes
+			is_wet = yes
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+	}
+}
+d_oil_deposit = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
+		modifier = { district_e_fossil_fuel_generator_max = -2 district_generator_max = 2 }
+	}
+	planet_modifier = {
+		district_e_fossil_fuel_generator_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_fossil_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			is_dry = yes
+			is_wet = yes
+		}
+	}
+
+	drop_weight = {
+		weight = @med
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+	}
+}
+d_large_oil_deposit = {
+	icon = "d_oil_deposit"
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_energy
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
+		modifier = { district_e_fossil_fuel_generator_max = -3 district_generator_max = 3 }
+	}
+	planet_modifier = {
+		district_e_fossil_fuel_generator_max = 3
+	}
+
+	potential = {
+		OR = {
+			do3f_no_energy_deposits = yes
+			do3f_002_fossil_deposits = yes
+		}
+		do3f_can_have_random_energy_districts = yes
+		OR = {
+			is_dry = yes
+			is_wet = yes
+		}
+	}
+
+	drop_weight = {
+		weight = @low
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+	}
+}
+# Mining
+# Stable
+d_stable_ground = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_minerals
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_mining_districts_stable }
+		modifier = { district_m_stable_mining_max = -1 district_mining_max = 1 }
+	}
+	planet_modifier = {
+		district_m_stable_mining_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_mining_deposits = yes
+			do3f_002_stable_mining_deposits = yes
+		}
+		do3f_can_have_random_mining_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_planet_class = pc_alpine
+					is_planet_class = pc_arctic
+					is_planet_class = pc_arid
+					is_planet_class = pc_continental
+					is_planet_class = pc_ocean
+					is_planet_class = pc_nuked
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					is_planet_class = pc_alpine
+					is_planet_class = pc_arctic
+					is_planet_class = pc_arid
+					is_planet_class = pc_continental
+					is_planet_class = pc_ocean
+					is_planet_class = pc_nuked
+					has_modifier = "noxious_world"
+				}
+				NOR = {
+					has_modifier = "subglacial_world"
+					has_modifier = "panthalassic_world"
+					has_modifier = "atoll_world"
+					has_modifier = "iceberg_world"
+				}
+			}
+			# Planetary Diversity
+			OR = {
+				is_planet_class = pc_alpine
+				is_planet_class = pc_pd_cold_cave
+				is_planet_class = pc_highland
+				is_planet_class = pc_duneforest
+				is_planet_class = pc_arctic
+				is_planet_class = pc_arid
+				is_planet_class = pc_pd_dry_superhab
+				is_planet_class = pc_outback
+				is_planet_class = pc_coastal
+				is_planet_class = pc_continental
+				pd_is_planet_class_nuked = yes
+				is_pd_radiotrophic_world = yes
+				is_planet_class = pc_cascadian
+				is_planet_class = pc_hajungle
+				is_planet_class = pc_cenote
+				is_planet_class = pc_mesa
+				is_planet_class = pc_badlands
+				is_planet_class = pc_med
+				is_planet_class = pc_frozen_desert
+				is_planet_class = pc_glacial
+				is_planet_class = pc_hadesert
+				is_planet_class = pc_methane
+				is_planet_class = pc_crystal
+				is_planet_class = pc_technoorganic
+				is_planet_class = pc_graveyard
+				is_planet_class = pc_superhabitable
+				is_planet_class = pc_retinal
+				is_planet_class = pc_forest
+				is_planet_class = pc_lake	
+				is_planet_class = pc_tepid
+				is_planet_class = pc_megaflora	
+				is_planet_class = pc_pd_petrified
+				is_pd_megaflora_hive = yes		
+				is_planet_class = pc_tidallylocked
+				is_planet_class = pc_supercon
+				is_planet_class = pc_pd_sinkhole
+				is_planet_class = pc_boreal
+				is_planet_class = pc_snow
+				is_planet_class = pc_karst
+				is_planet_class = pc_primal
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_cold = yes
+		}
+		modifier = {
+			factor = 2
+			has_modifier = "ultra_rich"
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "mineral_rich"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "mineral_poor"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "mineral_poor"
+		}
+		modifier = {
+			factor = 3
+			has_modifier = "mineral_world"
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_modifier = "frigid_world"
+				has_modifier = "geothermal_world"
+			}
+		}
+	}
+}
+d_ultra_stable_ground = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_minerals
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_mining_districts_stable }
+		modifier = { district_m_stable_mining_max = -2 district_mining_max = 2 }
+	}
+	planet_modifier = {
+		district_m_stable_mining_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_mining_deposits = yes
+			do3f_002_stable_mining_deposits = yes
+		}
+		do3f_can_have_random_mining_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_planet_class = pc_alpine
+					is_planet_class = pc_arctic
+					is_planet_class = pc_arid
+					is_planet_class = pc_continental
+					is_planet_class = pc_ocean
+					is_planet_class = pc_nuked
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					is_planet_class = pc_alpine
+					is_planet_class = pc_arctic
+					is_planet_class = pc_arid
+					is_planet_class = pc_continental
+					is_planet_class = pc_ocean
+					is_planet_class = pc_nuked
+					has_modifier = "noxious_world"
+				}
+				NOR = {
+					has_modifier = "subglacial_world"
+					has_modifier = "panthalassic_world"
+					has_modifier = "atoll_world"
+					has_modifier = "iceberg_world"
+				}
+			}
+			# Planetary Diversity
+			OR = {
+				is_planet_class = pc_alpine
+				is_planet_class = pc_pd_cold_cave
+				is_planet_class = pc_highland
+				is_planet_class = pc_duneforest
+				is_planet_class = pc_arctic
+				is_planet_class = pc_arid
+				is_planet_class = pc_pd_dry_superhab
+				is_planet_class = pc_outback
+				is_planet_class = pc_coastal
+				is_planet_class = pc_continental
+				pd_is_planet_class_nuked = yes
+				is_pd_radiotrophic_world = yes
+				is_planet_class = pc_cascadian
+				is_planet_class = pc_hajungle
+				is_planet_class = pc_cenote
+				is_planet_class = pc_mesa
+				is_planet_class = pc_badlands
+				is_planet_class = pc_med
+				is_planet_class = pc_frozen_desert
+				is_planet_class = pc_glacial
+				is_planet_class = pc_hadesert
+				is_planet_class = pc_methane
+				is_planet_class = pc_crystal
+				is_planet_class = pc_technoorganic
+				is_planet_class = pc_graveyard
+				is_planet_class = pc_superhabitable
+				is_planet_class = pc_retinal
+				is_planet_class = pc_forest
+				is_planet_class = pc_lake	
+				is_planet_class = pc_tepid
+				is_planet_class = pc_megaflora	
+				is_planet_class = pc_pd_petrified
+				is_pd_megaflora_hive = yes		
+				is_planet_class = pc_tidallylocked
+				is_planet_class = pc_supercon
+				is_planet_class = pc_pd_sinkhole
+				is_planet_class = pc_boreal
+				is_planet_class = pc_snow
+				is_planet_class = pc_karst
+				is_planet_class = pc_primal
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @med
+		modifier = {
+			factor = @planet_type_bonus
+			is_cold = yes
+		}
+		modifier = {
+			factor = 2
+			has_modifier = "ultra_rich"
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "mineral_rich"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "mineral_poor"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "mineral_poor"
+		}
+		modifier = {
+			factor = 3
+			has_modifier = "mineral_world"
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_modifier = "frigid_world"
+				has_modifier = "geothermal_world"
+			}
+		}
+	}
+}
+
+# Surface
+d_small_rock_formation = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_minerals
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_mining_districts_surface }
+		modifier = { district_m_surface_mining_max = -1 district_mining_max = 1 }
+	}
+	planet_modifier = {
+		district_m_surface_mining_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_mining_deposits = yes
+			do3f_002_surface_mining_deposits = yes
+		}
+		do3f_can_have_random_mining_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_planet_class = pc_tropical
+					is_planet_class = pc_continental
+					is_planet_class = pc_savannah
+					is_planet_class = pc_desert
+					is_planet_class = pc_gaia
+					is_planet_class = pc_relic
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					is_planet_class = pc_continental
+					is_planet_class = pc_tropical
+					is_planet_class = pc_savannah
+					is_planet_class = pc_desert
+					is_planet_class = pc_gaia
+					is_planet_class = pc_relic
+					is_planet_class = pc_sterile
+					has_modifier = "mesa_world"
+					has_modifier = "plateau_world"
+				}
+				NOT = { has_modifier = "effusive_world" }
+			}
+			# Planetary Diversity
+			OR = {
+				is_planet_class = pc_tropical
+				is_planet_class = pc_wettidallylocked
+				is_planet_class = pc_savannah
+				is_planet_class = pc_desert
+				is_planet_class = pc_pd_dry_cave
+				is_planet_class = pc_salt
+				is_planet_class = pc_aquifer
+				is_planet_class = pc_coral
+				is_planet_class = pc_storm
+				is_planet_class = pc_pd_iceberg
+				is_planet_class = pc_ocean
+				is_planet_class = pc_reef
+				is_planet_class = pc_pd_archipelago
+				is_planet_class = pc_tundra
+				is_planet_class = pc_pd_cold_superhab
+				is_planet_class = pc_cryoflora
+				is_planet_class = pc_rogue
+				is_planet_class = pc_lichen
+				is_planet_class = pc_eyeball
+				is_planet_class = pc_glacio
+				is_planet_class = pc_lanthanide
+				is_planet_class = pc_desertislands
+				is_planet_class = pc_subarctic
+				is_planet_class = pc_mangrove
+				is_planet_class = pc_wetswamp
+				is_planet_class = pc_fog
+				is_planet_class = pc_biolumen
+				is_planet_class = pc_steppe
+				is_planet_class = pc_prairie
+				is_planet_class = pc_veld
+				is_planet_class = pc_semiarid
+				is_planet_class = pc_sandsea
+				is_planet_class = pc_oasis
+				is_planet_class = pc_swamp
+				is_planet_class = pc_mud
+				is_planet_class = pc_basalt
+				is_planet_class = pc_mushroom
+				is_planet_class = pc_ammonia
+				is_planet_class = pc_acid
+				is_planet_class = pc_methane
+				is_planet_class = pc_antarctic
+				is_planet_class = pc_aeolian
+				is_planet_class = pc_geothermal	
+				is_planet_class = pc_ash
+				is_planet_class = pc_continental
+				is_planet_class = pc_tropical
+				is_planet_class = pc_wettidallylocked
+				is_planet_class = pc_savannah
+				is_planet_class = pc_desert
+				is_planet_class = pc_pd_dry_cave
+				is_planet_class = pc_salt
+				is_planet_class = pc_aquifer
+				is_planet_class = pc_coral
+				pd_is_planet_class_gaia = yes
+				pd_aw_is_shroud_planet = yes
+				is_planet_class = pc_relic
+				is_planet_class = pc_nuked_relic
+				is_planet_class = pc_milarc_relic
+				is_planet_class = pc_cascadian
+				is_planet_class = pc_hajungle
+				is_planet_class = pc_cenote
+				is_planet_class = pc_steppe
+				is_planet_class = pc_prairie
+				is_planet_class = pc_veld
+				is_planet_class = pc_semiarid
+				is_planet_class = pc_sandsea
+				is_planet_class = pc_oasis
+				is_planet_class = pc_mesa
+				is_planet_class = pc_badlands
+				is_planet_class = pc_med
+				is_planet_class = pc_superhabitable
+				is_planet_class = pc_tidallylocked
+				is_planet_class = pc_supercon
+				is_planet_class = pc_pd_sinkhole
+				is_planet_class = pc_crystal
+				is_planet_class = pc_technoorganic
+				is_planet_class = pc_graveyard
+				is_planet_class = pc_retinal
+				is_planet_class = pc_forest
+				is_planet_class = pc_lake	
+				is_planet_class = pc_tepid
+				is_planet_class = pc_megaflora
+				is_planet_class = pc_pd_petrified
+				is_pd_megaflora_hive = yes
+				is_planet_class = pc_primal
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_cold = yes
+		}
+		modifier = {
+			factor = 2
+			has_modifier = "ultra_rich"
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "mineral_rich"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "mineral_poor"
+		}
+		modifier = {
+			factor = 0.5
+			is_planet_class = pc_desert
+		}
+		modifier = {
+			factor = 3
+			has_modifier = "mesa_world"
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_modifier = "supercontinental_world"
+				has_modifier = "plateau_world"
+				has_modifier = "ash_world"
+			}
+		}
+		modifier = {
+			factor = 0.25
+			has_modifier = "steppe_world"
+		}
+	}
+}
+d_large_rock_formation = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_minerals
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_mining_districts_surface }
+		modifier = { district_m_surface_mining_max = -2 district_mining_max = 2 }
+	}
+	planet_modifier = {
+		district_m_surface_mining_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_mining_deposits = yes
+			do3f_002_surface_mining_deposits = yes
+		}
+		do3f_can_have_random_mining_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_planet_class = pc_tropical
+					is_planet_class = pc_continental
+					is_planet_class = pc_savannah
+					is_planet_class = pc_desert
+					is_planet_class = pc_gaia
+					is_planet_class = pc_relic
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					is_planet_class = pc_continental
+					is_planet_class = pc_tropical
+					is_planet_class = pc_savannah
+					is_planet_class = pc_desert
+					is_planet_class = pc_gaia
+					is_planet_class = pc_relic
+					is_planet_class = pc_sterile
+					has_modifier = "mesa_world"
+					has_modifier = "plateau_world"
+				}
+				NOT = { has_modifier = "effusive_world" }
+			}
+			# Planetary Diversity
+			OR = {
+				is_planet_class = pc_tropical
+				is_planet_class = pc_wettidallylocked
+				is_planet_class = pc_savannah
+				is_planet_class = pc_desert
+				is_planet_class = pc_pd_dry_cave
+				is_planet_class = pc_salt
+				is_planet_class = pc_aquifer
+				is_planet_class = pc_coral
+				is_planet_class = pc_storm
+				is_planet_class = pc_pd_iceberg
+				is_planet_class = pc_ocean
+				is_planet_class = pc_reef
+				is_planet_class = pc_pd_archipelago
+				is_planet_class = pc_tundra
+				is_planet_class = pc_pd_cold_superhab
+				is_planet_class = pc_cryoflora
+				is_planet_class = pc_rogue
+				is_planet_class = pc_lichen
+				is_planet_class = pc_eyeball
+				is_planet_class = pc_glacio
+				is_planet_class = pc_lanthanide
+				is_planet_class = pc_desertislands
+				is_planet_class = pc_subarctic
+				is_planet_class = pc_mangrove
+				is_planet_class = pc_wetswamp
+				is_planet_class = pc_fog
+				is_planet_class = pc_biolumen
+				is_planet_class = pc_steppe
+				is_planet_class = pc_prairie
+				is_planet_class = pc_veld
+				is_planet_class = pc_semiarid
+				is_planet_class = pc_sandsea
+				is_planet_class = pc_oasis
+				is_planet_class = pc_swamp
+				is_planet_class = pc_mud
+				is_planet_class = pc_basalt
+				is_planet_class = pc_mushroom
+				is_planet_class = pc_ammonia
+				is_planet_class = pc_acid
+				is_planet_class = pc_methane
+				is_planet_class = pc_antarctic
+				is_planet_class = pc_aeolian
+				is_planet_class = pc_geothermal	
+				is_planet_class = pc_ash
+				is_planet_class = pc_continental
+				is_planet_class = pc_tropical
+				is_planet_class = pc_wettidallylocked
+				is_planet_class = pc_savannah
+				is_planet_class = pc_desert
+				is_planet_class = pc_pd_dry_cave
+				is_planet_class = pc_salt
+				is_planet_class = pc_aquifer
+				is_planet_class = pc_coral
+				pd_is_planet_class_gaia = yes
+				pd_aw_is_shroud_planet = yes
+				is_planet_class = pc_relic
+				is_planet_class = pc_nuked_relic
+				is_planet_class = pc_milarc_relic
+				is_planet_class = pc_cascadian
+				is_planet_class = pc_hajungle
+				is_planet_class = pc_cenote
+				is_planet_class = pc_steppe
+				is_planet_class = pc_prairie
+				is_planet_class = pc_veld
+				is_planet_class = pc_semiarid
+				is_planet_class = pc_sandsea
+				is_planet_class = pc_oasis
+				is_planet_class = pc_mesa
+				is_planet_class = pc_badlands
+				is_planet_class = pc_med
+				is_planet_class = pc_superhabitable
+				is_planet_class = pc_tidallylocked
+				is_planet_class = pc_supercon
+				is_planet_class = pc_pd_sinkhole
+				is_planet_class = pc_crystal
+				is_planet_class = pc_technoorganic
+				is_planet_class = pc_graveyard
+				is_planet_class = pc_retinal
+				is_planet_class = pc_forest
+				is_planet_class = pc_lake	
+				is_planet_class = pc_tepid
+				is_planet_class = pc_megaflora
+				is_planet_class = pc_pd_petrified
+				is_pd_megaflora_hive = yes
+				is_planet_class = pc_primal
+			}
+		}		
+	}
+
+	drop_weight = {
+		weight = @med
+		modifier = {
+			factor = @planet_type_bonus
+			is_cold = yes
+		}
+		modifier = {
+			factor = 2
+			has_modifier = "ultra_rich"
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "mineral_rich"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "mineral_poor"
+		}
+		modifier = {
+			factor = 0.5
+			is_planet_class = pc_desert
+		}
+		modifier = {
+			factor = 3
+			has_modifier = "mesa_world"
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_modifier = "supercontinental_world"
+				has_modifier = "plateau_world"
+				has_modifier = "ash_world"
+			}
+		}
+		modifier = {
+			factor = 0.25
+			has_modifier = "steppe_world"
+		}
+	}
+}
+
+# Unstable
+d_loose_rock = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_minerals
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_mining_districts_unstable }
+		modifier = { district_m_unstable_mining_max = -1 district_mining_max = 1 }
+	}
+	planet_modifier = {
+		district_m_unstable_mining_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_mining_deposits = yes
+			do3f_002_unstable_mining_deposits = yes
+		}
+		do3f_can_have_random_mining_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_planet_class = pc_savannah
+					is_planet_class = pc_continental
+					is_planet_class = pc_ocean
+					is_planet_class = pc_tropical
+					is_planet_class = pc_desert
+					is_planet_class = pc_relic
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					has_modifier = aeolian_world
+					has_modifier = steppe_world
+					has_modifier = mesocyclonic_world
+					has_modifier = forgotten_world
+					has_modifier = atoll_world
+					has_modifier = storm_world
+					has_modifier = boreal_world
+					has_modifier = monsoon_world
+					has_modifier = megaflora_world
+					has_modifier = forest_world
+					has_modifier = moraine_world
+					has_modifier = dust_world
+					has_modifier = effusive_world
+					has_modifier = dune_world
+					has_modifier = oasis_world
+					has_modifier = primal_world
+					has_modifier = noxious_world
+					has_modifier = swamp_world
+					has_modifier = iceberg_world
+				}
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_cold = yes
+		}
+	}
+}
+d_loose_rock_formation = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_minerals
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_mining_districts_unstable }
+		modifier = { district_m_unstable_mining_max = -2 district_mining_max = 2 }
+	}
+	planet_modifier = {
+		district_m_unstable_mining_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_mining_deposits = yes
+			do3f_002_unstable_mining_deposits = yes
+		}
+		do3f_can_have_random_mining_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_planet_class = pc_savannah
+					is_planet_class = pc_continental
+					is_planet_class = pc_ocean
+					is_planet_class = pc_tropical
+					is_planet_class = pc_desert
+					is_planet_class = pc_relic
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					# Subclasses
+					has_modifier = salt_world
+					has_modifier = aeolian_world
+					has_modifier = steppe_world
+					has_modifier = mesocyclonic_world
+					has_modifier = forgotten_world
+					has_modifier = atoll_world
+					has_modifier = storm_world
+					has_modifier = boreal_world
+					has_modifier = monsoon_world
+					has_modifier = megaflora_world
+					has_modifier = forest_world
+					has_modifier = moraine_world
+					has_modifier = dust_world
+					has_modifier = effusive_world
+					has_modifier = dune_world
+					has_modifier = oasis_world
+					has_modifier = primal_world
+					has_modifier = noxious_world
+					has_modifier = swamp_world
+					has_modifier = iceberg_world
+				}
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @med
+		modifier = {
+			factor = @planet_type_bonus
+			is_cold = yes
+		}
+	}
+}
+# Mountain
+d_exposed_mountain_resources = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_minerals
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_mining_districts_mountain }
+		modifier = { district_m_mountain_mining_max = -1 district_mining_max = 1 }
+	}
+	planet_modifier = {
+		district_m_mountain_mining_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_mining_deposits = yes
+			do3f_002_unstable_mining_deposits = yes
+		}
+		do3f_can_have_random_mining_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_planet_class = pc_continental
+					is_planet_class = pc_desert
+					is_planet_class = pc_alpine
+					is_planet_class = pc_arctic
+					is_planet_class = pc_arid
+					is_planet_class = pc_tundra
+					is_planet_class = pc_gaia
+					is_planet_class = pc_relic
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					is_planet_class = pc_continental
+					is_planet_class = pc_desert
+					is_planet_class = pc_alpine
+					is_planet_class = pc_arctic
+					is_planet_class = pc_arid
+					is_planet_class = pc_tundra
+					is_planet_class = pc_gaia
+					is_planet_class = pc_relic
+					is_planet_class = pc_tidallylocked
+					is_planet_class = pc_sterile
+					has_modifier = "noxious_world"
+				}
+				NOR = { 
+					has_modifier = "eyeball_world"
+					has_modifier = "karst_world"
+					has_modifier = "iceberg_world"
+				}
+			}
+			OR = {
+				is_planet_class = pc_continental
+				is_planet_class = pc_desert
+				is_planet_class = pc_pd_dry_cave
+				is_planet_class = pc_salt
+				is_planet_class = pc_aquifer
+				is_planet_class = pc_coral
+				is_planet_class = pc_alpine
+				is_planet_class = pc_pd_cold_cave
+				is_planet_class = pc_highland
+				is_planet_class = pc_duneforest
+				is_planet_class = pc_arctic
+				is_planet_class = pc_arid
+				is_planet_class = pc_pd_dry_superhab
+				is_planet_class = pc_outback
+				is_planet_class = pc_coastal
+				is_planet_class = pc_tundra
+				is_planet_class = pc_pd_cold_superhab
+				is_planet_class = pc_cryoflora
+				is_planet_class = pc_rogue
+				is_planet_class = pc_lichen
+				is_planet_class = pc_eyeball
+				is_planet_class = pc_glacio
+				is_planet_class = pc_lanthanide
+				pd_is_planet_class_gaia = yes
+				pd_aw_is_shroud_planet = yes
+				is_planet_class = pc_relic
+				is_planet_class = pc_nuked_relic
+				is_planet_class = pc_milarc_relic
+				is_planet_class = pc_cascadian
+				is_planet_class = pc_hajungle
+				is_planet_class = pc_cenote
+				is_planet_class = pc_sandsea
+				is_planet_class = pc_oasis
+				is_planet_class = pc_mesa
+				is_planet_class = pc_badlands
+				is_planet_class = pc_med
+				is_planet_class = pc_frozen_desert
+				is_planet_class = pc_hadesert
+				is_planet_class = pc_boreal
+				is_planet_class = pc_snow
+				is_planet_class = pc_swamp
+				is_planet_class = pc_mud
+				is_planet_class = pc_basalt
+				is_planet_class = pc_mushroom
+				is_planet_class = pc_ammonia
+				is_planet_class = pc_acid
+				is_planet_class = pc_methane
+				is_planet_class = pc_tidallylocked
+				is_planet_class = pc_supercon
+				is_planet_class = pc_pd_sinkhole
+				is_planet_class = pc_crystal
+				is_planet_class = pc_technoorganic
+				is_planet_class = pc_graveyard
+				is_planet_class = pc_antarctic
+				is_planet_class = pc_aeolian
+				is_planet_class = pc_geothermal
+				is_planet_class = pc_retinal
+				is_planet_class = pc_forest
+				is_planet_class = pc_lake	
+				is_planet_class = pc_tepid	
+				is_planet_class = pc_pd_petrified
+				is_planet_class = pc_megaflora	
+				is_pd_megaflora_hive = yes
+				is_planet_class = pc_ash
+				is_planet_class = pc_primal
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_cold = yes
+		}
+		modifier = {
+			factor = 2
+			has_modifier = "ultra_rich"
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "mineral_rich"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "mineral_poor"
+		}
+		modifier = {
+			factor = 5
+			has_modifier = "mineral_world"
+		}
+		modifier = {
+			factor = 3
+			has_modifier = "highland_world"
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				is_planet_class = pc_alpine
+				has_modifier = "adiabatic_world"
+				has_modifier = "frigid_world"
+				has_modifier = "ash_world"
+			}
+		}
+		modifier = {
+			factor = 0.25
+			has_modifier = "steppe_world"
+		}
+		modifier = {
+			factor = @planet_type_bonus
+			is_pd_exotic = yes
+		}
+	}
+}
+
+# Deep
+d_deep_minerals = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_minerals
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_mining_districts_deep }
+		modifier = { district_m_deep_mining_max = -1 district_mining_max = 1 }
+	}
+	planet_modifier = {
+		district_m_deep_mining_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_mining_deposits = yes
+			do3f_002_unstable_mining_deposits = yes
+		}
+		do3f_can_have_random_mining_districts = yes
+		OR = {
+			# Not a subclass in Real Space: New Frontiers
+			AND = {
+				NOT = {
+					has_global_flag = has_new_frontiers_mod
+					is_planet_subclass = yes
+				}
+				# Vanilla
+				OR = {
+					is_planet_class = pc_ocean
+					is_planet_class = pc_tropical
+					is_planet_class = pc_savannah
+					is_planet_class = pc_alpine
+					is_planet_class = pc_arctic
+					is_planet_class = pc_arid
+					is_planet_class = pc_tundra
+					is_planet_class = pc_nuked
+					is_planet_class = pc_gaia
+					is_planet_class = pc_relic
+				}
+			}
+			# Real Space: New Frontiers
+			AND = {
+				has_global_flag = has_new_frontiers_mod
+				OR = {
+					is_planet_class = pc_ocean
+					is_planet_class = pc_tropical
+					is_planet_class = pc_savannah
+					is_planet_class = pc_alpine
+					is_planet_class = pc_arctic
+					is_planet_class = pc_arid
+					is_planet_class = pc_tundra
+					is_planet_class = pc_nuked
+					is_planet_class = pc_gaia
+					is_planet_class = pc_relic
+					is_planet_class = pc_tidallylocked
+					is_planet_class = pc_hollow
+					has_modifier = "effusive_world"
+				}
+				NOR = {
+					has_modifier = "panthalassic_world"
+					has_modifier = "atoll_world"
+					has_modifier = "eyeball_world"
+					has_modifier = "subglacial_world"
+					has_modifier = "mesa_world"
+					has_modifier = "plateau_world"
+					has_modifier = "noxious_world"
+				}
+			}
+			# Planetary Diversity
+			OR = {
+				is_planet_class = pc_ocean
+				is_planet_class = pc_reef
+				is_planet_class = pc_pd_archipelago
+				is_planet_class = pc_alpine
+				is_planet_class = pc_pd_cold_cave
+				is_planet_class = pc_highland
+				is_planet_class = pc_duneforest
+				is_planet_class = pc_arctic
+				is_planet_class = pc_arid
+				is_planet_class = pc_pd_dry_superhab
+				is_planet_class = pc_outback
+				is_planet_class = pc_coastal
+				is_planet_class = pc_tundra
+				is_planet_class = pc_pd_cold_superhab
+				is_planet_class = pc_cryoflora
+				is_planet_class = pc_rogue
+				is_planet_class = pc_lichen
+				is_planet_class = pc_eyeball
+				is_planet_class = pc_glacio
+				is_planet_class = pc_lanthanide
+				pd_is_planet_class_nuked = yes
+				is_pd_radiotrophic_world = yes
+				pd_is_planet_class_gaia = yes
+				pd_aw_is_shroud_planet = yes
+				is_planet_class = pc_relic
+				is_planet_class = pc_nuked_relic
+				is_planet_class = pc_milarc_relic
+				is_planet_class = pc_desertislands
+				is_planet_class = pc_mangrove
+				is_planet_class = pc_wetswamp
+				is_planet_class = pc_fog
+				is_planet_class = pc_biolumen
+				is_planet_class = pc_swamp
+				is_planet_class = pc_mud
+				is_planet_class = pc_basalt
+				is_planet_class = pc_frozen_desert
+				is_planet_class = pc_glacial
+				is_planet_class = pc_hadesert
+				is_planet_class = pc_boreal
+				is_planet_class = pc_snow
+				is_planet_class = pc_mushroom
+				is_planet_class = pc_ammonia
+				is_planet_class = pc_acid
+				is_planet_class = pc_methane
+				is_planet_class = pc_graveyard
+				is_planet_class = pc_crystal
+				is_planet_class = pc_technoorganic
+				is_planet_class = pc_antarctic
+				is_planet_class = pc_aeolian
+				is_planet_class = pc_geothermal
+				is_planet_class = pc_subarctic
+				is_planet_class = pc_karst	
+				is_planet_class = pc_ash
+				is_planet_class = pc_storm
+				is_planet_class = pc_pd_iceberg
+				is_planet_class = pc_ocean
+				is_planet_class = pc_reef
+				is_planet_class = pc_pd_archipelago
+				pd_is_planet_for_aqua_trait = yes
+				is_planet_class = pc_pd_hycean	
+				is_planet_class = pc_tropical
+				is_planet_class = pc_wettidallylocked
+				is_planet_class = pc_savannah
+				pd_is_planet_class_nuked = yes
+				is_pd_radiotrophic_world = yes
+				pd_is_planet_class_gaia = yes
+				pd_aw_is_shroud_planet = yes
+				is_planet_class = pc_relic
+				is_planet_class = pc_nuked_relic
+				is_planet_class = pc_milarc_relic
+				is_planet_class = pc_desertislands
+				is_planet_class = pc_subarctic
+				is_planet_class = pc_mangrove
+				is_planet_class = pc_wetswamp
+				is_planet_class = pc_fog
+				is_planet_class = pc_hajungle
+				is_planet_class = pc_cenote
+				is_planet_class = pc_biolumen
+				is_planet_class = pc_steppe
+				is_planet_class = pc_prairie
+				is_planet_class = pc_veld
+				is_planet_class = pc_semiarid
+				is_planet_class = pc_glacial
+				is_planet_class = pc_superhabitable
+				is_planet_class = pc_graveyard
+				is_planet_class = pc_crystal
+				is_planet_class = pc_technoorganic
+				is_planet_class = pc_karst
+				is_planet_class = pc_storm
+				is_planet_class = pc_pd_iceberg
+			}
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_cold = yes
+		}
+		modifier = {
+			factor = 2
+			has_modifier = "ultra_rich"
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "mineral_rich"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "mineral_poor"
+		}
+		modifier = {
+			factor = 5
+			OR = {
+				has_modifier = "infernal_world"
+				has_modifier = "mineral_world"
+			}
+		}
+		modifier = {
+			factor = 4
+			has_modifier = "karst_world"
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_modifier = "reef_world"
+				has_modifier = "adiabatic_world"
+				is_planet_class = pc_hollow
+			}
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_modifier = "frigid_world"
+				has_modifier = "geothermal_world"
+			}
+		}
+		modifier = {
+			factor = 2
+			has_modifier = "iceberg_world"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "subglacial_world"
+		}	
+		modifier = {
+			factor = @planet_type_bonus
+			is_pd_exotic = yes
+		}
+	}
+}
+
+# Farming
+# Nature
+d_berries_hedge = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_food
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_farming_districts_nature }
+		modifier = { district_f_nature_farms_max = -1 district_farming_max = 1 }
+	}
+	planet_modifier = {
+		district_f_nature_farms_max = 1
+	}
+
+	potential = {
+		NOT = { do3f_is_special_exotic_farming_pc = yes }
+		OR = {
+			do3f_no_farming_deposits = yes
+			do3f_002_nature_farms_deposits = yes
+		}
+		do3f_can_have_random_farming_districts = yes
+		OR = {
+			is_planet_class = pc_ocean
+			is_planet_class = pc_tropical
+			is_planet_class = pc_savannah
+			is_planet_class = pc_continental
+			is_planet_class = pc_gaia
+			has_modifier = "geothermal_world"
+		}
+		NOR = {
+			has_modifier = "panthalassic_world"
+			has_modifier = "storm_world"
+			has_modifier = "reef_world"
+			has_modifier = "swamp_world"
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_wet = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "lush_planet"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "bleak_planet"
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				has_modifier = "monsoon_world"
+				has_modifier = "megaflora_world"
+				has_modifier = "noxious_world"
+			}
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_modifier = "effusive_world"
+				has_modifier = "supercontinental_world"
+			}
+		}
+	}
+}
+d_fruit_fields = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_food
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_farming_districts_nature }
+		modifier = { district_f_nature_farms_max = -3 district_farming_max = 3 }
+	}
+	planet_modifier = {
+		district_f_nature_farms_max = 3
+	}
+
+	potential = {
+		NOT = { do3f_is_special_exotic_farming_pc = yes }
+		OR = {
+			do3f_no_farming_deposits = yes
+			do3f_002_nature_farms_deposits = yes
+		}
+		do3f_can_have_random_farming_districts = yes
+		OR = {
+			is_planet_class = pc_ocean
+			is_planet_class = pc_tropical
+			is_planet_class = pc_savannah
+			is_planet_class = pc_continental
+			is_planet_class = pc_gaia
+			has_modifier = "geothermal_world"
+		}
+		NOR = {
+			has_modifier = "panthalassic_world"
+			has_modifier = "storm_world"
+			has_modifier = "reef_world"
+			has_modifier = "swamp_world"
+		}
+	}
+
+	drop_weight = {
+		weight = @med
+		modifier = {
+			factor = @planet_type_bonus
+			is_wet = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "lush_planet"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "bleak_planet"
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				has_modifier = "monsoon_world"
+				has_modifier = "megaflora_world"
+				has_modifier = "noxious_world"
+			}
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_modifier = "effusive_world"
+				has_modifier = "supercontinental_world"
+			}
+		}
+	}
+}
+
+# Ocean
+d_underwater_reef = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_food
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_farming_districts_ocean }
+		modifier = { district_f_ocean_farms_max = -1 district_farming_max = 1 }
+	}
+	planet_modifier = {
+		district_f_ocean_farms_max = 1
+	}
+
+	potential = {
+		NOT = { do3f_is_special_exotic_farming_pc = yes }
+		OR = {
+			do3f_no_farming_deposits = yes
+			do3f_002_ocean_farming_deposits = yes
+		}
+		do3f_can_have_random_farming_districts = yes
+		OR = {
+			is_planet_class = pc_gaia
+			is_planet_class = pc_ocean
+			has_modifier = "young_world"
+			has_modifier = "subglacial_world"
+			has_modifier = "eyeball_world"
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_wet = yes
+		}
+		modifier = {
+			factor = 3
+			has_modifier = "reef_world"
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "lush_planet"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "bleak_planet"
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_modifier = "young_world"
+				has_modifier = "storm_world"
+				has_modifier = "eyeball_world"
+				has_modifier = "subglacial_world"
+			}
+		}
+	}
+}
+d_underwater_ecosystem = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_food
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_farming_districts_ocean }
+		modifier = { district_f_ocean_farms_max = -3 district_farming_max = 3 }
+	}
+	planet_modifier = {
+		district_f_ocean_farms_max = 3
+	}
+
+	potential = {
+		NOT = { do3f_is_special_exotic_farming_pc = yes }
+		OR = {
+			do3f_no_farming_deposits = yes
+			do3f_002_ocean_farming_deposits = yes
+		}
+		do3f_can_have_random_farming_districts = yes
+		OR = {
+			is_planet_class = pc_gaia
+			is_planet_class = pc_ocean
+			has_modifier = "young_world"
+			has_modifier = "subglacial_world"
+			has_modifier = "eyeball_world"
+		}
+	}
+
+	drop_weight = {
+		weight = @low
+		modifier = {
+			factor = @planet_type_bonus
+			is_wet = yes
+		}
+		modifier = {
+			factor = 3
+			has_modifier = "reef_world"
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "lush_planet"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "bleak_planet"
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_modifier = "young_world"
+				has_modifier = "storm_world"
+				has_modifier = "eyeball_world"
+				has_modifier = "subglacial_world"
+			}
+		}
+	}
+}
+
+# Exotic
+d_exotic_fauna = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_food
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_farming_districts_exotic }
+		modifier = { district_f_exotic_farms_max = -1 district_farming_max = 1 }
+	}
+	planet_modifier = {
+		district_f_exotic_farms_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_farming_deposits = yes
+			do3f_002_exotic_farms_deposits = yes
+			do3f_is_special_exotic_farming_pc = yes
+		}
+		OR = {
+			AND = {
+				do3f_can_have_random_farming_districts = yes
+				OR = {
+					is_cold = yes
+					has_modifier = "mycelium_world"
+				}
+				NOR = { 
+					has_modifier = "taiga_world"
+					has_modifier = "geothermal_world"
+				}
+			}
+			do3f_is_special_exotic_farming_pc = yes
+		}
+		
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_wet = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "lush_planet"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "bleak_planet"
+		}
+		modifier = {
+			factor = 4
+			has_modifier = "mushroom_world"
+		}
+		modifier = {
+			factor = 2
+			has_modifier = "mycelium_world"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "highland_world"
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_modifier = "moraine_world"
+				has_modifier = "glacial_world"
+				has_modifier = "frigid_world"
+				has_modifier = "mineral_world"
+			}
+		}
+		modifier = {
+			factor = 10
+			do3f_is_special_exotic_farming_pc = yes
+		}
+	}
+}
+d_mushrooms = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_food
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_farming_districts_exotic }
+		modifier = { district_f_exotic_farms_max = -1 district_farming_max = 1 }
+	}
+	planet_modifier = {
+		district_f_exotic_farms_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_farming_deposits = yes
+			do3f_002_exotic_farms_deposits = yes
+			do3f_is_special_exotic_farming_pc = yes
+		}
+		OR = {
+			AND = {
+				do3f_can_have_random_farming_districts = yes
+				OR = {
+					is_cold = yes
+					has_modifier = "mycelium_world"
+				}
+				NOR = { 
+					has_modifier = "taiga_world"
+					has_modifier = "geothermal_world"
+				}
+			}
+			do3f_is_special_exotic_farming_pc = yes
+		}
+		
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_wet = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "lush_planet"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "bleak_planet"
+		}
+		modifier = {
+			factor = 4
+			has_modifier = "mushroom_world"
+		}
+		modifier = {
+			factor = 2
+			has_modifier = "mycelium_world"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "highland_world"
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_modifier = "moraine_world"
+				has_modifier = "glacial_world"
+				has_modifier = "frigid_world"
+				has_modifier = "mineral_world"
+			}
+		}
+		modifier = {
+			factor = 10
+			do3f_is_special_exotic_farming_pc = yes
+		}
+	}
+}
+d_mushroom_ecosystem = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_food
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_farming_districts_exotic }
+		modifier = { district_f_exotic_farms_max = -2 district_farming_max = 2 }
+	}
+	planet_modifier = {
+		district_f_exotic_farms_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_farming_deposits = yes
+			do3f_002_exotic_farms_deposits = yes
+			do3f_is_special_exotic_farming_pc = yes
+		}
+		OR = {
+			AND = {
+				do3f_can_have_random_farming_districts = yes
+				OR = {
+					is_cold = yes
+					has_modifier = "mycelium_world"
+				}
+				NOR = { 
+					has_modifier = "taiga_world"
+					has_modifier = "geothermal_world"
+				}
+			}
+			do3f_is_special_exotic_farming_pc = yes
+		}
+		
+	}
+
+	drop_weight = {
+		weight = @med
+		modifier = {
+			factor = @planet_type_bonus
+			is_wet = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "lush_planet"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "bleak_planet"
+		}
+		modifier = {
+			factor = 4
+			has_modifier = "mushroom_world"
+		}
+		modifier = {
+			factor = 2
+			has_modifier = "mycelium_world"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "highland_world"
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_modifier = "moraine_world"
+				has_modifier = "glacial_world"
+				has_modifier = "frigid_world"
+				has_modifier = "mineral_world"
+			}
+		}
+		modifier = {
+			factor = 10
+			do3f_is_special_exotic_farming_pc = yes
+		}
+	}
+}
+
+# Oasis
+d_blooming_oasis = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_food
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_farming_districts_oasis }
+		modifier = { district_f_oasis_farms_max = -1 district_farming_max = 1 }
+	}
+	planet_modifier = {
+		district_f_oasis_farms_max = 1
+	}
+
+	potential = {
+		NOT = { do3f_is_special_exotic_farming_pc = yes }
+		OR = {
+			do3f_no_farming_deposits = yes
+			do3f_002_oasis_farms_deposits = yes
+		}
+		do3f_can_have_random_farming_districts = yes
+		OR = {
+			OR = {
+				is_planet_class = pc_arid
+				is_planet_class = pc_pd_dry_superhab
+				is_planet_class = pc_outback
+				is_planet_class = pc_coastal
+				is_planet_class = pc_desert
+				is_planet_class = pc_pd_dry_cave
+				is_planet_class = pc_salt
+				is_planet_class = pc_aquifer
+				is_planet_class = pc_coral
+				is_planet_class = pc_tropical
+				is_planet_class = pc_wettidallylocked
+				is_planet_class = pc_mangrove
+				is_planet_class = pc_hajungle
+				is_planet_class = pc_cenote
+				is_planet_class = pc_biolumen
+			}
+			OR = {
+				is_planet_class = pc_arid
+				is_planet_class = pc_desert
+				is_planet_class = pc_tidallylocked
+				has_modifier = "flaming_world"
+			}
+		}
+		NOT = {
+			has_modifier = "salt_world"
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = @planet_type_bonus
+			is_wet = yes
+		}
+		modifier = {
+			factor = 2
+			has_modifier = "oasis_world"
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "lush_planet"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "bleak_planet"
+		}
+		modifier = {
+			factor = 0.25
+			has_modifier = "karst_world"
+			has_modifier = "flaming_world"
+		}
+	}
+}
+
+# Cave
+d_lush_caves = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_food
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_farming_districts_cave }
+		modifier = { district_f_cave_farms_max = -1 district_farming_max = 1 }
+	}
+	planet_modifier = {
+		district_f_cave_farms_max = 1
+	}
+
+	potential = {
+		NOT = { do3f_is_special_exotic_farming_pc = yes }
+		OR = {
+			do3f_no_farming_deposits = yes
+			do3f_002_cave_farms_deposits = yes
+		}
+		do3f_can_have_random_farming_districts = yes
+		OR = {
+			is_planet_class = pc_nuked
+			is_cold = yes
+		# Real Space: New Frontiers
+			has_modifier = "infernal_world"
+		}
+		NOR = { 
+			has_modifier = "iceberg_world"
+			has_modifier = "geothermal_world"
+		}
+	}
+
+	drop_weight = {
+		weight = @high
+		modifier = {
+			factor = 0.33
+			is_planet_class = pc_nuked
+		}
+		modifier = {
+			factor = @planet_type_bonus
+			is_wet = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "lush_planet"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "bleak_planet"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "moraine_world"
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_modifier = "glacial_world"
+				has_modifier = "frigid_world"
+				has_modifier = "mineral_world"
+				has_modifier = "infernal_world"
+			}
+		}
+	}
+}
+d_lush_cave_complex = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+
+	category = deposit_cat_food
+
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+	}
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_farming_districts_cave }
+		modifier = { district_f_cave_farms_max = -3 district_farming_max = 3 }
+	}
+	planet_modifier = {
+		district_f_cave_farms_max = 3
+	}
+
+	potential = {
+		NOT = { do3f_is_special_exotic_farming_pc = yes }
+		OR = {
+			do3f_no_farming_deposits = yes
+			do3f_002_cave_farms_deposits = yes
+		}
+		do3f_can_have_random_farming_districts = yes
+		OR = {
+			is_planet_class = pc_nuked
+			is_cold = yes
+		# Real Space: New Frontiers
+			has_modifier = "infernal_world"
+		}
+		NOR = { 
+			has_modifier = "iceberg_world"
+			has_modifier = "geothermal_world"
+		}
+	}
+
+	drop_weight = {
+		weight = @low
+		modifier = {
+			factor = 0.33
+			is_planet_class = pc_nuked
+		}
+		modifier = {
+			factor = @planet_type_bonus
+			is_wet = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_modifier = "lush_planet"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "bleak_planet"
+		}
+		modifier = {
+			factor = 0.5
+			has_modifier = "moraine_world"
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				has_modifier = "glacial_world"
+				has_modifier = "frigid_world"
+				has_modifier = "mineral_world"
+				has_modifier = "infernal_world"
+			}
+		}
+	}
+}
+
+###########################################################################
+#Primary Districts
+#Strategic 'sources
+# Motes
+d_carbon_compounds = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_primary_districts_chemistry }
+		modifier = { district_do3f_chemistry_industry_max = -1 building_mote_harvesters_max = 1 }
+	}
+	planet_modifier = {
+		district_do3f_chemistry_industry_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_primary_deposits = yes
+			do3f_002_chemistry_deposits = yes
+		}
+		do3f_can_have_random_primary_districts = yes
+		NOR = {
+			has_modifier = "panthalassic_world"
+			has_modifier = "iceberg_world"
+			has_modifier = "eyeball_world"
+			has_modifier = "subglacial_world"
+		}
+	}
+
+	drop_weight = {
+		weight = @high_rare
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 3
+			OR = {
+				has_modifier = "infernal_world"
+				has_modifier = "karst_world"
+				has_modifier = "mesa_world"
+			}
+		}			
+		modifier = {
+			factor = 2
+			is_planet_class = pc_gaia
+		}
+		modifier = {
+			factor = 2
+			is_extreme_subclass = yes
+		}
+		modifier = {
+			factor = 0
+			solar_system = {
+				OR = {
+					has_star_flag = empire_home_system
+					has_star_flag = sol_system
+					has_star_flag = deneb_system
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			is_planet_class = pc_karst
+		}			
+		modifier = {
+			factor = 2
+			pd_is_planet_class_gaia = yes
+		}			
+		modifier = {
+			factor = 2
+			pd_aw_is_shroud_planet = yes
+		}			
+		modifier = {
+			factor = 2
+			is_planet_class = pc_graveyard
+		}		
+		modifier = {
+			factor = 1
+			is_planet_class = pc_crystal
+		}		
+		modifier = {
+			factor = 1
+			is_planet_class = pc_technoorganic
+		}
+		modifier = {
+			factor = 2
+			is_planet_class = pc_primal
+		}
+	}
+}
+d_complex_carbon_compounds = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_primary_districts_chemistry }
+		modifier = { district_do3f_chemistry_industry_max = -2 building_mote_harvesters_max = 2 }
+	}
+	planet_modifier = {
+		district_do3f_chemistry_industry_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_primary_deposits = yes
+			do3f_002_chemistry_deposits = yes
+		}
+		do3f_can_have_random_primary_districts = yes
+		NOR = {
+			has_modifier = "panthalassic_world"
+			has_modifier = "iceberg_world"
+			has_modifier = "eyeball_world"
+			has_modifier = "subglacial_world"
+		}
+	}
+
+	drop_weight = {
+		weight = @high_rare
+		modifier = {
+			factor = @planet_type_bonus
+			is_dry = yes
+		}
+		modifier = {
+			factor = 3
+			OR = {
+				has_modifier = "infernal_world"
+				has_modifier = "karst_world"
+				has_modifier = "mesa_world"
+			}
+		}			
+		modifier = {
+			factor = 2
+			is_planet_class = pc_gaia
+		}
+		modifier = {
+			factor = 2
+			is_extreme_subclass = yes
+		}
+		modifier = {
+			factor = 0
+			solar_system = {
+				OR = {
+					has_star_flag = empire_home_system
+					has_star_flag = sol_system
+					has_star_flag = deneb_system
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			is_planet_class = pc_karst
+		}			
+		modifier = {
+			factor = 2
+			pd_is_planet_class_gaia = yes
+		}			
+		modifier = {
+			factor = 2
+			pd_aw_is_shroud_planet = yes
+		}			
+		modifier = {
+			factor = 2
+			is_planet_class = pc_graveyard
+		}		
+		modifier = {
+			factor = 1
+			is_planet_class = pc_crystal
+		}		
+		modifier = {
+			factor = 1
+			is_planet_class = pc_technoorganic
+		}
+		modifier = {
+			factor = 2
+			is_planet_class = pc_primal
+		}
+	}
+}
+
+# Gas
+d_bubbling_lake = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_primary_districts_gas }
+		modifier = { district_do3f_gas_refinery_max = -1 building_gas_extractors_max = 1 }
+	}
+	planet_modifier = {
+		district_do3f_gas_refinery_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_primary_deposits = yes
+			do3f_002_gas_deposits = yes
+		}
+		do3f_can_have_random_primary_districts = yes
+		NOR = {
+			has_modifier = "dune_world"
+			has_modifier = "infernal_world"
+			has_modifier = "dust_world"
+			has_modifier = "panthalassic_world"
+			has_modifier = "storm_world"
+			has_modifier = "reef_world"
+			has_modifier = "glacial_world"
+			has_modifier = "iceberg_world"
+			has_modifier = "eyeball_world"
+			has_modifier = "subglacial_world"
+			has_modifier = "mineral_world"
+			has_modifier = "adiabatic_world"
+		}
+	}
+
+	drop_weight = {
+		weight = @high_rare
+		modifier = {
+			factor = @planet_type_bonus
+			is_wet = yes
+		}
+		modifier = {
+			factor = 10
+			OR = {
+				has_modifier = "bog_world"
+				has_modifier = "swamp_world"
+				has_modifier = "noxious_world"
+			}
+		}
+		modifier = {
+			factor = 3
+			has_modifier = "taiga_world"
+		}		
+		modifier = {
+			factor = 2
+			is_planet_class = pc_gaia
+		}
+		modifier = {
+			factor = 2
+			is_extreme_subclass = yes
+		}
+		modifier = {
+			factor = 0
+			solar_system = {
+				OR = {
+					has_star_flag = empire_home_system
+					has_star_flag = sol_system
+					has_star_flag = deneb_system
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			pd_is_planet_class_gaia = yes
+		}		
+		modifier = {
+			factor = 2
+			pd_aw_is_shroud_planet = yes
+		}					
+		modifier = {
+			factor = 1
+			is_planet_class = pc_graveyard
+		}		
+		modifier = {
+			factor = 2
+			is_planet_class = pc_crystal
+		}		
+		modifier = {
+			factor = 2
+			is_planet_class = pc_technoorganic
+		}
+	}
+}
+d_bubbling_ocean = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_primary_districts_gas }
+		modifier = { district_do3f_gas_refinery_max = -2 building_gas_extractors_max = 2 }
+	}
+	planet_modifier = {
+		district_do3f_gas_refinery_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_primary_deposits = yes
+			do3f_002_gas_deposits = yes
+		}
+		do3f_can_have_random_primary_districts = yes
+		NOR = {
+			has_modifier = "dune_world"
+			has_modifier = "infernal_world"
+			has_modifier = "dust_world"
+			has_modifier = "panthalassic_world"
+			has_modifier = "storm_world"
+			has_modifier = "reef_world"
+			has_modifier = "glacial_world"
+			has_modifier = "iceberg_world"
+			has_modifier = "eyeball_world"
+			has_modifier = "subglacial_world"
+			has_modifier = "mineral_world"
+			has_modifier = "adiabatic_world"
+		}
+	}
+
+	drop_weight = {
+		weight = @low_rare
+		modifier = {
+			factor = @planet_type_bonus
+			is_wet = yes
+		}
+		modifier = {
+			factor = 10
+			OR = {
+				has_modifier = "bog_world"
+				has_modifier = "swamp_world"
+				has_modifier = "noxious_world"
+			}
+		}
+		modifier = {
+			factor = 3
+			has_modifier = "taiga_world"
+		}		
+		modifier = {
+			factor = 2
+			is_planet_class = pc_gaia
+		}
+		modifier = {
+			factor = 2
+			is_extreme_subclass = yes
+		}
+		modifier = {
+			factor = 0
+			solar_system = {
+				OR = {
+					has_star_flag = empire_home_system
+					has_star_flag = sol_system
+					has_star_flag = deneb_system
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			pd_is_planet_class_gaia = yes
+		}		
+		modifier = {
+			factor = 2
+			pd_aw_is_shroud_planet = yes
+		}					
+		modifier = {
+			factor = 1
+			is_planet_class = pc_graveyard
+		}		
+		modifier = {
+			factor = 2
+			is_planet_class = pc_crystal
+		}		
+		modifier = {
+			factor = 2
+			is_planet_class = pc_technoorganic
+		}
+	}
+}
+
+# Crystals
+d_luminescent_cave = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_primary_districts_crystals }
+		modifier = { district_do3f_crystal_mines_max = -1 building_crystal_mines_max = 1 }
+	}
+	planet_modifier = {
+		district_do3f_crystal_mines_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_primary_deposits = yes
+			do3f_002_crystal_deposits = yes
+		}
+		do3f_can_have_random_primary_districts = yes
+		NOR = {
+			has_modifier = "panthalassic_world"
+			has_modifier = "storm_world"
+			has_modifier = "iceberg_world"
+			has_modifier = "eyeball_world"
+			has_modifier = "subglacial_world"
+		}
+	}
+
+	drop_weight = {
+		weight = @high_rare
+		modifier = {
+			factor = 6
+			OR = {
+				has_modifier = "infernal_world"
+				has_modifier = "karst_world"
+				has_modifier = "mineral_world"
+			}
+		}		
+		modifier = {
+			factor = 2
+			is_planet_class = pc_gaia
+		}
+		modifier = {
+			factor = 2
+			is_extreme_subclass = yes
+		}
+		modifier = {
+			factor = 0
+			solar_system = {
+				OR = {
+					has_star_flag = empire_home_system
+					has_star_flag = sol_system
+					has_star_flag = deneb_system
+				}
+			}
+		}
+		modifier = {
+			factor = @planet_type_bonus
+			is_cold = yes
+			is_planet_class = pc_karst
+		}
+		modifier = {
+			factor = 2
+			pd_is_planet_class_gaia = yes
+		}			
+		modifier = {
+			factor = 2
+			pd_aw_is_shroud_planet = yes
+		}				
+		modifier = {
+			factor = 1
+			is_planet_class = pc_graveyard
+		}			
+		modifier = {
+			factor = 1
+			is_planet_class = pc_crystal
+		}		
+		modifier = {
+			factor = 1
+			is_planet_class = pc_technoorganic
+		}
+		modifier = {
+			factor = 2
+			is_planet_class = pc_hothouse
+		}
+		modifier = {
+			factor = 0
+			solar_system = {
+				OR = {
+					has_star_flag = empire_home_system
+					has_star_flag = sol_system
+					has_star_flag = deneb_system
+				}
+			}
+		}
+	}
+}
+d_luminescent_cave_system = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_primary_districts_crystals }
+		modifier = { district_do3f_crystal_mines_max = -2 building_crystal_mines_max = 2 }
+	}
+	planet_modifier = {
+		district_do3f_crystal_mines_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_primary_deposits = yes
+			do3f_002_crystal_deposits = yes
+		}
+		do3f_can_have_random_primary_districts = yes
+		NOR = {
+			has_modifier = "panthalassic_world"
+			has_modifier = "storm_world"
+			has_modifier = "iceberg_world"
+			has_modifier = "eyeball_world"
+			has_modifier = "subglacial_world"
+		}
+	}
+
+	drop_weight = {
+		weight = @mid_rare
+		modifier = {
+			factor = 6
+			OR = {
+				has_modifier = "infernal_world"
+				has_modifier = "karst_world"
+				has_modifier = "mineral_world"
+			}
+		}		
+		modifier = {
+			factor = 2
+			is_planet_class = pc_gaia
+		}
+		modifier = {
+			factor = 2
+			is_extreme_subclass = yes
+		}
+		modifier = {
+			factor = 0
+			solar_system = {
+				OR = {
+					has_star_flag = empire_home_system
+					has_star_flag = sol_system
+					has_star_flag = deneb_system
+				}
+			}
+		}
+		modifier = {
+			factor = @planet_type_bonus
+			is_cold = yes
+			is_planet_class = pc_karst
+		}
+		modifier = {
+			factor = 2
+			pd_is_planet_class_gaia = yes
+		}			
+		modifier = {
+			factor = 2
+			pd_aw_is_shroud_planet = yes
+		}				
+		modifier = {
+			factor = 1
+			is_planet_class = pc_graveyard
+		}			
+		modifier = {
+			factor = 1
+			is_planet_class = pc_crystal
+		}		
+		modifier = {
+			factor = 1
+			is_planet_class = pc_technoorganic
+		}
+		modifier = {
+			factor = 2
+			is_planet_class = pc_hothouse
+		}
+		modifier = {
+			factor = 0
+			solar_system = {
+				OR = {
+					has_star_flag = empire_home_system
+					has_star_flag = sol_system
+					has_star_flag = deneb_system
+				}
+			}
+		}
+	}
+}
+
+#Others
+#Nature Reserves
+d_interesting_wildlife = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_primary_districts_nature }
+		modifier = { district_do3f_nature_reserve_max = -1 planet_researchers_society_research_produces_add = 1 }
+	}
+	planet_modifier = {
+		district_do3f_nature_reserve_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_primary_deposits = yes
+			do3f_002_nature_reserve_deposits = yes
+		}
+		can_have_habitable_deposits = yes
+		do3f_can_have_random_primary_districts = yes
+	}
+
+	drop_weight = {
+		weight = @high_rare
+	}
+}
+d_complex_ecosystem = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_primary_districts_nature }
+		modifier = { district_do3f_nature_reserve_max = -2 planet_researchers_society_research_produces_add = 2 }
+	}
+	planet_modifier = {
+		district_do3f_nature_reserve_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_primary_deposits = yes
+			do3f_002_nature_reserve_deposits = yes
+		}
+		can_have_habitable_deposits = yes
+		do3f_can_have_random_primary_districts = yes
+	}
+
+	drop_weight = {
+		weight = @mid_rare
+	}
+}
+#Assembly
+d_ancient_technology = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_primary_districts_assembly }
+		modifier = { pop_growth_speed = 0.2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_disable_primary_districts_assembly
+			owner = { is_regular_empire = yes }
+		}
+		district_do3f_cloning_facility_max = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_disable_primary_districts_assembly
+			owner = { is_hive_empire = yes }
+		}
+		district_do3f_drone_lab_max = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_disable_primary_districts_assembly
+			owner = { is_machine_empire = yes }
+		}
+		district_do3f_robot_assembly_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_primary_deposits = yes
+			do3f_002_assembly_deposits = yes
+		}
+		can_have_habitable_deposits = yes
+		do3f_can_have_random_primary_districts = yes
+	}
+
+	drop_weight = {
+		weight = @low_rare
+	}
+}
+# Tourism
+d_relaxing_location = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_primary_districts_tourism }
+		modifier = { district_do3f_tourism_max = -1 planet_immigration_pull_mult = 0.2 }
+	}
+	planet_modifier = {
+		district_do3f_tourism_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_primary_deposits = yes
+			do3f_002_tourism_deposits = yes
+		}
+		can_have_habitable_deposits = yes
+		do3f_can_have_random_primary_districts = yes
+	}
+
+	drop_weight = {
+		weight = @mid_rare
+	}
+}
+d_super_relaxing_location = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_primary_districts_tourism }
+		modifier = { district_do3f_tourism_max = -2 planet_immigration_pull_mult = 0.4 }
+	}
+	planet_modifier = {
+		district_do3f_tourism_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_primary_deposits = yes
+			do3f_002_tourism_deposits = yes
+		}
+		can_have_habitable_deposits = yes
+		has_planet_flag = do3f_districts_do3f_tourism
+	}
+
+	drop_weight = {
+		weight = @low_rare
+	}
+}
+#Archeology
+d_ancient_structure = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_primary_districts_archeology }
+		modifier = { district_do3f_archeology_max = -1 planet_researchers_minor_artifacts_produces_add = 0.25 }
+	}
+	planet_modifier = {
+		district_do3f_archeology_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_primary_deposits = yes
+			do3f_002_archeology_deposits = yes
+		}
+		can_have_habitable_deposits = yes
+		has_planet_flag = do3f_districts_do3f_archeology
+	}
+
+	drop_weight = {
+		weight = @low_rare
+	}
+}
+#Research
+d_small_anomaly = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_primary_districts_research }
+		modifier = { district_do3f_research_complex_max = -1 planet_researchers_physics_reaserch_produces_add = 1 }
+	}
+	planet_modifier = {
+		district_do3f_research_complex_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_primary_deposits = yes
+			do3f_002_research_complex_deposits = yes
+		}
+		can_have_habitable_deposits = yes
+		do3f_can_have_random_primary_districts = yes
+	}
+
+	drop_weight = {
+		weight = @high_rare
+	}
+}
+d_medium_anomaly = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_primary_districts_research }
+		modifier = { district_do3f_research_complex_max = -2 planet_researchers_physics_reaserch_produces_add = 2 }
+	}
+	planet_modifier = {
+		district_do3f_research_complex_max = 2
+	}
+
+	potential = {
+		OR = {
+			do3f_no_primary_deposits = yes
+			do3f_002_research_complex_deposits = yes
+		}
+		can_have_habitable_deposits = yes
+		do3f_can_have_random_primary_districts = yes
+	}
+
+	drop_weight = {
+		weight = @mid_rare
+	}
+}
+# Gardens + Ecogardens
+d_flower_fields = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_primary_districts_gardens }
+		modifier = { district_do3f_gardens_max = -1 planet_farmers_food_produces_add = 2 }
+	}
+	planet_modifier = {
+		district_do3f_gardens_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_primary_deposits = yes
+			do3f_002_garden_deposits = yes
+			do3f_002_eco_garden_deposits = yes
+		}
+		can_have_habitable_deposits = yes
+		do3f_can_have_random_primary_districts = yes
+	}
+
+	drop_weight = {
+		weight = @mid_rare
+	}
+}
+d_eatable_flower_fields = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_primary_districts_gardens }
+		modifier = { district_do3f_gardens_max = -1 planet_farmers_food_produces_add = 2 planet_farmers_unity_produces_add = 2 }
+	}
+	planet_modifier = {
+		district_do3f_ecogardens_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_primary_deposits = yes
+			do3f_002_garden_deposits = yes
+			do3f_002_eco_garden_deposits = yes
+		}
+		can_have_habitable_deposits = yes
+		do3f_can_have_random_primary_districts = yes
+	}
+
+	drop_weight = {
+		weight = @low_rare
+	}
+}
+# Scrapyard
+d_ancient_scrap = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = no
+
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = { has_global_flag = do3f_disable_primary_districts_scrap }
+		modifier = { district_do3f_scrapyard_max = -1 planet_researchers_engineering_research_produces_add = 1 }
+	}
+	planet_modifier = {
+		district_do3f_scrapyard_max = 1
+	}
+
+	potential = {
+		OR = {
+			do3f_no_primary_deposits = yes
+			do3f_002_scrapyard_deposits = yes
+		}
+		can_have_habitable_deposits = yes
+		do3f_can_have_random_primary_districts = yes
+	}
+
+	drop_weight = {
+		weight = @mid_rare
+	}
+}

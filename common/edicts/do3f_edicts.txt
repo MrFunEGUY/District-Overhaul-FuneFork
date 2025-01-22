@@ -1,0 +1,21 @@
+
+do3f_mod_menu = {
+	length = 0
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+	}
+
+	potential = {
+		is_ai = no
+	}
+
+	effect = {
+		hidden_effect = {
+			country_event = { 
+				id = xenosmenu.01
+			}
+		}
+	}
+}

@@ -1,0 +1,5241 @@
+###
+#03 Energy Districts
+
+district_generator = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rural_build_time
+
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = { 
+		uses_district_set = standard
+	}
+
+	potential = { 
+		uses_district_set = standard
+		exists = owner
+		do3f_generator_district_potential = yes
+	}
+	
+	allow = {
+		NOR = {
+			has_modifier = resort_colony
+			## Megacorp_mod
+			has_modifier = urban_idyll_colony
+		}
+	}
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_generator_uncapped
+		district_e_wind_turbines
+		district_e_geothermal_generator
+		district_e_solar_generator
+		district_e_tidal_generator
+		district_e_biomass_generator
+		# WH40K Planets Renewed
+		district_industrial_generator
+		district_underdeveloped_power
+	}
+#### - Cost & Upkeep -####
+	resources = {
+		category = planet_districts
+		upkeep = { energy = @do3f_base_upkeep }
+		cost = {
+            trigger = { pd_aw_is_megaflora_planet = no }
+            minerals = @do3f_base_cost
+        }
+        cost = {
+            trigger = { pd_aw_is_megaflora_planet = yes }
+            food = @do3f_base_cost
+        }
+		upkeep = { #ECAF
+			trigger = {
+				owner = {
+					OR = {
+						has_valid_civic = civic_welfare_state
+						has_valid_civic = civic_shared_burden
+					}
+				}
+			}
+			energy = 0.15
+		}
+	}
+####- Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_technician_drone_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_technician_drone_add = 2
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_technician_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			job_technician_drone_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			job_technician_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_generator_add = 2
+		}
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- ECAF -####
+	triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    has_valid_civic = civic_welfare_state
+                    has_valid_civic = civic_shared_burden
+                }
+            }
+        }
+        modifier = {
+            job_technician_add = 1
+            planet_housing_add = 1
+        }
+    }
+####- Stuff added by this mod -####
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_technician_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_technician_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_generator_effect_desc
+	}
+	
+	prerequisites = {
+		tech_power_plant_1
+	}
+}
+
+# Fusion Reactor District
+# Higher energy per pop than others and provides physics reasearch, but has motes upkeep
+# Produces some ernergy without any jobs
+district_e_fusion_generator = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rural_build_time
+
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = { 
+		uses_district_set = standard
+	}
+	potential = { 
+		uses_district_set = standard
+		exists = owner
+		OR = {
+			pd_aw_is_megaflora_planet = yes
+			do3f_generator_district_potential = yes
+		}
+	}
+	
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_generator
+		district_generator_uncapped
+		district_e_fossil_fuel_generator
+		district_e_wind_turbines
+		district_e_geothermal_generator
+		district_e_solar_generator
+		district_e_tidal_generator
+		district_e_biomass_generator
+		# WH40K Planets Renewed
+		district_industrial_generator
+		district_underdeveloped_power
+	}	
+#### - Cost & Upkeep -####
+	resources = {
+		category = planet_districts
+		cost = { minerals = @do3f_base_cost }
+		upkeep = {
+			energy = @do3f_base_upkeep
+			volatile_motes = 0.5
+		}
+		produces = { energy = 5 }	
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			minerals = @do3f_base_cost
+		}
+		upkeep = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			energy = @do3f_base_upkeep
+			volatile_motes = 0.5
+		}
+	}
+#### - Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_e_fusion_drone_add = 3
+			job_02_experimental_drone_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_e_fusion_drone_add = 2
+			job_02_experimental_drone_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_e_fusion_technician_add = 2
+			job_02_physicist_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			job_e_fusion_drone_add = 1
+		}
+	}	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			job_e_fusion_technician_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = { job_fe_acolyte_generator_add = 2 }
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_e_fusion_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_02_experimental_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_e_fusion_technician_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_02_physicist_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_generator_effect_desc
+	}
+	
+	prerequisites = {
+		tech_power_plant_1
+	}
+}
+
+# Fossil fuel power plants
+# Lowers habitability and happiness but cheaper than other energy districts
+# High energy per pop
+district_e_fossil_fuel_generator = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rural_build_time
+
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = { 
+		uses_district_set = standard
+	}
+	potential = { 
+		uses_district_set = standard
+		exists = owner
+		do3f_generator_district_potential = yes
+	}
+	
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_generator
+		district_generator_uncapped
+		district_e_fusion_generator
+		district_e_wind_turbines
+		district_e_geothermal_generator
+		district_e_solar_generator
+		district_e_tidal_generator
+		district_e_biomass_generator
+		# WH40K Planets Renewed
+		district_industrial_generator
+		district_underdeveloped_power
+	}	
+#### - Cost & Upkeep -####
+	resources = {
+		category = planet_districts
+		cost = { minerals = 240 }
+		upkeep = { energy = @do3f_base_upkeep }
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			minerals = 240
+		}
+		upkeep = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			energy = @do3f_base_upkeep
+		}	
+	}
+#### - Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+		pop_environment_tolerance = -0.05
+		pop_happiness = -0.05
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = { job_e_fossil_fuel_drone_add = 3 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_e_fossil_fuel_drone_add = 2
+			planet_housing_add = 1
+		}
+	}		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = { job_e_fossil_fuel_technician_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_e_fossil_fuel_drone_add = 1 }
+	}		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_e_fossil_fuel_technician_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = { job_fe_acolyte_generator_add = 2 }
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_e_fossil_fuel_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_e_fossil_fuel_technician_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_generator_effect_desc
+	}
+	
+	prerequisites = {
+		tech_power_plant_1
+	}
+}
+
+# Wind Park
+# Produces some ernergy without any jobs
+# Requires alloys to build
+# Reduces immigration pull and amenities.
+district_e_wind_turbines = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rural_build_time
+
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = {
+		NOT = { has_global_flag = do3f_disable_energy_districts_wind }
+		OR = {
+			num_free_districts = {
+				type = district_e_wind_turbines
+				value > 0
+			}
+			num_districts = {
+				type = district_e_wind_turbines
+				value > 0
+			}
+		}
+		uses_district_set = standard
+		if = {
+			limit = {
+				has_planetary_diversity = yes
+			}
+			pd_aw_is_wasteland_planet = no
+			is_pd_planetary_megaproject = no
+		}
+	}
+	potential = { 
+		NOT = { has_global_flag = do3f_disable_energy_districts_wind }
+		OR = {
+			num_free_districts = {
+				type = district_e_wind_turbines
+				value > 0
+			}
+			num_districts = {
+				type = district_e_wind_turbines
+				value > 0
+			}
+		}
+		uses_district_set = standard
+		exists = owner
+		if = {
+			limit = {
+				has_planetary_diversity = yes
+			}
+			pd_aw_is_wasteland_planet = no
+			is_pd_planetary_megaproject = no
+		}
+	}
+	
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_generator
+		district_generator_uncapped
+		district_e_fusion_generator
+		district_e_fossil_fuel_generator
+		district_e_geothermal_generator
+		district_e_solar_generator
+		district_e_tidal_generator
+		district_e_biomass_generator
+		# WH40K Planets Renewed
+		district_industrial_generator
+		district_underdeveloped_power
+	}
+#### - Cost & Upkeep -####
+	resources = {
+		category = planet_districts
+		cost = { alloys = 80 }
+		upkeep = { energy = 1 }
+		produces = { energy = 4 }
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			alloys = 80
+		}
+		upkeep = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			energy = 1
+		}
+	}
+#### - Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = { job_e_wind_turbine_drone_add = 3 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_e_wind_turbine_drone_add = 2
+			planet_housing_add = 1
+		}
+	}		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = { job_e_wind_turbine_technician_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_e_wind_turbine_technician_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_e_wind_turbine_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = { job_fe_acolyte_generator_add = 2 }
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_e_wind_turbine_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_e_wind_turbine_technician_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_generator_effect_desc
+	}
+	
+	prerequisites = {
+		tech_power_plant_1
+	}
+}
+
+# Geothermal Power Plant
+# Produces some minerals
+# High cost and alloys uipkeep
+district_e_geothermal_generator = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rural_build_time
+
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = { 
+		uses_district_set = standard
+	}
+	potential = { 
+		uses_district_set = standard
+		exists = owner
+		OR = {
+			pd_aw_is_megaflora_planet = yes
+			do3f_generator_district_potential = yes
+		}
+	}
+	
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_generator
+		district_generator_uncapped
+		district_e_fusion_generator
+		district_e_fossil_fuel_generator
+		district_e_wind_turbines
+		district_e_solar_generator
+		district_e_tidal_generator
+		district_e_biomass_generator
+		# WH40K Planets Renewed
+		district_industrial_generator
+		district_underdeveloped_power
+	}
+#### - Cost & Upkeep -####
+	resources = {
+		category = planet_districts
+		cost = { minerals = @do3f_city_cost }
+		upkeep = { alloys = @do3f_base_upkeep }
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			minerals = @do3f_city_cost
+		}
+		upkeep = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			alloys = @do3f_base_upkeep
+		}
+	}
+#### - Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = { job_e_geothermal_drone_add = 3 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_e_geothermal_drone_add = 2
+			planet_housing_add = 1
+		}
+	}			
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = { job_e_geothermal_technician_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_e_geothermal_drone_add = 1 }
+	}		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_e_geothermal_technician_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = { job_fe_acolyte_generator_add = 2 }
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_e_geothermal_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_e_geothermal_technician_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_generator_effect_desc
+	}
+	
+	prerequisites = {
+		tech_power_plant_1
+	}
+}
+
+# Solar Farm
+# Requires alloys and crystals to build
+# No upkeep
+district_e_solar_generator = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rural_build_time
+
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = { 
+		uses_district_set = standard
+	}
+	potential = { 
+		uses_district_set = standard
+		exists = owner
+		OR = {
+			pd_aw_is_megaflora_planet = yes
+			do3f_generator_district_potential = yes
+		}
+	}
+	
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_generator
+		district_generator_uncapped
+		district_e_fusion_generator
+		district_e_fossil_fuel_generator
+		district_e_wind_turbines
+		district_e_geothermal_generator
+		district_e_tidal_generator
+		district_e_biomass_generator
+		# WH40K Planets Renewed
+		district_industrial_generator
+		district_underdeveloped_power
+	}
+#### - Cost & Upkeep -####
+	resources = {
+		category = planet_districts
+		cost = {
+			alloys = 80
+			rare_crystals = 5
+		}
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			alloys = 80
+			rare_crystals = 5
+		}
+	}
+#### - Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = { job_e_solar_drone_add = 3 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_e_solar_drone_add = 2
+			planet_housing_add = 1
+		}
+	}	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = { job_e_solar_technician_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_e_solar_drone_add = 1 }
+	}		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_e_solar_technician_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = { job_fe_acolyte_generator_add = 2 }
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_e_solar_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_e_solar_technician_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_generator_effect_desc
+	}
+	
+	prerequisites = {
+		tech_power_plant_1
+	}
+}
+
+# Hydro Power Plant District
+# Doesn't use up district slots
+# Requires alloys to build and high upkeep
+district_e_tidal_generator = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rural_build_time
+
+	min_for_deposits_on_planet = 3	
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = { 
+		uses_district_set = standard
+	}
+	potential = { 
+		uses_district_set = standard
+		exists = owner
+		OR = {
+			pd_aw_is_megaflora_planet = yes
+			do3f_generator_district_potential = yes
+		}
+	}
+	
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_generator
+		district_generator_uncapped
+		district_e_fusion_generator
+		district_e_fossil_fuel_generator
+		district_e_wind_turbines
+		district_e_geothermal_generator
+		district_e_solar_generator
+		district_e_biomass_generator
+		# WH40K Planets Renewed
+		district_industrial_generator
+		district_underdeveloped_power
+	}
+#### - Cost & Upkeep -####
+	resources = {
+		category = planet_districts
+		cost = { alloys = 200 }
+		upkeep = { energy = @do3f_arcology_upkeep }
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			alloys = 200
+		}
+		upkeep = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			energy = @do3f_arcology_upkeep
+		}
+	}
+#### - Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+		planet_max_districts_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = { job_e_tidal_technician_drone_add = 3 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_e_tidal_technician_drone_add = 2
+			planet_housing_add = 1
+		}
+	}		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = { job_e_tidal_technician_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_e_tidal_technician_drone_add = 1 }
+	}		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_e_tidal_technician_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = { job_fe_acolyte_generator_add = 2 }
+	}
+
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_e_tidal_technician_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_e_tidal_technician_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_generator_effect_desc
+	}
+	
+	prerequisites = {
+		tech_power_plant_1
+	}
+}
+
+# Biomass Plant
+# Uses food to produce energy. Produces gases as byproduct.
+# Produces more energy if the planet has a surplus of food
+district_e_biomass_generator = {
+	base_buildtime = 360
+
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = { 
+		uses_district_set = standard
+	}
+	potential = { 
+		uses_district_set = standard
+		exists = owner
+		OR = {
+			pd_aw_is_megaflora_planet = yes
+			do3f_generator_district_potential = yes
+		}
+	}
+
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_generator
+		district_generator_uncapped
+		district_e_fusion_generator
+		district_e_fossil_fuel_generator
+		district_e_wind_turbines
+		district_e_geothermal_generator
+		district_e_solar_generator
+		district_e_tidal_generator
+		# WH40K Planets Renewed
+		district_industrial_generator
+		district_underdeveloped_power
+	}
+#### - Cost & Upkeep -####
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 300
+		}
+		upkeep = {
+			food = 3
+		}
+		produces = {
+			exotic_gases = 1
+		}
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			minerals = 300
+		}
+		upkeep = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			food = 3
+		}
+	}
+#### - Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_e_biomass_technician_drone_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_e_biomass_technician_drone_add = 2
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_e_biomass_technician_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			job_e_biomass_technician_drone_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			job_e_biomass_technician_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_generator_add = 2
+		}
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_e_biomass_technician_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_e_biomass_technician_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_generator_effect_desc
+	}
+
+	prerequisites = {
+		tech_power_plant_1
+	}
+}
+
+
+###
+#04 Mineral Districts
+
+district_mining = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rural_build_time
+	
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = { 
+		NAND = {
+			exists = from
+			from = { is_subterranean_empire = yes }
+		}
+		uses_district_set = standard
+	}
+	
+	potential = { 
+		NAND = {
+			exists = owner
+			owner = { is_subterranean_empire = yes }
+		}
+		uses_district_set = standard
+		exists = owner
+		do3f_mining_district_potential = yes
+	}
+	
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_mining_uncapped
+		district_m_stable_mining
+		district_m_unstable_mining
+		district_m_surface_mining
+		district_m_deep_mining
+		district_m_moutain_mining
+		# WH40K Planets Renewed
+		district_industrial_mining
+	}	
+#### - Cost & Upkeep -####
+	resources = {
+		category = planet_districts
+		upkeep = { energy = @do3f_base_upkeep }
+		cost = {
+            trigger = {
+                pd_aw_is_megaflora_planet = no
+            }
+            minerals = @do3f_base_cost
+        }
+        cost = {
+            trigger = {
+                pd_aw_is_megaflora_planet = yes
+            }
+            food = @do3f_base_cost
+        }
+	}
+####- Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 2
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_miner_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			job_mining_drone_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			job_miner_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = { job_fe_acolyte_mine_add = 2 }
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- PD -####
+	triggered_planet_modifier = {
+        potential = {
+            has_modifier = metal_planet
+        }
+        modifier = {
+            planet_housing_add = 5
+        }
+    }
+####- Stuff added by this mod -####
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_mining_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_miner_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_mine_effect_desc
+	}
+	
+	prerequisites = {
+		tech_mechanized_mining
+	}
+}
+
+# Unstable mines
+# Reduce stability
+# Low cost
+district_m_unstable_mining = {
+	base_buildtime = 180
+	
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = { 
+		NAND = {
+			exists = from
+			from = { is_subterranean_empire = yes }
+		}
+		uses_district_set = standard
+	}
+	
+	potential = { 
+		NAND = {
+			exists = owner
+			owner = { is_subterranean_empire = yes }
+		}
+		uses_district_set = standard
+		exists = owner
+		do3f_mining_district_potential = yes
+	}
+	
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_mining
+		district_mining_uncapped
+		district_m_stable_mining
+		district_m_surface_mining
+		district_m_deep_mining
+		district_m_mountain_mining
+		# WH40K Planets Renewed
+		district_industrial_mining
+	}
+#### - Cost & Upkeep -####
+	resources = {
+		category = planet_districts
+		cost = { minerals = 100 }
+		upkeep = { energy = @do3f_base_upkeep }
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			minerals = 100
+		}
+		upkeep = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			energy = @do3f_base_upkeep
+		}
+	}
+#### - Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+		planet_stability_add = -5
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 2
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_miner_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = { job_fe_acolyte_mine_add = 2 }
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = { planet_housing_add = 1 }
+	}	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}		
+####- Stuff added by this mod -####
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_mining_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_miner_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_mine_effect_desc
+	}
+	
+	prerequisites = {
+		tech_mechanized_mining
+	}
+}
+
+# Stable mines
+# Increase stability
+# High cost and upkeep
+district_m_stable_mining = {
+	expansion_planner = yes
+    base_buildtime = @do3f_base_build_time
+	
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = { 
+		NAND = {
+			exists = from
+			from = { is_subterranean_empire = yes }
+		}
+		uses_district_set = standard
+	}
+	
+	potential = { 
+		NAND = {
+			exists = owner
+			owner = { is_subterranean_empire = yes }
+		}
+		uses_district_set = standard
+		exists = owner
+		do3f_mining_district_potential = yes
+	}
+	
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_mining
+		district_mining_uncapped
+		district_m_unstable_mining
+		district_m_surface_mining
+		district_m_deep_mining
+		district_m_mountain_mining
+		# WH40K Planets Renewed
+		district_industrial_mining
+	}
+#### - Cost & Upkeep -####	
+	resources = {
+		category = planet_districts
+		cost = { minerals = @do3f_base_cost }
+		upkeep = { energy = 2 }
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			minerals = @do3f_base_cost
+		}
+		upkeep = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			energy = 2
+		}
+	}
+#### - Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+		planet_stability_add = 5
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs			
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 2
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_miner_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = { job_fe_acolyte_mine_add = 2 }
+	}
+####- Vanilla Modifiers -####	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_mining_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_miner_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_mine_effect_desc
+	}
+	
+	prerequisites = {
+		tech_mechanized_mining
+	}
+}
+
+# Open pit mine
+# Decreases habitability but cheap
+# More jobs than normal
+# Gets the possibily of creating artificial lakes in them that increase habitability, happiness, amenities and immigration pull.
+district_m_surface_mining = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rural_build_time
+	
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = { 
+		NAND = {
+			exists = from
+			from = { is_subterranean_empire = yes }
+		}
+		uses_district_set = standard
+	}
+	
+	potential = { 
+		NAND = {
+			exists = owner
+			owner = { is_subterranean_empire = yes }
+		}
+		uses_district_set = standard
+		exists = owner
+		do3f_mining_district_potential = yes
+	}
+	
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_mining
+		district_mining_uncapped
+		district_m_unstable_mining
+		district_m_stable_mining
+		district_m_deep_mining
+		district_m_mountain_mining
+		# WH40K Planets Renewed
+		district_industrial_mining
+	}
+#### - Cost & Upkeep -####
+	resources = {
+		category = planet_districts
+		cost = { minerals = 200 }
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			minerals = 200
+		}
+	}
+#### - Base -####
+	planet_modifier = {
+		planet_housing_add = 3
+		pop_environment_tolerance = -0.05
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs			
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 3
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_miner_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_mine_add = 2
+		}
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_mining_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_miner_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_mine_effect_desc
+	}
+	
+	prerequisites = {
+		tech_mechanized_mining
+	}
+}
+
+# Deep mine
+# High cost and alloys upkeep
+# Job energy upkeep, but more minerals production
+# Also add cave cleaner jobs
+district_m_deep_mining = {
+	base_buildtime = 720
+
+	min_for_deposits_on_planet = 1
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = { 
+		NAND = {
+			exists = from
+			from = { is_subterranean_empire = yes }
+		}
+		uses_district_set = standard
+	}
+	
+	potential = { 
+		NAND = {
+			exists = owner
+			owner = { is_subterranean_empire = yes }
+		}
+		uses_district_set = standard
+		exists = owner
+		OR = {
+			pd_aw_is_megaflora_planet = yes
+			do3f_generator_district_potential = yes
+		}
+	}
+
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_mining
+		district_mining_uncapped
+		district_m_unstable_mining
+		district_m_stable_mining
+		district_m_surface_mining
+		district_m_mountain_mining
+		# WH40K Planets Renewed
+		district_industrial_mining
+	}
+#### - Cost & Upkeep -####
+	resources = {
+		category = planet_districts
+		cost = { minerals = @do3f_city_cost }
+		upkeep = { alloys = 1 }
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			minerals = @do3f_city_cost
+		}
+		upkeep = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			alloys = 1
+		}
+	}
+#### - Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_m_deep_mining_drone_add = 3
+			job_cave_cleaner_gestalt_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_m_deep_mining_drone_add = 2
+			job_cave_cleaner_gestalt_add = 1
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_m_deep_miner_add = 2
+			job_cave_cleaner_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_m_deep_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_m_deep_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_mine_add = 3
+		}
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_m_deep_mining_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_m_deep_miner_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_mine_effect_desc
+	}
+
+	#Lithoid Supremacy Comp
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_civic = civic_mining_cities
+					has_civic = civic_mining_cities_corp
+				}
+			}
+		}
+		modifier = {
+			planet_housing_add = 2
+			planet_max_buildings_add = 0.25
+		}
+	}
+	
+	prerequisites = {
+		tech_mechanized_mining
+	}
+}
+
+# Mountain Top Mining
+# High cost, alloy upkeep
+# Adds more jobs than normal
+district_m_mountain_mining = {
+	base_buildtime = 360
+
+	min_for_deposits_on_planet = 1
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = { 
+		NAND = {
+			exists = from
+			from = { is_subterranean_empire = yes }
+		}
+		uses_district_set = standard
+	}
+	
+	potential = { 
+		NAND = {
+			exists = owner
+			owner = { is_subterranean_empire = yes }
+		}
+		uses_district_set = standard
+		exists = owner
+		OR = {
+			pd_aw_is_megaflora_planet = yes
+			do3f_generator_district_potential = yes
+		}
+	}
+
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_mining
+		district_mining_uncapped
+		district_m_unstable_mining
+		district_m_stable_mining
+		district_m_surface_mining
+		district_m_deep_mining
+		# WH40K Planets Renewed
+		district_industrial_mining
+	}
+#### - Cost & Upkeep -####
+	resources = {
+		category = planet_districts
+		cost = { minerals = 400 }
+		upkeep = { alloys = 1 }
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			minerals = 400
+		}
+		upkeep = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			alloys = 1
+		}
+	}
+#### - Base -####
+	planet_modifier = {
+		planet_housing_add = 3
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 3
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_miner_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_mine_add = 2
+		}
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_mining_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_miner_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_mine_effect_desc
+	}
+	
+	prerequisites = {
+		tech_mechanized_mining
+	}
+}
+
+
+###
+#Farming Districts
+
+district_farming = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rural_build_time
+	
+	min_for_deposits_on_planet = 6	
+	max_for_deposits_on_planet = 20
+#### - Potentials -####
+	show_on_uncolonized = {
+		uses_district_set = standard
+	}
+	
+	potential = {
+		uses_district_set = standard
+		exists = owner
+		do3f_farming_district_potential = yes
+	}
+	
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_farming_uncapped
+		district_f_nature_farms
+		district_f_ocean_farms
+		district_f_exotic_farms
+		district_f_industrial_farms
+		district_f_oasis_farms
+		district_f_cave_farms
+		# WH40K Planets Renewed
+		district_agri
+	}
+#### - Cost & Upkeep -####		
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @do3f_base_cost
+			trigger = {
+				OR = {
+					has_modifier = wooden_planet
+					pd_aw_is_megaflora_planet = no
+				}
+			}
+		}
+		cost = {
+			food = @do3f_base_cost
+			trigger = {
+				OR = {
+					has_modifier = wooden_planet
+					pd_aw_is_megaflora_planet = yes
+				}
+			}
+		}
+		upkeep = {
+			energy = @do3f_base_upkeep
+			trigger = { NOT = { has_modifier = wooden_planet } }
+		}
+		upkeep = {
+			food = @do3f_base_upkeep
+			trigger = { has_modifier = wooden_planet }
+		}
+	}
+####- Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = { job_agri_drone_add = 3 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_agri_drone_add = 2
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = { job_fe_acolyte_farm_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+				NAND = {
+					is_anglers_empire = yes
+					PREV = { planet = { is_wet = yes } }
+				}
+			}
+		}
+		modifier = {
+			job_farmer_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		modifier = {
+			job_angler_add = 1
+			job_pearl_diver_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			job_agri_drone_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			job_farmer_add = 1
+		}
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_max_buildings_add = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_max_buildings_add = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Special Districts -####
+	triggered_planet_modifier = {
+		potential = {
+			has_district = district_01_biological_industries
+		}
+		job_ranger_add = 1
+	}
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_agri_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+				NAND = {
+					is_anglers_empire = yes
+					PREV = { planet = { is_wet = yes } }
+				}
+			}
+		}
+		text = job_farmer_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		text = job_aqu_angler_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		text = job_pearl_diver_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_farm_effect_desc
+	}
+	
+	prerequisites = {
+		tech_industrial_farming
+	}
+
+	destroy_trigger = {
+		exists = owner
+		AND = {
+			owner = { is_ai = yes }
+			owner = { country_uses_food = no }
+		}
+	}
+}
+
+# Nature farming
+# More jobs than normal
+# Addtional unity
+# Cheap and no upkeep
+district_f_nature_farms = {
+	base_buildtime = 240
+	
+	min_for_deposits_on_planet = 3	
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = {
+		uses_district_set = standard
+	}
+	
+	potential = {
+		uses_district_set = standard
+		exists = owner
+		OR = {
+			pd_aw_is_megaflora_planet = yes
+			do3f_generator_district_potential = yes
+		}
+	}
+	
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_farming
+		district_farming_uncapped
+		district_f_ocean_farms
+		district_f_exotic_farms
+		district_f_industrial_farms
+		district_f_oasis_farms
+		district_f_cave_farms
+		# WH40K Planets Renewed
+		district_agri
+	}
+#### - Cost & Upkeep -####	
+	resources = {
+		category = planet_districts
+		cost = { minerals = @do3f_base_cost }
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			minerals = @do3f_base_cost
+		}
+	}
+#### - Base -####
+	planet_modifier = {
+		planet_housing_add = 3
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs			
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = { job_agri_drone_add = 4 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_agri_drone_add = 3
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+				NAND = {
+					is_anglers_empire = yes
+					PREV = { planet = { is_wet = yes } }
+				}
+			}
+		}
+		modifier = {
+			job_f_nature_farmer_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		modifier = {
+			job_f_nature_farmer_add = 1
+			job_angler_add = 2
+			job_pearl_diver_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_agri_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_f_nature_farmer_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = { job_fe_acolyte_farm_add = 2 }
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_max_buildings_add = 0.5
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_max_buildings_add = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Special Districts -####
+	triggered_planet_modifier = {
+		potential = {
+			has_district = district_01_biological_industries
+		}
+		job_ranger_add = 1
+	}
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_agri_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_f_nature_farmer_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_farm_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		text = job_aqu_angler_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		text = job_pearl_diver_effect_desc
+	}
+	
+	prerequisites = {
+		tech_industrial_farming
+	}
+
+	destroy_trigger = {
+		exists = owner
+		AND = {
+			owner = { is_ai = yes }
+			owner = { country_uses_food = no }
+		}
+	}
+}
+
+# Ocean farming
+# Doesn't use up district slots
+# Alloy cost, high upkeep
+district_f_ocean_farms = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rural_build_time
+	
+	min_for_deposits_on_planet = 2	
+	max_for_deposits_on_planet = 8
+#### - Potentials -####	
+	show_on_uncolonized = {
+		uses_district_set = standard
+	}
+	
+	potential = {
+		uses_district_set = standard
+		exists = owner
+		OR = {
+			pd_aw_is_megaflora_planet = yes
+			do3f_generator_district_potential = yes
+		}
+	}
+	
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_farming
+		district_farming_uncapped
+		district_f_nature_farms
+		district_f_exotic_farms
+		district_f_industrial_farms
+		district_f_oasis_farms
+		# WH40K Planets Renewed
+		district_agri
+	}
+#### - Cost & Upkeep -####	
+	resources = {
+		category = planet_districts
+		cost = { alloys = 100 }
+		upkeep = { energy = 2 }
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			alloys = 100
+		}
+		upkeep = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			energy = 2
+		}
+	}
+#### - Base -####
+	planet_modifier = { 
+		planet_max_districts_add = 1
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = { job_f_aquatic_agri_drone_add = 3 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_f_aquatic_agri_drone_add = 2
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+				NAND = {
+					is_anglers_empire = yes
+					PREV = { planet = { is_wet = yes } }
+				}
+			}
+		}
+		modifier = { job_f_aquatic_farmer_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		modifier = {
+			job_f_aquatic_farmer_add = 1
+			job_angler_add = 1
+			job_pearl_diver_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_f_aquatic_agri_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_f_aquatic_farmer_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = { job_fe_acolyte_farm_add = 2 }
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_max_buildings_add = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_max_buildings_add = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Special Districts -####
+	triggered_planet_modifier = {
+		potential = {
+			has_district = district_01_biological_industries
+		}
+		job_ranger_add = 1
+	}
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_f_aquatic_agri_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_f_aquatic_farmer_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_farm_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		text = job_aqu_angler_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		text = job_pearl_diver_effect_desc
+	}
+	
+	prerequisites = {
+		tech_industrial_farming
+	}
+
+	destroy_trigger = {
+		exists = owner
+		AND = {
+			owner = { is_ai = yes }
+			owner = { country_uses_food = no }
+		}
+	}
+}
+
+# Exotic farming
+# Only avaible on very few planets
+# Provides special researcher jobs based on planet
+district_f_exotic_farms = {
+	base_buildtime = 240
+	
+	min_for_deposits_on_planet = 3	
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = {
+		uses_district_set = standard
+	}
+	
+	potential = {
+		uses_district_set = standard
+		exists = owner
+		OR = {
+			pd_aw_is_megaflora_planet = yes
+			do3f_generator_district_potential = yes
+		}
+	}
+	
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_farming
+		district_farming_uncapped
+		district_f_nature_farms
+		district_f_ocean_farms
+		district_f_industrial_farms
+		district_f_oasis_farms
+		# WH40K Planets Renewed
+		district_agri
+	}
+#### - Cost & Upkeep -####	
+	resources = {
+		category = planet_districts
+		cost = { minerals = @do3f_base_cost }
+		upkeep = { energy = 2 }
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			minerals = @do3f_base_cost
+		}
+		upkeep = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			energy = 2
+		}
+	}
+#### - Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs			
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = { job_f_fungi_agri_drone_add = 2 }
+	}		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = { job_f_fungi_farmer_add = 2 }
+	}		
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_mushroom
+			owner = { is_gestalt = no }
+		}
+		modifier = { job_02_ecosystem_researcher_add = 1 }
+	}		
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_biolumen
+			owner = { is_gestalt = no }
+		}
+		modifier = { job_02_biolumen_researcher_add = 1 }
+	}		
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_technoorganic
+			owner = { is_gestalt = no }
+		}
+		modifier = { job_02_technoorganic_researcher_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_mushroom
+			owner = { is_gestalt = yes }
+		}
+		modifier = { job_02_ecosystem_researcher_drone_add = 1 }
+	}		
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_biolumen
+			owner = { is_gestalt = yes }
+		}
+		modifier = { job_02_biolumen_researcher_drone_add = 1 }
+	}		
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_technoorganic
+			owner = { is_gestalt = yes }
+		}
+		modifier = { job_02_technoorganic_researcher_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = { job_fe_acolyte_farm_add = 2 }
+	}			
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			do3f_is_special_exotic_farming_pc = yes
+		}
+		modifier = { job_f_fungi_agri_drone_add = 1 }
+	}		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			do3f_is_special_exotic_farming_pc = yes
+		}
+		modifier = { job_f_fungi_farmer_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_f_fungi_agri_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_f_fungi_farmer_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+			do3f_is_special_exotic_farming_pc = yes
+		}
+		modifier = { job_fe_acolyte_farm_add = 2 }
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_max_buildings_add = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_max_buildings_add = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Special Districts -####
+	triggered_planet_modifier = {
+		potential = {
+			has_district = district_01_biological_industries
+		}
+		job_ranger_add = 1
+	}
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_f_fungi_agri_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_f_fungi_farmer_effect_desc
+	}		
+	triggered_desc = {
+		trigger = {
+			is_planet_class = pc_mushroom
+			owner = { is_gestalt = no }
+		}
+		text = job_02_ecosystem_researcher_effect_desc
+	}	
+	triggered_desc = {
+		trigger = {
+			is_planet_class = pc_biolumen
+			owner = { is_gestalt = no }
+		}
+		text = job_02_biolumen_researcher_effect_desc
+	}	
+	triggered_desc = {
+		trigger = {
+			is_planet_class = pc_technoorganic
+			owner = { is_gestalt = no }
+		}
+		text = job_02_technoorganic_researcher_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			is_planet_class = pc_mushroom
+			owner = { is_gestalt = yes }
+		}
+		text = job_02_ecosystem_researcher_drone_effect_desc
+	}	
+	triggered_desc = {
+		trigger = {
+			is_planet_class = pc_biolumen
+			owner = { is_gestalt = yes }
+		}
+		text = job_02_biolumen_researcher_drone_effect_desc
+	}	
+	triggered_desc = {
+		trigger = {
+			is_planet_class = pc_technoorganic
+			owner = { is_gestalt = yes }
+		}
+		text = job_02_technoorganic_researcher_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_farm_effect_desc
+	}
+	
+	prerequisites = {
+		tech_industrial_farming
+	}
+}
+
+# Oasis farming
+# Less productive
+# Adds habitability
+district_f_oasis_farms = {
+	base_buildtime = 360
+
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = {
+		uses_district_set = standard
+	}
+	
+	potential = {
+		uses_district_set = standard
+		exists = owner
+		OR = {
+			pd_aw_is_megaflora_planet = yes
+			do3f_generator_district_potential = yes
+		}
+	}
+
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_farming
+		district_farming_uncapped
+		district_f_nature_farms
+		district_f_ocean_farms
+		district_f_exotic_farms
+		district_f_industrial_farms
+		# WH40K Planets Renewed
+		district_agri
+	}
+#### - Cost & Upkeep -####
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 250
+		}
+		upkeep = {
+			energy = 1
+		}
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			minerals = 250
+		}
+		upkeep = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			energy = 1
+		}
+	}
+#### - Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+		pop_environment_tolerance = 0.025
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_agri_drone_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_agri_drone_add = 2
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_farmer_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_agri_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_farmer_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_farm_add = 2
+		}
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_max_buildings_add = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_max_buildings_add = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Special Districts -####
+	triggered_planet_modifier = {
+		potential = {
+			has_district = district_01_biological_industries
+		}
+		job_ranger_add = 1
+	}
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_agri_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_farmer_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_farm_effect_desc
+	}
+
+	prerequisites = {
+		tech_industrial_farming
+	}
+}
+
+# Industrial agriculture district
+# Large amounts of cheap food
+# More Productive than regular farming, but harms happiness and habitability
+district_f_industrial_farms = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rural_build_time
+	
+	min_for_deposits_on_planet = 3	
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = {
+		uses_district_set = standard
+	}
+	
+	potential = {
+		uses_district_set = standard
+		exists = owner
+		do3f_farming_district_potential = yes
+	}
+	
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_farming
+		district_farming_uncapped
+		district_f_nature_farms
+		district_f_ocean_farms
+		district_f_exotic_farms
+		district_f_oasis_farms
+		district_f_cave_farms
+		# WH40K Planets Renewed
+		district_agri
+	}
+#### - Cost & Upkeep -####	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @do3f_base_cost
+			alloys = 200
+		}
+		upkeep = { energy = @do3f_city_upkeep }
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			minerals = @do3f_base_cost
+			alloys = 200
+		}
+		upkeep = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			energy = @do3f_city_upkeep
+		}
+	}
+####- Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+		pop_happiness = -0.025
+		pop_environment_tolerance = -0.025
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = { job_f_industrial_agri_drone_add = 3 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_f_industrial_agri_drone_add = 2
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+				NAND = {
+					is_anglers_empire = yes
+					PREV = { planet = { is_wet = yes } }
+				}
+			}
+		}
+		modifier = { job_f_industrial_farmer_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		modifier = {
+			job_f_industrial_farmer_add = 1
+			job_angler_add = 1
+			job_pearl_diver_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_f_industrial_agri_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_f_industrial_farmer_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = { job_fe_acolyte_farm_add = 2 }
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_max_buildings_add = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_max_buildings_add = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Special Districts -####
+	triggered_planet_modifier = {
+		potential = {
+			has_district = district_01_biological_industries
+		}
+		job_ranger_add = 1
+	}
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_f_industrial_agri_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_f_industrial_farmer_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_farm_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		text = job_aqu_angler_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		text = job_pearl_diver_effect_desc
+	}
+	
+	prerequisites = {
+		tech_industrial_farming
+	}
+
+	destroy_trigger = {
+		exists = owner
+		AND = {
+			owner = { is_ai = yes }
+			owner = { country_uses_food = no }
+		}
+	}
+}
+
+# Cave farming
+# Either Deposits or Underground Tunnel Complex
+# Provides a cave cleaner job
+district_f_cave_farms = {
+	base_buildtime = 240
+
+	min_for_deposits_on_planet = 3
+	max_for_deposits_on_planet = 15
+#### - Potentials -####
+	show_on_uncolonized = {
+		uses_district_set = standard
+	}
+	
+	potential = {
+		uses_district_set = standard
+		exists = owner
+		OR = {
+			pd_aw_is_megaflora_planet = yes
+			do3f_generator_district_potential = yes
+		}
+	}
+	allow = { NOT = { has_modifier = resort_colony } }
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_farming
+		district_farming_uncapped
+		district_f_nature_farms
+		district_f_ocean_farms
+		district_f_exotic_farms
+		district_f_industrial_farms
+		district_f_oasis_farms
+		# WH40K Planets Renewed
+		district_agri
+	}
+#### - Cost & Upkeep -####
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 300
+		}
+		upkeep = {
+			energy = 2
+		}
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			minerals = 300
+		}
+		upkeep = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			energy = 2
+		}
+	}
+####- Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_f_cave_agri_drone_add = 3
+			job_cave_cleaner_gestalt_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_f_cave_agri_drone_add = 2
+			planet_housing_add = 1
+			job_cave_cleaner_gestalt_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_f_cave_farmer_add = 3
+			job_cave_cleaner_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_f_cave_agri_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_f_cave_farmer_add = 1 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_farm_add = 2
+		}
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_max_buildings_add = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_max_buildings_add = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- Stuff added by this mod -####
+####- Special Districts -####
+	triggered_planet_modifier = {
+		potential = {
+			has_district = district_01_biological_industries
+		}
+		job_ranger_add = 1
+	}
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_f_cave_agri_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_f_cave_farmer_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_farm_effect_desc
+	}
+
+	prerequisites = {
+		tech_industrial_farming
+	}
+}
+
+###
+# Special
+###
+district_generator_uncapped = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rural_build_time
+	icon = district_generator
+	is_capped_by_modifier = no
+#### - Potentials -####
+	show_on_uncolonized = {
+		OR = {
+			uses_district_set = hive_world
+			uses_district_set = machine_world
+			uses_district_set = pdnecroplanet
+			AND = {
+				exists = from
+				from = {
+					OR = {
+						is_gestalt = yes
+						is_fallen_empire = yes
+					}
+				}
+				uses_district_set = shattered_ring_world
+			}
+			pd_aw_is_megaflora_planet = yes
+            pd_aw_is_wasteland_planet = yes
+            has_modifier = pd_aw_core_tap
+            has_modifier = pd_aw_agriworld
+            has_modifier = pd_aw_stripmine
+		}
+		NOT = { is_planet_class = pc_pd_flora_hive }
+	}
+	potential = {
+		OR = {
+			uses_district_set = hive_world
+			uses_district_set = machine_world
+			uses_district_set = pdnecroplanet
+			AND = {
+				exists = owner
+				owner = {
+					OR = {
+						is_gestalt = yes
+						is_fallen_empire = yes
+					}
+				}
+				uses_district_set = shattered_ring_world
+			}
+			pd_aw_is_megaflora_planet = yes
+            pd_aw_is_wasteland_planet = yes
+            has_modifier = pd_aw_core_tap
+            has_modifier = pd_aw_agriworld
+            has_modifier = pd_aw_stripmine
+        }
+        NOT = {
+            is_planet_class = pc_pd_flora_hive
+        }
+	}
+	
+	allow = {
+		NOR = {
+            has_modifier = resort_colony
+            has_modifier = pd_aw_agriworld
+            has_modifier = pd_aw_stripmine
+        }
+	}
+#### - Conversion -####	
+	conversion_ratio = 1
+	convert_to = {
+		district_generator
+		district_e_wind_turbines
+		district_e_geothermal_generator
+		district_e_solar_generator
+		district_e_tidal_generator
+		district_e_biomass_generator
+		# WH40K Planets Renewed
+		district_industrial_generator
+		district_underdeveloped_power
+	}
+#### - Cost & Upkeep -####	
+	resources = {
+		category = planet_districts
+		upkeep = { energy = @do3f_base_upkeep }
+		cost = {
+            trigger = {
+                pd_aw_is_megaflora_planet = no
+            }
+            minerals = @do3f_base_cost
+        }
+        cost = {
+            trigger = {
+                pd_aw_is_megaflora_planet = yes
+            }
+            food = @do3f_base_cost
+        }
+		upkeep = { #ECAF
+            trigger = {
+                owner = {
+                    OR = {
+                        has_valid_civic = civic_welfare_state
+                        has_valid_civic = civic_shared_burden
+                    }
+                }
+            }
+            energy = 0.15
+        }
+	}
+####- Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+# Jobs
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = { job_technician_drone_add = 3 }
+	}		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = { job_technician_add = 2 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = { job_fe_acolyte_generator_add = 2 }
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+        potential = {
+            NOT = {
+                uses_district_set = shattered_ring_world
+            }
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                has_ascension_perk = ap_machine_worlds
+            }
+        }
+        modifier = {
+            job_technician_drone_add = 2
+            planet_housing_add = 3
+        }
+    }
+####- ECAF -####
+	triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    has_valid_civic = civic_welfare_state
+                    has_valid_civic = civic_shared_burden
+                }
+            }
+        }
+        modifier = {
+            job_technician_add = 1
+            planet_housing_add = 1
+        }
+    }
+####- PD -####
+	triggered_planet_modifier = {
+        potential = {
+            has_modifier = pd_aw_core_tap
+        }
+        modifier = {
+            planet_housing_add = 1
+        }
+    }
+	triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+            has_deposit = d_pd_aw_tree_of_life_bloomed
+        }
+        modifier = {
+            planet_housing_add = 2
+            job_technician_drone_add = 3
+        }
+    }
+####- Stuff added by this mod -####
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_technician_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_technician_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_generator_effect_desc
+	}
+	
+	prerequisites = {
+		tech_power_plant_1
+	}
+}
+district_mining_uncapped = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rural_build_time
+	icon = district_mining
+	is_capped_by_modifier = no
+#### - Potentials -####
+	show_on_uncolonized = {
+		OR = {
+			uses_district_set = hive_world
+			uses_district_set = machine_world
+			uses_district_set = shattered_ring_world
+			uses_district_set = pdnecroplanet
+			AND = {
+				exists = from
+				from = { is_subterranean_empire = yes }
+				uses_district_set = standard
+			}
+			OR = {
+				pd_aw_is_wasteland_planet = yes
+				is_pd_planetary_megaproject = yes
+			}
+		}
+	}
+
+	potential = {
+		OR = {
+			uses_district_set = hive_world
+			uses_district_set = machine_world
+			uses_district_set = shattered_ring_world
+			uses_district_set = pdnecroplanet
+			AND = {
+				exists = owner
+				owner = { is_subterranean_empire = yes }
+				uses_district_set = standard
+			}
+			OR = {
+				pd_aw_is_wasteland_planet = yes
+				is_pd_planetary_megaproject = yes
+			}
+		}
+	}
+	
+	allow = { 
+		NOT = { has_modifier = resort_colony }
+		if = {
+			limit = { has_planetary_diversity = yes }
+			is_pd_planetary_megaproject = no
+		}
+	}
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_mining
+		district_m_stable_mining
+		district_m_unstable_mining
+		district_m_surface_mining
+		district_m_deep_mining
+		district_m_moutain_mining
+		# WH40K Planets Renewed
+		district_industrial_mining
+	}
+#### - Cost & Upkeep -####
+	resources = {
+		category = planet_districts
+		cost = { minerals = @do3f_base_cost }
+		upkeep = { energy = @do3f_base_upkeep }
+		cost = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			minerals = @do3f_base_cost
+		}
+		upkeep = {
+			trigger = {
+				has_global_flag = do3f_better_districts
+			}
+			energy = @do3f_base_upkeep
+		}
+	}
+####- Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs
+	triggered_planet_modifier = {
+		potential = {
+			NOT = { uses_district_set = shattered_ring_world }
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			NOT = { uses_district_set = shattered_ring_world }
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 2
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			NOT = { uses_district_set = shattered_ring_world }
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_miner_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			NOT = { uses_district_set = shattered_ring_world }
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_mine_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			uses_district_set = shattered_ring_world
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_scrap_miner_drone_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			uses_district_set = shattered_ring_world
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_scrap_miner_drone_add = 2
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			uses_district_set = shattered_ring_world
+			exists = owner
+			owner = {
+				is_gestalt = no
+			}
+		}
+		modifier = {
+			job_scrap_miner_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			NOT = { uses_district_set = shattered_ring_world }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_mining_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			NOT = { uses_district_set = shattered_ring_world }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_miner_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			uses_district_set = shattered_ring_world
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_scrap_miner_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			uses_district_set = shattered_ring_world
+			exists = owner
+			owner = {
+				is_gestalt = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_scrap_miner_add = 1 }
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_origin = origin_subterranean }
+		}
+		modifier = {
+			planet_housing_add = 2
+			planet_max_buildings_add = 0.34
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_origin = origin_subterranean }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_housing_add = 2
+			planet_max_buildings_add = 0.34
+		}
+	}
+####- Stuff added by this mod -####
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			NOT = { uses_district_set = shattered_ring_world }
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_mining_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			NOT = { uses_district_set = shattered_ring_world }
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_miner_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			NOT = { owner = { has_origin = origin_subterranean } }
+		}
+		text = job_scrap_miner_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+			NOT = { owner = { has_origin = origin_subterranean } }
+		}
+		text = job_scrap_miner_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			NOT = { uses_district_set = shattered_ring_world }
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_mine_effect_desc
+	}
+	
+	desc = {
+		trigger = {
+			NOT = { uses_district_set = shattered_ring_world  }
+		}
+		text = district_mining_uncapped_desc
+	}
+	desc = {
+		trigger = { 
+			uses_district_set = shattered_ring_world
+			NOT = { owner = { is_subterranean_empire = yes } }
+		}
+		text = district_srw_mining_desc
+	}
+	
+	prerequisites = {
+	}
+}
+district_farming_uncapped = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rural_build_time
+	icon = district_farming
+	is_capped_by_modifier = no
+#### - Potentials -####
+	show_on_uncolonized = {
+		OR = {
+			uses_district_set = hive_world
+			uses_district_set = shattered_ring_world
+			uses_district_set = pdnecroplanet
+			OR = {
+				pd_aw_is_wasteland_planet = yes
+				is_pd_planetary_megaproject = yes
+			}
+			is_planet_class = pc_technoorganic
+			has_deposit = d_technocanal
+		}
+		if = {
+			limit = { has_planetary_diversity = yes }
+			OR = {
+				pd_aw_is_megaflora_planet = yes
+				has_modifier = pd_aw_core_tap
+				has_modifier = pd_aw_agriworld
+				has_modifier = pd_aw_stripmine
+			}
+			NOT = { is_planet_class = pc_pd_flora_hive }
+        }
+	}
+	
+	potential = {
+		OR = {
+			uses_district_set = hive_world
+			uses_district_set = shattered_ring_world
+			OR = {
+				pd_aw_is_wasteland_planet = yes
+				is_pd_planetary_megaproject = yes
+			}
+			is_planet_class = pc_technoorganic
+			has_deposit = d_technocanal
+			AND = {
+				exists = owner
+				owner = { is_anglers_empire = yes }
+				planet = { 
+					OR = {
+						is_planet_class = pc_ocean 
+						pd_is_planet_for_aqua_trait = yes
+						is_planet_class = pc_reef
+						is_planet_class = pc_pd_archipelago
+						is_planet_class = pc_desertislands 
+						is_planet_class = pc_subarctic 
+						is_planet_class = pc_storm
+						is_planet_class = pc_pd_iceberg
+					}
+				}
+			}
+			pd_aw_is_megaflora_planet = yes
+            has_modifier = pd_aw_core_tap
+            has_modifier = pd_aw_agriworld
+            has_modifier = pd_aw_stripmine
+        }
+		NOR = {
+			is_planet_class = pc_pd_flora_hive
+            pd_aw_is_necro_planet = yes
+			AND = {
+				owner = { is_ai = yes }
+				owner = { country_uses_food = no }
+			}
+		}
+		exists = owner
+	}
+	
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		if = {
+			limit = { has_planetary_diversity = yes }
+			NOR = {
+				pd_aw_is_wasteland_planet = yes
+				has_modifier = pd_aw_core_tap
+				has_modifier = pd_aw_stripmine
+			}
+		}
+	}
+#### - Conversion -####
+	conversion_ratio = 1
+	convert_to = {
+		district_farming
+		district_rw_farming
+		district_f_nature_farms
+		district_f_ocean_farms
+		district_f_exotic_farms
+		district_f_industrial_farms
+		district_f_oasis_farms
+		# WH40K Planets Renewed
+		district_agri
+	}
+#### - Cost & Upkeep -####	
+	resources = {
+		category = planet_districts
+		upkeep = { energy = @do3f_base_upkeep }
+		cost = {
+            trigger = { pd_aw_is_megaflora_planet = no }
+            minerals = @do3f_base_cost
+        }
+        cost = {
+            trigger = { pd_aw_is_megaflora_planet = yes }
+            food = @do3f_base_cost
+        }
+		upkeep = { #ECAF
+            trigger = {
+                owner = {
+                    OR = {
+                        has_valid_civic = civic_welfare_state
+                        has_valid_civic = civic_shared_burden
+                    }
+                }
+            }
+            energy = 0.15
+        }
+	}
+####- Base -####
+	planet_modifier = {
+		planet_housing_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_housing_add = 1
+		}
+	}
+# Jobs		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = { job_agri_drone_add = 3 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_agri_drone_add = 2
+			planet_housing_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = { job_fe_acolyte_farm_add = 3 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+				NAND = {
+					is_anglers_empire = yes
+					PREV = { planet = { is_wet = yes } }
+				}
+			}
+		}
+		modifier = {
+			job_farmer_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		modifier = {
+			job_angler_add = 1
+			job_pearl_diver_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_agri_drone_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { job_farmer_add = 1 }
+	}
+####- Vanilla Modifiers -####
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_max_buildings_add = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+			has_global_flag = do3f_better_districts
+		}
+		modifier = {
+			planet_housing_add = 1
+			planet_max_buildings_add = 0.5
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				has_technology = tech_housing_agrarian_idyll 
+				has_valid_civic = civic_agrarian_idyll
+			}
+			has_global_flag = do3f_better_districts
+		}
+		modifier = { planet_housing_add = 1 }
+	}
+####- ECAF -####
+	triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    has_valid_civic = civic_welfare_state
+                    has_valid_civic = civic_shared_burden
+                }
+            }
+        }
+        modifier = {
+            job_farmer_add = 1
+            planet_housing_add = 1
+        }
+    }
+####- PD -####
+	triggered_planet_modifier = {
+        potential = {
+            has_modifier = pd_aw_agriworld
+        }
+        modifier = {
+            planet_housing_add = 1
+        }
+    }
+	triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+            has_deposit = d_pd_aw_tree_of_life_bloomed
+        }
+        modifier = {
+            planet_housing_add = 2
+            job_agri_drone_add = 3
+        }
+    }
+####- Stuff added by this mod -####
+####- Special Districts -####
+	triggered_planet_modifier = {
+		potential = {
+			has_district = district_01_biological_industries
+		}
+		job_ranger_add = 1
+	}
+####- Desc -####
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_agri_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+				NAND = {
+					is_anglers_empire = yes
+					PREV = { planet = { is_wet = yes } }
+				}
+			}
+		}
+		text = job_farmer_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		text = job_aqu_angler_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		text = job_pearl_diver_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_farm_effect_desc
+	}
+
+	prerequisites = {
+		tech_industrial_farming
+	}
+
+	destroy_trigger = {
+		exists = owner
+		AND = {
+			owner = { is_ai = yes }
+			owner = { country_uses_food = no }
+		}
+	}
+}

@@ -1,0 +1,899 @@
+# Unique
+f_holy_gardener = {
+	category = ruler
+	condition_string = RULER_JOB_TRIGGER
+	building_icon = building_00_tree_temple
+	clothes_texture_index = 1
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_ruler_job
+	
+	resources = {
+		category = planet_botanists
+		produces = {
+			unity = 20
+			society_research = 5
+		}
+		upkeep = {
+			food = 10
+		}
+	}
+
+	planet_modifier = {
+		planet_stability_add = 20
+	}
+
+	weight = {
+		weight = @ruler_job_weight
+		mult = value:job_weights_modifier|JOB|high_priest|RESOURCE|unity|
+		modifier = {
+			factor = 0.1
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 5
+			has_job = f_holy_gardener
+		}
+		# crisis purge
+		modifier = {
+			factor = 0.01
+			exists = planet
+			exists = planet.controller
+			planet.controller = {
+				OR = {
+					is_country_type = swarm
+					is_country_type = ai_empire
+				}
+			}
+		}
+	}
+}
+
+# Cultivators
+f_lavender_cultivator = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_f_lavender_t1
+	clothes_texture_index = 3
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+	}
+	
+	resources = {
+		category = planet_cultivators
+		upkeep = {
+			food = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_add = 5
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		trade_value_add = 5
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
+	}
+
+	weight = {
+		weight = @specialist_job_weight
+		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|
+		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_job = f_tea_cultivator
+		}
+	}	
+}
+f_lavender_cultivator_drone = {
+	category = complex_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_f_lavender_t1
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	possible = { can_think = yes }
+	
+	resources = {
+		category = planet_cultivators
+		upkeep = {
+			food = 3
+		}
+	}
+
+	planet_modifier = {
+		planet_stability_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_no_happiness_add = 4
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	weight = {
+		weight = @complex_drone_job_weight
+		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+		modifier = {
+			factor = 1.1
+			exists = owner
+			years_passed < 1
+			owner = { has_valid_civic = civic_machine_assimilator }
+			has_trait = trait_cybernetic
+		}
+		modifier = {
+			factor = 2 # <- hive mind amenities jobs are non specialist so they have base weight 1 instead of 1000 but we still want them
+			NOT = { has_job = f_lavender_cultivator_drone }
+			planet = {
+				free_amenities < 3
+			}
+		}
+		modifier = {
+			factor = 2 # <- hive mind amenities jobs are non specialist so they have base weight 1 instead of 1000 but we still want them
+			has_job = f_lavender_cultivator_drone
+			planet = {
+				free_amenities < 8
+			}
+		}
+	}	
+}
+
+f_tea_cultivator = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_f_tea_t1
+	clothes_texture_index = 3
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+	}
+	
+	resources = {
+		category = planet_cultivators
+		produces = {
+			unity = 4
+		}
+		upkeep = {
+			food = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		trade_value_add = 4
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
+	}
+
+	weight = {
+		weight = @specialist_job_weight
+		mult = value:job_weights_modifier|JOB|f_tea_cultivator|RESOURCE|unity|
+		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_job = f_tea_cultivator
+		}
+	}
+}
+f_tea_cultivator_drone = {
+	category = complex_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_f_tea_t1
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	possible = { can_think = yes }
+	
+	resources = {
+		category = planet_cultivators
+		produces = {
+			unity = 4
+		}
+		upkeep = {
+			food = 3
+		}
+	}
+	
+	planet_modifier = {
+		planet_stability_add = 2
+	}
+
+	weight = {
+		weight = @complex_drone_job_weight
+		mult = value:job_weights_modifier|JOB|synapse_drone|RESOURCE|unity|
+		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+	}
+}
+
+f_spices_cultivator = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_f_spices_t1
+	clothes_texture_index = 3
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+	}
+	
+	resources = {
+		category = planet_cultivators
+		produces = {
+			consumer_goods = 4
+		}
+		upkeep = {
+			food = 3
+		}
+	}
+	planet_modifier = {
+		
+	}
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		trade_value_add = 4
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
+	}
+
+	weight = {
+		weight = @specialist_job_weight
+		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|
+		mult = value:job_weights_modifier|JOB|f_spices_cultivator|RESOURCE|consumer_goods|
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_job = f_spices_cultivator
+		}
+	}
+}
+f_spices_cultivator_drone = {
+	category = complex_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_f_spices_t1
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	possible = { can_think = yes }
+	
+	resources = {
+		category = planet_cultivators
+		produces = {
+			consumer_goods = 4
+		}
+		upkeep = {
+			food = 3
+		}
+	}
+	planet_modifier = {
+		planet_stability_add = 2
+	}
+	
+	weight = {
+		weight = @complex_drone_job_weight
+		mult = value:job_weights_modifier|JOB|f_spices_cultivator_drone|RESOURCE|consumer_goods|
+		modifier = {
+			factor = 0.9
+			exists = owner
+			years_passed < 1
+			owner = { has_valid_civic = civic_machine_assimilator }
+			has_trait = trait_cybernetic
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_job = f_spices_cultivator_drone
+				AND = {
+					exists = owner
+					owner = { has_deficit = consumer_goods }
+				}
+			}
+		}
+	}	
+}
+
+f_algae_worker = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_f_algea_t1
+	clothes_texture_index = 3
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+	}
+	
+	resources = {
+		category = planet_cultivators
+		produces = {
+			alloys = 5
+		}
+		upkeep = {
+			food = 10
+		}
+	}
+
+	weight = {
+		weight = @specialist_job_weight # Fairly important job
+		mult = value:job_weights_modifier|JOB|foundry|RESOURCE|alloys|
+		modifier = {
+			factor = 5
+			has_job = f_algae_worker
+		}
+	}
+}
+f_algae_worker_drone = {
+	category = complex_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_f_algea_t1
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	possible = { can_think = yes }
+	
+	resources = {
+		category = planet_cultivators
+		produces = {
+			alloys = 5
+		}
+		upkeep = {
+			food = 10
+		}
+	}
+	
+	weight = {
+		weight = @complex_drone_job_weight
+		mult = value:job_weights_modifier|JOB|f_algae_worker_drone|RESOURCE|alloys|
+	}
+}
+f_algae_fabricator = {
+	category = complex_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_f_algea_t1
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	possible = { can_think = yes }
+	
+	resources = {
+		category = planet_cultivators
+		produces = {
+			alloys = 5
+		}
+		upkeep = {
+			food = 8
+		}
+	}
+	
+	weight = {
+		weight = @complex_drone_job_weight
+		mult = value:job_weights_modifier|JOB|f_algae_fabricator|RESOURCE|alloys|
+		modifier = {
+			factor = 0.9
+			exists = owner
+			years_passed < 1
+			owner = { has_valid_civic = civic_machine_assimilator }
+			has_trait = trait_cybernetic
+		}
+	}
+}
+
+f_lichen_worker = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_f_lichen_t1
+	clothes_texture_index = 3
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+	}
+	
+	resources = {
+		category = planet_cultivators
+		produces = {
+			minerals = 6
+		}
+		upkeep = {
+			food = 3
+		}
+	}
+	weight = {
+		weight = @specialist_job_weight
+		mult = value:job_weights_modifier|JOB|f_lichen_worker|RESOURCE|minerals|
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no	
+			NOT = { has_trait = trait_mechanical }	
+		}		
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}	
+	}	
+}
+f_lichen_drone = {
+	category = complex_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_f_lichen_t1
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	possible = { can_think = yes }
+	
+	resources = {
+		category = planet_cultivators
+		produces = {
+			minerals = 6
+		}
+		upkeep = {
+			food = 3
+		}
+	}
+	weight = {
+		weight = @complex_drone_job_weight
+		mult = value:job_weights_modifier|JOB|f_lichen_drone|RESOURCE|minerals|
+		modifier = {
+			factor = 0.9
+			exists = owner
+			years_passed < 1
+			owner = { has_valid_civic = civic_machine_assimilator }
+			has_trait = trait_cybernetic
+		}
+	}	
+}
+
+# Botanists
+f_shady_botanist = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_f_drugs_t1
+	clothes_texture_index = 3
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+	}
+	
+	resources = {
+		category = planet_botanists
+		produces = {
+			physics_research = 5
+			engineering_research = 5
+			society_research = 5
+		}
+		upkeep = {
+			food = 4 
+		}
+	}
+	planet_modifier = {
+		planet_crime_add = 12
+		branch_office_criminal_syndicate_value_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_add = 10
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	weight = {
+		weight = @specialist_job_weight
+		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_job = f_shady_botanist
+		}
+	}
+}
+f_silence_flower_drone = {
+	category = complex_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_f_drugs_t1
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	possible = { can_think = yes }
+	
+	resources = {
+		category = planet_botanists
+		produces = {
+			physics_research = 5
+			engineering_research = 5
+			society_research = 5
+		}
+		upkeep = {
+			food = 4
+		}
+	}
+	planet_modifier = {
+		planet_crime_no_happiness_add = 12
+	}
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_no_happiness_add = 10
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	weight = {
+		weight = @complex_drone_job_weight
+		modifier = {
+			factor = 0.9
+			exists = owner
+			years_passed < 1
+			owner = { has_valid_civic = civic_machine_assimilator }
+			has_trait = trait_cybernetic
+		}
+		modifier = {
+			factor = 2 # <- hive mind amenities jobs are non specialist so they have base weight 1 instead of 1000 but we still want them
+			NOT = { has_job = f_silence_flower_bot }
+			planet = {
+				free_amenities < 3
+			}
+		}
+		modifier = {
+			factor = 2 # <- hive mind amenities jobs are non specialist so they have base weight 1 instead of 1000 but we still want them
+			has_job = f_silence_flower_bot
+			planet = {
+				free_amenities < 8
+			}
+		}
+	}
+}
+f_silence_flower_bot = {
+	category = complex_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_f_drugs_t1
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	possible = { can_think = yes }
+	
+	resources = {
+		category = planet_botanists
+		produces = {
+			physics_research = 6
+			engineering_research = 6
+			society_research = 6
+		}
+		upkeep = {
+			food = 3
+		}
+	}
+	planet_modifier = {
+		planet_crime_no_happiness_add = 12
+	}
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_no_happiness_add = 10
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	weight = {
+		weight = @complex_drone_job_weight
+		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+		modifier = {
+			factor = 0.9
+			exists = owner
+			years_passed < 1
+			owner = { has_valid_civic = civic_machine_assimilator }
+			has_trait = trait_cybernetic
+		}
+		modifier = {
+			factor = 2 # <- hive mind amenities jobs are non specialist so they have base weight 1 instead of 1000 but we still want them
+			NOT = { has_job = f_silence_flower_bot }
+			planet = {
+				free_amenities < 3
+			}
+		}
+		modifier = {
+			factor = 2 # <- hive mind amenities jobs are non specialist so they have base weight 1 instead of 1000 but we still want them
+			has_job = f_silence_flower_bot
+			planet = {
+				free_amenities < 8
+			}
+		}
+	}
+}
+
+f_militant_botanist = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_f_red_flowers_t1
+	clothes_texture_index = 3
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+	}
+	
+	resources = {
+		category = planet_botanists
+		upkeep = {
+			food = 4
+		}
+	}
+
+	country_modifier = {
+		country_naval_cap_add = 4
+	}
+	pop_modifier = {
+		pop_defense_armies_add = 6
+	}
+	planet_modifier = {
+		planet_amenities_add = -6
+	}
+
+	weight = {
+		weight = @specialist_job_weight
+		modifier = {
+			factor = 2
+			has_trait = trait_resilient
+		}
+		modifier = {
+			factor = 2
+			has_trait = trait_very_strong
+		}
+		modifier = {
+			factor = 1.5
+			has_trait = trait_strong
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_weak
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_cybernetic
+		}
+		modifier = {
+			factor = 2
+			has_trait = trait_presapient_earthbound
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_limited_regeneration
+		}
+	}
+}
+f_militant_flower_drone = {
+	category = complex_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_f_drugs_t1
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_drone_job
+
+	possible = { can_think = yes }
+	
+	resources = {
+		category = planet_botanists
+		upkeep = {
+			food = 5
+		}
+	}
+		
+	country_modifier = {
+		country_naval_cap_add = 7
+	}
+	pop_modifier = {
+		pop_defense_armies_add = 5
+	}
+	planet_modifier = {
+		planet_amenities_no_happiness_add = -10
+	}
+
+	weight = {
+		weight = @complex_drone_job_weight
+		modifier = {
+			weight = 100
+			exists = owner
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 4
+			has_trait = trait_resilient
+		}
+		modifier = {
+			factor = 4
+			has_trait = trait_very_strong
+		}
+		modifier = {
+			factor = 3
+			has_trait = trait_strong
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_weak
+		}
+		modifier = {
+			factor = 0.9
+			exists = owner
+			years_passed < 1
+			owner = { has_valid_civic = civic_machine_assimilator }
+			has_trait = trait_cybernetic
+		}
+	}	
+}

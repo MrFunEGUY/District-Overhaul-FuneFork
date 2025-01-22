@@ -1,0 +1,67 @@
+@Edict1Cost = 10
+@Edict2Cost = 20
+@Edict3Cost = 30
+@EdictSpecialCost = 1
+
+@EdictPerpetual = -1
+# do3f_improved_districts = {
+# 	length = @EdictPerpetual
+# 	icon = "GFX_edict_type_policy"
+
+# 	resources = {
+# 		category = edicts
+# 	}
+
+# 	potential = {
+# 		is_ai = no
+# 		NOT = { has_global_flag = do3f_better_districts }
+# 	}
+
+# 	effect = { set_global_flag = do3f_better_districts }
+# }
+# do3f_stop_improved_districts = {
+# 	length = @EdictPerpetual
+# 	icon = "GFX_edict_type_policy"
+
+# 	resources = {
+# 		category = edicts
+# 	}
+
+# 	potential = {
+# 		is_ai = no
+# 		has_global_flag = do3f_better_districts
+# 	}
+
+# 	effect = { remove_global_flag = do3f_better_districts }
+# }
+
+#do3f_improved_arcologies = {
+#	length = @EdictPerpetual
+#	icon = "GFX_edict_type_policy"
+#
+#	resources = {
+#		category = edicts
+#	}
+#
+#	potential = {
+#		is_ai = no
+#		NOT = { has_global_flag = do3f_high_density_arcologies }
+#	}
+#
+#	effect = { set_global_flag = do3f_high_density_arcologies }
+#}
+#do3f_stop_improved_arcologies = {
+#	length = @EdictPerpetual
+#	icon = "GFX_edict_type_policy"
+#
+#	resources = {
+#		category = edicts
+#	}
+#
+#	potential = {
+#		is_ai = no
+#		has_global_flag = do3f_high_density_arcologies
+#	}
+#
+#	effect = { remove_global_flag = do3f_high_density_arcologies }
+#}

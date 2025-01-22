@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_sm_planetary_shipyard_uplink"
+		texturefile = "gfx/interface/icons/starbase_modules/sm_planetary_shipyard_uplink.dds"
+	}
+}

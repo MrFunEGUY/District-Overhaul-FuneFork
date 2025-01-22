@@ -1,0 +1,711 @@
+###- Planet Classes -###
+do3f_is_habitable_asteroid = {
+	OR = {
+		is_planet_class = pc_habitable_asteroid
+		is_planet_class = pc_habitable_ice_asteroid
+		is_planet_class = pc_habitable_crystal_asteroid
+	}
+}
+do3f_is_habitable_barren = {
+	OR = {
+		is_planet_class = pc_molten_habitable
+		is_planet_class = pc_barren_habitable
+		is_planet_class = pc_barren_cold_habitable
+		is_planet_class = pc_toxic_habitable
+		is_planet_class = pc_frozen_habitable
+	}
+}
+
+do3f_is_arcology_planet = {
+	OR = {
+		do3f_is_ecu_planet = yes
+		do3f_is_hive_planet = yes
+		do3f_is_machine_planet = yes
+	}
+}
+do3f_is_ecu_planet = {
+	OR = {
+		is_planet_class = pc_city
+		# WH40K Planets Renewed
+		is_planet_class = pc_industrial
+		is_planet_class = pc_forge
+		is_planet_class = pc_forgee
+		is_planet_class = pc_forgeee
+		is_planet_class = pc_forge_ring
+		is_planet_class = pc_forge_ring2
+		is_planet_class = pc_forge_ring3
+		is_planet_class = pc_agri
+		is_planet_class = pc_shrine
+		is_planet_class = pc_fortress
+		is_planet_class = pc_penal
+		is_planet_class = pc_hive_arid
+		is_planet_class = pc_hive_continental_01
+		is_planet_class = pc_hive_continental_02
+		is_planet_class = pc_hive_ocean
+		is_planet_class = pc_hive_tundra
+		is_planet_class = pc_hive_medium
+		is_planet_class = pc_super_hive
+		is_planet_class = pc_hive_industrial
+		is_planet_class = pc_mega_hive
+		# Planetary Diversity
+		is_pd_planetary_megaproject = yes
+		is_pd_arcology = yes
+	}
+}
+do3f_is_hive_planet = {
+	OR = {
+		is_planet_class = pc_hive
+		# Planetary Diverstiy
+		is_pd_megaflora_hive = yes
+		is_pd_hive_arcology = yes
+		pd_is_planet_class_hive = yes
+	}
+}
+do3f_is_machine_planet = {
+	OR = {
+		is_planet_class = pc_machine
+		# Planetary Diversity
+		pd_is_planet_class_machine = yes
+		is_pd_robot_arcology = yes
+	}
+}
+
+do3f_is_ringworld = {
+	OR = {
+		is_planet_class = pc_ringworld_habitable
+		is_planet_class = pc_shattered_ring_habitable
+		# Planetary Diversity
+		is_planetary_diversity_ringworld = yes
+	}
+	
+}
+do3f_is_habitable_structure = {
+	OR = {
+		# Vanilla
+		is_planet_class = pc_ringworld_habitable
+		is_planet_class = pc_habitat
+		do3f_is_ringworld = yes
+		# Planetary Ringworlds 3.6
+		is_planet_class = pc_planetary_ringworld
+		is_planet_class = pc_planetary_ringworld_machine
+		is_planet_class = pc_planetary_ringworld_hive
+		is_planet_class = pc_planetary_ringworld_city
+		# Planetary Diversity
+		is_pd_habitat = yes
+	}
+}
+
+###- Districts Overhaul -###
+do3f_is_special_exotic_farming_pc = {
+	OR = {
+		is_pd_unique = yes
+		is_pd_exotic = yes
+		is_pd_bad_exotic = yes
+	}
+}
+
+do3f_can_have_random_districts = {
+	OR = {
+		# Vanilla
+		# Wet
+		is_planet_class = pc_continental
+		is_planet_class = pc_tropical
+		is_planet_class = pc_ocean
+		# Dry
+		is_planet_class = pc_desert
+		is_planet_class = pc_arid
+		is_planet_class = pc_savannah
+		# Cold
+		is_planet_class = pc_arctic
+		is_planet_class = pc_tundra
+		is_planet_class = pc_alpine
+		# Special
+		is_planet_class = pc_gaia
+		is_planet_class = pc_nuked
+		is_planet_class = pc_relic
+		# Lithoid Supremacy
+		is_planet_class = pc_geode
+		# Real Space: New Frontiers
+		AND = {
+			has_global_flag = has_new_frontiers_mod
+			OR = {
+				is_planet_class = pc_tidallylocked
+				is_planet_class = pc_sterile
+				is_planet_class = pc_hollow
+			}
+		}
+		can_have_habitable_deposits = yes
+	}
+	NOR = {
+		# Planetary Ringworlds
+		is_planet_class = pc_planetary_ringworld
+		is_planet_class = pc_planetary_ringworld_machine
+		is_planet_class = pc_planetary_ringworld_hive
+		is_planet_class = pc_planetary_ringworld_city
+		# WH40K Planets Renewed
+		is_planet_class = pc_industrial
+		is_planet_class = pc_forge
+		is_planet_class = pc_forgee
+		is_planet_class = pc_forgeee
+		is_planet_class = pc_forge_ring
+		is_planet_class = pc_forge_ring2
+		is_planet_class = pc_forge_ring3
+		is_planet_class = pc_agri
+		is_planet_class = pc_shrine
+		is_planet_class = pc_fortress
+		is_planet_class = pc_penal
+		is_planet_class = pc_hive_arid
+		is_planet_class = pc_hive_continental_01
+		is_planet_class = pc_hive_continental_02
+		is_planet_class = pc_hive_ocean
+		is_planet_class = pc_hive_tundra
+		is_planet_class = pc_hive_medium
+		is_planet_class = pc_super_hive
+		is_planet_class = pc_hive_industrial
+		is_planet_class = pc_mega_hive
+
+		do3f_is_habitable_asteroid = yes
+		do3f_is_habitable_barren = yes
+	}
+}
+do3f_can_have_random_housing_districts = {
+	do3f_can_have_random_districts = yes
+	NOR = {
+		# Vanilla
+		is_planet_class = pc_habitat
+		is_planet_class = pc_city
+		is_planet_class = pc_ringworld_habitable
+		is_planet_class = pc_cybrex
+	}
+}
+do3f_can_have_random_mining_districts = {
+	do3f_can_have_random_districts = yes
+	if = {
+		limit = {
+			has_planetary_diversity = yes
+		}
+		pd_aw_is_wasteland_planet = no
+		is_pd_planetary_megaproject = no
+	}
+}
+do3f_can_have_random_energy_districts = {
+	do3f_can_have_random_districts = yes
+	if = {
+		limit = {
+			has_planetary_diversity = yes
+		}
+		pd_aw_is_wasteland_planet = no
+		is_pd_planetary_megaproject = no
+	}
+}
+do3f_can_have_random_farming_districts = {
+	do3f_can_have_random_districts = yes
+	if = {
+		limit = {
+			has_planetary_diversity = yes
+		}
+		pd_aw_is_wasteland_planet = no
+		is_pd_planetary_megaproject = no
+	}
+}
+do3f_can_have_random_primary_districts = {
+	do3f_can_have_random_districts = yes
+	if = {
+		limit = { has_planetary_diversity = yes }
+		pd_aw_is_wasteland_planet = no
+		is_pd_planetary_megaproject = no
+	}
+}
+
+do3f_mining_district_potential = {
+	if = {
+		limit = { has_planetary_diversity = yes }
+		pd_aw_is_megaflora_planet = no
+		NOR = {
+			pd_aw_is_wasteland_planet = yes
+			has_modifier = pd_aw_core_tap
+			has_modifier = pd_aw_agriworld
+			has_modifier = pd_aw_stripmine
+		}
+	}
+}
+
+do3f_generator_district_potential = {
+	if = {
+		limit = { has_planetary_diversity = yes }
+		pd_aw_is_megaflora_planet = no
+		NOR = {
+			pd_aw_is_wasteland_planet = yes
+			has_modifier = pd_aw_core_tap
+			has_modifier = pd_aw_agriworld
+			has_modifier = pd_aw_stripmine
+		}
+	}
+	## Megacorp_mod
+	NOT = { has_modifier = urban_idyll_colony }
+}
+
+do3f_farming_district_potential = {
+	OR = {
+		NOT = { exists = owner }
+		NOT = { owner = { is_anglers_empire = yes } }
+		AND = {
+			owner = { is_anglers_empire = yes }
+			NOT = { 
+				is_planet_class = pc_ocean
+				AND = {
+					pd_is_flooded_planet = yes
+					NOT = { is_planet_class = pc_relic }
+				}
+			}
+		}
+	}
+	NOT = {
+		AND = {
+			exists = owner
+			owner = {
+				is_ai = yes
+				country_uses_food = no
+			}
+		}
+	}
+	if = {
+		limit = { has_planetary_diversity = yes }
+		pd_aw_is_necro_planet = no
+		pd_aw_is_megaflora_planet = no
+		NOR = {
+			pd_aw_is_wasteland_planet = yes
+			pd_aw_is_lithoid_planet = yes
+			has_modifier = pd_aw_core_tap
+			has_modifier = pd_aw_agriworld
+			has_modifier = pd_aw_stripmine
+		}
+	}
+}
+
+###- Secondary Districts -###
+do3f_can_have_secondary_district = {
+	always = yes
+}
+do3f_02_has_secondary_district = {
+	OR = {
+		has_deposit = d_workshops
+		has_deposit = d_university
+		has_deposit = d_local_industry
+		has_deposit = d_production_hub
+		has_deposit = d_local_stores
+		has_deposit = d_spaceport
+		has_deposit = d_academy
+		has_deposit = d_logistics_hub
+		has_deposit = d_bureaucratic
+		has_deposit = d_hydroponic_bay
+		has_deposit = d_entertainment
+		has_deposit = d_necrophage
+	}
+}
+
+###- Colony Designations -###
+do3f_is_city_planet = {
+	has_designation = col_capital
+	has_designation = col_capital_hive
+	has_designation = col_capital_machine
+
+	has_designation = col_city
+	has_designation = col_hive
+	has_designation = col_nexus
+
+	has_designation = col_industrial
+	has_designation = col_foundry
+	has_designation = col_factory
+	has_designation = col_refinery
+
+	has_designation = col_research
+	has_designation = col_fortress
+	has_designation = col_bureau_spiritualist
+	has_designation = col_bureau
+	has_designation = col_bureau_hive
+	has_designation = col_bureau_machine
+
+	has_designation = col_cemetery
+	has_designation = col_storage
+	has_designation = col_trade
+}
+do3f_is_industrial_planet = {
+	has_designation = col_industrial
+	has_designation = col_foundry
+	has_designation = col_factory
+	has_designation = col_refinery
+}
+do3f_is_rural_planet = {
+	has_designation = col_default
+	has_designation = col_default_machine
+
+	has_designation = col_generator
+	has_designation = col_mining
+	has_designation = col_farming
+
+	has_designation = col_rural
+	has_designation = col_rural_gestalt
+
+	has_designation = col_frontier
+	has_designation = col_waste
+	has_designation = col_feudal
+}
+
+###- Deposits -###
+#Housing
+	do3f_002_ocean_housing_deposits = {
+		has_deposit = d_underwater_foundation
+	}
+	do3f_002_ascended_housing_deposits = {
+		OR = {
+			has_deposit = d_precurser_city
+			# Real Space: New Frontiers
+			# Special
+			has_deposit = d_ancient_ruins
+		}
+	}
+	do3f_002_underground_housing_deposits = {
+		has_deposit = d_city_cavesystem 
+	}
+#Energy
+	do3f_no_energy_deposits = {
+		AND = {
+			do3f_002_fusion_deposits = no
+			do3f_002_fossil_deposits = no
+			do3f_002_solar_deposits = no
+			do3f_002_wind_deposits = no
+			do3f_002_geothermal_deposits = no
+			do3f_002_tidal_deposits = no
+			do3f_002_bio_compound_deposits = no
+		}
+	}
+
+	do3f_002_fusion_deposits = {
+		OR = {
+			has_deposit = d_betharian_deposit
+			has_deposit = d_small_deuterium_deposit
+			has_deposit = d_deuterium_deposit
+			has_deposit = d_large_deuterium_deposit
+			has_deposit = d_small_boron11_deposit
+			has_deposit = d_boron11_deposit
+			has_deposit = d_large_boron11_deposit
+		}
+	}
+	do3f_002_fossil_deposits = {
+		OR = {
+			has_deposit = d_small_coal_deposit 
+			has_deposit = d_coal_deposit 
+			has_deposit = d_large_coal_deposit 
+			has_deposit = d_small_natural_gas_deposit 
+			has_deposit = d_natural_gas_deposit 
+			has_deposit = d_large_natural_gas_deposit 
+			has_deposit = d_small_oil_deposit 
+			has_deposit = d_oil_deposit 
+			has_deposit = d_large_oil_deposit 
+		}
+	}
+	do3f_002_solar_deposits = {
+		OR = {
+			has_deposit = d_open_space 
+			has_deposit = d_low_athmosphere_zone 
+			has_deposit = d_arid_highlands 
+			has_deposit = d_searing_desert
+			# Real Space: New Frontiers
+			has_deposit = d_salt_flat
+			has_deposit = d_scorched_badlands
+			# Special
+			has_deposit = d_grand_canyon
+		}
+	}
+	do3f_002_wind_deposits = {
+		OR = {
+			has_deposit = d_stormy_highlands 
+			has_deposit = d_stormy_flats 
+			has_deposit = d_tempestous_mountain
+			# Real Space: New Frontiers
+			# Special
+			has_deposit = d_great_vortex
+		}
+	}
+	do3f_002_geothermal_deposits = {
+		OR = {
+			has_deposit = d_boiling_lake 
+			has_deposit = d_hot_volcano  
+			has_deposit = d_hot_springs
+			has_deposit = d_frozen_gas_lake
+			has_deposit = d_geothermal_vent
+			# Real Space: New Frontiers
+			has_deposit = d_underground_springs
+			has_deposit = d_ice_geyser
+			has_deposit = d_gaseous_eruption
+			# Special
+			has_deposit = d_maze_cliff_formations
+			# Planetary Diversity
+			has_deposit = d_powerful_geyser
+		}
+	}
+	do3f_002_tidal_deposits = {
+		OR = {
+			has_deposit = d_underwater_hill 
+			has_deposit = d_underwater_mountain  
+			has_deposit = d_rushing_waterfalls 
+			has_deposit = d_underwater_vent
+			# Real Space: New Frontiers
+			has_deposit = d_turbulent_currents
+			has_deposit = d_submerged_gas_eruption
+			# Special
+			has_deposit = d_stormy_water
+			# Planetary Diversity
+			has_deposit = d_strong_currents
+			has_deposit = d_underwater_jets
+		}
+	}
+	do3f_002_bio_compound_deposits = {
+		OR = {
+			has_deposit = d_small_crop_field  
+			has_deposit = d_biofuel_crops 
+			has_deposit = d_small_forest
+			has_deposit = d_large_forest
+			has_deposit = d_industrial_bio_waste
+			# Real Space: New Frontiers
+			has_deposit = d_peat_moors
+		}
+	}
+#Mining
+	do3f_no_mining_deposits = {
+		AND = {
+			do3f_002_unstable_mining_deposits = no
+			do3f_002_stable_mining_deposits = no
+			do3f_002_surface_mining_deposits = no
+			do3f_002_deep_mining_deposits = no
+			do3f_002_moutain_mining_deposits = no
+		}
+	}
+
+	do3f_002_unstable_mining_deposits = {
+		OR = {
+			has_deposit = d_loose_rock 
+			has_deposit = d_loose_rock_formation 
+			# Real Space: New Frontiers
+			# Special
+			has_deposit = d_grand_canyon
+			# Planetary Diversity
+			has_deposit = d_coral_deposit
+		}
+	}
+	do3f_002_stable_mining_deposits = {
+		OR = {
+			has_deposit = d_stable_ground 
+			has_deposit = d_ultra_stable_ground
+			has_deposit = d_veiny_cliffs
+			# Real Space: New Frontiers
+			has_deposit = d_abundant_atoll
+		}
+	}
+	do3f_002_surface_mining_deposits = {
+		OR = {
+			has_deposit = d_small_rock_formation 
+			has_deposit = d_large_rock_formation 
+			has_deposit = d_mineral_fields
+			has_deposit = d_prosperous_mesa
+			# Real Space: New Frontiers
+			has_deposit = d_offshore_fields
+			# Special
+			has_deposit = d_maze_cliff_formations
+		}
+	}
+	do3f_002_deep_mining_deposits = {
+		OR = {
+			has_deposit = d_deep_minerals
+			has_deposit = d_ore_rich_caverns
+			has_deposit = d_submerged_ore_veins
+			# Real Space: New Frontiers
+			has_deposit = d_rich_lodes
+			# Special
+			has_deposit = d_vast_crevasse
+			# Planetary Diversity
+			has_deposit = d_submerged_caves
+		}
+	}
+	do3f_002_moutain_mining_deposits = {
+		OR = {
+			has_deposit = d_exposed_mountain_resources
+			has_deposit = d_rich_mountain
+		}
+	}
+#Farming
+	do3f_no_farming_deposits = {
+		AND = {
+			do3f_002_nature_farms_deposits = no
+			do3f_002_ocean_farming_deposits = no
+			do3f_002_exotic_farms_deposits = no
+			do3f_002_oasis_farms_deposits = no
+			do3f_002_cave_farms_deposits = no
+		}
+	}
+
+	do3f_002_nature_farms_deposits = {
+		OR = {
+			has_deposit = d_berries_hedge 
+			has_deposit = d_fruit_fields 
+			has_deposit = d_bountiful_plains
+			has_deposit = d_green_hills
+			has_deposit = d_fertile_lands
+			has_deposit = d_black_soil
+			has_deposit = d_rugged_woods
+			has_deposit = d_lush_jungle
+			# Real Space: New Frontiers
+			has_deposit = d_estuary_meadows
+			has_deposit = d_huge_tree
+		}
+	}
+	do3f_002_ocean_farming_deposits = {
+		OR = {
+			has_deposit = d_underwater_reef	
+			has_deposit = d_underwater_ecosystem	
+			has_deposit = d_boggy_fens
+			has_deposit = d_teeming_reef
+			# Real Space: New Frontiers
+			has_deposit = d_seagrass_shelf
+			has_deposit = d_kelp_forest
+			# Planetary Diversity
+			has_deposit = d_sea_grass
+			has_deposit = d_kelp_forests
+		}
+	}
+	do3f_002_exotic_farms_deposits = {
+		OR = {
+			has_deposit = d_exotic_fauna
+			has_deposit = d_mushrooms	
+			has_deposit = d_mushroom_ecosystem	
+			has_deposit = d_fungal_forest
+			# Planetary Diversity
+			has_deposit = d_hydrocarbon_lakes
+			has_deposit = d_ammonia_seas
+		}
+	}
+	do3f_002_oasis_farms_deposits = {
+		OR = {
+			has_deposit = d_blooming_oasis
+			has_deposit = d_nutritious_mudland
+			has_deposit = d_lichen_fields
+			has_deposit = d_forgiving_tundra
+			has_deposit = d_great_river
+			has_deposit = d_marvelous_oasis
+			has_deposit = d_tropical_island
+		}
+		
+	}
+	do3f_002_cave_farms_deposits = {
+		OR = {
+			has_deposit = d_lush_caves
+			has_deposit = d_lush_cave_complex
+			has_deposit = d_fungal_caves
+			# Real Space: New Frontiers
+			has_deposit = d_underground_reservoir
+			# Special
+			has_deposit = d_karst_cave
+		}
+			
+	}
+###- Primary Districts -###
+	do3f_no_primary_deposits = {
+		NOR = {
+			do3f_002_sr_primary_deposits = yes
+			do3f_002_not_sr_primary_deposits = yes
+		}
+	}
+	do3f_002_sr_primary_deposits = {
+		OR = {
+			do3f_002_chemistry_deposits = yes
+			do3f_002_gas_deposits = yes
+			do3f_002_crystal_deposits = yes
+		}
+	}
+	do3f_002_not_sr_primary_deposits = {
+		OR = {
+			do3f_002_nature_reserve_deposits = yes
+			do3f_002_research_complex_deposits = yes
+			do3f_002_scrapyard_deposits = yes
+
+			do3f_002_assembly_deposits = yes
+			do3f_002_archeology_deposits = yes
+
+			do3f_002_tourism_deposits = yes
+			do3f_002_garden_deposits = yes
+			do3f_002_eco_garden_deposits = yes
+		}
+	}
+
+	do3f_002_chemistry_deposits = {
+		OR = {
+			has_deposit = d_carbon_compounds 
+			has_deposit = d_complex_carbon_compounds
+		}
+	}
+	do3f_002_gas_deposits = {
+		OR = {
+			has_deposit = d_bubbling_lake 
+			has_deposit = d_bubbling_ocean
+
+			has_deposit = d_aquatic_trench
+		}
+	}
+	do3f_002_crystal_deposits = {
+		OR = {
+			has_deposit = d_luminescent_cave 
+			has_deposit = d_luminescent_cave_system
+		}
+	}
+	do3f_002_nature_reserve_deposits = {
+		OR = {
+			has_deposit = d_interesting_wildlife 
+			has_deposit = d_complex_ecosystem 
+		}
+	}
+	do3f_002_research_complex_deposits = {
+		OR = {
+			has_deposit = d_small_anomaly
+			has_deposit = d_medium_anomaly
+			# Real Space: New Frontiers
+			# Special
+			has_deposit = d_boneyard
+			has_deposit = d_levitating_rocks
+		}
+	}
+	do3f_002_assembly_deposits = {
+		has_deposit = d_ancient_technology
+	}
+	do3f_002_tourism_deposits = {
+		OR = {
+			has_deposit = d_relaxing_location  
+			has_deposit = d_super_relaxing_location 
+			# Real Space: New Frontiers
+			# Special
+			has_deposit = d_serene_coastline
+		}
+	}
+	do3f_002_archeology_deposits = {
+		OR = {
+			has_deposit = d_ancient_structure
+			# Real Space: New Frontiers
+			# Special
+			has_deposit = d_ancient_ruins
+		}
+	}
+	do3f_002_garden_deposits = {
+		has_deposit = d_flower_fields
+	}
+	do3f_002_eco_garden_deposits = {
+		has_deposit = d_eatable_flower_fields
+	}
+	do3f_002_scrapyard_deposits = {
+		OR = {
+			has_deposit = d_ancient_scrap
+			# Real Space: New Frontiers
+			# Special
+			has_deposit = d_relic_landfill
+		}
+
+	}

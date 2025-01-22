@@ -1,0 +1,57 @@
+## Possible Deposit Variables ##
+# resources, resource and amount
+# potential trigger (planet scope)
+# blocked_modifier - applied to planet only when deposit blocker has been cleared
+# constant_modifier - applied to planet always
+# blocker = <key/any/none> - default any
+# station = station class in orbit to gather
+
+
+
+# Planetary Features
+
+d_rockworm_hive = {
+	is_for_colonizable = yes
+	icon = d_rockworm_hive_dig
+	use_for_min_max_adjustments = yes
+	category = deposit_cat_rare
+
+	planet_modifier = {
+		planet_jobs_minerals_produces_mult = 0.2
+		district_m_unstable_mining_max = 3
+		district_m_deep_mining_max = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_m_unstable_mining_max = 3
+		district_m_deep_mining_max = 2
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	potential = { always = no }
+}
+
+d_forceful_winds = {
+	is_for_colonizable = yes
+	icon = d_forceful_winds
+	use_for_min_max_adjustments = yes
+	category = deposit_cat_rare
+
+	planet_modifier = {
+		planet_jobs_energy_produces_mult = 0.30
+		district_e_wind_turbines_max = 5
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_e_wind_turbines_max = 5
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	potential = { always = no }
+}

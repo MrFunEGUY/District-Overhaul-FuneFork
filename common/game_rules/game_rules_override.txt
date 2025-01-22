@@ -1,0 +1,37 @@
+can_colonize_planet = {
+	OR = {
+		NOR = {
+			is_planet_class = pc_habitable_asteroid
+			is_planet_class = pc_habitable_ice_asteroid
+			is_planet_class = pc_habitable_crystal_asteroid
+			is_planet_class = pc_molten_habitable
+			is_planet_class = pc_barren_habitable
+			is_planet_class = pc_barren_cold_habitable
+			is_planet_class = pc_toxic_habitable
+			is_planet_class = pc_frozen_habitable
+		}
+		AND = {
+			OR = {
+				is_planet_class = pc_habitable_asteroid
+				is_planet_class = pc_habitable_ice_asteroid
+				is_planet_class = pc_habitable_crystal_asteroid
+			}
+			root = {
+				has_technology = tech_asteroid_adaption_0
+			}
+			NOT = { has_global_flag = do3f_disable_mechanics_asteroid_colonizing }
+		}
+		AND = {
+			OR = {
+				is_planet_class = pc_molten_habitable
+				is_planet_class = pc_barren_habitable
+				is_planet_class = pc_barren_cold_habitable
+				is_planet_class = pc_toxic_habitable
+				is_planet_class = pc_frozen_habitable
+			}
+			root = {
+				has_technology = tech_secondary_planets_adaption_0
+			}
+		}
+	}
+}

@@ -1,0 +1,260 @@
+decision_01_search_for_cave_systems = {
+	owned_planets_only = yes
+	icon = "decision_search_for_cave_systems"
+	
+	enactment_time = 720
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+			minerals = 1000
+		}
+	}
+	potential = { 
+		habitable_structure = no
+		owner = { has_ascension_perk = ap_underground_city }
+		NOT = { has_global_flag = do3f_disable_housing_district_underground }
+	}
+	effect = {
+		do3f_002_spawn_underground_housing_deposits = yes
+		validate_planet_buildings_and_districts = yes
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 10000
+			free_district_slots < 3
+		}
+	}
+}
+
+decision_f_add_industrial_farms = {
+	owned_planets_only = yes
+	icon = decision_planet_food_boost
+
+	enactment_time = 360
+	resources = {
+		category = decisions
+		cost = {
+			minerals = 300
+		}
+	}
+
+	potential = {
+		uses_district_set = standard
+		NOT = {
+			do3f_is_special_exotic_farming_pc = yes
+		}
+		owner = {
+			country_uses_food = yes
+		}
+		NOT = { has_global_flag = do3f_disable_farming_districts_industrial }
+		pd_aw_is_wasteland_planet = no
+		is_pd_planetary_megaproject = no
+		NOT = { is_planet_class = pc_technoorganic }
+		NOT = { has_deposit = d_technocanal }
+		NOT = { has_deposit = d_technocanal_blocker }
+		OR = {
+			has_designation = col_rural
+			has_designation = col_rural_gestalt
+			has_designation = col_farming
+			has_designation = col_habitat_farming
+			has_designation = col_habitat_gestalt_farming
+			has_designation = col_ring_farming
+			has_designation = col_capital_extraction
+			has_designation = col_ecu_mix
+			has_designation = col_penal
+			has_designation = col_slave
+			has_building = building_food_processing_center
+			has_building = building_food_processing_facility
+			### AA Consortium
+			has_building = building_food_retailer
+		}
+	}
+	
+	effect = {
+		add_deposit = d_district_f_industrial_farms
+		validate_planet_buildings_and_districts = yes
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			add = 10
+			bad_food_economy = yes
+		}
+		modifier = {
+			add = 10
+			low_food_income = yes
+		}
+		modifier = {
+			add = 10
+			low_food_storage = yes
+		}
+	}
+}
+decision_f_remove_industrial_farms = {
+	owned_planets_only = yes
+	icon = decision_planet_food_boost
+
+	enactment_time = 120
+	resources = {
+		category = decisions
+		cost = {
+			influence = 10
+		}
+	}
+
+	potential = {
+		has_deposit = d_district_f_industrial_farms
+	}
+	
+	effect = {
+		remove_deposit = d_district_f_industrial_farms
+		validate_planet_buildings_and_districts = yes
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			add = 100
+			owner = { country_uses_food = no }
+		}
+	}
+}
+
+## Remove Deposit
+decision_02_remove_secondary_district = {
+	owned_planets_only = yes
+	icon = "decision_demolish_secondary"
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	
+	potential = {
+		do3f_02_has_secondary_district = yes
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = decision_remove_secondary_districts_requirements
+			num_districts = { type = district_02_workshops value < 1 }
+			num_districts = { type = district_02_university value < 1 }
+			num_districts = { type = district_02_local_industry value < 1 }
+			num_districts = { type = district_02_production_hub value < 1 }
+			num_districts = { type = district_02_local_stores value < 1 }
+			num_districts = { type = district_02_spaceport value < 1 }
+			num_districts = { type = district_02_academy value < 1 }
+			num_districts = { type = district_02_logistics_hub value < 1 }
+			num_districts = { type = district_02_bureaucratic value < 1 }
+			num_districts = { type = district_02_hydroponic_bay value < 1 }
+			num_districts = { type = district_02_entertainment value < 1 }
+			num_districts = { type = district_02_necrophage value < 1 }
+		}
+	}
+
+	effect = {
+		if = {
+			limit = { has_deposit = d_workshops }
+			remove_deposit = d_workshops
+		}
+		if = {
+			limit = { has_deposit = d_university }
+			remove_deposit = d_university
+		}
+		if = {
+			limit = { has_deposit = d_local_industry }
+			remove_deposit = d_local_industry
+		}
+		if = {
+			limit = { has_deposit = d_production_hub }
+			remove_deposit = d_production_hub
+		}
+		if = {
+			limit = { has_deposit = d_local_stores }
+			remove_deposit = d_local_stores
+		}
+		if = {
+			limit = { has_deposit = d_spaceport }
+			remove_deposit = d_spaceport
+		}
+		if = {
+			limit = { has_deposit = d_academy }
+			remove_deposit = d_academy
+		}
+		if = {
+			limit = { has_deposit = d_logistics_hub }
+			remove_deposit = d_logistics_hub
+		}
+		if = {
+			limit = { has_deposit = d_bureaucratic }
+			remove_deposit = d_bureaucratic
+		}
+		if = {
+			limit = { has_deposit = d_hydroponic_bay }
+			remove_deposit = d_hydroponic_bay
+		}
+		if = {
+			limit = { has_deposit = d_entertainment }
+			remove_deposit = d_entertainment
+		}
+		if = {
+			limit = { has_deposit = d_necrophage }
+			remove_deposit = d_necrophage
+		}
+		validate_planet_buildings_and_districts = yes
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+## Set Deposit
+decision_02_choose_secondary_district = {
+	owned_planets_only = yes
+	icon = "decision_district_workshops"
+	
+	resources = {
+		category = decisions
+	}
+	
+	potential = {
+		do3f_02_has_secondary_district = no
+		do3f_can_have_secondary_district = yes
+		do3f_is_arcology_planet = no
+		owner = {
+			OR = {
+				has_origin = origin_necrophage
+				has_technology = tech_advanced_metallurgy_1
+				#has_technology = tech_engineering_2
+				has_technology = tech_basic_science_lab_2
+				has_technology = tech_alloys_2
+				has_technology = tech_luxuries_2
+				has_technology = tech_interstellar_economics
+				has_technology = tech_centralized_command
+				has_technology = tech_combat_training
+				has_technology = tech_global_production_strategy
+				has_technology = tech_colonial_bureaucracy
+				has_technology = tech_hydroponics
+				has_technology = tech_hyper_entertainment_forum
+			}
+		}
+	}
+	allow = {
+		has_planetary_ascension_tier >= 1
+	}
+	
+	effect = {
+		planet_event = { id = do3fdistrictevents.01 }
+		validate_planet_buildings_and_districts = yes
+	}
+
+	ai_weight = {
+		weight = 500
+	}
+}

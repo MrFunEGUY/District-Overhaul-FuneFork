@@ -1,0 +1,48 @@
+####- Planetary Diversity -####
+	has_planetary_diversity = { always = no }
+
+	is_pd_planetary_megaproject = { always = no }
+	is_pd_arcology = { always = no }
+
+	is_pd_megaflora_hive = { always = no }
+	is_pd_hive_arcology = { always = no }
+	pd_is_planet_class_hive = { always = no }
+
+	pd_is_planet_class_machine = { always = no }
+	is_pd_robot_arcology = { always = no }
+
+	is_planetary_diversity_ringworld = { always = no }
+	is_pd_habitat = { always = no }
+
+	is_pd_unique = { always = no }
+	is_pd_exotic = { always = no }
+	is_pd_bad_exotic = { always = no }
+
+	is_pd_radiotrophic_world = { always = no }
+	pd_aw_is_wasteland_planet = { always = no }
+	pd_aw_is_shroud_planet = { always = no }
+
+	pd_is_planet_class_gaia = { is_planet_class = pc_gaia }
+	pd_is_planet_class_nuked = { is_planet_class = pc_nuked }
+	pd_is_planet_for_aqua_trait = { is_planet_class = pc_ocean }
+
+	pd_aw_is_megaflora_planet = { always = no }
+	pd_aw_is_lithoid_planet = { always = no }
+	pd_aw_is_necro_planet = { always = no }
+	pd_is_flooded_planet = {
+		OR = {
+			has_modifier = flooded_habitat
+			is_planet_class = pc_ocean
+		}
+	}
+#
+####- Real Space: New Frontiers -####
+	is_planet_subclass = { always = no }
+	is_extreme_subclass = { always = no }
+#
+####- ZoFE -####
+	is_playable_country = {
+		any_playable_country = {
+			is_same_empire = prev
+		}
+	}

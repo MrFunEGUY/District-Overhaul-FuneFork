@@ -1,0 +1,28 @@
+﻿l_english:
+###- Decisions -###
+# do3f_001_district_decisions.txt
+ decision_01_search_for_cave_systems:0 "Search for underground cave systems"
+ decision_01_search_for_cave_systems_desc:0 "Searching for caves will allow the construction of underground cities, which don't reduce the planets maximum amount of districts."
+
+ decision_f_add_industrial_farms:0 "Add Industrial Farms"
+ decision_f_add_industrial_farms_desc:0 "Adds a deposit that allows up to three indutrial farming districts to be constructed."
+ decision_f_remove_industrial_farms:0 "Remove Industrial Farms"
+ decision_f_remove_industrial_farms_desc:0 "Removes a single industrial farm deposit."
+
+# do3f_02_secondary_district_decisions.txt
+ decision_02_remove_secondary_district:0 "Remove Secondary District"
+ decision_02_remove_secondary_district_desc:0 "Removing the already existing Secondary District will allow a new one to be chosen."
+ decision_remove_secondary_districts_requirements:0 "Secondary Districts have to be demolished first"
+ decision_02_choose_secondary_district:0 "Choose Secondary District"
+ decision_02_choose_secondary_district_desc:0 "Choosing a Secondary District will allow up to three of the selected type to be constructed."
+
+###- Edicts -###
+ edict_do3f_improved_districts:0 "Improved Planetary Districts & Unlock More Building Slots"
+ edict_do3f_improved_districts_desc:0 "§YFor Compatibility with 'Improved Planetary Districts' and 'Unlock More Building Slots'§!\nEffects:\n£district£ Housing Districts:\n  - §GDouble§! £housing£ Housing, £building£ Building Slots and £job£ Jobs\n  - §RDouble§! Upkeep & Cost\n\n£district£ Industrial Districts:\n  - §GDouble§! £housing£ Housing and £job£ Jobs\n  - §G+1§! £building£ Building Slots\n  - §RDouble§! Upkeep & Cost\n\n£district£ Rural Districts:\n  - §G+1§! £housing£ Housing and £job£ Job\n  - §G+1§! £building£ Building Slots\n  - §RDouble§! Upkeep & Cost\n\nNotes:\n§YEffects from techs, civics and policies etc. are doubled§!\n§YInfrastructure District not affected by changes§!\n§YPrimary and Secondary Districts not affected by changes§!"
+ edict_do3f_stop_improved_districts:0 "Stop Improved Planetary Districts & Unlock More Building Slots"
+ edict_do3f_stop_improved_districts_desc:0 "Districts will revert back to normal."
+
+# edict_improved_arcologies:0 "High Density Arcologies"
+# edict_improved_arcologies_desc:0 "Arcologies will have massively increase housing, jobs and upkeep."
+# edict_stop_improved_arcologies:0 "Stop High Density Arcologies"
+# edict_stop_improved_arcologies_desc:0 "Arcologies will revert back to normal."

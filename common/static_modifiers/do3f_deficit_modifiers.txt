@@ -1,0 +1,60 @@
+exo_triiodide_deficit = {
+	planet_jobs_produces_mult = -0.3
+	planet_chemists_produces_mult = -0.9
+}
+exo_vantablack_deficit = {
+	planet_jobs_produces_mult = -0.3
+	planet_jobs_physics_research_produces_mult = -0.9
+	planet_jobs_engineering_research_produces_mult = -0.3
+	planet_jobs_society_research_produces_mult = -0.3
+}
+exo_gallium_deficit = {
+	planet_jobs_produces_mult = -0.3
+	planet_jobs_consumer_goods_produces_mult = -0.9
+	planet_pop_assembly_mult = -0.9
+}
+exo_plutonium_deficit = {
+	planet_jobs_produces_mult = -0.3
+	planet_jobs_energy_produces_mult = -0.9
+}
+exo_adamantite_deficit = {
+	planet_jobs_produces_mult = -0.3
+	army_health = -0.9
+}
+exo_administrantium_deficit = {
+	planet_jobs_produces_mult = -0.3
+	empire_size_mult = 0.5
+	empire_size_penalty_mult = 0.5
+}
+exo_hyperion_deficit = {
+	planet_jobs_produces_mult = -0.3
+	planet_jobs_unity_produces_mult = -0.6
+	planet_amenities_mult = -0.5
+}
+exo_coaxium_deficit = {
+	planet_jobs_produces_mult = -0.3
+	ship_speed_mult = -0.9
+}
+exo_dust_deficit = {
+	planet_jobs_produces_mult = -0.3
+	planet_jobs_physics_research_produces_mult = -0.3
+	planet_jobs_engineering_research_produces_mult = -0.3
+	planet_jobs_society_research_produces_mult = -0.6
+	planet_jobs_unity_produces_mult = -0.6
+}
+exo_stalinium_deficit = {
+	planet_jobs_produces_mult = -0.3
+	planet_jobs_alloys_produces_mult = -0.9
+	army_health = -0.6
+}
+exo_kruppstahl_deficit = {
+	planet_jobs_produces_mult = -0.3
+	planet_jobs_alloys_produces_mult = -0.6
+	army_health = -0.9
+}
+exo_tachyon_deficit = {
+	planet_jobs_produces_mult = -0.3
+	empire_size_mult = 0.25
+	empire_size_penalty_mult = 0.75
+	planet_jobs_unity_produces_mult = -0.6
+}

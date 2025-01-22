@@ -1,0 +1,1653 @@
+@primary = 3
+@rw_maintenance = 5
+########################
+# Strategic 'sources   #
+########################
+district_do3f_chemistry_industry = {
+	expansion_planner = yes
+    base_buildtime = 480
+
+	min_for_deposits_on_planet = 2	
+	max_for_deposits_on_planet = 5
+
+	show_on_uncolonized = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_chemistry }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_chemistry_industry
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_chemistry_industry
+				value > 0
+			}
+		}
+	}
+
+	potential = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_chemistry }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_chemistry_industry
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_chemistry_industry
+				value > 0
+			}
+		}
+		exists = owner
+	}
+	
+	allow = {
+		NOT = { has_modifier = resort_colony }
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 600
+		}
+		upkeep = {
+			energy = 4
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = @primary
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_mote_harvesting_drone_add = @primary
+		}
+	}	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+			}
+		}
+		modifier = {
+			job_mote_harvester_add = @primary
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_mote_harvesting_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+			}
+		}
+		text = job_mote_harvester_effect_desc
+	}
+}
+district_do3f_gas_refinery = {
+	expansion_planner = yes
+    base_buildtime = 480
+
+	min_for_deposits_on_planet = 2	
+	max_for_deposits_on_planet = 5
+
+	show_on_uncolonized = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_gas }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_gas_refinery
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_gas_refinery
+				value > 0
+			}
+		}
+	}
+
+	potential = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_gas }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_gas_refinery
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_gas_refinery
+				value > 0
+			}
+		}
+		exists = owner
+	}
+	
+	allow = {
+		NOT = { has_modifier = resort_colony }
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 600
+		}
+		upkeep = {
+			energy = 4
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = @primary
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_gas_extraction_drone_add = @primary
+		}
+	}	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+			}
+		}
+		modifier = {
+			job_gas_extractor_add = @primary
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_gas_extraction_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+			}
+		}
+		text = job_gas_extractor_effect_desc
+	}
+}
+district_do3f_crystal_mines = {
+	expansion_planner = yes
+    base_buildtime = 480
+
+	min_for_deposits_on_planet = 2	
+	max_for_deposits_on_planet = 5
+
+	show_on_uncolonized = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_crystals }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_crystal_mines
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_crystal_mines
+				value > 0
+			}
+		}
+	}
+
+	potential = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_crystals }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_crystal_mines
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_crystal_mines
+				value > 0
+			}
+		}
+		exists = owner
+	}
+	
+	allow = {
+		NOT = { has_modifier = resort_colony }
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 600
+		}
+		upkeep = {
+			energy = 4
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = @primary
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_crystal_mining_drone_add = @primary
+		}
+	}		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+			}
+		}
+		modifier = {
+			job_crystal_miner_add = @primary
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_crystal_mining_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+			}
+		}
+		text = job_crystal_miner_effect_desc
+	}
+}
+########################
+# Research             #
+########################
+district_do3f_nature_reserve = {
+	expansion_planner = yes
+    base_buildtime = 360
+	min_for_deposits_on_planet = 2	
+	max_for_deposits_on_planet = 8
+	
+	show_on_uncolonized = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_nature }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_nature_reserve
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_nature_reserve
+				value > 0
+			}
+		}
+	}
+	
+	potential = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_nature }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_nature_reserve
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_nature_reserve
+				value > 0
+			}
+		}
+		exists = owner
+	}
+	
+	allow = {
+		NOT = { has_modifier = slave_colony }
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = @primary
+		deposit_blockers_natural_unity_produces_add = 2
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_02_park_ranger_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {	
+			job_02_nature_research_drone_add = 3
+		}
+	}
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_02_park_ranger_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes } 
+		}
+		text = job_02_nature_research_drone_effect_desc
+	}
+}
+district_do3f_research_complex = {
+	expansion_planner = yes
+    base_buildtime = 360
+	min_for_deposits_on_planet = 2	
+	max_for_deposits_on_planet = 8
+	
+	show_on_uncolonized = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_research }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_research_complex
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_research_complex
+				value > 0
+			}
+		}
+	}
+	
+	potential = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_research }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_research_complex
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_research_complex
+				value > 0
+			}
+		}
+		exists = owner
+	}
+	
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = @primary
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_02_physicist_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_02_experimental_drone_add = 3
+		}
+	}
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_02_physicist_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes } 
+		}
+		text = job_02_experimental_drone_effect_desc
+	}
+}
+district_do3f_scrapyard = {
+	expansion_planner = yes
+    base_buildtime = 480
+	min_for_deposits_on_planet = 2	
+	max_for_deposits_on_planet = 8
+	
+	show_on_uncolonized = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_scrap }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_scrapyard
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_scrapyard
+				value > 0
+			}
+		}
+	}
+	
+	potential = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_scrap }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_scrapyard
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_scrapyard
+				value > 0
+			}
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 400
+		}
+		upkeep = {
+			energy = 2
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = @primary
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_02_engineer_add = 2
+			job_scrap_miner_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_02_engineering_drone_add = 2
+			job_scrap_miner_drone_add = 1
+		}
+	}
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_02_engineer_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes } 
+		}
+		text = job_02_engineering_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_scrap_miner_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes } 
+		}
+		text = job_scrap_miner_drone_effect_desc
+	}
+}
+########################
+# Amenities            #
+########################
+district_do3f_tourism = {
+	expansion_planner = yes
+    base_buildtime = 600
+
+	min_for_deposits_on_planet = 2	
+	max_for_deposits_on_planet = 8
+
+	show_on_uncolonized = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_tourism }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_tourism
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_tourism
+				value > 0
+			}
+		}
+	}
+
+	potential = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_tourism }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_tourism
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_tourism
+				value > 0
+			}
+		}
+		exists = owner
+	}
+	
+	allow = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+		owner = { is_regular_empire = yes }
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 4
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = @primary
+		planet_immigration_pull_mult = 0.1
+		pop_growth_from_immigration = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_entertainer_add = @primary
+			job_culture_worker_add = @primary
+		}
+	}
+
+	triggered_desc = {
+		text = job_entertainer_effect_desc
+	}
+	triggered_desc = {
+		text = job_culture_worker_effect_desc
+	}
+}
+district_do3f_gardens = {
+	expansion_planner = yes
+    base_buildtime = 400
+	min_for_deposits_on_planet = 2	
+	max_for_deposits_on_planet = 8
+
+	show_on_uncolonized = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_gardens }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_gardens
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_gardens
+				value > 0
+			}
+		}
+	}
+
+	potential = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_gardens }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_gardens
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_gardens
+				value > 0
+			}
+		}
+		exists = owner
+	}
+	
+	allow = {
+		NOT = { has_modifier = slave_colony }
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 3
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = @primary
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_entertainer_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_02_gardener_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_chronicle_drone_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_farm_add = 3
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_entertainer_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_02_gardener_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_agri_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_farm_effect_desc
+	}
+}
+district_do3f_ecogardens = {
+	expansion_planner = yes
+    base_buildtime = 600
+	min_for_deposits_on_planet = 2	
+	max_for_deposits_on_planet = 8
+
+	show_on_uncolonized = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_ecogardens }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_ecogardens
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_ecogardens
+				value > 0
+			}
+		}
+	}
+
+	potential = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_ecogardens }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_ecogardens
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_ecogardens
+				value > 0
+			}
+		}
+		exists = owner
+	}
+	
+	allow = {
+		NOT = { has_modifier = slave_colony }
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 750
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = @primary
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_entertainer_add = 2
+			job_02_gardener_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_agri_drone_add = 2
+			job_chronicle_drone_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_agri_drone_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		modifier = {
+			job_fe_acolyte_farm_add = 5
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_entertainer_effect_desc
+	}
+
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_02_gardener_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_agri_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_fallen_empire_spiritualist = yes }
+		}
+		text = job_fe_acolyte_farm_effect_desc
+	}
+}
+########################
+# Ancient              #
+########################
+district_do3f_robot_assembly = {
+	expansion_planner = yes
+    base_buildtime = 720
+
+	min_for_deposits_on_planet = 1	
+	max_for_deposits_on_planet = 4
+
+	show_on_uncolonized = {
+		exists = from
+		from = { is_machine_empire = yes }
+		do3f_002_assembly_deposits = yes
+		NOT = { has_global_flag = do3f_disable_primary_districts_assembly }
+	}
+	potential = {
+		exists = owner
+		owner = { is_machine_empire = yes }
+		do3f_002_assembly_deposits = yes
+		NOT = { has_global_flag = do3f_disable_primary_districts_assembly }
+	}
+	
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_do3f_drone_lab
+		district_do3f_cloning_facility		
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 2000
+		}
+		upkeep = {
+			energy = 20
+		}		
+	}
+	planet_modifier = {
+		planet_housing_add = @primary
+		job_replicator_add = @primary
+	}
+
+	triggered_desc = {
+		trigger = { exists = owner }
+		text = job_replicator_desc
+	}
+}
+district_do3f_drone_lab = {
+	expansion_planner = yes
+    base_buildtime = 720
+
+	min_for_deposits_on_planet = 1	
+	max_for_deposits_on_planet = 4
+
+	show_on_uncolonized = {
+		exists = from
+		from = { is_hive_empire = yes }
+		do3f_002_assembly_deposits = yes
+		NOT = { has_global_flag = do3f_disable_primary_districts_assembly }
+	}
+	potential = {
+		exists = owner
+		owner = { is_hive_empire = yes }
+		do3f_002_assembly_deposits = yes
+		NOT = { has_global_flag = do3f_disable_primary_districts_assembly }
+	}
+	
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_do3f_robot_assembly
+		district_do3f_cloning_facility		
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 2000
+		}
+		upkeep = {
+			energy = 20
+		}		
+	}
+	planet_modifier = {
+		planet_housing_add = @primary
+		job_spawning_drone_add = @primary
+	}
+
+	triggered_desc = {
+		trigger = { exists = owner }
+		text = job_spawning_drone_desc
+	}
+}
+district_do3f_cloning_facility = {
+	expansion_planner = yes
+    base_buildtime = 720
+
+	min_for_deposits_on_planet = 1	
+	max_for_deposits_on_planet = 4
+
+	show_on_uncolonized = {
+		exists = from
+		from = { is_regular_empire = yes }
+		do3f_002_assembly_deposits = yes
+		NOT = { has_global_flag = do3f_disable_primary_districts_assembly }
+	}
+	potential = {
+		exists = owner
+		owner = { is_regular_empire = yes }
+		do3f_002_assembly_deposits = yes
+		NOT = { has_global_flag = do3f_disable_primary_districts_assembly }
+	}
+	
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	conversion_ratio = 1
+	convert_to = {
+		district_do3f_robot_assembly
+		district_do3f_drone_lab		
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 2000
+		}
+		upkeep = {
+			energy = 20
+		}		
+	}
+	
+	planet_modifier = {
+		planet_housing_add = @primary
+		job_02_clone_scientist_add = @primary
+	}
+
+	triggered_desc = {
+		trigger = { exists = owner }
+		text = job_02_clone_scientist_desc
+	}
+}
+district_do3f_archeology = {
+	expansion_planner = yes
+    base_buildtime = 400
+	is_capped_by_modifier = yes
+	min_for_deposits_on_planet = 1	
+	max_for_deposits_on_planet = 5
+	show_on_uncolonized = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_archeology }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_archeology
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_archeology
+				value > 0
+			}
+		}
+	}
+	potential = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_archeology }
+		OR = {
+			num_free_districts = {
+				type = district_do3f_archeology
+				value > 0
+			}
+			num_districts = {
+				type = district_do3f_archeology
+				value > 0
+			}
+		}
+		exists = owner
+	}
+	
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			alloys = 500
+		}
+		upkeep = {
+			energy = 5
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = @primary
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_02_archaeologist_add = @primary
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_02_archaeologist_drone_add = @primary
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = yes
+			}
+		}
+		text = job_02_archaeologist_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_02_archaeologist_effect_desc
+	}
+}
+### For Ringworlds ###
+# Neutronium Forge - Provides Alloys
+district_do3f_rw_neutronium_forge = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rw_build_time
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_ring_alloy }
+		OR = {
+			uses_district_set = ring_world
+			# Planetary Ringworlds 3.6
+			uses_district_set = planet_ring
+			uses_district_set = planet_ring_city
+		}
+		system_star = {
+			OR = {
+				is_star_class = sc_neutron_star
+				is_star_class = sc_pulsar
+				# Real Space
+				is_star_class = sc_magnetar
+				is_star_class = sc_microquasar_1
+				is_star_class = sc_microquasar_2
+			}
+		}
+	}
+	
+	potential = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_ring_alloy }
+		OR = {
+			uses_district_set = ring_world
+			# Planetary Ringworlds 3.6
+			uses_district_set = planet_ring
+			uses_district_set = planet_ring_city
+		}
+		system_star = {
+			OR = {
+				is_star_class = sc_neutron_star
+				is_star_class = sc_pulsar
+			}
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @do3f_rw_cost
+		}
+		upkeep = {
+			energy = 15
+		}	
+	}
+
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_02_neutronium_mining_drone_add = 10
+		}
+		
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_02_neutronium_miner_add = 10
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_02_neutronium_mining_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_02_neutronium_miner_effect_desc
+	}
+}
+# Exotic Resource Collectors - Provides Exotic Gases
+district_do3f_rw_exotic_resource_collector = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rw_build_time
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_ring_gas }
+		OR = {
+			uses_district_set = ring_world
+			# Planetary Ringworlds 3.6
+			uses_district_set = planet_ring
+			uses_district_set = planet_ring_city
+		}
+		OR = {
+			is_inside_nebula = yes
+			# Real Space
+			is_star_class = sc_p_purple
+			is_star_class = sc_p_green
+			is_star_class = sc_p_red
+		}
+	}
+
+	potential = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_ring_gas }
+		OR = {
+			uses_district_set = ring_world
+			# Planetary Ringworlds 3.6
+			uses_district_set = planet_ring
+			uses_district_set = planet_ring_city
+		}
+		OR = {
+			is_inside_nebula = yes
+			# Real Space
+			is_star_class = sc_p_purple
+			is_star_class = sc_p_green
+			is_star_class = sc_p_red
+		}
+		
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @do3f_rw_cost
+			alloys = 200
+		}
+		upkeep = {
+			energy = @rw_maintenance
+			alloys = 5
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_02_exotic_resource_collection_drone_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_02_exotic_resource_collector_add = 10
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_02_exotic_resource_collection_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_02_exotic_resource_collector_effect_desc
+	}
+}
+# Stellar Siphon Ports - Provides Motes
+district_do3f_rw_siphon_ports = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rw_build_time
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_ring_motes }
+		OR = {
+			uses_district_set = ring_world
+			# Planetary Ringworlds 3.6
+			uses_district_set = planet_ring
+			uses_district_set = planet_ring_city
+		}
+		is_inside_nebula = no
+		system_star = {
+			OR = {
+				is_star_class = sc_m
+				is_star_class = sc_m_giant
+				is_star_class = sc_g
+				is_star_class = sc_k
+				is_star_class = sc_t
+				# Real Space
+				is_star_class = sc_g_giant
+				is_star_class = sc_k_giant
+				is_star_class = sc_k_super
+				is_star_class = sc_m_super
+				is_star_class = sc_m_hyper
+				is_star_class = sc_l
+				is_star_class = sc_y
+				is_star_class = sc_d
+			}
+		}
+	}
+
+	potential = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_ring_motes }
+		OR = {
+			uses_district_set = ring_world
+			# Planetary Ringworlds 3.6
+			uses_district_set = planet_ring
+			uses_district_set = planet_ring_city
+		}
+		is_inside_nebula = no
+		system_star = {
+			OR = {
+				is_star_class = sc_m
+				is_star_class = sc_m_giant
+				is_star_class = sc_g
+				is_star_class = sc_k
+				is_star_class = sc_t
+			}
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @do3f_rw_cost
+			alloys = 200
+		}
+		upkeep = {
+			energy = @rw_maintenance
+			alloys = 5
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_03_pilot_drone_add = 10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_02_siphon_pilot_add = 10
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_02_siphon_pilot_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_02_siphon_pilot_effect_desc
+	}
+}
+# Deepspace Crystalization Facilities - Provides Crystals
+district_do3f_rw_crystalization_facilities = {
+	expansion_planner = yes
+    base_buildtime = @do3f_rw_build_time
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_ring_crystals }
+		OR = {
+			uses_district_set = ring_world
+			# Planetary Ringworlds 3.6
+			uses_district_set = planet_ring
+			uses_district_set = planet_ring_city
+		}
+		is_inside_nebula = no
+		system_star = {
+			NOR = {
+				is_star_class = sc_m
+				is_star_class = sc_m_giant
+				is_star_class = sc_g
+				is_star_class = sc_k
+				is_star_class = sc_t
+				# Real Space
+				is_star_class = sc_g_giant
+				is_star_class = sc_k_giant
+				is_star_class = sc_k_super
+				is_star_class = sc_m_super
+				is_star_class = sc_m_hyper
+				is_star_class = sc_l
+				is_star_class = sc_y
+				is_star_class = sc_d
+			}
+		}
+	}
+
+	potential = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_ring_crystals }
+		OR = {
+			uses_district_set = ring_world
+			# Planetary Ringworlds 3.6
+			uses_district_set = planet_ring
+			uses_district_set = planet_ring_city
+		}
+		is_inside_nebula = no
+		system_star = {
+			NOR = {
+				is_star_class = sc_m
+				is_star_class = sc_m_giant
+				is_star_class = sc_g
+				is_star_class = sc_k
+				is_star_class = sc_t
+			}
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @do3f_rw_cost
+			alloys = 200
+		}
+		upkeep = {
+			energy = @rw_maintenance
+			alloys = 5
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		job_02_crystal_growing_drone_add = 10
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_02_crystal_grower_add = 10
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_02_crystal_growing_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_02_crystal_grower_effect_desc
+	}
+}
+
+district_do3f_rw_asteroid_belt_mining = {
+	expansion_planner = yes
+    base_buildtime = 1
+	is_capped_by_modifier = no
+
+	show_on_uncolonized = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_ring_mining }
+		OR = {
+			uses_district_set = ring_world
+			# Planetary Ringworlds 3.6
+			uses_district_set = planet_ring
+			uses_district_set = planet_ring_city
+		}
+		solar_system = {
+			any_system_planet = {
+				is_asteroid = yes
+			}
+		}
+	}
+	
+	potential = {
+		NOT = { has_global_flag = do3f_disable_primary_districts_ring_mining }
+		OR = {
+			uses_district_set = ring_world
+			# Planetary Ringworlds 3.6
+			uses_district_set = planet_ring
+			uses_district_set = planet_ring_city
+		}
+		exists = owner
+		solar_system = {
+			any_system_planet = {
+				is_asteroid = yes
+			}
+		}
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	resources = {
+		category = planet_districts
+		upkeep = { energy = 15 }
+	}
+
+	planet_modifier = {
+		planet_housing_add = 15
+		trade_value_add = 10
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_agrarian_idyll }
+		}
+		modifier = { planet_housing_add = 5 }
+	}			
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = { job_m_asteroid_mining_drone_add = 15 }
+	}		
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+			}
+		}
+		modifier = { job_m_asteroid_miner_add = 15 }
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_m_asteroid_mining_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+			}
+		}
+		text = job_m_asteroid_miner_effect_desc
+	}
+	
+	prerequisites = {
+		tech_mechanized_mining
+	}
+}

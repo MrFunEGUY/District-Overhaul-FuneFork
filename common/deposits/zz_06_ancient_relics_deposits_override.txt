@@ -1,0 +1,222 @@
+d_ancient_reactor_pits = {
+	is_for_colonizable = yes
+	icon = d_reactor
+
+	potential = { always = no }
+
+	planet_modifier = {
+		district_e_fusion_generator_max = 6
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_e_fusion_generator_max = 6
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+}
+
+d_immense_solar_array = {
+	is_for_colonizable = yes
+	icon = d_solar_array
+
+	potential = { always = no }
+
+	planet_modifier = {
+		district_e_solar_generator_max = 3
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_e_solar_generator_max = 3
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+}
+
+d_abandoned_mining_tunnels = {
+	is_for_colonizable = yes
+	icon = d_mining_tunnels
+
+	potential = { always = no }
+
+	planet_modifier = {
+		district_m_deep_mining_max = 6
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_m_deep_mining_max = 6
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+}
+
+d_relic_metal_boneyard = {
+	is_for_colonizable = yes
+	icon = d_metal_boneyard
+
+	potential = { always = no }
+
+	planet_modifier = {
+		district_m_stable_mining_max = 3
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_m_stable_mining_max = 3
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+}
+
+d_central_spire = {
+	is_for_colonizable = yes
+	icon = d_central_spire
+	category = deposit_cat_rare
+
+	potential = { always = no }
+	
+	planet_modifier = { 
+		district_01_ascended_housing_max = 4
+		planet_jobs_society_research_produces_mult = 0.15
+		planet_jobs_engineering_research_produces_mult = 0.15
+		planet_jobs_physics_research_produces_mult = 0.15
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_researcher_add = 8
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 8
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {	
+			job_calculator_add = 8
+		}
+	}
+}
+
+d_industrial_sector = {
+	is_for_colonizable = yes
+	icon = d_ruins_medium
+	category = deposit_cat_rare
+
+	potential = { always = no }
+
+	planet_modifier = {
+		district_do3f_chemistry_industry_max = 2
+		district_do3f_gas_refinery_max = 2
+		district_do3f_crystal_mines_max = 2
+	}
+}
+
+d_relic_dense_ruins = {
+	is_for_colonizable = yes
+	icon = d_ruins_large
+	category = deposit_cat_rare
+
+	potential = { always = no }
+	
+	planet_modifier = {
+		planet_max_districts_add = -6
+		district_do3f_archeology_max = 2
+		planet_jobs_society_research_produces_mult = 0.15
+		planet_jobs_engineering_research_produces_mult = 0.15
+		planet_jobs_physics_research_produces_mult = 0.15
+	}
+}
+
+d_former_relic_world = {
+	is_for_colonizable = yes
+	icon = d_central_spire
+	category = deposit_cat_rare
+
+	potential = { always = no }
+
+	planet_modifier = {
+		district_do3f_archeology_max = 1
+		planet_jobs_society_research_produces_mult = 0.1
+		planet_jobs_engineering_research_produces_mult = 0.1
+		planet_jobs_physics_research_produces_mult = 0.1
+	}
+}
+
+d_artifacts_planet_1 = {
+	is_for_colonizable = yes
+	icon = "d_archaeological_dig"
+	category = deposit_cat_rare
+
+	potential = { always = no }
+
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			minor_artifacts = 1
+		}
+	}
+
+	planet_modifier = {
+		district_do3f_archeology_max = 1
+	}
+}
+
+d_artifacts_planet_2 = {
+	is_for_colonizable = yes
+	icon = "d_archaeological_dig"
+	category = deposit_cat_rare
+
+	potential = { always = no }
+
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			minor_artifacts = 2
+		}
+	}
+
+	planet_modifier = {
+		district_do3f_archeology_max = 2
+	}
+}
+
+d_artifacts_planet_3 = {
+	is_for_colonizable = yes
+	icon = "d_archaeological_dig"
+	category = deposit_cat_rare
+
+	potential = { always = no }
+
+	resources = {
+		category = orbital_research_deposits
+		produces = {
+			minor_artifacts = 3
+		}
+	}
+
+	planet_modifier = {
+		district_do3f_archeology_max = 3
+	}
+}

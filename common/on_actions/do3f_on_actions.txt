@@ -1,0 +1,12 @@
+on_press_begin = {
+	events = {
+		xenosgamestart.02
+		do3fspecialdepositevents.01
+	}
+}
+
+on_yearly_pulse = {
+	events = {
+		do3fspecialdepositevents.01
+	}
+}

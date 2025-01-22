@@ -1,0 +1,186 @@
+namespace = xenosmenu
+# Main Menu
+country_event = {
+	id = xenosmenu.01
+	title = "xenosmenu.01.name"
+	desc = "xenosmenu.01.desc"
+
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	immediate = {
+		if = {
+			limit = { NOT = { has_global_flag = do3f_mods_active } }
+			set_global_flag = do3f_mods_active
+		}
+	}
+
+	option = {
+		name = "xenosmenu.01.disable_features"
+		trigger = { always = no }
+		# hidden_effect = {
+		# 	root = {
+		# 		country_event = { id = xenosdisablefeaturesevents.01 days = 0 }
+		# 	}
+		# }
+	}
+	option = {
+		name = "FINISHED"
+		trigger = {
+			has_global_flag = do3f_mods_active
+		}
+	}
+}
+
+country_event = {
+	id = xenosmenu.02
+	title = "xenosmenu.02.name"
+	desc = "xenosmenu.02.desc"
+	
+	picture = GFX_evt_announcement
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = "xenosmenu.02.sec_dis_buff"
+		hidden_effect = {
+			root = {
+				country_event = { id = xenosmenu.021 days = 0 }
+			}
+		}
+		allow = { is_active = yes }
+	}
+	option = {
+		name = "xenosmenu.02.improved_districts"
+		hidden_effect = {
+			root = {
+				country_event = { id = xenosmenu.022 days = 0 }
+			}
+		}
+		allow = { is_active = yes }
+	}
+	option = {
+		name = "NEVERMIND"
+		hidden_effect = {
+			root = {
+				country_event = { id = xenosmenu.01 days = 0 }
+			}
+		}
+	}
+}
+country_event = {
+	id = xenosmenu.021
+	title = "xenosmenu.021.name"
+	desc = "xenosmenu.021.desc"
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_ship_bridge
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = "xenosmenu.021.sec_dis_buff_increase"
+		allow = {
+			root = {
+				check_variable = {
+					which = do3f_secondary_district_buff
+					value < 2
+				}
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				change_variable = {
+					which = do3f_secondary_district_buff
+					value = 1
+				}
+			}
+			root = {
+				country_event = { id = xenosmenu.021 days = 0 }
+			}
+		}
+	}
+	option = {
+		name = "xenosmenu.021.sec_dis_buff_reduce"
+		allow = {
+			root = {
+				check_variable = {
+					which = do3f_secondary_district_buff
+					value > 0
+				}
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				change_variable = {
+					which = do3f_secondary_district_buff
+					value = -1
+				}
+			}
+			root = {
+				country_event = { id = xenosmenu.021 days = 0 }
+			}
+		}
+	}
+
+	option = {
+		name = "NEVERMIND"
+		hidden_effect = {
+			root = {
+				country_event = { id = xenosmenu.02 days = 0 }
+			}
+		}
+	}
+}
+country_event = {
+	id = xenosmenu.022
+	title = "xenosmenu.022.name"
+	desc = "xenosmenu.022.desc"
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_ship_bridge
+
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+	}
+
+	option = {
+		name = "xenosmenu.022.reg_dis_buff"
+		hidden_effect = {
+			if = {
+				limit = {
+					has_global_flag = do3f_better_districts
+				}
+				remove_global_flag = do3f_better_districts
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_global_flag = do3f_better_districts
+					}
+				}
+				set_global_flag = do3f_better_districts
+			}
+			root = {
+				country_event = { id = xenosmenu.022 days = 0 }
+			}
+		}
+	}
+	option = {
+		name = "NEVERMIND"
+		hidden_effect = {
+			root = {
+				country_event = { id = xenosmenu.02 days = 0 }
+			}
+		}
+	}
+}

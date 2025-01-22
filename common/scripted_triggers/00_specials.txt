@@ -1,0 +1,3 @@
+is_intplan_agri_active = { always = no }
+is_active = { always = no }
+is_the_belt_active = { always = no }

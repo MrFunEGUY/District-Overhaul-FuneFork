@@ -1,0 +1,50 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_text_exo_triiodide"
+		texturefile = "gfx/interface/icons/resources/exo_triiodide.dds"
+	}
+	spriteType = {
+		name = "GFX_text_exo_vantablack"
+		texturefile = "gfx/interface/icons/resources/exo_vantablack.dds"
+	}
+	spriteType = {
+		name = "GFX_text_exo_gallium"
+		texturefile = "gfx/interface/icons/resources/exo_gallium.dds"
+	}
+	spriteType = {
+		name = "GFX_text_exo_plutonium"
+		texturefile = "gfx/interface/icons/resources/exo_plutonium.dds"
+	}
+	spriteType = {
+		name = "GFX_text_exo_adamantite"
+		texturefile = "gfx/interface/icons/resources/exo_adamantite.dds"
+	}
+	spriteType = {
+		name = "GFX_text_exo_administrantium"
+		texturefile = "gfx/interface/icons/resources/exo_administrantium.dds"
+	}
+	spriteType = {
+		name = "GFX_text_exo_coaxium"
+		texturefile = "gfx/interface/icons/resources/exo_coaxium.dds"
+	}
+	spriteType = {
+		name = "GFX_text_exo_hyperion"
+		texturefile = "gfx/interface/icons/resources/exo_hyperion.dds"
+	}
+	spriteType = {
+		name = "GFX_text_exo_dust"
+		texturefile = "gfx/interface/icons/resources/exo_dust.dds"
+	}
+	spriteType = {
+		name = "GFX_text_exo_stalinium"
+		texturefile = "gfx/interface/icons/resources/exo_stalinium.dds"
+	}
+	spriteType = {
+		name = "GFX_text_exo_kruppstahl"
+		texturefile = "gfx/interface/icons/resources/exo_kruppstahl.dds"
+	}
+	spriteType = {
+		name = "GFX_text_exo_tachyon"
+		texturefile = "gfx/interface/icons/resources/exo_tachyon.dds"
+	}
+}

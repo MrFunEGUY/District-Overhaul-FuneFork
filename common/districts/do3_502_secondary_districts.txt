@@ -1,0 +1,2502 @@
+########################
+# Rural/Basic 'sources #
+########################
+district_02_hydroponic_bay = {
+	base_buildtime = @do3f_base_build_time
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		OR = {
+			num_free_districts = {
+				type = district_02_hydroponic_bay
+				value > 0
+			}
+			num_districts = {
+				type = district_02_hydroponic_bay
+				value > 0
+			}
+		}
+	}
+	
+	potential = {
+		OR = {
+			num_free_districts = {
+				type = district_02_hydroponic_bay
+				value > 0
+			}
+			num_districts = {
+				type = district_02_hydroponic_bay
+				value > 0
+			}
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_02_relay_stations
+		district_02_tunnel_networks
+		district_02_lower_city_development
+	}
+
+	resources = {
+		category = planet_districts
+		upkeep = {
+			energy = 5
+		}
+		upkeep = {
+			trigger = { do3f_is_arcology_planet = yes }
+			energy = 10
+		}
+		upkeep = {
+			trigger = { do3f_is_ringworld = yes }
+			energy = 20
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = 3
+		planet_max_buildings_add = 3
+		planet_farmers_produces_mult = 0.25
+		planet_pops_upkeep_mult = -0.1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_farmer_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {	
+			job_agri_drone_add = 3
+		}
+	}
+######################
+### Arcology Boost ###
+######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_arcology_planet = yes }
+		modifier = { planet_housing_add = 6 }
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_farmer_add = 6
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_gestalt = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_agri_drone_add = 6
+		}
+	}
+#######################
+### Ringworld Boost ###
+#######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_ringworld = yes }
+		modifier = {
+			planet_housing_add = 14
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_farmer_add = 14
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_gestalt = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_agri_drone_add = 14
+		}
+	}
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_farmer_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes } 
+		}
+		text = job_agri_drone_effect_desc
+	}
+}
+
+district_02_local_stores = {
+	base_buildtime = @do3f_base_build_time
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		OR = {
+			num_free_districts = {
+				type = district_02_local_stores
+				value > 0
+			}
+			num_districts = {
+				type = district_02_local_stores
+				value > 0
+			}
+		}
+	}
+	
+	potential = {
+		OR = {
+			num_free_districts = {
+				type = district_02_local_stores
+				value > 0
+			}
+			num_districts = {
+				type = district_02_local_stores
+				value > 0
+			}
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_02_relay_stations
+		district_02_tunnel_networks
+		district_02_lower_city_development
+	}
+
+	resources = {
+		category = planet_districts
+		upkeep = {
+			energy = 5
+		}
+		upkeep = {
+			trigger = { do3f_is_arcology_planet = yes }
+			energy = 10
+		}
+		upkeep = {
+			trigger = { do3f_is_ringworld = yes }
+			energy = 20
+		}		
+	}
+		
+	planet_modifier = {
+		planet_housing_add = 3
+		planet_max_buildings_add = 3
+	
+		trade_value_mult = 0.1
+		planet_max_branch_office_buildings_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = { owner = { is_regular_empire = yes } }
+		modifier = {
+			job_clerk_add = 2
+			job_merchant_add = 1
+		}
+	}
+	
+######################
+### Arcology Boost ###
+######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_arcology_planet = yes }
+		modifier = { planet_housing_add = 7 }
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = { 
+			job_clerk_add = 4
+			job_merchant_add = 2
+		}
+	}
+#######################
+### Ringworld Boost ###
+#######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_ringworld = yes }
+		modifier = {
+			planet_housing_add = 14
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = { 
+			job_clerk_add = 10
+			job_merchant_add = 4
+		}
+	}
+	
+	triggered_desc = {
+		trigger = {
+			owner = { is_regular_empire = yes }
+		}
+		text = job_clerk_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			owner = { is_regular_empire = yes }
+		}
+		text = job_merchant_effect_desc
+	}
+}
+
+########################
+# Advanced 'sources    #
+########################
+district_02_local_industry = {
+	base_buildtime = @do3f_base_build_time
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		OR = {
+			num_free_districts = {
+				type = district_02_local_industry
+				value > 0
+			}
+			num_districts = {
+				type = district_02_local_industry
+				value > 0
+			}
+		}
+	}
+	
+	potential = {
+		OR = {
+			num_free_districts = {
+				type = district_02_local_industry
+				value > 0
+			}
+			num_districts = {
+				type = district_02_local_industry
+				value > 0
+			}
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_02_relay_stations
+		district_02_tunnel_networks
+		district_02_lower_city_development
+	}
+
+	resources = {
+		category = planet_districts
+		upkeep = {
+			energy = 5
+		}
+		upkeep = {
+			trigger = { do3f_is_arcology_planet = yes }
+			energy = 10
+		}
+		upkeep = {
+			trigger = { do3f_is_ringworld = yes }
+			energy = 20
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = 3
+		planet_max_buildings_add = 3
+
+		planet_metallurgists_alloys_produces_mult = 0.1
+		planet_pop_assembly_mult = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_foundry_add = 1
+			job_02_engineer_add = 1
+			job_02_component_manufacturer_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_alloy_drone_add = 1
+			job_02_engineering_drone_add = 1
+			job_02_component_manufacturing_drone_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_fabricator_add = 1
+			job_02_engineering_drone_add = 1
+			job_02_component_manufacturing_drone_add = 1
+		}
+	}	
+######################
+### Arcology Boost ###
+######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_arcology_planet = yes }
+		modifier = { planet_housing_add = 6 }
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_foundry_add = 4
+			job_02_engineer_add = 1
+			job_02_component_manufacturer_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_hive_empire = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_alloy_drone_add = 4
+			job_02_engineering_drone_add = 1
+			job_02_component_manufacturing_drone_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_machine_empire = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_fabricator_add = 4
+			job_02_engineering_drone_add = 1
+			job_02_component_manufacturing_drone_add = 1
+		}
+	}
+#######################
+### Ringworld Boost ###
+#######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_ringworld = yes }
+		modifier = {
+			planet_housing_add = 14
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_foundry_add = 9
+			job_02_engineer_add = 2
+			job_02_component_manufacturer_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_hive_empire = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_alloy_drone_add = 9
+			job_02_engineering_drone_add = 2
+			job_02_component_manufacturing_drone_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_machine_empire = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_fabricator_add = 9
+			job_02_engineering_drone_add = 2
+			job_02_component_manufacturing_drone_add = 3
+		}
+	}
+		
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		text = job_alloy_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = job_fabricator_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+			}
+		}
+		text = job_foundry_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_02_engineer_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes } 
+		}
+		text = job_02_engineering_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_02_component_manufacturer_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes } 
+		}
+		text = job_02_component_manufacturing_drone_effect_desc
+	}
+}
+
+district_02_production_hub = {
+	base_buildtime = @do3f_base_build_time
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		OR = {
+			num_free_districts = {
+				type = district_02_production_hub
+				value > 0
+			}
+			num_districts = {
+				type = district_02_production_hub
+				value > 0
+			}
+		}
+	}
+	
+	potential = {
+		OR = {
+			num_free_districts = {
+				type = district_02_production_hub
+				value > 0
+			}
+			num_districts = {
+				type = district_02_production_hub
+				value > 0
+			}
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_02_relay_stations
+		district_02_tunnel_networks
+		district_02_lower_city_development
+	}
+
+	resources = {
+		category = planet_districts
+		upkeep = {
+			energy = 5
+		}
+		upkeep = {
+			trigger = { do3f_is_arcology_planet = yes }
+			energy = 10
+		}
+		upkeep = {
+			trigger = { do3f_is_ringworld = yes }
+			energy = 20
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = 3
+		planet_max_buildings_add = 3
+
+		planet_artisans_consumer_goods_produces_mult = 0.1
+		planet_jobs_upkeep_mult = -0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_artisan_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_artisan_drone_add = 3
+		}
+	}
+######################
+### Arcology Boost ###
+######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_arcology_planet = yes }
+		modifier = { planet_housing_add = 6 }
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = { job_artisan_add = 6 }
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_gestalt = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = { job_artisan_drone_add = 6 }
+	}
+#######################
+### Ringworld Boost ###
+#######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_ringworld = yes }
+		modifier = {
+			planet_housing_add = 14
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = { job_artisan_add = 14 }
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_gestalt = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = { job_artisan_drone_add = 14 }
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_artisan_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { 
+				is_gestalt = no
+			}
+		}
+		text = job_artisan_effect_desc
+	}
+}
+
+########################
+# Research             #
+########################
+district_02_workshops = {
+	base_buildtime = @do3f_base_build_time
+	is_capped_by_modifier = yes
+	
+	show_on_uncolonized = {
+		OR = {
+			num_free_districts = {
+				type = district_02_workshops
+				value > 0
+			}
+			num_districts = {
+				type = district_02_workshops
+				value > 0
+			}
+		}
+	}
+	
+	potential = {
+		OR = {
+			num_free_districts = {
+				type = district_02_workshops
+				value > 0
+			}
+			num_districts = {
+				type = district_02_workshops
+				value > 0
+			}
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_02_relay_stations
+		district_02_tunnel_networks
+		district_02_lower_city_development
+	}
+	
+	resources = {
+		category = planet_districts
+		upkeep = {
+			energy = 5
+		}
+		upkeep = {
+			trigger = { do3f_is_arcology_planet = yes }
+			energy = 10
+		}
+		upkeep = {
+			trigger = { do3f_is_ringworld = yes }
+			energy = 20
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = 3
+		planet_max_buildings_add = 3
+
+		planet_jobs_engineering_research_produces_mult = 0.1
+		planet_artisans_produces_mult = 0.05
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_02_engineer_add = 2
+			job_02_component_manufacturer_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_02_engineering_drone_add = 2
+			job_02_component_manufacturing_drone_add = 1
+		}
+	}
+######################
+### Arcology Boost ###
+######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_arcology_planet = yes }
+		modifier = {
+			planet_housing_add = 6
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_regular_empire = yes } 
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_02_component_manufacturer_add = 2
+			job_02_engineering_drone_add = 4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = {
+				is_gestalt = yes
+			}
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_02_component_manufacturing_drone_add = 2
+			job_02_engineering_drone_add = 4
+		}
+	}
+#######################
+### Ringworld Boost ###
+#######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_ringworld = yes }
+		modifier = {
+			planet_housing_add = 14
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_02_component_manufacturer_add = 7
+			job_02_engineering_drone_add = 7
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = { 
+				is_gestalt = yes
+			}
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_02_component_manufacturing_drone_add = 7
+			job_02_engineering_drone_add = 7
+		}
+	}
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_02_engineer_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes } 
+		}
+		text = job_02_engineering_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_02_component_manufacturer_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes } 
+		}
+		text = job_02_component_manufacturing_drone_effect_desc
+	}
+}
+
+district_02_university = {
+	base_buildtime = @do3f_base_build_time
+	is_capped_by_modifier = yes
+	
+	show_on_uncolonized = {
+		OR = {
+			num_free_districts = {
+				type = district_02_university
+				value > 0
+			}
+			num_districts = {
+				type = district_02_university
+				value > 0
+			}
+		}
+	}
+	
+	potential = {
+		OR = {
+			num_free_districts = {
+				type = district_02_university
+				value > 0
+			}
+			num_districts = {
+				type = district_02_university
+				value > 0
+			}
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+	
+	resources = {
+		category = planet_districts
+		upkeep = {
+			energy = 5
+		}	
+		upkeep = {
+			trigger = { do3f_is_arcology_planet = yes }
+			energy = 10
+		}
+		upkeep = {
+			trigger = { do3f_is_ringworld = yes }
+			energy = 20
+		}		
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_02_relay_stations
+		district_02_tunnel_networks
+		district_02_lower_city_development
+	}
+
+	planet_modifier = {
+		planet_housing_add = 3
+		planet_researchers_engineering_research_produces_mult = 0.1
+		planet_researchers_society_research_produces_mult = 0.1
+		planet_researchers_physics_research_produces_mult = 0.1
+		planet_researchers_unity_produces_add = 1
+		planet_jobs_specialist_produces_mult = 0.05
+		planet_max_buildings_add = 3
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_head_researcher_add = 1
+			job_02_teacher_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_brain_drone_add = 4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			planet_housing_add = 1	
+			job_calculator_add = 3
+		}
+	}
+######################
+### Arcology Boost ###
+######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_arcology_planet = yes }
+		modifier = { planet_housing_add = 6 }
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			
+			do3f_is_arcology_planet = yes
+		}
+		modifier = { 
+			job_head_researcher_add = 2
+			job_02_teacher_add = 2
+			planet_housing_add = -2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_hive_empire = yes
+			} 
+			do3f_is_arcology_planet = yes
+		}
+		modifier = { job_brain_drone_add = 5 }
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = {
+				is_machine_empire = yes
+			}
+			do3f_is_arcology_planet = yes
+		}
+		modifier = { job_calculator_add = 5 }
+	}
+#######################
+### Ringworld Boost ###
+#######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_ringworld = yes }
+		modifier = {
+			planet_housing_add = 14
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			
+			do3f_is_ringworld = yes
+		}
+		modifier = { 
+			job_head_researcher_add = 5
+			job_02_teacher_add = 5
+			planet_housing_add = -4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = {
+				is_hive_empire = yes
+			}
+			
+			do3f_is_ringworld = yes
+		}
+		modifier = { job_brain_drone_add = 13 }
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = {
+				is_machine_empire = yes
+			}
+			
+			do3f_is_ringworld = yes
+		}
+		modifier = { job_calculator_add = 13 }
+	}
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_head_researcher_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_02_teacher_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_hive_empire = yes } 
+		}
+		text = job_brain_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_machine_empire = yes } 
+		}
+		text = job_calculator_effect_desc
+	}
+}
+
+########################
+# Military             #
+########################
+district_02_spaceport = {
+	base_buildtime = @do3f_base_build_time
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		OR = {
+			num_free_districts = {
+				type = district_02_spaceport
+				value > 0
+			}
+			num_districts = {
+				type = district_02_spaceport
+				value > 0
+			}
+		}
+	}
+	
+	potential = {
+		OR = {
+			num_free_districts = {
+				type = district_02_spaceport
+				value > 0
+			}
+			num_districts = {
+				type = district_02_spaceport
+				value > 0
+			}
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_02_relay_stations
+		district_02_tunnel_networks
+		district_02_lower_city_development
+	}
+
+	resources = {
+		category = planet_districts
+		upkeep = {
+			energy = 5
+		}
+		upkeep = {
+			trigger = { do3f_is_arcology_planet = yes }
+			energy = 10
+		}
+		upkeep = {
+			trigger = { do3f_is_ringworld = yes }
+			energy = 20
+		}		
+	}
+
+	planet_modifier = {
+		pop_defense_armies_add = 3
+		planet_housing_add = 3
+		planet_max_buildings_add = 3
+		planet_soldiers_unity_produces_add = 2
+		planet_soldiers_influence_produces_add = 0.1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_03_pilot_add = 2
+			job_soldier_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_03_pilot_drone_add = 2
+			job_warrior_drone_add = 1
+		}
+	}
+######################
+### Arcology Boost ###
+######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_arcology_planet = yes }
+		modifier = { planet_housing_add = 6 }
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_03_pilot_add = 4
+			job_soldier_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_gestalt = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_03_pilot_drone_add = 4
+			job_warrior_drone_add = 2
+		}
+	}
+#######################
+### Ringworld Boost ###
+#######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_ringworld = yes }
+		modifier = {
+			planet_housing_add = 14
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_03_pilot_add = 10
+			job_soldier_add = 4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_gestalt = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_03_pilot_drone_add = 10
+			job_warrior_drone_add = 4
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_03_pilot_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_soldier_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_03_pilot_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_warrior_drone_effect_desc
+	}
+}
+
+district_02_academy = {
+	base_buildtime = @do3f_base_build_time
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		OR = {
+			num_free_districts = {
+				type = district_02_academy
+				value > 0
+			}
+			num_districts = {
+				type = district_02_academy
+				value > 0
+			}
+		}
+	}
+	
+	potential = {
+		OR = {
+			num_free_districts = {
+				type = district_02_academy
+				value > 0
+			}
+			num_districts = {
+				type = district_02_academy
+				value > 0
+			}
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_02_relay_stations
+		district_02_tunnel_networks
+		district_02_lower_city_development
+	}
+
+	resources = {
+		category = planet_districts
+		upkeep = {
+			energy = 5
+		}
+		upkeep = {
+			trigger = { do3f_is_arcology_planet = yes }
+			energy = 10
+		}
+		upkeep = {
+			trigger = { do3f_is_ringworld = yes }
+			energy = 20
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = 3
+		planet_max_buildings_add = 3
+		pop_defense_armies_add = 3
+		army_defense_morale_mult = 0.25
+		army_experience_gain_mult = 0.5
+		army_starting_experience_add = 200
+		planet_army_build_speed_mult = 0.25
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_soldier_add = 1
+			job_02_officer_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_02_officer_drone_add = 2
+			job_warrior_drone_add = 1
+		}
+	}
+######################
+### Arcology Boost ###
+######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_arcology_planet = yes }
+		modifier = { planet_housing_add = 6 }
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_soldier_add = 2
+			job_02_officer_add = 4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_gestalt = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_02_officer_drone_add = 4
+			job_warrior_drone_add = 2
+		}
+	}
+#######################
+### Ringworld Boost ###
+#######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_ringworld = yes }
+		modifier = {
+			planet_housing_add = 14
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_soldier_add = 4
+			job_02_officer_add = 10
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_gestalt = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_02_officer_drone_add = 10
+			job_warrior_drone_add = 4
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_02_officer_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_02_officer_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_soldier_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_warrior_drone_effect_desc
+	}
+}
+
+########################
+# Other                #
+########################
+district_02_logistics_hub = {
+	base_buildtime = @do3f_base_build_time
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		OR = {
+			num_free_districts = {
+				type = district_02_logistics_hub
+				value > 0
+			}
+			num_districts = {
+				type = district_02_logistics_hub
+				value > 0
+			}
+		}
+	}
+	
+	potential = {
+		OR = {
+			num_free_districts = {
+				type = district_02_logistics_hub
+				value > 0
+			}
+			num_districts = {
+				type = district_02_logistics_hub
+				value > 0
+			}
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_02_relay_stations
+		district_02_tunnel_networks
+		district_02_lower_city_development
+	}
+
+	resources = {
+		category = planet_districts
+		upkeep = {
+			energy = 5
+		}
+		upkeep = {
+			trigger = { do3f_is_arcology_planet = yes }
+			energy = 10
+		}
+		upkeep = {
+			trigger = { do3f_is_ringworld = yes }
+			energy = 20
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = 3
+		planet_max_buildings_add = 3
+		planet_jobs_worker_produces_mult = 0.2
+		planet_building_build_speed_mult = 0.25
+		planet_buildings_upkeep_mult = -0.1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_merchant_add = 1
+			job_02_logistic_worker_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_02_logistic_drone_add = 2
+			job_brain_drone_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_02_logistic_drone_add = 2	
+			job_calculator_add = 1
+		}
+	}
+######################
+### Arcology Boost ###
+######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_arcology_planet = yes }
+		modifier = { planet_housing_add = 6 }
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_merchant_add = 2
+			job_02_logistic_worker_add = 4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_hive_empire = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_02_logistic_drone_add = 4
+			job_brain_drone_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_machine_empire = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_02_logistic_drone_add = 4	
+			job_calculator_add = 2
+		}
+	}
+#######################
+### Ringworld Boost ###
+#######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_ringworld = yes }
+		modifier = {
+			planet_housing_add = 14
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_merchant_add = 4
+			job_02_logistic_worker_add = 10
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_hive_empire = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_02_logistic_drone_add = 10
+			job_brain_drone_add = 4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_machine_empire = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_02_logistic_drone_add = 10
+			job_calculator_add = 4
+		}
+	}
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_merchant_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_02_logistic_worker_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes } 
+		}
+		text = job_02_logistic_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_hive_empire = yes } 
+		}
+		text = job_brain_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_machine_empire = yes } 
+		}
+		text = job_calculator_effect_desc
+	}
+}
+
+district_02_bureaucratic = {
+	base_buildtime = @do3f_base_build_time
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		OR = {
+			num_free_districts = {
+				type = district_02_bureaucratic
+				value > 0
+			}
+			num_districts = {
+				type = district_02_bureaucratic
+				value > 0
+			}
+		}
+	}
+	
+	potential = {
+		OR = {
+			num_free_districts = {
+				type = district_02_bureaucratic
+				value > 0
+			}
+			num_districts = {
+				type = district_02_bureaucratic
+				value > 0
+			}
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_02_relay_stations
+		district_02_tunnel_networks
+		district_02_lower_city_development
+	}
+
+	resources = {
+		category = planet_districts
+		upkeep = {
+			energy = 5
+		}
+		upkeep = {
+			trigger = { do3f_is_arcology_planet = yes }
+			energy = 10
+		}
+		upkeep = {
+			trigger = { do3f_is_ringworld = yes }
+			energy = 20
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = 3
+		planet_max_buildings_add = 3
+		planet_amenities_add = 15
+		planet_administrators_produces_mult = 0.35
+		planet_administrators_influence_produces_add = 0.2
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_megacorp = no
+				is_spiritualist = no
+			}
+		}
+		modifier = {
+			job_bureaucrat_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_megacorp = yes
+				is_spiritualist = no
+			}
+		}
+		modifier = {
+			job_manager_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_megacorp = no
+				is_spiritualist = yes
+			}
+		}
+		modifier = {
+			job_priest_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_megacorp = yes
+				is_spiritualist = yes
+			}
+		}
+		modifier = {
+			job_priest_add = 2
+			job_manager_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_synapse_drone_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_coordinator_add = 3
+		}
+	}
+######################
+### Arcology Boost ###
+######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_arcology_planet = yes }
+		modifier = { planet_housing_add = 6 }
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_bureaucrat_add = 6
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_megacorp = no
+				is_spiritualist = no
+			}
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_bureaucrat_add = 6
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_megacorp = yes
+				is_spiritualist = no
+			}
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_manager_add = 6
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_megacorp = no
+				is_spiritualist = yes
+			}
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_priest_add = 6
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_megacorp = yes
+				is_spiritualist = yes
+			}
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_priest_add = 3
+			job_manager_add = 3
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_synapse_drone_add = 6
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_machine_empire = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_coordinator_add = 6
+		}
+	}
+#######################
+### Ringworld Boost ###
+#######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_ringworld = yes }
+		modifier = {
+			planet_housing_add = 14
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_megacorp = no
+				is_spiritualist = no
+			}
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_bureaucrat_add = 14
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_megacorp = yes
+				is_spiritualist = no
+			}
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_manager_add = 14
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_megacorp = no
+				is_spiritualist = yes
+			}
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_priest_add = 14
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_megacorp = yes
+				is_spiritualist = yes
+			}
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_priest_add = 7
+			job_manager_add = 7
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_hive_empire = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_synapse_drone_add = 14
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_machine_empire = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_coordinator_add = 14
+		}
+	}
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_bureaucrat_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_spiritualist = yes } 
+		}
+		text = job_priest_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_megacorp = yes } 
+		}
+		text = job_manager_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_hive_empire = yes } 
+		}
+		text = job_synapse_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_machine_empire = yes } 
+		}
+		text = job_coordinator_effect_desc
+	}
+}
+
+district_02_entertainment = {
+	base_buildtime = @do3f_base_build_time
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		OR = {
+			num_free_districts = {
+				type = district_02_entertainment
+				value > 0
+			}
+			num_districts = {
+				type = district_02_entertainment
+				value > 0
+			}
+		}
+	}
+	
+	potential = {
+		OR = {
+			num_free_districts = {
+				type = district_02_entertainment
+				value > 0
+			}
+			num_districts = {
+				type = district_02_entertainment
+				value > 0
+			}
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_02_relay_stations
+		district_02_tunnel_networks
+		district_02_lower_city_development
+	}
+
+	resources = {
+		category = planet_districts
+		upkeep = {
+			energy = 5
+		}
+		upkeep = {
+			trigger = { do3f_is_arcology_planet = yes }
+			energy = 10
+		}
+		upkeep = {
+			trigger = { do3f_is_ringworld = yes }
+			energy = 20
+		}		
+	}
+
+	planet_modifier = {
+		planet_housing_add = 3
+		planet_max_buildings_add = 3
+		pop_happiness = 0.1
+		planet_amenities_mult = 0.25
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_entertainer_add = 2
+			job_culture_worker_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {	
+			job_02_maintenance_drone_add = 4
+		}
+	}
+######################
+### Arcology Boost ###
+######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_arcology_planet = yes }
+		modifier = { planet_housing_add = 6 }
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_entertainer_add = 4
+			job_culture_worker_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_gestalt = yes }
+			do3f_is_arcology_planet = yes
+		}
+		modifier = {
+			job_02_maintenance_drone_add = 8
+		}
+	}
+#######################
+### Ringworld Boost ###
+#######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_ringworld = yes }
+		modifier = {
+			planet_housing_add = 14
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_regular_empire = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_entertainer_add = 10
+			job_culture_worker_add = 4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = { 
+			owner = { is_gestalt = yes }
+			do3f_is_ringworld = yes
+		}
+		modifier = {
+			job_02_maintenance_drone_add = 16
+		}
+	}
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_entertainer_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_culture_worker_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_gestalt = yes } 
+		}
+		text = job_02_maintenance_drone_effect_desc
+	}
+}
+
+district_02_necrophage = {
+	base_buildtime = @do3f_base_build_time
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		OR = {
+			num_free_districts = {
+				type = district_02_necrophage
+				value > 0
+			}
+			num_districts = {
+				type = district_02_necrophage
+				value > 0
+			}
+		}
+	}
+	
+	potential = {
+		OR = {
+			num_free_districts = {
+				type = district_02_necrophage
+				value > 0
+			}
+			num_districts = {
+				type = district_02_necrophage
+				value > 0
+			}
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	conversion_ratio = 0.5
+	convert_to = {
+		district_02_relay_stations
+		district_02_tunnel_networks
+		district_02_lower_city_development
+	}
+
+	resources = {
+		category = planet_districts
+		upkeep = {
+			energy = 5
+		}
+		upkeep = {
+			trigger = { do3f_is_arcology_planet = yes }
+			energy = 10
+		}
+		upkeep = {
+			trigger = { do3f_is_ringworld = yes }
+			energy = 20
+		}		
+	}
+
+	planet_modifier = {
+		planet_jobs_specialist_produces_mult = 0.2
+		planet_jobs_unity_produces_mult = 0.5
+		planet_max_buildings_add = 3
+		planet_housing_add = 3
+		job_mortal_initiate_add = 1
+		job_necro_apprentice_add = 2
+	}
+######################
+### Arcology Boost ###
+######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_arcology_planet = yes }
+		modifier = {
+			planet_housing_add = 6
+			job_mortal_initiate_add = 2
+			job_necro_apprentice_add = 4
+		}
+	}
+#######################
+### Ringworld Boost ###
+#######################
+	triggered_planet_modifier = {
+		potential = { do3f_is_ringworld = yes }
+		modifier = {
+			planet_housing_add = 14
+			job_mortal_initiate_add = 4
+			job_necro_apprentice_add = 10
+		}
+	}
+	
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_necro_apprentice_effect_desc
+	}
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes } 
+		}
+		text = job_mortal_initiate_effect_desc
+	}
+}
+
+### For Arcology Planets ###
+# Machine World: Enhanced Relay Stations: -deviancy; (+)outputs; -maintanance
+district_02_relay_stations = {
+	base_buildtime = @do3f_base_build_time
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		uses_district_set = machine_world
+		OR = {
+			num_free_districts = {
+				type = district_02_relay_stations
+				value > 0
+			}
+			num_districts = {
+				type = district_02_relay_stations
+				value > 0
+			}
+		}
+	}
+	
+	potential = {
+		uses_district_set = machine_world
+		num_free_districts = {
+			type = district_02_relay_stations
+			value > 0
+		}
+		num_districts = {
+			type = district_02_relay_stations
+			value > 0
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	resources = {
+		category = planet_districts
+		upkeep = {
+			energy = 10
+		}	
+	}
+
+	planet_modifier = {
+		planet_max_buildings_add = 4
+		job_coordinator_per_pop = 0.05
+		planet_amenities_add = 15
+		planet_jobs_robotic_produces_mult = 0.25
+		planet_crime_no_happiness_mult = -0.25
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+		}
+		text = job_coordinator_effect_desc
+	}
+}
+
+# Hive World: Expansive Tunnel Networks: medium upkeep; +2 planet_districts, capped
+district_02_tunnel_networks = {
+	base_buildtime = @do3f_base_build_time
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		uses_district_set = hive_world
+		num_free_districts = {
+			type = district_02_tunnel_networks
+			value > 0
+		}
+		num_districts = {
+			type = district_02_tunnel_networks
+			value > 0
+		}
+	}
+	
+	potential = {
+		uses_district_set = hive_world
+		num_free_districts = {
+			type = district_02_tunnel_networks
+			value > 0
+		}
+		num_districts = {
+			type = district_02_tunnel_networks
+			value > 0
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	resources = {
+		category = planet_districts
+		upkeep = {
+			energy = 10
+		}	
+	}
+
+	planet_modifier = {
+		planet_max_buildings_add = 4
+		planet_districts_upkeep_mult = -0.2
+		planet_max_districts_add = 4
+		job_cave_cleaner_gestalt_add = 3
+	}
+}
+
+# City World: Lower City Development: high upkeep; +2 planet_districts, capped, (+)trade_value
+district_02_lower_city_development = {
+	base_buildtime = @do3f_base_build_time
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		uses_district_set = city_world
+		num_free_districts = {
+			type = district_02_lower_city_development
+			value > 0
+		}
+		num_districts = {
+			type = district_02_lower_city_development
+			value > 0
+		}
+	}
+	
+	potential = {
+		uses_district_set = city_world
+		num_free_districts = {
+			type = district_02_lower_city_development
+			value > 0
+		}
+		num_districts = {
+			type = district_02_lower_city_development
+			value > 0
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	resources = {
+		category = planet_districts
+		upkeep = {
+			energy = 10
+		}	
+	}
+
+	planet_modifier = {
+		planet_max_buildings_add = 4
+		planet_max_districts_add = 4
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_merchant_add = 2
+		trade_value_mult = 0.15
+		}
+	}
+
+	triggered_desc = {
+		trigger = { 
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_merchant_effect_desc
+	}
+}
+
+# City World: Shipyard District: +spaceport shipyards; +naval capacity (requires spaceport module)
+district_02_shipyards = {
+	base_buildtime = @do3f_base_build_time
+	is_capped_by_modifier = yes
+
+	show_on_uncolonized = {
+		uses_district_set = city_world
+		num_free_districts = {
+			type = district_02_shipyards
+			value > 0
+		}
+		num_districts = {
+			type = district_02_shipyards
+			value > 0
+		}
+	}
+	
+	potential = {
+		uses_district_set = city_world
+		num_free_districts = {
+			type = district_02_shipyards
+			value > 0
+		}
+		num_districts = {
+			type = district_02_shipyards
+			value > 0
+		}
+		exists = owner
+	}
+
+	allow = {
+		NOT = { has_modifier = resort_colony }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	resources = {
+		category = planet_districts
+		upkeep = {
+			energy = 5
+			alloys = 2
+		}	
+	}
+
+	planet_modifier = {
+		planet_max_buildings_add = 4
+		planet_housing_add = 4
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_03_pilot_add = 4
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_03_pilot_drone_add = 4
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_03_pilot_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_03_pilot_drone_effect_desc
+	}
+}

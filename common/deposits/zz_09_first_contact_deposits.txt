@@ -1,0 +1,33 @@
+## Possible Deposit Variables ##
+# resources, resource and amount
+# potential trigger (planet scope)
+# blocked_modifier - applied to planet only when deposit blocker has been cleared
+# constant_modifier - applied to planet always
+# blocker = <key/any/none> - default any
+# station = station class in orbit to gather
+
+#############################
+#	First Contact Deposits	#
+#############################
+
+#Random Events Deposits
+
+d_freeports = {
+	is_for_colonizable = yes
+	icon = "d_station_cargo"
+	category = deposit_cat_rare
+
+	potential = { always = no }
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+		}
+		job_trader_add = 4
+	}
+
+	planet_modifier = {
+		district_do3f_tourism_max = 1
+	}
+}
+
