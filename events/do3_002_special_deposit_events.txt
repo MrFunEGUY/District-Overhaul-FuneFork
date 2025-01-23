@@ -5,7 +5,7 @@ event = {
 	hide_window = yes
 	is_triggered_only = yes
 	fire_only_once = yes
-	trigger = { NOT = { has_global_flag = do3f_disable_deposit_ringcity } }
+	
 	immediate = {
 		every_galaxy_planet = {
 			limit = {

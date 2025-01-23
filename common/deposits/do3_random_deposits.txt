@@ -188,10 +188,6 @@ d_stormy_highlands = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_wind }
-		modifier = { district_e_wind_turbines_max = -1 district_generator_max = 1 }
-	}
 	planet_modifier = {
 		district_e_wind_turbines_max = 1
 	}
@@ -316,10 +312,6 @@ d_stormy_flats = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_wind }
-		modifier = { district_e_wind_turbines_max = -2 district_generator_max = 2 }
-	}
 	planet_modifier = {
 		district_e_wind_turbines_max = 2
 	}
@@ -447,10 +439,6 @@ d_boiling_lake = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_geo }
-		modifier = { district_e_geothermal_generator_max = -1 district_generator_max = 1 }
-	}
 	planet_modifier = {
 		district_e_geothermal_generator_max = 1
 	}
@@ -617,10 +605,6 @@ d_hot_volcano = {
 	use_weights_for_terraforming_swap_types = yes
 	should_swap_deposit_on_terraforming = yes
 	terraforming_swap_types = {
-	}
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_geo }
-		modifier = { district_e_geothermal_generator_max = -2 district_generator_max = 2 }
 	}
 	planet_modifier = {
 		district_e_geothermal_generator_max = 2
@@ -792,10 +776,6 @@ d_open_space = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_solar }
-		modifier = { district_e_solar_generator_max = -1 district_generator_max = 1 }
-	}
 	planet_modifier = {
 		district_e_solar_generator_max = 1
 	}
@@ -927,10 +907,6 @@ d_low_athmosphere_zone = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_solar }
-		modifier = { district_e_solar_generator_max = -2 district_generator_max = 2 }
-	}
 	planet_modifier = {
 		district_e_solar_generator_max = 2
 	}
@@ -1064,10 +1040,6 @@ d_underwater_hill = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_tidal }
-		modifier = { district_e_tidal_generator_max = -1 district_generator_max = 1 planet_max_districts_add = 1 }
-	}
 	planet_modifier = {
 		district_e_tidal_generator_max = 1
 		planet_max_districts_add = -1
@@ -1162,10 +1134,6 @@ d_underwater_mountain = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_tidal }
-		modifier = { district_e_tidal_generator_max = -2 district_generator_max = 2 planet_max_districts_add = 1 }
-	}
 	planet_modifier = {
 		district_e_tidal_generator_max = 2
 		planet_max_districts_add = -1
@@ -1262,10 +1230,6 @@ d_small_crop_field = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_bio }
-		modifier = { district_e_biomass_generator_max = -1 district_generator_max = 1 }
-	}
 	planet_modifier = {
 		district_e_biomass_generator_max = 1
 	}
@@ -1344,10 +1308,6 @@ d_biofuel_crops = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_bio }
-		modifier = { district_e_biomass_generator_max = -2 district_generator_max = 2 }
-	}
 	planet_modifier = {
 		district_e_biomass_generator_max = 2
 	}
@@ -1426,10 +1386,6 @@ d_small_forest = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_bio }
-		modifier = { district_e_biomass_generator_max = -2 district_generator_max = 2 }
-	}
 	planet_modifier = {
 		district_e_biomass_generator_max = 2
 	}
@@ -1508,10 +1464,6 @@ d_large_forest = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_bio }
-		modifier = { district_e_biomass_generator_max = -3 district_generator_max = 3 }
-	}
 	planet_modifier = {
 		district_e_biomass_generator_max = 3
 	}
@@ -1587,10 +1539,6 @@ d_industrial_bio_waste = {
 
 	category = deposit_cat_energy
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_bio }
-		modifier = { district_e_biomass_generator_max = -2 district_generator_max = 2 }
-	}
 	planet_modifier = {
 		district_e_biomass_generator_max = 2
 	}
@@ -1622,10 +1570,6 @@ d_small_deuterium_deposit = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_fusion }
-		modifier = { district_e_fusion_generator_max = -1 district_generator_max = 1 }
-	}
 	planet_modifier = {
 		district_e_fusion_generator_max = 1
 	}
@@ -1662,10 +1606,6 @@ d_deuterium_deposit = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_fusion }
-		modifier = { district_e_fusion_generator_max = -2 district_generator_max = 2 }
-	}
 	planet_modifier = {
 		district_e_fusion_generator_max = 2
 	}
@@ -1703,10 +1643,6 @@ d_large_deuterium_deposit = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_fusion }
-		modifier = { district_e_fusion_generator_max = -3 district_generator_max = 3 }
-	}
 	planet_modifier = {
 		district_e_fusion_generator_max = 3
 	}
@@ -1745,10 +1681,6 @@ d_small_boron11_deposit = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_fusion }
-		modifier = { district_e_fusion_generator_max = -1 district_generator_max = 1 }
-	}
 	planet_modifier = {
 		district_e_fusion_generator_max = 1
 	}
@@ -1809,10 +1741,6 @@ d_boron11_deposit = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_fusion }
-		modifier = { district_e_fusion_generator_max = -2 district_generator_max = 2 }
-	}
 	planet_modifier = {
 		district_e_fusion_generator_max = 2
 	}
@@ -1874,10 +1802,6 @@ d_large_boron11_deposit = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_fusion }
-		modifier = { district_e_fusion_generator_max = -3 district_generator_max = 3 }
-	}
 	planet_modifier = {
 		district_e_fusion_generator_max = 3
 	}
@@ -1940,10 +1864,6 @@ d_small_coal_deposit = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
-		modifier = { district_e_fossil_fuel_generator_max = -1 district_generator_max = 1 }
-	}
 	planet_modifier = {
 		district_e_fossil_fuel_generator_max = 1
 	}
@@ -1980,10 +1900,6 @@ d_coal_deposit = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
-		modifier = { district_e_fossil_fuel_generator_max = -2 district_generator_max = 2 }
-	}
 	planet_modifier = {
 		district_e_fossil_fuel_generator_max = 2
 	}
@@ -2021,10 +1937,6 @@ d_large_coal_deposit = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
-		modifier = { district_e_fossil_fuel_generator_max = -3 district_generator_max = 3 }
-	}
 	planet_modifier = {
 		district_e_fossil_fuel_generator_max = 3
 	}
@@ -2063,10 +1975,6 @@ d_small_natural_gas_deposit = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
-		modifier = { district_e_fossil_fuel_generator_max = -1 district_generator_max = 1 }
-	}
 	planet_modifier = {
 		district_e_fossil_fuel_generator_max = 1
 	}
@@ -2103,10 +2011,6 @@ d_natural_gas_deposit = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
-		modifier = { district_e_fossil_fuel_generator_max = -2 district_generator_max = 2 }
-	}
 	planet_modifier = {
 		district_e_fossil_fuel_generator_max = 2
 	}
@@ -2144,10 +2048,6 @@ d_large_natural_gas_deposit = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
-		modifier = { district_e_fossil_fuel_generator_max = -3 district_generator_max = 3 }
-	}
 	planet_modifier = {
 		district_e_fossil_fuel_generator_max = 3
 	}
@@ -2186,10 +2086,6 @@ d_small_oil_deposit = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
-		modifier = { district_e_fossil_fuel_generator_max = -1 district_generator_max = 1 }
-	}
 	planet_modifier = {
 		district_e_fossil_fuel_generator_max = 1
 	}
@@ -2225,10 +2121,6 @@ d_oil_deposit = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
-		modifier = { district_e_fossil_fuel_generator_max = -2 district_generator_max = 2 }
-	}
 	planet_modifier = {
 		district_e_fossil_fuel_generator_max = 2
 	}
@@ -2265,10 +2157,6 @@ d_large_oil_deposit = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_energy_districts_fossil }
-		modifier = { district_e_fossil_fuel_generator_max = -3 district_generator_max = 3 }
-	}
 	planet_modifier = {
 		district_e_fossil_fuel_generator_max = 3
 	}
@@ -2306,10 +2194,6 @@ d_stable_ground = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_mining_districts_stable }
-		modifier = { district_m_stable_mining_max = -1 district_mining_max = 1 }
-	}
 	planet_modifier = {
 		district_m_stable_mining_max = 1
 	}
@@ -2449,10 +2333,6 @@ d_ultra_stable_ground = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_mining_districts_stable }
-		modifier = { district_m_stable_mining_max = -2 district_mining_max = 2 }
-	}
 	planet_modifier = {
 		district_m_stable_mining_max = 2
 	}
@@ -2594,10 +2474,6 @@ d_small_rock_formation = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_mining_districts_surface }
-		modifier = { district_m_surface_mining_max = -1 district_mining_max = 1 }
-	}
 	planet_modifier = {
 		district_m_surface_mining_max = 1
 	}
@@ -2783,10 +2659,6 @@ d_large_rock_formation = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_mining_districts_surface }
-		modifier = { district_m_surface_mining_max = -2 district_mining_max = 2 }
-	}
 	planet_modifier = {
 		district_m_surface_mining_max = 2
 	}
@@ -2974,10 +2846,6 @@ d_loose_rock = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_mining_districts_unstable }
-		modifier = { district_m_unstable_mining_max = -1 district_mining_max = 1 }
-	}
 	planet_modifier = {
 		district_m_unstable_mining_max = 1
 	}
@@ -3053,10 +2921,6 @@ d_loose_rock_formation = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_mining_districts_unstable }
-		modifier = { district_m_unstable_mining_max = -2 district_mining_max = 2 }
-	}
 	planet_modifier = {
 		district_m_unstable_mining_max = 2
 	}
@@ -3134,10 +2998,6 @@ d_exposed_mountain_resources = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_mining_districts_mountain }
-		modifier = { district_m_mountain_mining_max = -1 district_mining_max = 1 }
-	}
 	planet_modifier = {
 		district_m_mountain_mining_max = 1
 	}
@@ -3317,10 +3177,6 @@ d_deep_minerals = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_mining_districts_deep }
-		modifier = { district_m_deep_mining_max = -1 district_mining_max = 1 }
-	}
 	planet_modifier = {
 		district_m_deep_mining_max = 1
 	}
@@ -3548,10 +3404,6 @@ d_berries_hedge = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_farming_districts_nature }
-		modifier = { district_f_nature_farms_max = -1 district_farming_max = 1 }
-	}
 	planet_modifier = {
 		district_f_nature_farms_max = 1
 	}
@@ -3621,10 +3473,6 @@ d_fruit_fields = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_farming_districts_nature }
-		modifier = { district_f_nature_farms_max = -3 district_farming_max = 3 }
-	}
 	planet_modifier = {
 		district_f_nature_farms_max = 3
 	}
@@ -3696,10 +3544,6 @@ d_underwater_reef = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_farming_districts_ocean }
-		modifier = { district_f_ocean_farms_max = -1 district_farming_max = 1 }
-	}
 	planet_modifier = {
 		district_f_ocean_farms_max = 1
 	}
@@ -3708,7 +3552,7 @@ d_underwater_reef = {
 		NOT = { do3f_is_special_exotic_farming_pc = yes }
 		OR = {
 			do3f_no_farming_deposits = yes
-			do3f_002_ocean_farming_deposits = yes
+			do3f_002_ocean_farms_deposits = yes
 		}
 		do3f_can_have_random_farming_districts = yes
 		OR = {
@@ -3760,10 +3604,6 @@ d_underwater_ecosystem = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_farming_districts_ocean }
-		modifier = { district_f_ocean_farms_max = -3 district_farming_max = 3 }
-	}
 	planet_modifier = {
 		district_f_ocean_farms_max = 3
 	}
@@ -3772,7 +3612,7 @@ d_underwater_ecosystem = {
 		NOT = { do3f_is_special_exotic_farming_pc = yes }
 		OR = {
 			do3f_no_farming_deposits = yes
-			do3f_002_ocean_farming_deposits = yes
+			do3f_002_ocean_farms_deposits = yes
 		}
 		do3f_can_have_random_farming_districts = yes
 		OR = {
@@ -3826,10 +3666,6 @@ d_exotic_fauna = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_farming_districts_exotic }
-		modifier = { district_f_exotic_farms_max = -1 district_farming_max = 1 }
-	}
 	planet_modifier = {
 		district_f_exotic_farms_max = 1
 	}
@@ -3909,10 +3745,6 @@ d_mushrooms = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_farming_districts_exotic }
-		modifier = { district_f_exotic_farms_max = -1 district_farming_max = 1 }
-	}
 	planet_modifier = {
 		district_f_exotic_farms_max = 1
 	}
@@ -3992,10 +3824,6 @@ d_mushroom_ecosystem = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_farming_districts_exotic }
-		modifier = { district_f_exotic_farms_max = -2 district_farming_max = 2 }
-	}
 	planet_modifier = {
 		district_f_exotic_farms_max = 2
 	}
@@ -4077,10 +3905,6 @@ d_blooming_oasis = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_farming_districts_oasis }
-		modifier = { district_f_oasis_farms_max = -1 district_farming_max = 1 }
-	}
 	planet_modifier = {
 		district_f_oasis_farms_max = 1
 	}
@@ -4160,10 +3984,6 @@ d_lush_caves = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_farming_districts_cave }
-		modifier = { district_f_cave_farms_max = -1 district_farming_max = 1 }
-	}
 	planet_modifier = {
 		district_f_cave_farms_max = 1
 	}
@@ -4231,10 +4051,6 @@ d_lush_cave_complex = {
 	terraforming_swap_types = {
 	}
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_farming_districts_cave }
-		modifier = { district_f_cave_farms_max = -3 district_farming_max = 3 }
-	}
 	planet_modifier = {
 		district_f_cave_farms_max = 3
 	}
@@ -4304,10 +4120,6 @@ d_carbon_compounds = {
 
 	category = deposit_cat_rare
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_primary_districts_chemistry }
-		modifier = { district_do3f_chemistry_industry_max = -1 building_mote_harvesters_max = 1 }
-	}
 	planet_modifier = {
 		district_do3f_chemistry_industry_max = 1
 	}
@@ -4396,10 +4208,6 @@ d_complex_carbon_compounds = {
 
 	category = deposit_cat_rare
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_primary_districts_chemistry }
-		modifier = { district_do3f_chemistry_industry_max = -2 building_mote_harvesters_max = 2 }
-	}
 	planet_modifier = {
 		district_do3f_chemistry_industry_max = 2
 	}
@@ -4490,10 +4298,6 @@ d_bubbling_lake = {
 
 	category = deposit_cat_rare
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_primary_districts_gas }
-		modifier = { district_do3f_gas_refinery_max = -1 building_gas_extractors_max = 1 }
-	}
 	planet_modifier = {
 		district_do3f_gas_refinery_max = 1
 	}
@@ -4586,10 +4390,6 @@ d_bubbling_ocean = {
 
 	category = deposit_cat_rare
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_primary_districts_gas }
-		modifier = { district_do3f_gas_refinery_max = -2 building_gas_extractors_max = 2 }
-	}
 	planet_modifier = {
 		district_do3f_gas_refinery_max = 2
 	}
@@ -4684,10 +4484,6 @@ d_luminescent_cave = {
 
 	category = deposit_cat_rare
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_primary_districts_crystals }
-		modifier = { district_do3f_crystal_mines_max = -1 building_crystal_mines_max = 1 }
-	}
 	planet_modifier = {
 		district_do3f_crystal_mines_max = 1
 	}
@@ -4784,10 +4580,6 @@ d_luminescent_cave_system = {
 
 	category = deposit_cat_rare
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_primary_districts_crystals }
-		modifier = { district_do3f_crystal_mines_max = -2 building_crystal_mines_max = 2 }
-	}
 	planet_modifier = {
 		district_do3f_crystal_mines_max = 2
 	}
@@ -4887,10 +4679,6 @@ d_interesting_wildlife = {
 
 	category = deposit_cat_rare
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_primary_districts_nature }
-		modifier = { district_do3f_nature_reserve_max = -1 planet_researchers_society_research_produces_add = 1 }
-	}
 	planet_modifier = {
 		district_do3f_nature_reserve_max = 1
 	}
@@ -4916,10 +4704,6 @@ d_complex_ecosystem = {
 
 	category = deposit_cat_rare
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_primary_districts_nature }
-		modifier = { district_do3f_nature_reserve_max = -2 planet_researchers_society_research_produces_add = 2 }
-	}
 	planet_modifier = {
 		district_do3f_nature_reserve_max = 2
 	}
@@ -4947,28 +4731,12 @@ d_ancient_technology = {
 	category = deposit_cat_rare
 
 	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_primary_districts_assembly }
-		modifier = { pop_growth_speed = 0.2 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_disable_primary_districts_assembly
-			owner = { is_regular_empire = yes }
-		}
 		district_do3f_cloning_facility_max = 1
 	}
 	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_disable_primary_districts_assembly
-			owner = { is_hive_empire = yes }
-		}
 		district_do3f_drone_lab_max = 1
 	}
 	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_disable_primary_districts_assembly
-			owner = { is_machine_empire = yes }
-		}
 		district_do3f_robot_assembly_max = 1
 	}
 
@@ -4994,10 +4762,6 @@ d_relaxing_location = {
 
 	category = deposit_cat_rare
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_primary_districts_tourism }
-		modifier = { district_do3f_tourism_max = -1 planet_immigration_pull_mult = 0.2 }
-	}
 	planet_modifier = {
 		district_do3f_tourism_max = 1
 	}
@@ -5023,10 +4787,6 @@ d_super_relaxing_location = {
 
 	category = deposit_cat_rare
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_primary_districts_tourism }
-		modifier = { district_do3f_tourism_max = -2 planet_immigration_pull_mult = 0.4 }
-	}
 	planet_modifier = {
 		district_do3f_tourism_max = 2
 	}
@@ -5037,7 +4797,6 @@ d_super_relaxing_location = {
 			do3f_002_tourism_deposits = yes
 		}
 		can_have_habitable_deposits = yes
-		has_planet_flag = do3f_districts_do3f_tourism
 	}
 
 	drop_weight = {
@@ -5053,10 +4812,6 @@ d_ancient_structure = {
 
 	category = deposit_cat_rare
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_primary_districts_archeology }
-		modifier = { district_do3f_archeology_max = -1 planet_researchers_minor_artifacts_produces_add = 0.25 }
-	}
 	planet_modifier = {
 		district_do3f_archeology_max = 1
 	}
@@ -5067,7 +4822,6 @@ d_ancient_structure = {
 			do3f_002_archeology_deposits = yes
 		}
 		can_have_habitable_deposits = yes
-		has_planet_flag = do3f_districts_do3f_archeology
 	}
 
 	drop_weight = {
@@ -5083,10 +4837,6 @@ d_small_anomaly = {
 
 	category = deposit_cat_rare
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_primary_districts_research }
-		modifier = { district_do3f_research_complex_max = -1 planet_researchers_physics_reaserch_produces_add = 1 }
-	}
 	planet_modifier = {
 		district_do3f_research_complex_max = 1
 	}
@@ -5112,10 +4862,6 @@ d_medium_anomaly = {
 
 	category = deposit_cat_rare
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_primary_districts_research }
-		modifier = { district_do3f_research_complex_max = -2 planet_researchers_physics_reaserch_produces_add = 2 }
-	}
 	planet_modifier = {
 		district_do3f_research_complex_max = 2
 	}
@@ -5142,10 +4888,6 @@ d_flower_fields = {
 
 	category = deposit_cat_rare
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_primary_districts_gardens }
-		modifier = { district_do3f_gardens_max = -1 planet_farmers_food_produces_add = 2 }
-	}
 	planet_modifier = {
 		district_do3f_gardens_max = 1
 	}
@@ -5172,10 +4914,6 @@ d_eatable_flower_fields = {
 
 	category = deposit_cat_rare
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_primary_districts_gardens }
-		modifier = { district_do3f_gardens_max = -1 planet_farmers_food_produces_add = 2 planet_farmers_unity_produces_add = 2 }
-	}
 	planet_modifier = {
 		district_do3f_ecogardens_max = 1
 	}
@@ -5203,10 +4941,6 @@ d_ancient_scrap = {
 
 	category = deposit_cat_rare
 
-	triggered_planet_modifier = {
-		potential = { has_global_flag = do3f_disable_primary_districts_scrap }
-		modifier = { district_do3f_scrapyard_max = -1 planet_researchers_engineering_research_produces_add = 1 }
-	}
 	planet_modifier = {
 		district_do3f_scrapyard_max = 1
 	}

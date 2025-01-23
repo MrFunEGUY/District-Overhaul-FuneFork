@@ -41,26 +41,11 @@ district_crashed_slaver_ship = {
 		upkeep = {
 			energy = 2
 		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = 2
-		}
 	}
 #### - Base -####
 	planet_modifier = {
 		planet_housing_add = 4
 		planet_max_buildings_add = 0.75
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 0.75
-			planet_housing_add = 2
-		}
 	}
 
 	triggered_planet_modifier = {
@@ -124,29 +109,6 @@ district_crashed_slaver_ship = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_technology = tech_housing_2
-				NOT = { has_valid_civic = civic_agrarian_idyll }
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_housing_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_active_tradition = tr_mercantile_trickle_up_economics }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			job_clerk_add = 1
-		}
-	}
 ####- Ethics and Civics -####
 	triggered_planet_modifier = {
 		potential = {
@@ -205,11 +167,7 @@ district_01_suburbs = {
 #### - Potentials -####
 	show_on_uncolonized = {	
 		from = { is_regular_empire = yes }
-		NOT = { has_global_flag = do3f_disable_housing_district_suburbs }
-		if = {
-			limit = { NOT = { has_global_flag = do3f_disable_housing_district_suburbs } }
-			NOT = { do3f_is_special_exotic_farming_pc = yes }
-		}
+		do3f_is_special_exotic_farming_pc = yes
 		OR = {
 			uses_district_set = standard
 			uses_district_set = hive_world
@@ -224,11 +182,7 @@ district_01_suburbs = {
 		NOT = { has_deposit = d_crashed_slaver_ship }
 		exists = owner
 		owner = { is_regular_empire = yes }
-		NOT = { has_global_flag = do3f_disable_housing_district_suburbs }
-		if = {
-			limit = { NOT = { has_global_flag = do3f_disable_housing_district_suburbs } }
-			NOT = { do3f_is_special_exotic_farming_pc = yes }
-		}
+		do3f_is_special_exotic_farming_pc = yes
 		OR = {
 			uses_district_set = standard
 			uses_district_set = hive_world
@@ -274,15 +228,6 @@ district_01_suburbs = {
 	planet_modifier = {
 		planet_housing_add = 3
 		planet_max_buildings_add = 1
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 2
-		}
 	}
 
 	triggered_planet_modifier = {
@@ -339,18 +284,7 @@ district_city = {
 	show_on_uncolonized = {
 		exists = from
 		from = { is_regular_empire = yes }
-		if = {
-			limit = {
-				NAND = {
-					has_global_flag = do3f_disable_housing_district_shelters
-					has_global_flag = do3f_disable_housing_district_slums
-					has_global_flag = do3f_disable_housing_district_ascended
-					has_global_flag = do3f_disable_housing_district_ocean
-					has_global_flag = do3f_disable_housing_district_underground
-				}
-			}
-			NOT = { do3f_is_special_exotic_farming_pc = yes }
-		}
+		do3f_is_special_exotic_farming_pc = no
 		OR = {
 			uses_district_set = standard
 			uses_district_set = hive_world
@@ -376,18 +310,7 @@ district_city = {
 				}
 			}
 		}
-		if = {
-			limit = {
-				NAND = {
-					has_global_flag = do3f_disable_housing_district_shelters
-					has_global_flag = do3f_disable_housing_district_slums
-					has_global_flag = do3f_disable_housing_district_ascended
-					has_global_flag = do3f_disable_housing_district_ocean
-					has_global_flag = do3f_disable_housing_district_underground
-				}
-			}
-			NOT = { do3f_is_special_exotic_farming_pc = yes }
-		}
+		do3f_is_special_exotic_farming_pc = no
 		OR = {
 			uses_district_set = standard
 			uses_district_set = hive_world
@@ -453,15 +376,6 @@ district_city = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 5
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
 			exists = owner
 			owner = {
 				OR = {
@@ -469,21 +383,6 @@ district_city = {
 					has_origin = origin_fear_of_the_dark
 				}
 			}
-		}
-		modifier = {
-			job_clerk_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				OR = {
-					is_regular_empire = yes
-					has_origin = origin_fear_of_the_dark
-				}
-			}
-			has_global_flag = do3f_better_districts
 		}
 		modifier = {
 			job_clerk_add = 1
@@ -535,55 +434,6 @@ district_city = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = -1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_active_tradition = tr_prosperity_public_works }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_housing_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_technology = tech_housing_1 }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_technology = tech_housing_2
-				NOT = {
-					has_valid_civic = civic_agrarian_idyll
-				}
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_active_tradition = tr_mercantile_trickle_up_economics }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			job_clerk_add = 1
-		}
-	}
 ####- Ethics and Civics -####
 	triggered_planet_modifier = {
 		potential = {
@@ -633,18 +483,7 @@ district_hive = {
 #### - Potentials -####
 	show_on_uncolonized = {
 		from = { is_hive_empire = yes }
-		if = {
-			limit = {
-				NAND = {
-					has_global_flag = do3f_disable_housing_district_shelters
-					has_global_flag = do3f_disable_housing_district_slums
-					has_global_flag = do3f_disable_housing_district_ascended
-					has_global_flag = do3f_disable_housing_district_ocean
-					has_global_flag = do3f_disable_housing_district_underground
-				}
-			}
-			NOT = { do3f_is_special_exotic_farming_pc = yes }
-		}
+		do3f_is_special_exotic_farming_pc = no
 		OR = {
 			uses_district_set = standard
 			uses_district_set = hive_world
@@ -654,18 +493,7 @@ district_hive = {
 	}
 
 	potential = {
-		if = {
-			limit = {
-				NAND = {
-					has_global_flag = do3f_disable_housing_district_shelters
-					has_global_flag = do3f_disable_housing_district_slums
-					has_global_flag = do3f_disable_housing_district_ascended
-					has_global_flag = do3f_disable_housing_district_ocean
-					has_global_flag = do3f_disable_housing_district_underground
-				}
-			}
-			NOT = { do3f_is_special_exotic_farming_pc = yes }
-		}
+		do3f_is_special_exotic_farming_pc = no
 		exists = owner
 		owner = { is_hive_empire = yes }
 		OR = {
@@ -712,18 +540,6 @@ district_hive = {
 		cost = { minerals = @do3f_city_cost }
 		upkeep = { energy = @do3f_city_upkeep }
 		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = @do3f_city_cost
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = @do3f_city_upkeep
-		}
-		cost = {
             trigger = {
                 pd_aw_is_megaflora_planet = no
             }
@@ -741,16 +557,6 @@ district_hive = {
 		planet_housing_add = 6
 		job_02_maintenance_drone_add = 3
 		planet_max_buildings_add = 1
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 6
-			job_02_maintenance_drone_add = 3
-		}
 	}
 
 	triggered_planet_modifier = {
@@ -791,33 +597,6 @@ district_hive = {
 		modifier = { planet_housing_add = 1 }
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_technology = tech_housing_1 }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_technology = tech_housing_2 }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_housing_add = 1
-			job_02_maintenance_drone_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_active_tradition = tr_prosperity_extended_hives }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 1 }
-	}
 ####- Desc -####
 }
 
@@ -828,18 +607,7 @@ district_nexus = {
 #### - Potentials -####	
 	show_on_uncolonized = {
 		from = { is_machine_empire = yes }
-		if = {
-			limit = {
-				NAND = {
-					has_global_flag = do3f_disable_housing_district_shelters
-					has_global_flag = do3f_disable_housing_district_slums
-					has_global_flag = do3f_disable_housing_district_ascended
-					has_global_flag = do3f_disable_housing_district_ocean
-					has_global_flag = do3f_disable_housing_district_underground
-				}
-			}
-			NOT = { do3f_is_special_exotic_farming_pc = yes }
-		}
+		do3f_is_special_exotic_farming_pc = no
 		OR = {
 			uses_district_set = standard
 			uses_district_set = hive_world
@@ -854,18 +622,7 @@ district_nexus = {
 	}
 
 	potential = {
-		if = {
-			limit = {
-				NAND = {
-					has_global_flag = do3f_disable_housing_district_shelters
-					has_global_flag = do3f_disable_housing_district_slums
-					has_global_flag = do3f_disable_housing_district_ascended
-					has_global_flag = do3f_disable_housing_district_ocean
-					has_global_flag = do3f_disable_housing_district_underground
-				}
-			}
-			NOT = { do3f_is_special_exotic_farming_pc = yes }
-		}
+		do3f_is_special_exotic_farming_pc = no
 		exists = owner
 		owner = { is_machine_empire = yes }
 		OR = {
@@ -907,34 +664,12 @@ district_nexus = {
 		category = planet_districts_cities
 		cost = { minerals = @do3f_city_cost }
 		upkeep = { energy = @do3f_city_upkeep }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = @do3f_city_cost
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = @do3f_city_upkeep
-		}
 	}
 #### - Base -####	
 	planet_modifier = {
 		planet_housing_add = 5
 		job_02_maintenance_drone_add = 3
 		planet_max_buildings_add = 1
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_housing_add = 5
-			job_02_maintenance_drone_add = 3
-			planet_max_buildings_add = 1
-		}
 	}
 ####- Vanilla Modifiers -####
 	triggered_planet_modifier = {
@@ -962,33 +697,6 @@ district_nexus = {
 		modifier = { planet_housing_add = 1 }
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_technology = tech_housing_1 }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_technology = tech_housing_2 }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_housing_add = 1
-			job_02_maintenance_drone_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_tradition = tr_prosperity_optimized_nexus }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 1 }
-	}
 ####- PD -####
 	triggered_planet_modifier = {
         potential = {
@@ -1016,7 +724,6 @@ district_01_shelters = {
 	exempt_from_ai_planet_specialization = yes
 #### - Potentials -####	
 	show_on_uncolonized = {
-		NOT = { has_global_flag = do3f_disable_housing_district_shelters }
 		do3f_is_special_exotic_farming_pc = yes
 		OR = {
 			uses_district_set = standard
@@ -1037,7 +744,6 @@ district_01_shelters = {
 	potential = {
 		NOT = { has_deposit = d_crashed_slaver_ship }
 		exists = owner
-		NOT = { has_global_flag = do3f_disable_housing_district_shelters }
 		do3f_is_special_exotic_farming_pc = yes
 		OR = {
 			uses_district_set = standard
@@ -1079,33 +785,12 @@ district_01_shelters = {
 		category = planet_districts_cities
 		cost = { minerals = @do3f_city_cost }
 		upkeep = { energy = @do3f_arcology_upkeep }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = @do3f_city_cost
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = @do3f_arcology_upkeep
-		}
 	}
 #### - Base -####	
 	planet_modifier = {
 		planet_housing_add = 4
 		pop_environment_tolerance = 0.05
 		planet_max_buildings_add = 1
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_housing_add = 4
-			planet_max_buildings_add = 1
-		}
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -1130,30 +815,6 @@ district_01_shelters = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_regular_empire = yes
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			job_02_maintenance_worker_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = yes
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			job_02_maintenance_drone_add = 1
-		}
-	}
 ####- Vanilla Modifiers -####
 	triggered_planet_modifier = {
 		potential = {
@@ -1186,41 +847,6 @@ district_01_shelters = {
 		modifier = { job_clerk_add = 1 }
 	}
 	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = -1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_technology = tech_housing_1 }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_tradition = tr_prosperity_public_works }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_tradition = tr_prosperity_interstellar_franchising }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_clerk_add = 1 }
-	}
-
 ####- Stuff added by this mod -####
 ####- Desc -####
 	triggered_desc = {
@@ -1254,20 +880,12 @@ district_01_slums = {
 #### - Potentials -####	
 	show_on_uncolonized = {
 		has_modifier = slave_colony
-		NOT = { has_global_flag = do3f_disable_housing_district_slums }
-		if = {
-			limit = { NOT = { has_global_flag = do3f_disable_housing_district_slums } }
-			NOT = { do3f_is_special_exotic_farming_pc = yes }
-		}
+		do3f_is_special_exotic_farming_pc = yes
 	}
 	potential = {
 		exists = owner
 		has_modifier = slave_colony
-		NOT = { has_global_flag = do3f_disable_housing_district_slums }
-		if = {
-			limit = { NOT = { has_global_flag = do3f_disable_housing_district_slums } }
-			NOT = { do3f_is_special_exotic_farming_pc = yes }
-		}
+		do3f_is_special_exotic_farming_pc = yes
 	}
 
 	allow = {
@@ -1278,28 +896,12 @@ district_01_slums = {
 	resources = {
 		category = planet_districts
 		cost = { minerals = 50 }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = 50
-		}
 	}
 #### - Base -####	
 	planet_modifier = {
 		planet_housing_add = 5
 		planet_max_buildings_add = 1
 		job_slave_overseer_add = 1
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_housing_add = 5
-			planet_max_buildings_add = 1
-			job_slave_overseer_add = 1
-		}
 	}
 ####- Desc -####
 	triggered_desc = {
@@ -1320,72 +922,31 @@ district_01_ocean_housing = {
 	show_on_uncolonized = {
 		is_artificial = no
 		OR = {
-			num_free_districts = {
-				type = district_01_ocean_housing
-				value > 0
-			}
-			num_districts = {
-				type = district_01_ocean_housing
-				value > 0
-			}
+			has_district = district_01_ocean_housing
+			num_districts = { type = district_01_ocean_housing value > 0 }
 		}
-		NOT = { has_global_flag = do3f_disable_housing_district_ocean }
-		if = {
-			limit = { NOT = { has_global_flag = do3f_disable_housing_district_ocean } }
-			NOT = { do3f_is_special_exotic_farming_pc = yes }
-		}
+		do3f_is_special_exotic_farming_pc = yes
 	}
 	potential = {
 		exists = owner
 		is_artificial = no
 		OR = {
-			num_free_districts = {
-				type = district_01_ocean_housing
-				value > 0
-			}
-			num_districts = {
-				type = district_01_ocean_housing
-				value > 0
-			}
+			has_district = district_01_ocean_housing
+			num_districts = { type = district_01_ocean_housing value > 0 }
 		}
-		NOT = { has_global_flag = do3f_disable_housing_district_ocean }
-		if = {
-			limit = { NOT = { has_global_flag = do3f_disable_housing_district_ocean } }
-			NOT = { do3f_is_special_exotic_farming_pc = yes }
-		}
+		do3f_is_special_exotic_farming_pc = yes
 	}
 #### - Cost & Upkeep -####
 	resources = {
 		category = planet_districts_cities
 		cost = { minerals = @do3f_city_cost }
 		upkeep = { energy = 4 }	
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = @do3f_city_cost
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = 4
-		}	
 	}
 #### - Base -####	
 	planet_modifier = { 
 		planet_housing_add = 6
 		planet_max_districts_add = 1
 		planet_max_buildings_add = 1
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 6
-		}
 	}
 ####- Vanilla Modifiers -####
 	triggered_planet_modifier = {
@@ -1415,35 +976,6 @@ district_01_ocean_housing = {
 		modifier = { planet_housing_add = 1 }
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				has_valid_civic = civic_agrarian_idyll
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = -1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_technology = tech_housing_1 }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_technology = tech_housing_2
-				NOT = { has_valid_civic = civic_agrarian_idyll }
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 1 }
-	}
 ####- Stuff added by this mod -####
 ####- Desc -####
 }
@@ -1454,70 +986,29 @@ district_01_ascended_housing = {
 #### - Potentials -####	
 	show_on_uncolonized = {
 		OR = {
-			num_free_districts = {
-				type = district_01_ascended_housing
-				value > 0
-			}
-			num_districts = {
-				type = district_01_ascended_housing
-				value > 0
-			}
+			has_district = district_01_ascended_housing
+			num_districts = { type = district_01_ascended_housing value > 0 }
 		}
-		NOT = { has_global_flag = do3f_disable_housing_district_ascended }
-		if = {
-			limit = { NOT = { has_global_flag = do3f_disable_housing_district_ascended } }
-			NOT = { do3f_is_special_exotic_farming_pc = yes }
-		}
+		do3f_is_special_exotic_farming_pc = yes
 	}
 	potential = {
 		exists = owner
 		OR = {
-			num_free_districts = {
-				type = district_01_ascended_housing
-				value > 0
-			}
-			num_districts = {
-				type = district_01_ascended_housing
-				value > 0
-			}
+			has_district = district_01_ascended_housing
+			num_districts = { type = district_01_ascended_housing value > 0 }
 		}
-		NOT = { has_global_flag = do3f_disable_housing_district_ascended }
-		if = {
-			limit = { NOT = { has_global_flag = do3f_disable_housing_district_ascended } }
-			NOT = { do3f_is_special_exotic_farming_pc = yes }
-		}
+		do3f_is_special_exotic_farming_pc = yes
 	}
 #### - Cost & Upkeep -####
 	resources = {
 		category = planet_districts_cities
 		cost = { minerals = @do3f_arcology_cost }
 		upkeep = { energy = 10 }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = @do3f_arcology_cost
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = 10
-		}		
 	}
 #### - Base -####		
 	planet_modifier = { 
 		planet_housing_add = 18
 		planet_max_buildings_add = 3
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 18
-		}
 	}
 ####- Vanilla Modifiers -####
 	triggered_planet_modifier = {
@@ -1544,32 +1035,6 @@ district_01_ascended_housing = {
 		modifier = { planet_housing_add = 6 }
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				has_valid_civic = civic_agrarian_idyll
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = -6 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_technology = tech_housing_1 }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 6 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_technology = tech_housing_2 }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 6 }
-	}
 ####- Stuff added by this mod -####
 ####- Desc -####
 }
@@ -1581,40 +1046,20 @@ district_01_underground_city = {
 #### - Potentials -####	
 	show_on_uncolonized = {
 		OR = {
-			num_free_districts = {
-				type = district_01_underground_city
-				value > 0
-			}
-			num_districts = {
-				type = district_01_underground_city
-				value > 0
-			}
+			has_district = district_01_underground_city
+			num_districts = { type = district_01_underground_city value > 0 }
 		}
 		is_artificial = no
-		NOT = { has_global_flag = do3f_disable_housing_district_underground }
-		if = {
-			limit = { NOT = { has_global_flag = do3f_disable_housing_district_underground } }
-			NOT = { do3f_is_special_exotic_farming_pc = yes }
-		}
+		do3f_is_special_exotic_farming_pc = yes
 	}
 	potential = {
 		exists = owner
 		OR = {
-			num_free_districts = {
-				type = district_01_underground_city
-				value > 0
-			}
-			num_districts = {
-				type = district_01_underground_city
-				value > 0
-			}
+			has_district = district_01_underground_city
+			num_districts = { type = district_01_underground_city value > 0 }
 		}
 		is_artificial = no
-		NOT = { has_global_flag = do3f_disable_housing_district_underground }
-		if = {
-			limit = { NOT = { has_global_flag = do3f_disable_housing_district_underground } }
-			NOT = { do3f_is_special_exotic_farming_pc = yes }
-		}
+		do3f_is_special_exotic_farming_pc = yes
 	}
 	
 	allow = {
@@ -1625,33 +1070,12 @@ district_01_underground_city = {
 		category = planet_districts_cities
 		cost = { minerals = @do3f_city_cost }
 		upkeep = { energy = @do3f_arcology_upkeep }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = @do3f_city_cost
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = @do3f_arcology_upkeep
-		}
 	}
 #### - Base -####	
 	planet_modifier = { 
 		planet_housing_add = 4
 		planet_max_districts_add = 1
 		planet_max_buildings_add = 2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 2
-			planet_housing_add = 4
-		}
 	}
 ####- Vanilla Modifiers -####
 	triggered_planet_modifier = {

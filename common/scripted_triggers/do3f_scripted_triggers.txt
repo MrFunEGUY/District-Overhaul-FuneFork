@@ -360,6 +360,7 @@ do3f_is_rural_planet = {
 	do3f_002_ascended_housing_deposits = {
 		OR = {
 			has_deposit = d_precurser_city
+			has_deposit = d_central_spire
 			# Real Space: New Frontiers
 			# Special
 			has_deposit = d_ancient_ruins
@@ -390,6 +391,10 @@ do3f_is_rural_planet = {
 			has_deposit = d_small_boron11_deposit
 			has_deposit = d_boron11_deposit
 			has_deposit = d_large_boron11_deposit
+			has_deposit = d_irradiated_valley
+			has_deposit = d_boswash_metropolitan_axis
+			has_deposit = d_ancient_reactor_pits
+			has_deposit = d_solar_storm_2_districts
 		}
 	}
 	do3f_002_fossil_deposits = {
@@ -402,7 +407,8 @@ do3f_is_rural_planet = {
 			has_deposit = d_large_natural_gas_deposit 
 			has_deposit = d_small_oil_deposit 
 			has_deposit = d_oil_deposit 
-			has_deposit = d_large_oil_deposit 
+			has_deposit = d_large_oil_deposit
+			has_deposit = d_delhi_sprawl
 		}
 	}
 	do3f_002_solar_deposits = {
@@ -411,6 +417,12 @@ do3f_is_rural_planet = {
 			has_deposit = d_low_athmosphere_zone 
 			has_deposit = d_arid_highlands 
 			has_deposit = d_searing_desert
+			has_deposit = d_dayside_farm
+			has_deposit = d_delhi_sprawl
+			has_deposit = d_immense_solar_array
+			has_deposit = d_pulsar_scarred
+			has_deposit = d_ancient_facilities
+			has_deposit = d_immense_solar_array
 			# Real Space: New Frontiers
 			has_deposit = d_salt_flat
 			has_deposit = d_scorched_badlands
@@ -423,6 +435,8 @@ do3f_is_rural_planet = {
 			has_deposit = d_stormy_highlands 
 			has_deposit = d_stormy_flats 
 			has_deposit = d_tempestous_mountain
+			has_deposit = d_buzzing_plains
+			has_deposit = d_forceful_winds
 			# Real Space: New Frontiers
 			# Special
 			has_deposit = d_great_vortex
@@ -435,6 +449,11 @@ do3f_is_rural_planet = {
 			has_deposit = d_hot_springs
 			has_deposit = d_frozen_gas_lake
 			has_deposit = d_geothermal_vent
+			has_deposit = d_underground_generator
+			has_deposit = d_underground_contact_zone
+			has_deposit = d_numas_breath
+			has_deposit = d_boswash_metropolitan_axis
+			has_deposit = d_ancient_facilities
 			# Real Space: New Frontiers
 			has_deposit = d_underground_springs
 			has_deposit = d_ice_geyser
@@ -449,7 +468,10 @@ do3f_is_rural_planet = {
 		OR = {
 			has_deposit = d_underwater_hill 
 			has_deposit = d_underwater_mountain  
-			has_deposit = d_rushing_waterfalls 
+			has_deposit = d_rushing_waterfalls
+			has_deposit = d_underwater_vent
+			has_deposit = d_pearl_river_agglomerate
+			has_deposit = d_electrified_oceans
 			has_deposit = d_underwater_vent
 			# Real Space: New Frontiers
 			has_deposit = d_turbulent_currents
@@ -468,6 +490,7 @@ do3f_is_rural_planet = {
 			has_deposit = d_small_forest
 			has_deposit = d_large_forest
 			has_deposit = d_industrial_bio_waste
+			has_deposit = d_organic_landfill
 			# Real Space: New Frontiers
 			has_deposit = d_peat_moors
 		}
@@ -479,14 +502,20 @@ do3f_is_rural_planet = {
 			do3f_002_stable_mining_deposits = no
 			do3f_002_surface_mining_deposits = no
 			do3f_002_deep_mining_deposits = no
-			do3f_002_moutain_mining_deposits = no
+			do3f_002_mountain_mining_deposits = no
 		}
 	}
 
 	do3f_002_unstable_mining_deposits = {
 		OR = {
 			has_deposit = d_loose_rock 
-			has_deposit = d_loose_rock_formation 
+			has_deposit = d_loose_rock_formation
+			has_deposit = d_metal_boneyard
+			has_deposit = d_junk_wastes
+			has_deposit = d_turtle_corpse
+			has_deposit = d_planet_stripmine
+			has_deposit = d_volcanic_active_planet
+			has_deposit = d_rockworm_hive
 			# Real Space: New Frontiers
 			# Special
 			has_deposit = d_grand_canyon
@@ -499,6 +528,10 @@ do3f_is_rural_planet = {
 			has_deposit = d_stable_ground 
 			has_deposit = d_ultra_stable_ground
 			has_deposit = d_veiny_cliffs
+			has_deposit = d_ancient_mining_site
+			has_deposit = d_planet_stripmine
+			has_deposit = d_mesopotamian_urban_corridor
+			has_deposit = d_relic_metal_boneyard
 			# Real Space: New Frontiers
 			has_deposit = d_abundant_atoll
 		}
@@ -509,6 +542,22 @@ do3f_is_rural_planet = {
 			has_deposit = d_large_rock_formation 
 			has_deposit = d_mineral_fields
 			has_deposit = d_prosperous_mesa
+			has_deposit = d_dust_caverns
+			has_deposit = d_mineral_striations
+			has_deposit = d_impact_crater
+			has_deposit = d_nano_corpses
+			has_deposit = d_ancient_manufactorium_crater
+			has_deposit = d_planet_stripmine
+			has_deposit = d_mesopotamian_urban_corridor
+			has_deposit = d_mauritanian_security_zone
+			has_deposit = d_lithoid_crater
+			has_deposit = d_project_cornucopia
+			has_deposit = d_crater_bluelotus
+			has_deposit = d_admirals_bickering_crashed_cargo_ship
+			has_deposit = d_prospectorium_strip_mine
+			has_deposit = d_fallen_orbital_shipyard
+			has_deposit = d_magnetic_storm_1_minerals
+			has_deposit = d_magnetic_storm_3_mix
 			# Real Space: New Frontiers
 			has_deposit = d_offshore_fields
 			# Special
@@ -520,6 +569,16 @@ do3f_is_rural_planet = {
 			has_deposit = d_deep_minerals
 			has_deposit = d_ore_rich_caverns
 			has_deposit = d_submerged_ore_veins
+			has_deposit = d_underground_vault_2
+			has_deposit = d_underground_mine
+			has_deposit = d_polaris_city
+			has_deposit = d_submerged_ore_veins
+			has_deposit = d_planet_stripmine
+			has_deposit = d_mesopotamian_urban_corridor
+			has_deposit = d_abandoned_mining_tunnels
+			has_deposit = d_project_cornucopia
+			has_deposit = d_rockworm_hive
+			has_deposit = d_magnetic_storm_1_minerals
 			# Real Space: New Frontiers
 			has_deposit = d_rich_lodes
 			# Special
@@ -528,17 +587,20 @@ do3f_is_rural_planet = {
 			has_deposit = d_submerged_caves
 		}
 	}
-	do3f_002_moutain_mining_deposits = {
+	do3f_002_mountain_mining_deposits = {
 		OR = {
 			has_deposit = d_exposed_mountain_resources
 			has_deposit = d_rich_mountain
+			has_deposit = d_exotic_mountain
+			has_deposit = d_machine_minerals
+			has_deposit = d_sky_mountain
 		}
 	}
 #Farming
 	do3f_no_farming_deposits = {
 		AND = {
 			do3f_002_nature_farms_deposits = no
-			do3f_002_ocean_farming_deposits = no
+			do3f_002_ocean_farms_deposits = no
 			do3f_002_exotic_farms_deposits = no
 			do3f_002_oasis_farms_deposits = no
 			do3f_002_cave_farms_deposits = no
@@ -550,22 +612,30 @@ do3f_is_rural_planet = {
 			has_deposit = d_berries_hedge 
 			has_deposit = d_fruit_fields 
 			has_deposit = d_bountiful_plains
+			has_deposit = d_rugged_woods
 			has_deposit = d_green_hills
+			has_deposit = d_lush_jungle
 			has_deposit = d_fertile_lands
 			has_deposit = d_black_soil
-			has_deposit = d_rugged_woods
-			has_deposit = d_lush_jungle
+			has_deposit = d_natural_farmland
+			has_deposit = d_abandoned_primitive_homesteads
+			has_deposit = d_hyperfertile_valley
+			has_deposit = d_floodplains
+			has_deposit = d_tree_of_life_home
+			has_deposit = d_tree_of_life_colony
 			# Real Space: New Frontiers
 			has_deposit = d_estuary_meadows
 			has_deposit = d_huge_tree
 		}
 	}
-	do3f_002_ocean_farming_deposits = {
+	do3f_002_ocean_farms_deposits = {
 		OR = {
 			has_deposit = d_underwater_reef	
 			has_deposit = d_underwater_ecosystem	
 			has_deposit = d_boggy_fens
 			has_deposit = d_teeming_reef
+			has_deposit = d_pacific_algae_tracts
+			has_deposit = d_organic_slurry
 			# Real Space: New Frontiers
 			has_deposit = d_seagrass_shelf
 			has_deposit = d_kelp_forest
@@ -580,6 +650,9 @@ do3f_is_rural_planet = {
 			has_deposit = d_mushrooms	
 			has_deposit = d_mushroom_ecosystem	
 			has_deposit = d_fungal_forest
+			has_deposit = d_turtle_corpse
+			has_deposit = d_metallic_puddles
+			has_deposit = d_scandinavian_reclamation_sector
 			# Planetary Diversity
 			has_deposit = d_hydrocarbon_lakes
 			has_deposit = d_ammonia_seas
@@ -588,12 +661,13 @@ do3f_is_rural_planet = {
 	do3f_002_oasis_farms_deposits = {
 		OR = {
 			has_deposit = d_blooming_oasis
-			has_deposit = d_nutritious_mudland
 			has_deposit = d_lichen_fields
 			has_deposit = d_forgiving_tundra
+			has_deposit = d_nutritious_mudland
 			has_deposit = d_great_river
 			has_deposit = d_marvelous_oasis
 			has_deposit = d_tropical_island
+			has_deposit = d_saharan_irrigation_project
 		}
 		
 	}
@@ -602,6 +676,7 @@ do3f_is_rural_planet = {
 			has_deposit = d_lush_caves
 			has_deposit = d_lush_cave_complex
 			has_deposit = d_fungal_caves
+			has_deposit = d_underground_farm
 			# Real Space: New Frontiers
 			has_deposit = d_underground_reservoir
 			# Special
@@ -642,13 +717,19 @@ do3f_is_rural_planet = {
 		OR = {
 			has_deposit = d_carbon_compounds 
 			has_deposit = d_complex_carbon_compounds
+			has_deposit = d_dust_caverns
+			has_deposit = d_dust_desert
+			has_deposit = d_industrial_sector
 		}
 	}
 	do3f_002_gas_deposits = {
 		OR = {
 			has_deposit = d_bubbling_lake 
 			has_deposit = d_bubbling_ocean
-
+			has_deposit = d_bubbling_swamp
+			has_deposit = d_fuming_bog
+			has_deposit = d_industrial_sector
+			#########
 			has_deposit = d_aquatic_trench
 		}
 	}
@@ -656,12 +737,20 @@ do3f_is_rural_planet = {
 		OR = {
 			has_deposit = d_luminescent_cave 
 			has_deposit = d_luminescent_cave_system
+			has_deposit = d_crystalline_caverns
+			has_deposit = d_crystal_forest
+			has_deposit = d_crystal_reef
+			has_deposit = d_luminescent_cave_system
+			has_deposit = d_luminescent_cave_system
+			has_deposit = d_industrial_sector
 		}
 	}
 	do3f_002_nature_reserve_deposits = {
 		OR = {
 			has_deposit = d_interesting_wildlife 
-			has_deposit = d_complex_ecosystem 
+			has_deposit = d_complex_ecosystem
+			has_deposit = d_nature_preserve_blocker
+			has_deposit = d_avian_reserve
 		}
 	}
 	do3f_002_research_complex_deposits = {
@@ -680,7 +769,8 @@ do3f_is_rural_planet = {
 	do3f_002_tourism_deposits = {
 		OR = {
 			has_deposit = d_relaxing_location  
-			has_deposit = d_super_relaxing_location 
+			has_deposit = d_super_relaxing_location
+			has_deposit = d_freeports
 			# Real Space: New Frontiers
 			# Special
 			has_deposit = d_serene_coastline
@@ -689,6 +779,11 @@ do3f_is_rural_planet = {
 	do3f_002_archeology_deposits = {
 		OR = {
 			has_deposit = d_ancient_structure
+			has_deposit = d_relic_dense_ruins
+			has_deposit = d_former_relic_world
+			has_deposit = d_artifacts_planet_1
+			has_deposit = d_artifacts_planet_2
+			has_deposit = d_artifacts_planet_3
 			# Real Space: New Frontiers
 			# Special
 			has_deposit = d_ancient_ruins
@@ -703,6 +798,7 @@ do3f_is_rural_planet = {
 	do3f_002_scrapyard_deposits = {
 		OR = {
 			has_deposit = d_ancient_scrap
+			has_deposit = d_fallen_orbital_shipyard
 			# Real Space: New Frontiers
 			# Special
 			has_deposit = d_relic_landfill

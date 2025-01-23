@@ -8,9 +8,6 @@
 				has_district = district_02_shipyards
 			}
 		}
-		NOT = {
-			has_global_flag = do3f_disable_secondary_districts_ecu_shipyard
-		}
 	}
 
 	possible = {

@@ -7,26 +7,18 @@ district_hab_alloys = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_alloy }
 		OR = {
 			has_district = district_hab_alloys
-			num_free_districts = {
-				type = district_hab_alloys
-				value > 0
-			}
+			num_free_districts = { type = district_hab_alloys value > 0 }
 		}
 	}
 
 	potential = {
 		uses_district_set = habitat
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_alloy }
 		exists = owner
 		OR = {
 			has_district = district_hab_alloys
-			num_free_districts = {
-				type = district_hab_alloys
-				value > 0
-			}
+			num_free_districts = { type = district_hab_alloys value > 0 }
 		}
 	}
 
@@ -82,26 +74,18 @@ district_hab_consumer_goodss = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_consumer_goods }
 		OR = {
 			has_district = district_hab_consumer_goodss
-			num_free_districts = {
-				type = district_hab_consumer_goodss
-				value > 0
-			}
+			num_free_districts = { type = district_hab_consumer_goodss value > 0 }
 		}
 	}
 
 	potential = {
 		uses_district_set = habitat
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_consumer_goods }
 		exists = owner
 		OR = {
 			has_district = district_hab_consumer_goodss
-			num_free_districts = {
-				type = district_hab_consumer_goodss
-				value > 0
-			}
+			num_free_districts = { type = district_hab_consumer_goodss value > 0 }
 		}
 	}
 
@@ -157,26 +141,18 @@ district_hab_volatile_motes = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_motes }
 		OR = {
 			has_district = district_hab_volatile_motes
-			num_free_districts = {
-				type = district_hab_volatile_motes
-				value > 0
-			}
+			num_free_districts = { type = district_hab_volatile_motes value > 0 }
 		}
 	}
 
 	potential = {
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_motes }
 		uses_district_set = habitat
 		exists = owner
 		OR = {
 			has_district = district_hab_volatile_motes
-			num_free_districts = {
-				type = district_hab_volatile_motes
-				value > 0
-			}
+			num_free_districts = { type = district_hab_volatile_motes value > 0 }
 		}
 	}
 
@@ -232,26 +208,18 @@ district_hab_exotic_gases = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_gas }
 		OR = {
 			has_district = district_hab_exotic_gases
-			num_free_districts = {
-				type = district_hab_exotic_gases
-				value > 0
-			}
+			num_free_districts = { type = district_hab_exotic_gases value > 0 }
 		}
 	}
 
 	potential = {
 		uses_district_set = habitat
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_gas }
 		exists = owner
 		OR = {
 			has_district = district_hab_exotic_gases
-			num_free_districts = {
-				type = district_hab_exotic_gases
-				value > 0
-			}
+			num_free_districts = { type = district_hab_exotic_gases value > 0 }
 		}
 	}
 
@@ -307,26 +275,18 @@ district_hab_rare_crystals = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_crystal }
 		OR = {
 			has_district = district_hab_rare_crystals
-			num_free_districts = {
-				type = district_hab_rare_crystals
-				value > 0
-			}
+			num_free_districts = { type = district_hab_rare_crystals value > 0 }
 		}
 	}
 
 	potential = {
 		uses_district_set = habitat
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_crystal }
 		exists = owner
 		OR = {
 			has_district = district_hab_rare_crystals
-			num_free_districts = {
-				type = district_hab_rare_crystals
-				value > 0
-			}
+			num_free_districts = { type = district_hab_rare_crystals value > 0 }
 		}
 	}
 
@@ -382,26 +342,18 @@ district_hab_dark_matter = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_dark_matter }
 		OR = {
 			has_district = district_hab_dark_matter
-			num_free_districts = {
-				type = district_hab_dark_matter
-				value > 0
-			}
+			num_free_districts = { type = district_hab_dark_matter value > 0 }
 		}
 	}
 
 	potential = {
 		uses_district_set = habitat
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_dark_matter }
 		exists = owner
 		OR = {
 			has_district = district_hab_dark_matter
-			num_free_districts = {
-				type = district_hab_dark_matter
-				value > 0
-			}
+			num_free_districts = { type = district_hab_dark_matter value > 0 }
 		}
 	}
 
@@ -457,26 +409,18 @@ district_hab_zro = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_zro }
 		OR = {
 			has_district = district_hab_zro
-			num_free_districts = {
-				type = district_hab_zro
-				value > 0
-			}
+			num_free_districts = { type = district_hab_zro value > 0 }
 		}
 	}
 
 	potential = {
 		uses_district_set = habitat
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_zro }
 		exists = owner
 		OR = {
 			has_district = district_hab_zro
-			num_free_districts = {
-				type = district_hab_zro
-				value > 0
-			}
+			num_free_districts = { type = district_hab_zro value > 0 }
 		}
 	}
 
@@ -532,26 +476,18 @@ district_hab_living_metal = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_living_metal }
 		OR = {
 			has_district = district_hab_living_metal
-			num_free_districts = {
-				type = district_hab_living_metal
-				value > 0
-			}
+			num_free_districts = { type = district_hab_living_metal value > 0 }
 		}
 	}
 
 	potential = {
 		uses_district_set = habitat
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_living_metal }
 		exists = owner
 		OR = {
 			has_district = district_hab_living_metal
-			num_free_districts = {
-				type = district_hab_living_metal
-				value > 0
-			}
+			num_free_districts = { type = district_hab_living_metal value > 0 }
 		}
 	}
 
@@ -607,26 +543,18 @@ district_hab_nanites = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_nanites }
 		OR = {
 			has_district = district_hab_nanites
-			num_free_districts = {
-				type = district_hab_nanites
-				value > 0
-			}
+			num_free_districts = { type = district_hab_nanites value > 0 }
 		}
 	}
 
 	potential = {
-		NOT = { has_global_flag = do3f_disable_artificial_districts_hab_nanites }
 		uses_district_set = habitat
 		exists = owner
 		OR = {
 			has_district = district_hab_nanites
-			num_free_districts = {
-				type = district_hab_nanites
-				value > 0
-			}
+			num_free_districts = { type = district_hab_nanites value > 0 }
 		}
 	}
 
@@ -684,11 +612,9 @@ district_rw_universal = {
 	
 	show_on_uncolonized = {
 		uses_district_set = ring_world
-		NOT = { has_global_flag = do3f_disable_artificial_districts_ring_uni }
 	}
 	
 	potential = {
-		NOT = { has_global_flag = do3f_disable_artificial_districts_ring_uni }
 		uses_district_set = ring_world
 		exists = owner
 	}
@@ -707,14 +633,6 @@ district_rw_universal = {
 	
 	planet_modifier = {
 		planet_max_buildings_add = 5
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 3
-		}
 	}
 	triggered_planet_modifier = {
 		potential = {

@@ -11,30 +11,16 @@ district_do3f_chemistry_industry = {
 	max_for_deposits_on_planet = 5
 
 	show_on_uncolonized = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_chemistry }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_chemistry_industry
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_chemistry_industry
-				value > 0
-			}
+			has_district = district_do3f_chemistry_industry
+			num_districts = { type = district_do3f_chemistry_industry value > 0 }
 		}
 	}
 
 	potential = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_chemistry }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_chemistry_industry
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_chemistry_industry
-				value > 0
-			}
+			has_district = district_do3f_chemistry_industry
+			num_districts = { type = district_do3f_chemistry_industry value > 0 }
 		}
 		exists = owner
 	}
@@ -103,30 +89,16 @@ district_do3f_gas_refinery = {
 	max_for_deposits_on_planet = 5
 
 	show_on_uncolonized = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_gas }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_gas_refinery
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_gas_refinery
-				value > 0
-			}
+			has_district = district_do3f_gas_refinery
+			num_districts = { type = district_do3f_gas_refinery value > 0 }
 		}
 	}
 
 	potential = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_gas }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_gas_refinery
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_gas_refinery
-				value > 0
-			}
+			has_district = district_do3f_gas_refinery
+			num_districts = { type = district_do3f_gas_refinery value > 0 }
 		}
 		exists = owner
 	}
@@ -195,30 +167,16 @@ district_do3f_crystal_mines = {
 	max_for_deposits_on_planet = 5
 
 	show_on_uncolonized = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_crystals }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_crystal_mines
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_crystal_mines
-				value > 0
-			}
+			has_district = district_do3f_crystal_mines
+			num_districts = { type = district_do3f_crystal_mines value > 0 }
 		}
 	}
 
 	potential = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_crystals }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_crystal_mines
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_crystal_mines
-				value > 0
-			}
+			has_district = district_do3f_crystal_mines
+			num_districts = { type = district_do3f_crystal_mines value > 0 }
 		}
 		exists = owner
 	}
@@ -289,30 +247,16 @@ district_do3f_nature_reserve = {
 	max_for_deposits_on_planet = 8
 	
 	show_on_uncolonized = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_nature }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_nature_reserve
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_nature_reserve
-				value > 0
-			}
+			has_district = district_do3f_nature_reserve
+			num_districts = { type = district_do3f_nature_reserve value > 0 }
 		}
 	}
 	
 	potential = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_nature }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_nature_reserve
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_nature_reserve
-				value > 0
-			}
+			has_district = district_do3f_nature_reserve
+			num_districts = { type = district_do3f_nature_reserve value > 0 }
 		}
 		exists = owner
 	}
@@ -376,30 +320,16 @@ district_do3f_research_complex = {
 	max_for_deposits_on_planet = 8
 	
 	show_on_uncolonized = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_research }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_research_complex
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_research_complex
-				value > 0
-			}
+			has_district = district_do3f_research_complex
+			num_districts = { type = district_do3f_research_complex value > 0 }
 		}
 	}
 	
 	potential = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_research }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_research_complex
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_research_complex
-				value > 0
-			}
+			has_district = district_do3f_research_complex
+			num_districts = { type = district_do3f_research_complex value > 0 }
 		}
 		exists = owner
 	}
@@ -464,30 +394,16 @@ district_do3f_scrapyard = {
 	max_for_deposits_on_planet = 8
 	
 	show_on_uncolonized = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_scrap }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_scrapyard
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_scrapyard
-				value > 0
-			}
+			has_district = district_do3f_scrapyard
+			num_districts = { type = district_do3f_scrapyard value > 0 }
 		}
 	}
 	
 	potential = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_scrap }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_scrapyard
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_scrapyard
-				value > 0
-			}
+			has_district = district_do3f_scrapyard
+			num_districts = { type = district_do3f_scrapyard value > 0 }
 		}
 		exists = owner
 	}
@@ -573,30 +489,16 @@ district_do3f_tourism = {
 	max_for_deposits_on_planet = 8
 
 	show_on_uncolonized = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_tourism }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_tourism
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_tourism
-				value > 0
-			}
+			has_district = district_do3f_tourism
+			num_districts = { type = district_do3f_tourism value > 0 }
 		}
 	}
 
 	potential = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_tourism }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_tourism
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_tourism
-				value > 0
-			}
+			has_district = district_do3f_tourism
+			num_districts = { type = district_do3f_tourism value > 0 }
 		}
 		exists = owner
 	}
@@ -648,30 +550,16 @@ district_do3f_gardens = {
 	max_for_deposits_on_planet = 8
 
 	show_on_uncolonized = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_gardens }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_gardens
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_gardens
-				value > 0
-			}
+			has_district = district_do3f_gardens
+			num_districts = { type = district_do3f_gardens value > 0 }
 		}
 	}
 
 	potential = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_gardens }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_gardens
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_gardens
-				value > 0
-			}
+			has_district = district_do3f_gardens
+			num_districts = { type = district_do3f_gardens value > 0 }
 		}
 		exists = owner
 	}
@@ -773,30 +661,16 @@ district_do3f_ecogardens = {
 	max_for_deposits_on_planet = 8
 
 	show_on_uncolonized = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_ecogardens }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_ecogardens
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_ecogardens
-				value > 0
-			}
+			has_district = district_do3f_ecogardens
+			num_districts = { type = district_do3f_ecogardens value > 0 }
 		}
 	}
 
 	potential = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_ecogardens }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_ecogardens
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_ecogardens
-				value > 0
-			}
+			has_district = district_do3f_ecogardens
+			num_districts = { type = district_do3f_ecogardens value > 0 }
 		}
 		exists = owner
 	}
@@ -914,13 +788,11 @@ district_do3f_robot_assembly = {
 		exists = from
 		from = { is_machine_empire = yes }
 		do3f_002_assembly_deposits = yes
-		NOT = { has_global_flag = do3f_disable_primary_districts_assembly }
 	}
 	potential = {
 		exists = owner
 		owner = { is_machine_empire = yes }
 		do3f_002_assembly_deposits = yes
-		NOT = { has_global_flag = do3f_disable_primary_districts_assembly }
 	}
 	
 	allow = {
@@ -963,13 +835,11 @@ district_do3f_drone_lab = {
 		exists = from
 		from = { is_hive_empire = yes }
 		do3f_002_assembly_deposits = yes
-		NOT = { has_global_flag = do3f_disable_primary_districts_assembly }
 	}
 	potential = {
 		exists = owner
 		owner = { is_hive_empire = yes }
 		do3f_002_assembly_deposits = yes
-		NOT = { has_global_flag = do3f_disable_primary_districts_assembly }
 	}
 	
 	allow = {
@@ -1012,13 +882,11 @@ district_do3f_cloning_facility = {
 		exists = from
 		from = { is_regular_empire = yes }
 		do3f_002_assembly_deposits = yes
-		NOT = { has_global_flag = do3f_disable_primary_districts_assembly }
 	}
 	potential = {
 		exists = owner
 		owner = { is_regular_empire = yes }
 		do3f_002_assembly_deposits = yes
-		NOT = { has_global_flag = do3f_disable_primary_districts_assembly }
 	}
 	
 	allow = {
@@ -1058,29 +926,15 @@ district_do3f_archeology = {
 	min_for_deposits_on_planet = 1	
 	max_for_deposits_on_planet = 5
 	show_on_uncolonized = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_archeology }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_archeology
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_archeology
-				value > 0
-			}
+			has_district = district_do3f_archeology
+			num_districts = { type = district_do3f_archeology value > 0 }
 		}
 	}
 	potential = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_archeology }
 		OR = {
-			num_free_districts = {
-				type = district_do3f_archeology
-				value > 0
-			}
-			num_districts = {
-				type = district_do3f_archeology
-				value > 0
-			}
+			has_district = district_do3f_archeology
+			num_districts = { type = district_do3f_archeology value > 0 }
 		}
 		exists = owner
 	}
@@ -1149,7 +1003,6 @@ district_do3f_rw_neutronium_forge = {
 	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_ring_alloy }
 		OR = {
 			uses_district_set = ring_world
 			# Planetary Ringworlds 3.6
@@ -1169,7 +1022,6 @@ district_do3f_rw_neutronium_forge = {
 	}
 	
 	potential = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_ring_alloy }
 		OR = {
 			uses_district_set = ring_world
 			# Planetary Ringworlds 3.6
@@ -1246,7 +1098,6 @@ district_do3f_rw_exotic_resource_collector = {
 	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_ring_gas }
 		OR = {
 			uses_district_set = ring_world
 			# Planetary Ringworlds 3.6
@@ -1263,7 +1114,6 @@ district_do3f_rw_exotic_resource_collector = {
 	}
 
 	potential = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_ring_gas }
 		OR = {
 			uses_district_set = ring_world
 			# Planetary Ringworlds 3.6
@@ -1341,7 +1191,6 @@ district_do3f_rw_siphon_ports = {
 	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_ring_motes }
 		OR = {
 			uses_district_set = ring_world
 			# Planetary Ringworlds 3.6
@@ -1370,7 +1219,6 @@ district_do3f_rw_siphon_ports = {
 	}
 
 	potential = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_ring_motes }
 		OR = {
 			uses_district_set = ring_world
 			# Planetary Ringworlds 3.6
@@ -1451,7 +1299,6 @@ district_do3f_rw_crystalization_facilities = {
 	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_ring_crystals }
 		OR = {
 			uses_district_set = ring_world
 			# Planetary Ringworlds 3.6
@@ -1480,7 +1327,6 @@ district_do3f_rw_crystalization_facilities = {
 	}
 
 	potential = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_ring_crystals }
 		OR = {
 			uses_district_set = ring_world
 			# Planetary Ringworlds 3.6
@@ -1561,7 +1407,6 @@ district_do3f_rw_asteroid_belt_mining = {
 	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_ring_mining }
 		OR = {
 			uses_district_set = ring_world
 			# Planetary Ringworlds 3.6
@@ -1576,7 +1421,6 @@ district_do3f_rw_asteroid_belt_mining = {
 	}
 	
 	potential = {
-		NOT = { has_global_flag = do3f_disable_primary_districts_ring_mining }
 		OR = {
 			uses_district_set = ring_world
 			# Planetary Ringworlds 3.6

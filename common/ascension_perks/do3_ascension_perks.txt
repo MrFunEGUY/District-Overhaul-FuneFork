@@ -1,7 +1,6 @@
 ap_underground_city = {
 	potential = {
 		NOT = { has_ascension_perk = ap_underground_city }
-		NOT = { has_global_flag = do3f_disable_housing_district_underground }
 	}
 	possible = { always = yes }
 	custom_tooltip = "ap_underground_city_unlock"
@@ -15,7 +14,6 @@ ap_underground_city = {
 # 		NOT = {
 # 			has_ascension_perk = ap_planetary_development
 # 		}
-# 		NOT = { has_global_flag = do3f_disable_mechanics_primary_districts }
 # 	}
 
 # 	possible = {

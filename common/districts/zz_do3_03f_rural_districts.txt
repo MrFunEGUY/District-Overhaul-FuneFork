@@ -10,12 +10,20 @@ district_generator = {
 #### - Potentials -####
 	show_on_uncolonized = { 
 		uses_district_set = standard
+		OR = {
+			has_district = district_generator
+			num_free_districts = { type = district_generator value > 0 }
+		}
 	}
 
 	potential = { 
 		uses_district_set = standard
 		exists = owner
 		do3f_generator_district_potential = yes
+		OR = {
+			has_district = district_generator
+			num_free_districts = { type = district_generator value > 0 }
+		}
 	}
 	
 	allow = {
@@ -66,15 +74,6 @@ district_generator = {
 	planet_modifier = {
 		planet_housing_add = 2
 	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
-	}
 # Jobs
 	triggered_planet_modifier = {
 		potential = {
@@ -110,29 +109,6 @@ district_generator = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			job_technician_drone_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			job_technician_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
@@ -148,14 +124,6 @@ district_generator = {
 		modifier = {
 			planet_housing_add = 1
 		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 1 }
 	}
 ####- ECAF -####
 	triggered_planet_modifier = {
@@ -217,6 +185,10 @@ district_e_fusion_generator = {
 #### - Potentials -####
 	show_on_uncolonized = { 
 		uses_district_set = standard
+		OR = {
+			has_district = district_e_fusion_generator
+			num_free_districts = { type = districte_fusion_generator value > 0 }
+		}
 	}
 	potential = { 
 		uses_district_set = standard
@@ -224,6 +196,10 @@ district_e_fusion_generator = {
 		OR = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
+		}
+		OR = {
+			has_district = district_e_fusion_generator
+			num_free_districts = { type = districte_fusion_generator value > 0 }
 		}
 	}
 	
@@ -252,32 +228,10 @@ district_e_fusion_generator = {
 			volatile_motes = 0.5
 		}
 		produces = { energy = 5 }	
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = @do3f_base_cost
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = @do3f_base_upkeep
-			volatile_motes = 0.5
-		}
 	}
 #### - Base -####
 	planet_modifier = {
 		planet_housing_add = 2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs
 	triggered_planet_modifier = {
@@ -317,29 +271,6 @@ district_e_fusion_generator = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			job_e_fusion_drone_add = 1
-		}
-	}	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			job_e_fusion_technician_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = { job_fe_acolyte_generator_add = 2 }
@@ -349,14 +280,6 @@ district_e_fusion_generator = {
 		potential = {
 			exists = owner
 			owner = { has_valid_civic = civic_agrarian_idyll }
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
 		}
 		modifier = { planet_housing_add = 1 }
 	}
@@ -421,11 +344,19 @@ district_e_fossil_fuel_generator = {
 #### - Potentials -####
 	show_on_uncolonized = { 
 		uses_district_set = standard
+		OR = {
+			has_district = district_e_fossil_fuel_generator
+			num_free_districts = { type = district_e_fossil_fuel_generator value > 0 }
+		}
 	}
 	potential = { 
 		uses_district_set = standard
 		exists = owner
 		do3f_generator_district_potential = yes
+		OR = {
+			has_district = district_e_fossil_fuel_generator
+			num_free_districts = { type = district_e_fossil_fuel_generator value > 0 }
+		}
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -449,33 +380,12 @@ district_e_fossil_fuel_generator = {
 		category = planet_districts
 		cost = { minerals = 240 }
 		upkeep = { energy = @do3f_base_upkeep }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = 240
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = @do3f_base_upkeep
-		}	
 	}
 #### - Base -####
 	planet_modifier = {
 		planet_housing_add = 2
 		pop_environment_tolerance = -0.05
 		pop_happiness = -0.05
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs
 	triggered_planet_modifier = {
@@ -508,25 +418,6 @@ district_e_fossil_fuel_generator = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_e_fossil_fuel_drone_add = 1 }
-	}		
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_e_fossil_fuel_technician_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = { job_fe_acolyte_generator_add = 2 }
@@ -536,14 +427,6 @@ district_e_fossil_fuel_generator = {
 		potential = {
 			exists = owner
 			owner = { has_valid_civic = civic_agrarian_idyll }
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
 		}
 		modifier = { planet_housing_add = 1 }
 	}
@@ -591,7 +474,6 @@ district_e_wind_turbines = {
 	max_for_deposits_on_planet = 15
 #### - Potentials -####
 	show_on_uncolonized = {
-		NOT = { has_global_flag = do3f_disable_energy_districts_wind }
 		OR = {
 			num_free_districts = {
 				type = district_e_wind_turbines
@@ -610,9 +492,12 @@ district_e_wind_turbines = {
 			pd_aw_is_wasteland_planet = no
 			is_pd_planetary_megaproject = no
 		}
+		OR = {
+			has_district = district_e_wind_turbines
+			num_free_districts = { type = district_e_wind_turbines value > 0 }
+		}
 	}
 	potential = { 
-		NOT = { has_global_flag = do3f_disable_energy_districts_wind }
 		OR = {
 			num_free_districts = {
 				type = district_e_wind_turbines
@@ -631,6 +516,10 @@ district_e_wind_turbines = {
 			}
 			pd_aw_is_wasteland_planet = no
 			is_pd_planetary_megaproject = no
+		}
+		OR = {
+			has_district = district_e_wind_turbines
+			num_free_districts = { type = district_e_wind_turbines value > 0 }
 		}
 	}
 	
@@ -656,31 +545,10 @@ district_e_wind_turbines = {
 		cost = { alloys = 80 }
 		upkeep = { energy = 1 }
 		produces = { energy = 4 }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			alloys = 80
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = 1
-		}
 	}
 #### - Base -####
 	planet_modifier = {
 		planet_housing_add = 2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs
 	triggered_planet_modifier = {
@@ -713,25 +581,6 @@ district_e_wind_turbines = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { 
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_e_wind_turbine_technician_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_e_wind_turbine_drone_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = { job_fe_acolyte_generator_add = 2 }
@@ -741,14 +590,6 @@ district_e_wind_turbines = {
 		potential = {
 			exists = owner
 			owner = { has_valid_civic = civic_agrarian_idyll }
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
 		}
 		modifier = { planet_housing_add = 1 }
 	}
@@ -796,6 +637,10 @@ district_e_geothermal_generator = {
 #### - Potentials -####
 	show_on_uncolonized = { 
 		uses_district_set = standard
+		OR = {
+			has_district = district_e_geothermal_generator
+			num_free_districts = { type = district_e_geothermal_generator value > 0 }
+		}
 	}
 	potential = { 
 		uses_district_set = standard
@@ -803,6 +648,10 @@ district_e_geothermal_generator = {
 		OR = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
+		}
+		OR = {
+			has_district = district_e_geothermal_generator
+			num_free_districts = { type = district_e_geothermal_generator value > 0 }
 		}
 	}
 	
@@ -827,31 +676,10 @@ district_e_geothermal_generator = {
 		category = planet_districts
 		cost = { minerals = @do3f_city_cost }
 		upkeep = { alloys = @do3f_base_upkeep }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = @do3f_city_cost
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			alloys = @do3f_base_upkeep
-		}
 	}
 #### - Base -####
 	planet_modifier = {
 		planet_housing_add = 2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs
 	triggered_planet_modifier = {
@@ -884,25 +712,6 @@ district_e_geothermal_generator = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_e_geothermal_drone_add = 1 }
-	}		
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_e_geothermal_technician_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = { job_fe_acolyte_generator_add = 2 }
@@ -912,14 +721,6 @@ district_e_geothermal_generator = {
 		potential = {
 			exists = owner
 			owner = { has_valid_civic = civic_agrarian_idyll }
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
 		}
 		modifier = { planet_housing_add = 1 }
 	}
@@ -967,6 +768,10 @@ district_e_solar_generator = {
 #### - Potentials -####
 	show_on_uncolonized = { 
 		uses_district_set = standard
+		OR = {
+			has_district = district_e_solar_generator
+			num_free_districts = { type = district_e_solar_generator value > 0 }
+		}
 	}
 	potential = { 
 		uses_district_set = standard
@@ -974,6 +779,10 @@ district_e_solar_generator = {
 		OR = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
+		}
+		OR = {
+			has_district = district_e_solar_generator
+			num_free_districts = { type = district_e_solar_generator value > 0 }
 		}
 	}
 	
@@ -1000,26 +809,10 @@ district_e_solar_generator = {
 			alloys = 80
 			rare_crystals = 5
 		}
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			alloys = 80
-			rare_crystals = 5
-		}
 	}
 #### - Base -####
 	planet_modifier = {
 		planet_housing_add = 2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs
 	triggered_planet_modifier = {
@@ -1052,25 +845,6 @@ district_e_solar_generator = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_e_solar_drone_add = 1 }
-	}		
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_e_solar_technician_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = { job_fe_acolyte_generator_add = 2 }
@@ -1080,14 +854,6 @@ district_e_solar_generator = {
 		potential = {
 			exists = owner
 			owner = { has_valid_civic = civic_agrarian_idyll }
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
 		}
 		modifier = { planet_housing_add = 1 }
 	}
@@ -1135,6 +901,10 @@ district_e_tidal_generator = {
 #### - Potentials -####
 	show_on_uncolonized = { 
 		uses_district_set = standard
+		OR = {
+			has_district = district_e_tidal_generator
+			num_free_districts = { type = district_e_tidal_generator value > 0 }
+		}
 	}
 	potential = { 
 		uses_district_set = standard
@@ -1142,6 +912,10 @@ district_e_tidal_generator = {
 		OR = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
+		}
+		OR = {
+			has_district = district_e_tidal_generator
+			num_free_districts = { type = district_e_tidal_generator value > 0 }
 		}
 	}
 	
@@ -1166,32 +940,11 @@ district_e_tidal_generator = {
 		category = planet_districts
 		cost = { alloys = 200 }
 		upkeep = { energy = @do3f_arcology_upkeep }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			alloys = 200
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = @do3f_arcology_upkeep
-		}
 	}
 #### - Base -####
 	planet_modifier = {
 		planet_housing_add = 2
 		planet_max_districts_add = 1
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs
 	triggered_planet_modifier = {
@@ -1224,25 +977,6 @@ district_e_tidal_generator = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_e_tidal_technician_drone_add = 1 }
-	}		
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_e_tidal_technician_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = { job_fe_acolyte_generator_add = 2 }
@@ -1253,14 +987,6 @@ district_e_tidal_generator = {
 		potential = {
 			exists = owner
 			owner = { has_valid_civic = civic_agrarian_idyll }
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
 		}
 		modifier = { planet_housing_add = 1 }
 	}
@@ -1307,6 +1033,10 @@ district_e_biomass_generator = {
 #### - Potentials -####
 	show_on_uncolonized = { 
 		uses_district_set = standard
+		OR = {
+			has_district = district_e_biomass_generator
+			num_free_districts = { type = district_e_biomass_generator value > 0 }
+		}
 	}
 	potential = { 
 		uses_district_set = standard
@@ -1314,6 +1044,10 @@ district_e_biomass_generator = {
 		OR = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
+		}
+		OR = {
+			has_district = district_e_biomass_generator
+			num_free_districts = { type = district_e_biomass_generator value > 0 }
 		}
 	}
 
@@ -1345,31 +1079,10 @@ district_e_biomass_generator = {
 		produces = {
 			exotic_gases = 1
 		}
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = 300
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			food = 3
-		}
 	}
 #### - Base -####
 	planet_modifier = {
 		planet_housing_add = 2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs
 	triggered_planet_modifier = {
@@ -1406,29 +1119,6 @@ district_e_biomass_generator = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			job_e_biomass_technician_drone_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			job_e_biomass_technician_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
@@ -1446,14 +1136,6 @@ district_e_biomass_generator = {
 		modifier = {
 			planet_housing_add = 1
 		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
 ####- Desc -####
@@ -1504,6 +1186,10 @@ district_mining = {
 			from = { is_subterranean_empire = yes }
 		}
 		uses_district_set = standard
+		OR = {
+			has_district = district_mining
+			num_free_districts = { type = district_mining value > 0 }
+		}
 	}
 	
 	potential = { 
@@ -1514,6 +1200,10 @@ district_mining = {
 		uses_district_set = standard
 		exists = owner
 		do3f_mining_district_potential = yes
+		OR = {
+			has_district = district_mining
+			num_free_districts = { type = district_mining value > 0 }
+		}
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -1525,7 +1215,7 @@ district_mining = {
 		district_m_unstable_mining
 		district_m_surface_mining
 		district_m_deep_mining
-		district_m_moutain_mining
+		district_m_mountain_mining
 		# WH40K Planets Renewed
 		district_industrial_mining
 	}	
@@ -1551,15 +1241,6 @@ district_mining = {
 		planet_housing_add = 2
 	}
 	
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
-	}
 # Jobs		
 	triggered_planet_modifier = {
 		potential = {
@@ -1596,30 +1277,6 @@ district_mining = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			job_mining_drone_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			job_miner_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = { job_fe_acolyte_mine_add = 2 }
@@ -1635,14 +1292,6 @@ district_mining = {
 		modifier = {
 			planet_housing_add = 1
 		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 1 }
 	}
 ####- PD -####
 	triggered_planet_modifier = {
@@ -1700,6 +1349,10 @@ district_m_unstable_mining = {
 			from = { is_subterranean_empire = yes }
 		}
 		uses_district_set = standard
+		OR = {
+			has_district = district_m_unstable_mining
+			num_free_districts = { type = district_m_unstable_mining value > 0 }
+		}
 	}
 	
 	potential = { 
@@ -1710,6 +1363,10 @@ district_m_unstable_mining = {
 		uses_district_set = standard
 		exists = owner
 		do3f_mining_district_potential = yes
+		OR = {
+			has_district = district_m_unstable_mining
+			num_free_districts = { type = district_m_unstable_mining value > 0 }
+		}
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -1730,32 +1387,11 @@ district_m_unstable_mining = {
 		category = planet_districts
 		cost = { minerals = 100 }
 		upkeep = { energy = @do3f_base_upkeep }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = 100
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = @do3f_base_upkeep
-		}
 	}
 #### - Base -####
 	planet_modifier = {
 		planet_housing_add = 2
 		planet_stability_add = -5
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs
 	triggered_planet_modifier = {
@@ -1792,25 +1428,6 @@ district_m_unstable_mining = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_mining_drone_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_miner_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = { job_fe_acolyte_mine_add = 2 }
@@ -1823,14 +1440,6 @@ district_m_unstable_mining = {
 		}
 		modifier = { planet_housing_add = 1 }
 	}	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 1 }
-	}		
 ####- Stuff added by this mod -####
 ####- Desc -####
 	triggered_desc = {
@@ -1879,6 +1488,10 @@ district_m_stable_mining = {
 			from = { is_subterranean_empire = yes }
 		}
 		uses_district_set = standard
+		OR = {
+			has_district = district_m_stable_mining
+			num_free_districts = { type = district_m_stable_mining value > 0 }
+		}
 	}
 	
 	potential = { 
@@ -1889,6 +1502,10 @@ district_m_stable_mining = {
 		uses_district_set = standard
 		exists = owner
 		do3f_mining_district_potential = yes
+		OR = {
+			has_district = district_m_stable_mining
+			num_free_districts = { type = district_m_stable_mining value > 0 }
+		}
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -1909,32 +1526,11 @@ district_m_stable_mining = {
 		category = planet_districts
 		cost = { minerals = @do3f_base_cost }
 		upkeep = { energy = 2 }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = @do3f_base_cost
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = 2
-		}
 	}
 #### - Base -####
 	planet_modifier = {
 		planet_housing_add = 2
 		planet_stability_add = 5
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs			
 	triggered_planet_modifier = {
@@ -1971,25 +1567,6 @@ district_m_stable_mining = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_mining_drone_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_miner_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = { job_fe_acolyte_mine_add = 2 }
@@ -1999,14 +1576,6 @@ district_m_stable_mining = {
 		potential = {
 			exists = owner
 			owner = { has_valid_civic = civic_agrarian_idyll }
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
 		}
 		modifier = { planet_housing_add = 1 }
 	}
@@ -2059,6 +1628,10 @@ district_m_surface_mining = {
 			from = { is_subterranean_empire = yes }
 		}
 		uses_district_set = standard
+		OR = {
+			has_district = district_m_surface_mining
+			num_free_districts = { type = district_m_surface_mining value > 0 }
+		}
 	}
 	
 	potential = { 
@@ -2069,6 +1642,10 @@ district_m_surface_mining = {
 		uses_district_set = standard
 		exists = owner
 		do3f_mining_district_potential = yes
+		OR = {
+			has_district = district_m_surface_mining
+			num_free_districts = { type = district_m_surface_mining value > 0 }
+		}
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -2088,26 +1665,11 @@ district_m_surface_mining = {
 	resources = {
 		category = planet_districts
 		cost = { minerals = 200 }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = 200
-		}
 	}
 #### - Base -####
 	planet_modifier = {
 		planet_housing_add = 3
 		pop_environment_tolerance = -0.05
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs			
 	triggered_planet_modifier = {
@@ -2144,25 +1706,6 @@ district_m_surface_mining = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_mining_drone_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_miner_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
@@ -2174,14 +1717,6 @@ district_m_surface_mining = {
 		potential = {
 			exists = owner
 			owner = { has_valid_civic = civic_agrarian_idyll }
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
 		}
 		modifier = { planet_housing_add = 1 }
 	}
@@ -2233,6 +1768,10 @@ district_m_deep_mining = {
 			from = { is_subterranean_empire = yes }
 		}
 		uses_district_set = standard
+		OR = {
+			has_district = district_m_deep_mining
+			num_free_districts = { type = district_m_deep_mining value > 0 }
+		}
 	}
 	
 	potential = { 
@@ -2245,6 +1784,10 @@ district_m_deep_mining = {
 		OR = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
+		}
+		OR = {
+			has_district = district_m_deep_mining
+			num_free_districts = { type = district_m_deep_mining value > 0 }
 		}
 	}
 
@@ -2266,31 +1809,10 @@ district_m_deep_mining = {
 		category = planet_districts
 		cost = { minerals = @do3f_city_cost }
 		upkeep = { alloys = 1 }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = @do3f_city_cost
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			alloys = 1
-		}
 	}
 #### - Base -####
 	planet_modifier = {
 		planet_housing_add = 2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs
 	triggered_planet_modifier = {
@@ -2330,25 +1852,6 @@ district_m_deep_mining = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_m_deep_mining_drone_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_m_deep_miner_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
@@ -2366,14 +1869,6 @@ district_m_deep_mining = {
 		modifier = {
 			planet_housing_add = 1
 		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
 ####- Desc -####
@@ -2440,6 +1935,10 @@ district_m_mountain_mining = {
 			from = { is_subterranean_empire = yes }
 		}
 		uses_district_set = standard
+		OR = {
+			has_district = district_m_mountain_mining
+			num_free_districts = { type = district_m_mountain_mining value > 0 }
+		}
 	}
 	
 	potential = { 
@@ -2452,6 +1951,10 @@ district_m_mountain_mining = {
 		OR = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
+		}
+		OR = {
+			has_district = district_m_mountain_mining
+			num_free_districts = { type = district_m_mountain_mining value > 0 }
 		}
 	}
 
@@ -2473,31 +1976,10 @@ district_m_mountain_mining = {
 		category = planet_districts
 		cost = { minerals = 400 }
 		upkeep = { alloys = 1 }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = 400
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			alloys = 1
-		}
 	}
 #### - Base -####
 	planet_modifier = {
 		planet_housing_add = 3
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs
 	triggered_planet_modifier = {
@@ -2534,25 +2016,6 @@ district_m_mountain_mining = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_mining_drone_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_miner_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
@@ -2570,14 +2033,6 @@ district_m_mountain_mining = {
 		modifier = {
 			planet_housing_add = 1
 		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
 ####- Desc -####
@@ -2624,12 +2079,20 @@ district_farming = {
 #### - Potentials -####
 	show_on_uncolonized = {
 		uses_district_set = standard
+		OR = {
+			has_district = district_farming
+			num_free_districts = { type = district_farming value > 0 }
+		}
 	}
 	
 	potential = {
 		uses_district_set = standard
 		exists = owner
 		do3f_farming_district_potential = yes
+		OR = {
+			has_district = district_farming
+			num_free_districts = { type = district_farming value > 0 }
+		}
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -2679,15 +2142,6 @@ district_farming = {
 ####- Base -####
 	planet_modifier = {
 		planet_housing_add = 2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs		
 	triggered_planet_modifier = {
@@ -2742,29 +2196,6 @@ district_farming = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			job_agri_drone_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			job_farmer_add = 1
-		}
-	}
 ####- Vanilla Modifiers -####
 	triggered_planet_modifier = {
 		potential = {
@@ -2783,28 +2214,6 @@ district_farming = {
 				has_technology = tech_housing_agrarian_idyll 
 				has_valid_civic = civic_agrarian_idyll
 			}
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_housing_add = 1
-			planet_max_buildings_add = 0.5
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				has_technology = tech_housing_agrarian_idyll 
-				has_valid_civic = civic_agrarian_idyll
-			}
-			has_global_flag = do3f_better_districts
 		}
 		modifier = { planet_housing_add = 1 }
 	}
@@ -2887,6 +2296,10 @@ district_f_nature_farms = {
 #### - Potentials -####
 	show_on_uncolonized = {
 		uses_district_set = standard
+		OR = {
+			has_district = district_f_nature_farms
+			num_free_districts = { type = district_f_nature_farms value > 0 }
+		}
 	}
 	
 	potential = {
@@ -2895,6 +2308,10 @@ district_f_nature_farms = {
 		OR = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
+		}
+		OR = {
+			has_district = district_f_nature_farms
+			num_free_districts = { type = district_f_nature_farms value > 0 }
 		}
 	}
 	
@@ -2916,25 +2333,10 @@ district_f_nature_farms = {
 	resources = {
 		category = planet_districts
 		cost = { minerals = @do3f_base_cost }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = @do3f_base_cost
-		}
 	}
 #### - Base -####
 	planet_modifier = {
 		planet_housing_add = 3
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs			
 	triggered_planet_modifier = {
@@ -2985,25 +2387,6 @@ district_f_nature_farms = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_agri_drone_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_f_nature_farmer_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = { job_fe_acolyte_farm_add = 2 }
@@ -3027,28 +2410,6 @@ district_f_nature_farms = {
 				has_technology = tech_housing_agrarian_idyll 
 				has_valid_civic = civic_agrarian_idyll
 			}
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_housing_add = 1
-			planet_max_buildings_add = 0.5
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				has_technology = tech_housing_agrarian_idyll 
-				has_valid_civic = civic_agrarian_idyll
-			}
-			has_global_flag = do3f_better_districts
 		}
 		modifier = { planet_housing_add = 1 }
 	}
@@ -3127,6 +2488,10 @@ district_f_ocean_farms = {
 #### - Potentials -####	
 	show_on_uncolonized = {
 		uses_district_set = standard
+		OR = {
+			has_district = district_f_ocean_farms
+			num_free_districts = { type = district_f_ocean_farms value > 0 }
+		}
 	}
 	
 	potential = {
@@ -3135,6 +2500,10 @@ district_f_ocean_farms = {
 		OR = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
+		}
+		OR = {
+			has_district = district_f_ocean_farms
+			num_free_districts = { type = district_f_ocean_farms value > 0 }
 		}
 	}
 	
@@ -3156,32 +2525,11 @@ district_f_ocean_farms = {
 		category = planet_districts
 		cost = { alloys = 100 }
 		upkeep = { energy = 2 }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			alloys = 100
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = 2
-		}
 	}
 #### - Base -####
 	planet_modifier = { 
 		planet_max_districts_add = 1
 		planet_housing_add = 2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs
 	triggered_planet_modifier = {
@@ -3230,25 +2578,6 @@ district_f_ocean_farms = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_f_aquatic_agri_drone_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_f_aquatic_farmer_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = { job_fe_acolyte_farm_add = 2 }
@@ -3271,28 +2600,6 @@ district_f_ocean_farms = {
 				has_technology = tech_housing_agrarian_idyll 
 				has_valid_civic = civic_agrarian_idyll
 			}
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_housing_add = 1
-			planet_max_buildings_add = 0.5
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				has_technology = tech_housing_agrarian_idyll 
-				has_valid_civic = civic_agrarian_idyll
-			}
-			has_global_flag = do3f_better_districts
 		}
 		modifier = { planet_housing_add = 1 }
 	}
@@ -3370,6 +2677,10 @@ district_f_exotic_farms = {
 #### - Potentials -####
 	show_on_uncolonized = {
 		uses_district_set = standard
+		OR = {
+			has_district = district_f_exotic_farms
+			num_free_districts = { type = district_f_exotic_farms value > 0 }
+		}
 	}
 	
 	potential = {
@@ -3378,6 +2689,10 @@ district_f_exotic_farms = {
 		OR = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
+		}
+		OR = {
+			has_district = district_f_exotic_farms
+			num_free_districts = { type = district_f_exotic_farms value > 0 }
 		}
 	}
 	
@@ -3399,31 +2714,10 @@ district_f_exotic_farms = {
 		category = planet_districts
 		cost = { minerals = @do3f_base_cost }
 		upkeep = { energy = 2 }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = @do3f_base_cost
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = 2
-		}
 	}
 #### - Base -####
 	planet_modifier = {
 		planet_housing_add = 2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs			
 	triggered_planet_modifier = {
@@ -3514,25 +2808,6 @@ district_f_exotic_farms = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_f_fungi_agri_drone_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_f_fungi_farmer_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 			do3f_is_special_exotic_farming_pc = yes
 		}
@@ -3556,28 +2831,6 @@ district_f_exotic_farms = {
 				has_technology = tech_housing_agrarian_idyll 
 				has_valid_civic = civic_agrarian_idyll
 			}
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_housing_add = 1
-			planet_max_buildings_add = 0.5
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				has_technology = tech_housing_agrarian_idyll 
-				has_valid_civic = civic_agrarian_idyll
-			}
-			has_global_flag = do3f_better_districts
 		}
 		modifier = { planet_housing_add = 1 }
 	}
@@ -3673,6 +2926,10 @@ district_f_oasis_farms = {
 #### - Potentials -####
 	show_on_uncolonized = {
 		uses_district_set = standard
+		OR = {
+			has_district = district_f_oasis_farms
+			num_free_districts = { type = district_f_oasis_farms value > 0 }
+		}
 	}
 	
 	potential = {
@@ -3681,6 +2938,10 @@ district_f_oasis_farms = {
 		OR = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
+		}
+		OR = {
+			has_district = district_f_oasis_farms
+			num_free_districts = { type = district_f_oasis_farms value > 0 }
 		}
 	}
 
@@ -3706,32 +2967,11 @@ district_f_oasis_farms = {
 		upkeep = {
 			energy = 1
 		}
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = 250
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = 1
-		}
 	}
 #### - Base -####
 	planet_modifier = {
 		planet_housing_add = 2
 		pop_environment_tolerance = 0.025
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs
 	triggered_planet_modifier = {
@@ -3768,25 +3008,6 @@ district_f_oasis_farms = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_agri_drone_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_farmer_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
@@ -3811,28 +3032,6 @@ district_f_oasis_farms = {
 				has_technology = tech_housing_agrarian_idyll 
 				has_valid_civic = civic_agrarian_idyll
 			}
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_housing_add = 1
-			planet_max_buildings_add = 0.5
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				has_technology = tech_housing_agrarian_idyll 
-				has_valid_civic = civic_agrarian_idyll
-			}
-			has_global_flag = do3f_better_districts
 		}
 		modifier = { planet_housing_add = 1 }
 	}
@@ -3887,12 +3086,20 @@ district_f_industrial_farms = {
 #### - Potentials -####
 	show_on_uncolonized = {
 		uses_district_set = standard
+		OR = {
+			has_district = district_f_industrial_farms
+			num_free_districts = { type = district_f_industrial_farms value > 0 }
+		}
 	}
 	
 	potential = {
 		uses_district_set = standard
 		exists = owner
 		do3f_farming_district_potential = yes
+		OR = {
+			has_district = district_f_industrial_farms
+			num_free_districts = { type = district_f_industrial_farms value > 0 }
+		}
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -3917,34 +3124,12 @@ district_f_industrial_farms = {
 			alloys = 200
 		}
 		upkeep = { energy = @do3f_city_upkeep }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = @do3f_base_cost
-			alloys = 200
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = @do3f_city_upkeep
-		}
 	}
 ####- Base -####
 	planet_modifier = {
 		planet_housing_add = 2
 		pop_happiness = -0.025
 		pop_environment_tolerance = -0.025
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs
 	triggered_planet_modifier = {
@@ -3993,25 +3178,6 @@ district_f_industrial_farms = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_f_industrial_agri_drone_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_f_industrial_farmer_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = { job_fe_acolyte_farm_add = 2 }
@@ -4034,28 +3200,6 @@ district_f_industrial_farms = {
 				has_technology = tech_housing_agrarian_idyll 
 				has_valid_civic = civic_agrarian_idyll
 			}
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_housing_add = 1
-			planet_max_buildings_add = 0.5
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				has_technology = tech_housing_agrarian_idyll 
-				has_valid_civic = civic_agrarian_idyll
-			}
-			has_global_flag = do3f_better_districts
 		}
 		modifier = { planet_housing_add = 1 }
 	}
@@ -4133,6 +3277,10 @@ district_f_cave_farms = {
 #### - Potentials -####
 	show_on_uncolonized = {
 		uses_district_set = standard
+		OR = {
+			has_district = district_f_cave_farms
+			num_free_districts = { type = district_f_cave_farms value > 0 }
+		}
 	}
 	
 	potential = {
@@ -4141,6 +3289,10 @@ district_f_cave_farms = {
 		OR = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
+		}
+		OR = {
+			has_district = district_f_cave_farms
+			num_free_districts = { type = district_f_cave_farms value > 0 }
 		}
 	}
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -4166,31 +3318,10 @@ district_f_cave_farms = {
 		upkeep = {
 			energy = 2
 		}
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = 300
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = 2
-		}
 	}
 ####- Base -####
 	planet_modifier = {
 		planet_housing_add = 2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs
 	triggered_planet_modifier = {
@@ -4227,26 +3358,6 @@ district_f_cave_farms = {
 			job_cave_cleaner_add = 1
 		}
 	}
-	
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_f_cave_agri_drone_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_f_cave_farmer_add = 1 }
-	}
 
 	triggered_planet_modifier = {
 		potential = {
@@ -4275,28 +3386,6 @@ district_f_cave_farms = {
 				has_technology = tech_housing_agrarian_idyll 
 				has_valid_civic = civic_agrarian_idyll
 			}
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_housing_add = 1
-			planet_max_buildings_add = 0.5
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				has_technology = tech_housing_agrarian_idyll 
-				has_valid_civic = civic_agrarian_idyll
-			}
-			has_global_flag = do3f_better_districts
 		}
 		modifier = { planet_housing_add = 1 }
 	}
@@ -4624,7 +3713,7 @@ district_mining_uncapped = {
 		district_m_unstable_mining
 		district_m_surface_mining
 		district_m_deep_mining
-		district_m_moutain_mining
+		district_m_mountain_mining
 		# WH40K Planets Renewed
 		district_industrial_mining
 	}
@@ -4633,31 +3722,10 @@ district_mining_uncapped = {
 		category = planet_districts
 		cost = { minerals = @do3f_base_cost }
 		upkeep = { energy = @do3f_base_upkeep }
-		cost = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			minerals = @do3f_base_cost
-		}
-		upkeep = {
-			trigger = {
-				has_global_flag = do3f_better_districts
-			}
-			energy = @do3f_base_upkeep
-		}
 	}
 ####- Base -####
 	planet_modifier = {
 		planet_housing_add = 2
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
 	}
 # Jobs
 	triggered_planet_modifier = {
@@ -4739,47 +3807,6 @@ district_mining_uncapped = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-			NOT = { uses_district_set = shattered_ring_world }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_mining_drone_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			NOT = { uses_district_set = shattered_ring_world }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_miner_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			uses_district_set = shattered_ring_world
-			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_scrap_miner_drone_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			uses_district_set = shattered_ring_world
-			exists = owner
-			owner = {
-				is_gestalt = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_scrap_miner_add = 1 }
-	}
 ####- Vanilla Modifiers -####
 	triggered_planet_modifier = {
 		potential = {
@@ -4796,29 +3823,6 @@ district_mining_uncapped = {
 		potential = {
 			exists = owner
 			owner = { has_origin = origin_subterranean }
-		}
-		modifier = {
-			planet_housing_add = 2
-			planet_max_buildings_add = 0.34
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				has_valid_civic = civic_agrarian_idyll
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_housing_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_origin = origin_subterranean }
-			has_global_flag = do3f_better_districts
 		}
 		modifier = {
 			planet_housing_add = 2
@@ -5012,15 +4016,6 @@ district_farming_uncapped = {
 	planet_modifier = {
 		planet_housing_add = 2
 	}
-	triggered_planet_modifier = {
-		potential = {
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_max_buildings_add = 1
-			planet_housing_add = 1
-		}
-	}
 # Jobs		
 	triggered_planet_modifier = {
 		potential = {
@@ -5073,25 +4068,6 @@ district_farming_uncapped = {
 			job_pearl_diver_add = 1
 		}
 	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_agri_drone_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_global_flag = do3f_better_districts
-		}
-		modifier = { job_farmer_add = 1 }
-	}
 ####- Vanilla Modifiers -####
 	triggered_planet_modifier = {
 		potential = {
@@ -5110,28 +4086,6 @@ district_farming_uncapped = {
 				has_technology = tech_housing_agrarian_idyll 
 				has_valid_civic = civic_agrarian_idyll
 			}
-		}
-		modifier = { planet_housing_add = 1 }
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
-			has_global_flag = do3f_better_districts
-		}
-		modifier = {
-			planet_housing_add = 1
-			planet_max_buildings_add = 0.5
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { 
-				has_technology = tech_housing_agrarian_idyll 
-				has_valid_civic = civic_agrarian_idyll
-			}
-			has_global_flag = do3f_better_districts
 		}
 		modifier = { planet_housing_add = 1 }
 	}

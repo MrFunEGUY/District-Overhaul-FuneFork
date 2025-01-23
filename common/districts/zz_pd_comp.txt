@@ -2249,14 +2249,6 @@ district_pdmachinefort_synapse = {
 # 	planet_modifier = {
 # 		planet_housing_add = 8
 # 	}
-# 	triggered_planet_modifier = {
-# 		potential = {
-# 			has_global_flag = do3f_better_districts
-# 		}
-# 		modifier = {
-# 			planet_max_buildings_add = 2
-# 		}
-# 	}
 
 # 	triggered_planet_modifier = {
 # 		potential = {
@@ -2338,14 +2330,6 @@ district_pdmachinefort_synapse = {
 # 	planet_modifier = {
 # 		planet_housing_add = 8
 # 	}
-# 	triggered_planet_modifier = {
-# 		potential = {
-# 			has_global_flag = do3f_better_districts
-# 		}
-# 		modifier = {
-# 			planet_max_buildings_add = 2
-# 		}
-# 	}
 	
 # 	triggered_planet_modifier = {
 # 		potential = {
@@ -2397,14 +2381,6 @@ district_pdmachinefort_synapse = {
 
 # 	planet_modifier = {
 # 		planet_housing_add = 8
-# 	}
-# 	triggered_planet_modifier = {
-# 		potential = {
-# 			has_global_flag = do3f_better_districts
-# 		}
-# 		modifier = {
-# 			planet_max_buildings_add = 2
-# 		}
 # 	}
 
 # 	triggered_planet_modifier = {
@@ -2461,15 +2437,6 @@ district_pdmachinefort_synapse = {
 # 	planet_modifier = {
 # 		planet_housing_add = 2
 # 	}
-# 	triggered_planet_modifier = {
-# 		potential = {
-# 			has_global_flag = do3f_better_districts
-# 		}
-# 		modifier = {
-# 			planet_max_buildings_add = 1
-# 			planet_housing_add = 1
-# 		}
-# 	}
 
 # 	triggered_planet_modifier = {
 # 		potential = {
@@ -2501,27 +2468,6 @@ district_pdmachinefort_synapse = {
 # 		}
 # 		modifier = {
 # 			job_pd_scrap_miner_add = 2
-# 		}
-# 	}
-
-# 	triggered_planet_modifier = {
-# 		potential = {
-# 			exists = owner
-# 			owner = { is_gestalt = yes }
-# 			has_global_flag = do3f_better_districts
-# 		}
-# 		modifier = {
-# 			job_pd_scrap_miner_drone_add = 1
-# 		}
-# 	}
-# 	triggered_planet_modifier = {
-# 		potential = {
-# 			exists = owner
-# 			owner = { is_gestalt = no }
-# 			has_global_flag = do3f_better_districts
-# 		}
-# 		modifier = {
-# 			job_pd_scrap_miner_add = 1
 # 		}
 # 	}
 
@@ -2580,15 +2526,6 @@ district_pdmachinefort_synapse = {
 # 	planet_modifier = {
 # 		planet_housing_add = 2
 # 	}
-# 	triggered_planet_modifier = {
-# 		potential = {
-# 			has_global_flag = do3f_better_districts
-# 		}
-# 		modifier = {
-# 			planet_max_buildings_add = 1
-# 			planet_housing_add = 1
-# 		}
-# 	}
 
 # 	triggered_planet_modifier = {
 # 		potential = {
@@ -2623,30 +2560,6 @@ district_pdmachinefort_synapse = {
 # 		}
 # 	}
 
-# 	triggered_planet_modifier = {
-# 		potential = {
-# 			exists = owner
-# 			owner = {
-# 				is_gestalt = no
-# 			}
-# 			has_global_flag = do3f_better_districts
-# 		}
-# 		modifier = {
-# 			job_pd_scrap_tech_add = 1
-# 		}
-# 	}
-# 	triggered_planet_modifier = {
-# 		potential = {
-# 			exists = owner
-# 			owner = {
-# 				is_gestalt = yes
-# 			}
-# 			has_global_flag = do3f_better_districts
-# 		}
-# 		modifier = {
-# 			job_pd_scrap_tech_drone_add = 1
-# 		}
-# 	}
 
 # 	triggered_desc = {
 # 		trigger = {
@@ -2701,15 +2614,6 @@ district_pdmachinefort_synapse = {
 # 	planet_modifier = {
 # 		planet_housing_add = 2
 # 	}
-# 	triggered_planet_modifier = {
-# 		potential = {
-# 			has_global_flag = do3f_better_districts
-# 		}
-# 		modifier = {
-# 			planet_max_buildings_add = 1
-# 			planet_housing_add = 1
-# 		}
-# 	}
 
 # 	triggered_planet_modifier = {
 # 		potential = {
@@ -2741,30 +2645,6 @@ district_pdmachinefort_synapse = {
 # 		}
 # 		modifier = {
 # 			job_pd_scrap_recycler_add = 2
-# 		}
-# 	}
-# 	triggered_planet_modifier = {
-# 		potential = {
-# 			exists = owner
-# 			owner = {
-# 				is_gestalt = no
-# 			}
-# 			has_global_flag = do3f_better_districts
-# 		}
-# 		modifier = {
-# 			job_pd_scrap_recycler_add = 1
-# 		}
-# 	}
-# 	triggered_planet_modifier = {
-# 		potential = {
-# 			exists = owner
-# 			owner = {
-# 				is_gestalt = yes
-# 			}
-# 			has_global_flag = do3f_better_districts
-# 		}
-# 		modifier = {
-# 			job_pd_scrap_recycler_drone_add = 1
 # 		}
 # 	}
 

@@ -13,7 +13,6 @@ decision_01_search_for_cave_systems = {
 	potential = { 
 		habitable_structure = no
 		owner = { has_ascension_perk = ap_underground_city }
-		NOT = { has_global_flag = do3f_disable_housing_district_underground }
 	}
 	effect = {
 		do3f_002_spawn_underground_housing_deposits = yes
@@ -48,7 +47,6 @@ decision_f_add_industrial_farms = {
 		owner = {
 			country_uses_food = yes
 		}
-		NOT = { has_global_flag = do3f_disable_farming_districts_industrial }
 		pd_aw_is_wasteland_planet = no
 		is_pd_planetary_megaproject = no
 		NOT = { is_planet_class = pc_technoorganic }

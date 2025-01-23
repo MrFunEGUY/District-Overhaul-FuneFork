@@ -19,7 +19,6 @@ can_colonize_planet = {
 			root = {
 				has_technology = tech_asteroid_adaption_0
 			}
-			NOT = { has_global_flag = do3f_disable_mechanics_asteroid_colonizing }
 		}
 		AND = {
 			OR = {

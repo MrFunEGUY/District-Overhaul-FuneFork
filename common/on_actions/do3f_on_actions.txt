@@ -1,6 +1,11 @@
+on_game_start = {
+	events = {
+		do3f_gamestart.01
+	}
+}
+
 on_press_begin = {
 	events = {
-		xenosgamestart.02
 		do3fspecialdepositevents.01
 	}
 }
