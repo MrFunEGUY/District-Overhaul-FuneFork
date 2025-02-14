@@ -13,14 +13,14 @@ district_do3f_chemistry_industry = {
 	show_on_uncolonized = {
 		OR = {
 			has_district = district_do3f_chemistry_industry
-			num_districts = { type = district_do3f_chemistry_industry value > 0 }
+			num_free_districts = { type = district_do3f_chemistry_industry value > 0 }
 		}
 	}
 
 	potential = {
 		OR = {
 			has_district = district_do3f_chemistry_industry
-			num_districts = { type = district_do3f_chemistry_industry value > 0 }
+			num_free_districts = { type = district_do3f_chemistry_industry value > 0 }
 		}
 		exists = owner
 	}
@@ -91,14 +91,14 @@ district_do3f_gas_refinery = {
 	show_on_uncolonized = {
 		OR = {
 			has_district = district_do3f_gas_refinery
-			num_districts = { type = district_do3f_gas_refinery value > 0 }
+			num_free_districts = { type = district_do3f_gas_refinery value > 0 }
 		}
 	}
 
 	potential = {
 		OR = {
 			has_district = district_do3f_gas_refinery
-			num_districts = { type = district_do3f_gas_refinery value > 0 }
+			num_free_districts = { type = district_do3f_gas_refinery value > 0 }
 		}
 		exists = owner
 	}
@@ -169,14 +169,14 @@ district_do3f_crystal_mines = {
 	show_on_uncolonized = {
 		OR = {
 			has_district = district_do3f_crystal_mines
-			num_districts = { type = district_do3f_crystal_mines value > 0 }
+			num_free_districts = { type = district_do3f_crystal_mines value > 0 }
 		}
 	}
 
 	potential = {
 		OR = {
 			has_district = district_do3f_crystal_mines
-			num_districts = { type = district_do3f_crystal_mines value > 0 }
+			num_free_districts = { type = district_do3f_crystal_mines value > 0 }
 		}
 		exists = owner
 	}
@@ -249,14 +249,14 @@ district_do3f_nature_reserve = {
 	show_on_uncolonized = {
 		OR = {
 			has_district = district_do3f_nature_reserve
-			num_districts = { type = district_do3f_nature_reserve value > 0 }
+			num_free_districts = { type = district_do3f_nature_reserve value > 0 }
 		}
 	}
 	
 	potential = {
 		OR = {
 			has_district = district_do3f_nature_reserve
-			num_districts = { type = district_do3f_nature_reserve value > 0 }
+			num_free_districts = { type = district_do3f_nature_reserve value > 0 }
 		}
 		exists = owner
 	}
@@ -322,14 +322,14 @@ district_do3f_research_complex = {
 	show_on_uncolonized = {
 		OR = {
 			has_district = district_do3f_research_complex
-			num_districts = { type = district_do3f_research_complex value > 0 }
+			num_free_districts = { type = district_do3f_research_complex value > 0 }
 		}
 	}
 	
 	potential = {
 		OR = {
 			has_district = district_do3f_research_complex
-			num_districts = { type = district_do3f_research_complex value > 0 }
+			num_free_districts = { type = district_do3f_research_complex value > 0 }
 		}
 		exists = owner
 	}
@@ -396,14 +396,14 @@ district_do3f_scrapyard = {
 	show_on_uncolonized = {
 		OR = {
 			has_district = district_do3f_scrapyard
-			num_districts = { type = district_do3f_scrapyard value > 0 }
+			num_free_districts = { type = district_do3f_scrapyard value > 0 }
 		}
 	}
 	
 	potential = {
 		OR = {
 			has_district = district_do3f_scrapyard
-			num_districts = { type = district_do3f_scrapyard value > 0 }
+			num_free_districts = { type = district_do3f_scrapyard value > 0 }
 		}
 		exists = owner
 	}
@@ -491,14 +491,14 @@ district_do3f_tourism = {
 	show_on_uncolonized = {
 		OR = {
 			has_district = district_do3f_tourism
-			num_districts = { type = district_do3f_tourism value > 0 }
+			num_free_districts = { type = district_do3f_tourism value > 0 }
 		}
 	}
 
 	potential = {
 		OR = {
 			has_district = district_do3f_tourism
-			num_districts = { type = district_do3f_tourism value > 0 }
+			num_free_districts = { type = district_do3f_tourism value > 0 }
 		}
 		exists = owner
 	}
@@ -552,14 +552,14 @@ district_do3f_gardens = {
 	show_on_uncolonized = {
 		OR = {
 			has_district = district_do3f_gardens
-			num_districts = { type = district_do3f_gardens value > 0 }
+			num_free_districts = { type = district_do3f_gardens value > 0 }
 		}
 	}
 
 	potential = {
 		OR = {
 			has_district = district_do3f_gardens
-			num_districts = { type = district_do3f_gardens value > 0 }
+			num_free_districts = { type = district_do3f_gardens value > 0 }
 		}
 		exists = owner
 	}
@@ -663,14 +663,14 @@ district_do3f_ecogardens = {
 	show_on_uncolonized = {
 		OR = {
 			has_district = district_do3f_ecogardens
-			num_districts = { type = district_do3f_ecogardens value > 0 }
+			num_free_districts = { type = district_do3f_ecogardens value > 0 }
 		}
 	}
 
 	potential = {
 		OR = {
 			has_district = district_do3f_ecogardens
-			num_districts = { type = district_do3f_ecogardens value > 0 }
+			num_free_districts = { type = district_do3f_ecogardens value > 0 }
 		}
 		exists = owner
 	}
@@ -928,13 +928,13 @@ district_do3f_archeology = {
 	show_on_uncolonized = {
 		OR = {
 			has_district = district_do3f_archeology
-			num_districts = { type = district_do3f_archeology value > 0 }
+			num_free_districts = { type = district_do3f_archeology value > 0 }
 		}
 	}
 	potential = {
 		OR = {
 			has_district = district_do3f_archeology
-			num_districts = { type = district_do3f_archeology value > 0 }
+			num_free_districts = { type = district_do3f_archeology value > 0 }
 		}
 		exists = owner
 	}

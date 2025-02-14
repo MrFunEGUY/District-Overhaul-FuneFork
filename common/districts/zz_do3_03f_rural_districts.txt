@@ -187,7 +187,7 @@ district_e_fusion_generator = {
 		uses_district_set = standard
 		OR = {
 			has_district = district_e_fusion_generator
-			num_free_districts = { type = districte_fusion_generator value > 0 }
+			num_free_districts = { type = district_e_fusion_generator value > 0 }
 		}
 	}
 	potential = { 
@@ -199,7 +199,7 @@ district_e_fusion_generator = {
 		}
 		OR = {
 			has_district = district_e_fusion_generator
-			num_free_districts = { type = districte_fusion_generator value > 0 }
+			num_free_districts = { type = district_e_fusion_generator value > 0 }
 		}
 	}
 	
@@ -474,16 +474,6 @@ district_e_wind_turbines = {
 	max_for_deposits_on_planet = 15
 #### - Potentials -####
 	show_on_uncolonized = {
-		OR = {
-			num_free_districts = {
-				type = district_e_wind_turbines
-				value > 0
-			}
-			num_districts = {
-				type = district_e_wind_turbines
-				value > 0
-			}
-		}
 		uses_district_set = standard
 		if = {
 			limit = {
@@ -498,16 +488,6 @@ district_e_wind_turbines = {
 		}
 	}
 	potential = { 
-		OR = {
-			num_free_districts = {
-				type = district_e_wind_turbines
-				value > 0
-			}
-			num_districts = {
-				type = district_e_wind_turbines
-				value > 0
-			}
-		}
 		uses_district_set = standard
 		exists = owner
 		if = {

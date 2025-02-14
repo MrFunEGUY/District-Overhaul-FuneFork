@@ -41,9 +41,7 @@ decision_f_add_industrial_farms = {
 
 	potential = {
 		uses_district_set = standard
-		NOT = {
-			do3f_is_special_exotic_farming_pc = yes
-		}
+		do3f_is_special_exotic_farming_pc = no
 		owner = {
 			country_uses_food = yes
 		}

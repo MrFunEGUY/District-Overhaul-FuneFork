@@ -306,50 +306,59 @@ do3f_02_has_secondary_district = {
 
 ###- Colony Designations -###
 do3f_is_city_planet = {
-	has_designation = col_capital
-	has_designation = col_capital_hive
-	has_designation = col_capital_machine
+	OR = {
+		has_designation = col_capital
+		has_designation = col_capital_hive
+		has_designation = col_capital_machine
 
-	has_designation = col_city
-	has_designation = col_hive
-	has_designation = col_nexus
+		has_designation = col_city
+		has_designation = col_hive
+		has_designation = col_nexus
 
-	has_designation = col_industrial
-	has_designation = col_foundry
-	has_designation = col_factory
-	has_designation = col_refinery
+		has_designation = col_industrial
+		has_designation = col_foundry
+		has_designation = col_factory
+		has_designation = col_refinery
 
-	has_designation = col_research
-	has_designation = col_fortress
-	has_designation = col_bureau_spiritualist
-	has_designation = col_bureau
-	has_designation = col_bureau_hive
-	has_designation = col_bureau_machine
+		has_designation = col_research
+		has_designation = col_fortress
+		has_designation = col_bureau_spiritualist
+		has_designation = col_bureau
+		has_designation = col_bureau_hive
+		has_designation = col_bureau_machine
 
-	has_designation = col_cemetery
-	has_designation = col_storage
-	has_designation = col_trade
+		has_designation = col_cemetery
+		has_designation = col_storage
+		has_designation = col_trade
+	}
+	
 }
 do3f_is_industrial_planet = {
-	has_designation = col_industrial
-	has_designation = col_foundry
-	has_designation = col_factory
-	has_designation = col_refinery
+	OR = {
+		has_designation = col_industrial
+		has_designation = col_foundry
+		has_designation = col_factory
+		has_designation = col_refinery
+	}
+	
 }
 do3f_is_rural_planet = {
-	has_designation = col_default
-	has_designation = col_default_machine
-
-	has_designation = col_generator
-	has_designation = col_mining
-	has_designation = col_farming
-
-	has_designation = col_rural
-	has_designation = col_rural_gestalt
-
-	has_designation = col_frontier
-	has_designation = col_waste
-	has_designation = col_feudal
+	OR = {
+		has_designation = col_default
+		has_designation = col_default_machine
+	
+		has_designation = col_generator
+		has_designation = col_mining
+		has_designation = col_farming
+	
+		has_designation = col_rural
+		has_designation = col_rural_gestalt
+	
+		has_designation = col_frontier
+		has_designation = col_waste
+		has_designation = col_feudal
+	}
+	
 }
 
 ###- Deposits -###

@@ -167,7 +167,7 @@ district_01_suburbs = {
 #### - Potentials -####
 	show_on_uncolonized = {	
 		from = { is_regular_empire = yes }
-		do3f_is_special_exotic_farming_pc = yes
+		do3f_is_special_exotic_farming_pc = no
 		OR = {
 			uses_district_set = standard
 			uses_district_set = hive_world
@@ -182,7 +182,7 @@ district_01_suburbs = {
 		NOT = { has_deposit = d_crashed_slaver_ship }
 		exists = owner
 		owner = { is_regular_empire = yes }
-		do3f_is_special_exotic_farming_pc = yes
+		do3f_is_special_exotic_farming_pc = no
 		OR = {
 			uses_district_set = standard
 			uses_district_set = hive_world
@@ -880,12 +880,12 @@ district_01_slums = {
 #### - Potentials -####	
 	show_on_uncolonized = {
 		has_modifier = slave_colony
-		do3f_is_special_exotic_farming_pc = yes
+		do3f_is_special_exotic_farming_pc = no
 	}
 	potential = {
 		exists = owner
 		has_modifier = slave_colony
-		do3f_is_special_exotic_farming_pc = yes
+		do3f_is_special_exotic_farming_pc = no
 	}
 
 	allow = {
@@ -925,7 +925,7 @@ district_01_ocean_housing = {
 			has_district = district_01_ocean_housing
 			num_districts = { type = district_01_ocean_housing value > 0 }
 		}
-		do3f_is_special_exotic_farming_pc = yes
+		do3f_is_special_exotic_farming_pc = no
 	}
 	potential = {
 		exists = owner
@@ -934,7 +934,7 @@ district_01_ocean_housing = {
 			has_district = district_01_ocean_housing
 			num_districts = { type = district_01_ocean_housing value > 0 }
 		}
-		do3f_is_special_exotic_farming_pc = yes
+		do3f_is_special_exotic_farming_pc = no
 	}
 #### - Cost & Upkeep -####
 	resources = {
@@ -989,7 +989,7 @@ district_01_ascended_housing = {
 			has_district = district_01_ascended_housing
 			num_districts = { type = district_01_ascended_housing value > 0 }
 		}
-		do3f_is_special_exotic_farming_pc = yes
+		do3f_is_special_exotic_farming_pc = no
 	}
 	potential = {
 		exists = owner
@@ -997,7 +997,7 @@ district_01_ascended_housing = {
 			has_district = district_01_ascended_housing
 			num_districts = { type = district_01_ascended_housing value > 0 }
 		}
-		do3f_is_special_exotic_farming_pc = yes
+		do3f_is_special_exotic_farming_pc = no
 	}
 #### - Cost & Upkeep -####
 	resources = {
@@ -1050,7 +1050,7 @@ district_01_underground_city = {
 			num_districts = { type = district_01_underground_city value > 0 }
 		}
 		is_artificial = no
-		do3f_is_special_exotic_farming_pc = yes
+		do3f_is_special_exotic_farming_pc = no
 	}
 	potential = {
 		exists = owner
@@ -1059,7 +1059,7 @@ district_01_underground_city = {
 			num_districts = { type = district_01_underground_city value > 0 }
 		}
 		is_artificial = no
-		do3f_is_special_exotic_farming_pc = yes
+		do3f_is_special_exotic_farming_pc = no
 	}
 	
 	allow = {
