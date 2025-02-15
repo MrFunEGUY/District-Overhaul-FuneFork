@@ -556,12 +556,12 @@ can_invest_into_research = {
 	low_mineral_income = no
 	OR = {
 		low_food_income = no
-		country_uses_food = no
+		owner = { country_uses_food = no }
 	}
 	low_alloy_income = no
 	OR = {
 		low_consumer_goods_income = no
-		country_uses_consumer_goods = no
+		owner = { country_uses_consumer_goods = no }
 	}
 }
 # The Empires economy allows a large investment into research
@@ -570,12 +570,12 @@ should_invest_into_research = {
 	large_mineral_income = yes
 	OR = {
 		large_food_income = yes
-		country_uses_food = no
+		owner = { country_uses_food = no }
 	}
 	large_alloy_income = yes
 	OR = {
 		large_consumer_goods_income = yes
-		country_uses_consumer_goods = no
+		owner = { country_uses_consumer_goods = no }
 	}
 }
 ###########

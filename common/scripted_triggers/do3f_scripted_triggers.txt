@@ -470,7 +470,7 @@ do3f_is_rural_planet = {
 			# Special
 			has_deposit = d_maze_cliff_formations
 			# Planetary Diversity
-			has_deposit = d_powerful_geyser
+			# has_deposit = d_powerful_geyser
 		}
 	}
 	do3f_002_tidal_deposits = {
@@ -488,8 +488,8 @@ do3f_is_rural_planet = {
 			# Special
 			has_deposit = d_stormy_water
 			# Planetary Diversity
-			has_deposit = d_strong_currents
-			has_deposit = d_underwater_jets
+			# has_deposit = d_strong_currents
+			# has_deposit = d_underwater_jets
 		}
 	}
 	do3f_002_bio_compound_deposits = {
@@ -529,7 +529,7 @@ do3f_is_rural_planet = {
 			# Special
 			has_deposit = d_grand_canyon
 			# Planetary Diversity
-			has_deposit = d_coral_deposit
+			# has_deposit = d_coral_deposit
 		}
 	}
 	do3f_002_stable_mining_deposits = {
@@ -593,7 +593,7 @@ do3f_is_rural_planet = {
 			# Special
 			has_deposit = d_vast_crevasse
 			# Planetary Diversity
-			has_deposit = d_submerged_caves
+			# has_deposit = d_submerged_caves
 		}
 	}
 	do3f_002_mountain_mining_deposits = {
@@ -649,8 +649,8 @@ do3f_is_rural_planet = {
 			has_deposit = d_seagrass_shelf
 			has_deposit = d_kelp_forest
 			# Planetary Diversity
-			has_deposit = d_sea_grass
-			has_deposit = d_kelp_forests
+			# has_deposit = d_sea_grass
+			# has_deposit = d_kelp_forests
 		}
 	}
 	do3f_002_exotic_farms_deposits = {
@@ -663,8 +663,8 @@ do3f_is_rural_planet = {
 			has_deposit = d_metallic_puddles
 			has_deposit = d_scandinavian_reclamation_sector
 			# Planetary Diversity
-			has_deposit = d_hydrocarbon_lakes
-			has_deposit = d_ammonia_seas
+			# has_deposit = d_hydrocarbon_lakes
+			# has_deposit = d_ammonia_seas
 		}
 	}
 	do3f_002_oasis_farms_deposits = {
