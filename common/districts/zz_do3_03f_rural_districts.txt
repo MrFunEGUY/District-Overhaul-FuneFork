@@ -284,6 +284,8 @@ district_e_fusion_generator = {
 		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_FUSION = 1 }
+
 ####- Desc -####
 	triggered_desc = {
 		trigger = {
@@ -431,6 +433,8 @@ district_e_fossil_fuel_generator = {
 		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_FOSSIL = 1 }
+
 ####- Desc -####
 	triggered_desc = {
 		trigger = {
@@ -574,6 +578,8 @@ district_e_wind_turbines = {
 		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_WIND = 1 }
+
 ####- Desc -####
 	triggered_desc = {
 		trigger = {
@@ -705,6 +711,8 @@ district_e_geothermal_generator = {
 		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_GEO = 1 }
+
 ####- Desc -####
 	triggered_desc = {
 		trigger = {
@@ -838,6 +846,8 @@ district_e_solar_generator = {
 		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_SOLAR = 1 }
+
 ####- Desc -####
 	triggered_desc = {
 		trigger = {
@@ -971,6 +981,8 @@ district_e_tidal_generator = {
 		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_TIDAL = 1 }
+
 ####- Desc -####
 	triggered_desc = {
 		trigger = {
@@ -1118,6 +1130,8 @@ district_e_biomass_generator = {
 		}
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_BIOMASS = 1 }
+
 ####- Desc -####
 	triggered_desc = {
 		trigger = {
@@ -1421,6 +1435,8 @@ district_m_unstable_mining = {
 		modifier = { planet_housing_add = 1 }
 	}	
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_MINING = 1 }
+
 ####- Desc -####
 	triggered_desc = {
 		trigger = {
@@ -1560,6 +1576,8 @@ district_m_stable_mining = {
 		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_MINING = 1 }
+
 ####- Desc -####
 	triggered_desc = {
 		trigger = {
@@ -1701,6 +1719,8 @@ district_m_surface_mining = {
 		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_MINING = 1 }
+
 ####- Desc -####
 	triggered_desc = {
 		trigger = {
@@ -1851,6 +1871,8 @@ district_m_deep_mining = {
 		}
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_DEEP_MINE = 1 }
+
 ####- Desc -####
 	triggered_desc = {
 		trigger = {
@@ -2015,6 +2037,8 @@ district_m_mountain_mining = {
 		}
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_MINING = 1 }
+
 ####- Desc -####
 	triggered_desc = {
 		trigger = {
@@ -2198,6 +2222,8 @@ district_farming = {
 		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_FARMING = 1 }
+
 ####- Special Districts -####
 	triggered_planet_modifier = {
 		potential = {
@@ -2394,6 +2420,8 @@ district_f_nature_farms = {
 		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_NATURE = 1 }
+
 ####- Special Districts -####
 	triggered_planet_modifier = {
 		potential = {
@@ -2584,6 +2612,8 @@ district_f_ocean_farms = {
 		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_OCEAN = 1 }
+
 ####- Special Districts -####
 	triggered_planet_modifier = {
 		potential = {
@@ -2815,6 +2845,8 @@ district_f_exotic_farms = {
 		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_EXOTIC = 1 }
+
 ####- Special Districts -####
 	triggered_planet_modifier = {
 		potential = {
@@ -3016,6 +3048,8 @@ district_f_oasis_farms = {
 		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_FARMING = 1 }
+
 ####- Special Districts -####
 	triggered_planet_modifier = {
 		potential = {
@@ -3184,6 +3218,8 @@ district_f_industrial_farms = {
 		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_INDUSTRIAL = 1 }
+
 ####- Special Districts -####
 	triggered_planet_modifier = {
 		potential = {
@@ -3370,6 +3406,8 @@ district_f_cave_farms = {
 		modifier = { planet_housing_add = 1 }
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_CAVE = 1 }
+
 ####- Special Districts -####
 	triggered_planet_modifier = {
 		potential = {
@@ -3583,6 +3621,7 @@ district_generator_uncapped = {
             planet_housing_add = 1
         }
     }
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_GENERATOR = 1 }
 ####- PD -####
 	triggered_planet_modifier = {
         potential = {
@@ -3810,6 +3849,8 @@ district_mining_uncapped = {
 		}
 	}
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_MINING = 1 }
+
 ####- Desc -####
 	triggered_desc = {
 		trigger = {
@@ -4108,6 +4149,8 @@ district_farming_uncapped = {
         }
     }
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden DISTRICT_FARMING = 1 }
+
 ####- Special Districts -####
 	triggered_planet_modifier = {
 		potential = {
