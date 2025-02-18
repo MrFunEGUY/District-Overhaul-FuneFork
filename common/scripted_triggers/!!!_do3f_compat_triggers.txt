@@ -1,3 +1,6 @@
+####- ECAF -####
+	is_welfare_or_burden = { has_valid_civic = civic_shared_burden }
+
 ####- Planetary Diversity -####
 	has_planetary_diversity = { always = no }
 
