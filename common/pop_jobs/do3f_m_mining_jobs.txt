@@ -344,6 +344,7 @@ m_deep_mining_drone = {
 		}
 	}
 }
+
 m_alloy_mining_drone = {
 	category = simple_drone
 	condition_string = DRONE_JOB_TRIGGER

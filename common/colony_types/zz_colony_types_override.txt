@@ -268,6 +268,7 @@ col_mining = {
 		planet_district_m_surface_mining_build_speed_mult = 0.25
 		planet_district_m_mountain_mining_build_speed_mult = 0.25
 		planet_district_m_deep_mining_build_speed_mult = 0.25
+
 		planet_miners_produces_mult = 0.25
 	}
 	triggered_planet_modifier = {
@@ -460,12 +461,14 @@ col_farming = {
 
 	planet_modifier = {
 		planet_district_farming_build_speed_mult = 0.25
-		planet_district_f_oasis_farms_build_speed_mult = 0.25
 		planet_district_f_nature_farms_build_speed_mult = 0.25
 		planet_district_f_ocean_farms_build_speed_mult = 0.25
-		planet_district_f_exotic_farms_build_speed_mult = 0.25
 		planet_district_f_cave_farms_build_speed_mult = 0.25
-		planet_farmers_produces_mult = 0.20
+		planet_district_f_exotic_farms_build_speed_mult = 0.25
+		planet_district_f_oasis_farms_build_speed_mult = 0.25
+		planet_district_f_industrial_farms_build_speed_mult = 0.25
+
+		planet_farmers_produces_mult = 0.25
 	}
 
 	triggered_planet_modifier = {
@@ -678,6 +681,8 @@ col_generator = {
 
 	planet_modifier = {
 		planet_district_generator_build_speed_mult = 0.25
+		planet_district_e_fusion_generator_build_speed_mult = 0.25
+		planet_district_e_fossil_fuel_generator_build_speed_mult = 0.25
 		planet_district_e_solar_generator_build_speed_mult = 0.25
 		planet_district_e_wind_turbines_build_speed_mult = 0.25
 		planet_district_e_geothermal_generator_build_speed_mult = 0.25

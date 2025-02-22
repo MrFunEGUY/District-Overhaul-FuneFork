@@ -65,7 +65,7 @@
   job_02_nanites_brain_drone_effect_desc:0 "£job_02_nanites_brain_drone£ $job_02_nanites_brain_drone_plural$ extract £nanites£ §Y$nanites$§! for £minerals£ §Y$minerals$§!"
   job_02_nanites_brain_drone_plural:0 "Nanites Brain Drones"
 ##################################################
-# Ernergy Jobs:                                  #
+# Energy Jobs:                                  #
 ##################################################
   # Fusion Technician
   mod_job_e_fusion_technician_add:0 "$job_e_fusion_technician$ Jobs"

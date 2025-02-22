@@ -774,7 +774,7 @@ f_industrial_agri_drone = {
 		}
 	}
 }
-f_aquatic_agri_drone  = {
+f_aquatic_agri_drone = {
 	category = simple_drone
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_food_processing_facility

@@ -1297,6 +1297,8 @@ district_mining = {
         }
     }
 ####- Stuff added by this mod -####
+	inline_script = { script = districts/civic_welfare_burden_init DISTRICT_MINING = 1 }
+
 ####- Desc -####
 	triggered_desc = {
 		trigger = {
