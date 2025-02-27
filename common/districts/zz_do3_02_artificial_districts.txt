@@ -7,19 +7,13 @@ district_hab_alloys = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		OR = {
-			has_district = district_hab_alloys
-			num_free_districts = { type = district_hab_alloys value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_alloys }
 	}
 
 	potential = {
 		uses_district_set = habitat
 		exists = owner
-		OR = {
-			has_district = district_hab_alloys
-			num_free_districts = { type = district_hab_alloys value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_alloys }
 	}
 
 	resources = {
@@ -74,19 +68,13 @@ district_hab_consumer_goodss = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		OR = {
-			has_district = district_hab_consumer_goodss
-			num_free_districts = { type = district_hab_consumer_goodss value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_consumer_goodss }
 	}
 
 	potential = {
 		uses_district_set = habitat
 		exists = owner
-		OR = {
-			has_district = district_hab_consumer_goodss
-			num_free_districts = { type = district_hab_consumer_goodss value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_consumer_goodss }
 	}
 
 	resources = {
@@ -141,19 +129,13 @@ district_hab_volatile_motes = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		OR = {
-			has_district = district_hab_volatile_motes
-			num_free_districts = { type = district_hab_volatile_motes value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_volatile_motes }
 	}
 
 	potential = {
 		uses_district_set = habitat
 		exists = owner
-		OR = {
-			has_district = district_hab_volatile_motes
-			num_free_districts = { type = district_hab_volatile_motes value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_volatile_motes }
 	}
 
 	resources = {
@@ -208,19 +190,13 @@ district_hab_exotic_gases = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		OR = {
-			has_district = district_hab_exotic_gases
-			num_free_districts = { type = district_hab_exotic_gases value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_exotic_gases }
 	}
 
 	potential = {
 		uses_district_set = habitat
 		exists = owner
-		OR = {
-			has_district = district_hab_exotic_gases
-			num_free_districts = { type = district_hab_exotic_gases value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_exotic_gases }
 	}
 
 	resources = {
@@ -275,19 +251,13 @@ district_hab_rare_crystals = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		OR = {
-			has_district = district_hab_rare_crystals
-			num_free_districts = { type = district_hab_rare_crystals value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_rare_crystals }
 	}
 
 	potential = {
 		uses_district_set = habitat
 		exists = owner
-		OR = {
-			has_district = district_hab_rare_crystals
-			num_free_districts = { type = district_hab_rare_crystals value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_rare_crystals }
 	}
 
 	resources = {
@@ -342,19 +312,13 @@ district_hab_dark_matter = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		OR = {
-			has_district = district_hab_dark_matter
-			num_free_districts = { type = district_hab_dark_matter value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_dark_matter }
 	}
 
 	potential = {
 		uses_district_set = habitat
 		exists = owner
-		OR = {
-			has_district = district_hab_dark_matter
-			num_free_districts = { type = district_hab_dark_matter value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_dark_matter }
 	}
 
 	resources = {
@@ -409,19 +373,13 @@ district_hab_zro = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		OR = {
-			has_district = district_hab_zro
-			num_free_districts = { type = district_hab_zro value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_zro }
 	}
 
 	potential = {
 		uses_district_set = habitat
 		exists = owner
-		OR = {
-			has_district = district_hab_zro
-			num_free_districts = { type = district_hab_zro value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_zro }
 	}
 
 	resources = {
@@ -476,19 +434,13 @@ district_hab_living_metal = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		OR = {
-			has_district = district_hab_living_metal
-			num_free_districts = { type = district_hab_living_metal value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_living_metal }
 	}
 
 	potential = {
 		uses_district_set = habitat
 		exists = owner
-		OR = {
-			has_district = district_hab_living_metal
-			num_free_districts = { type = district_hab_living_metal value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_living_metal }
 	}
 
 	resources = {
@@ -543,19 +495,13 @@ district_hab_nanites = {
 
 	show_on_uncolonized = {
 		uses_district_set = habitat
-		OR = {
-			has_district = district_hab_nanites
-			num_free_districts = { type = district_hab_nanites value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_nanites }
 	}
 
 	potential = {
 		uses_district_set = habitat
 		exists = owner
-		OR = {
-			has_district = district_hab_nanites
-			num_free_districts = { type = district_hab_nanites value > 0 }
-		}
+		can_have_district = { DISTRICT = district_hab_nanites }
 	}
 
 	resources = {

@@ -11,17 +11,11 @@ district_do3f_chemistry_industry = {
 	max_for_deposits_on_planet = 5
 
 	show_on_uncolonized = {
-		OR = {
-			has_district = district_do3f_chemistry_industry
-			num_free_districts = { type = district_do3f_chemistry_industry value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_chemistry_industry }
 	}
 
 	potential = {
-		OR = {
-			has_district = district_do3f_chemistry_industry
-			num_free_districts = { type = district_do3f_chemistry_industry value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_chemistry_industry }
 		exists = owner
 	}
 	
@@ -89,17 +83,11 @@ district_do3f_gas_refinery = {
 	max_for_deposits_on_planet = 5
 
 	show_on_uncolonized = {
-		OR = {
-			has_district = district_do3f_gas_refinery
-			num_free_districts = { type = district_do3f_gas_refinery value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_gas_refinery }
 	}
 
 	potential = {
-		OR = {
-			has_district = district_do3f_gas_refinery
-			num_free_districts = { type = district_do3f_gas_refinery value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_gas_refinery }
 		exists = owner
 	}
 	
@@ -167,17 +155,11 @@ district_do3f_crystal_mines = {
 	max_for_deposits_on_planet = 5
 
 	show_on_uncolonized = {
-		OR = {
-			has_district = district_do3f_crystal_mines
-			num_free_districts = { type = district_do3f_crystal_mines value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_crystal_mines }
 	}
 
 	potential = {
-		OR = {
-			has_district = district_do3f_crystal_mines
-			num_free_districts = { type = district_do3f_crystal_mines value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_crystal_mines }
 		exists = owner
 	}
 	
@@ -247,17 +229,11 @@ district_do3f_nature_reserve = {
 	max_for_deposits_on_planet = 8
 	
 	show_on_uncolonized = {
-		OR = {
-			has_district = district_do3f_nature_reserve
-			num_free_districts = { type = district_do3f_nature_reserve value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_nature_reserve }
 	}
 	
 	potential = {
-		OR = {
-			has_district = district_do3f_nature_reserve
-			num_free_districts = { type = district_do3f_nature_reserve value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_nature_reserve }
 		exists = owner
 	}
 	
@@ -320,17 +296,11 @@ district_do3f_research_complex = {
 	max_for_deposits_on_planet = 8
 	
 	show_on_uncolonized = {
-		OR = {
-			has_district = district_do3f_research_complex
-			num_free_districts = { type = district_do3f_research_complex value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_research_complex }
 	}
 	
 	potential = {
-		OR = {
-			has_district = district_do3f_research_complex
-			num_free_districts = { type = district_do3f_research_complex value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_research_complex }
 		exists = owner
 	}
 	
@@ -394,17 +364,11 @@ district_do3f_scrapyard = {
 	max_for_deposits_on_planet = 8
 	
 	show_on_uncolonized = {
-		OR = {
-			has_district = district_do3f_scrapyard
-			num_free_districts = { type = district_do3f_scrapyard value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_scrapyard }
 	}
 	
 	potential = {
-		OR = {
-			has_district = district_do3f_scrapyard
-			num_free_districts = { type = district_do3f_scrapyard value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_scrapyard }
 		exists = owner
 	}
 
@@ -489,17 +453,11 @@ district_do3f_tourism = {
 	max_for_deposits_on_planet = 8
 
 	show_on_uncolonized = {
-		OR = {
-			has_district = district_do3f_tourism
-			num_free_districts = { type = district_do3f_tourism value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_tourism }
 	}
 
 	potential = {
-		OR = {
-			has_district = district_do3f_tourism
-			num_free_districts = { type = district_do3f_tourism value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_tourism }
 		exists = owner
 	}
 	
@@ -550,17 +508,11 @@ district_do3f_gardens = {
 	max_for_deposits_on_planet = 8
 
 	show_on_uncolonized = {
-		OR = {
-			has_district = district_do3f_gardens
-			num_free_districts = { type = district_do3f_gardens value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_gardens }
 	}
 
 	potential = {
-		OR = {
-			has_district = district_do3f_gardens
-			num_free_districts = { type = district_do3f_gardens value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_gardens }
 		exists = owner
 	}
 	
@@ -661,17 +613,11 @@ district_do3f_ecogardens = {
 	max_for_deposits_on_planet = 8
 
 	show_on_uncolonized = {
-		OR = {
-			has_district = district_do3f_ecogardens
-			num_free_districts = { type = district_do3f_ecogardens value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_ecogardens }
 	}
 
 	potential = {
-		OR = {
-			has_district = district_do3f_ecogardens
-			num_free_districts = { type = district_do3f_ecogardens value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_ecogardens }
 		exists = owner
 	}
 	
@@ -926,16 +872,10 @@ district_do3f_archeology = {
 	min_for_deposits_on_planet = 1	
 	max_for_deposits_on_planet = 5
 	show_on_uncolonized = {
-		OR = {
-			has_district = district_do3f_archeology
-			num_free_districts = { type = district_do3f_archeology value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_archeology }
 	}
 	potential = {
-		OR = {
-			has_district = district_do3f_archeology
-			num_free_districts = { type = district_do3f_archeology value > 0 }
-		}
+		can_have_district = { DISTRICT = district_do3f_archeology }
 		exists = owner
 	}
 	

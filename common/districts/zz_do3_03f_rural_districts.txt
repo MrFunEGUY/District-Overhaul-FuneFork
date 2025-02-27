@@ -10,20 +10,14 @@ district_generator = {
 #### - Potentials -####
 	show_on_uncolonized = { 
 		uses_district_set = standard
-		OR = {
-			has_district = district_generator
-			num_free_districts = { type = district_generator value > 0 }
-		}
+		can_have_district = { DISTRICT = district_generator }
 	}
 
 	potential = { 
 		uses_district_set = standard
 		exists = owner
 		do3f_generator_district_potential = yes
-		OR = {
-			has_district = district_generator
-			num_free_districts = { type = district_generator value > 0 }
-		}
+		can_have_district = { DISTRICT = district_generator }
 	}
 	
 	allow = {
@@ -161,10 +155,7 @@ district_e_fusion_generator = {
 #### - Potentials -####
 	show_on_uncolonized = { 
 		uses_district_set = standard
-		OR = {
-			has_district = district_e_fusion_generator
-			num_free_districts = { type = district_e_fusion_generator value > 0 }
-		}
+		can_have_district = { DISTRICT = district_e_fusion_generator }
 	}
 	potential = { 
 		uses_district_set = standard
@@ -173,10 +164,7 @@ district_e_fusion_generator = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
 		}
-		OR = {
-			has_district = district_e_fusion_generator
-			num_free_districts = { type = district_e_fusion_generator value > 0 }
-		}
+		can_have_district = { DISTRICT = district_e_fusion_generator }
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -324,19 +312,13 @@ district_e_fossil_fuel_generator = {
 #### - Potentials -####
 	show_on_uncolonized = { 
 		uses_district_set = standard
-		OR = {
-			has_district = district_e_fossil_fuel_generator
-			num_free_districts = { type = district_e_fossil_fuel_generator value > 0 }
-		}
+		can_have_district = { DISTRICT = district_e_fossil_fuel_generator }
 	}
 	potential = { 
 		uses_district_set = standard
 		exists = owner
 		do3f_generator_district_potential = yes
-		OR = {
-			has_district = district_e_fossil_fuel_generator
-			num_free_districts = { type = district_e_fossil_fuel_generator value > 0 }
-		}
+		can_have_district = { DISTRICT = district_e_fossil_fuel_generator }
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -468,10 +450,7 @@ district_e_wind_turbines = {
 			pd_aw_is_wasteland_planet = no
 			is_pd_planetary_megaproject = no
 		}
-		OR = {
-			has_district = district_e_wind_turbines
-			num_free_districts = { type = district_e_wind_turbines value > 0 }
-		}
+		can_have_district = { DISTRICT = district_e_wind_turbines }
 	}
 	potential = { 
 		uses_district_set = standard
@@ -483,10 +462,7 @@ district_e_wind_turbines = {
 			pd_aw_is_wasteland_planet = no
 			is_pd_planetary_megaproject = no
 		}
-		OR = {
-			has_district = district_e_wind_turbines
-			num_free_districts = { type = district_e_wind_turbines value > 0 }
-		}
+		can_have_district = { DISTRICT = district_e_wind_turbines }
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -606,10 +582,7 @@ district_e_geothermal_generator = {
 #### - Potentials -####
 	show_on_uncolonized = { 
 		uses_district_set = standard
-		OR = {
-			has_district = district_e_geothermal_generator
-			num_free_districts = { type = district_e_geothermal_generator value > 0 }
-		}
+		can_have_district = { DISTRICT = district_e_geothermal_generator }
 	}
 	potential = { 
 		uses_district_set = standard
@@ -618,10 +591,7 @@ district_e_geothermal_generator = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
 		}
-		OR = {
-			has_district = district_e_geothermal_generator
-			num_free_districts = { type = district_e_geothermal_generator value > 0 }
-		}
+		can_have_district = { DISTRICT = district_e_geothermal_generator }
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -740,10 +710,7 @@ district_e_solar_generator = {
 #### - Potentials -####
 	show_on_uncolonized = { 
 		uses_district_set = standard
-		OR = {
-			has_district = district_e_solar_generator
-			num_free_districts = { type = district_e_solar_generator value > 0 }
-		}
+		can_have_district = { DISTRICT = district_e_solar_generator }
 	}
 	potential = { 
 		uses_district_set = standard
@@ -752,10 +719,7 @@ district_e_solar_generator = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
 		}
-		OR = {
-			has_district = district_e_solar_generator
-			num_free_districts = { type = district_e_solar_generator value > 0 }
-		}
+		can_have_district = { DISTRICT = district_e_solar_generator }
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -880,10 +844,7 @@ district_e_tidal_generator = {
 #### - Potentials -####
 	show_on_uncolonized = { 
 		uses_district_set = standard
-		OR = {
-			has_district = district_e_tidal_generator
-			num_free_districts = { type = district_e_tidal_generator value > 0 }
-		}
+		can_have_district = { DISTRICT = district_e_tidal_generator }
 	}
 	potential = { 
 		uses_district_set = standard
@@ -892,10 +853,7 @@ district_e_tidal_generator = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
 		}
-		OR = {
-			has_district = district_e_tidal_generator
-			num_free_districts = { type = district_e_tidal_generator value > 0 }
-		}
+		can_have_district = { DISTRICT = district_e_tidal_generator }
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -1022,10 +980,7 @@ district_e_biomass_generator = {
 #### - Potentials -####
 	show_on_uncolonized = { 
 		uses_district_set = standard
-		OR = {
-			has_district = district_e_biomass_generator
-			num_free_districts = { type = district_e_biomass_generator value > 0 }
-		}
+		can_have_district = { DISTRICT = district_e_biomass_generator }
 	}
 	potential = { 
 		uses_district_set = standard
@@ -1034,10 +989,7 @@ district_e_biomass_generator = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
 		}
-		OR = {
-			has_district = district_e_biomass_generator
-			num_free_districts = { type = district_e_biomass_generator value > 0 }
-		}
+		can_have_district = { DISTRICT = district_e_biomass_generator }
 	}
 
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -1179,10 +1131,7 @@ district_mining = {
 			from = { is_subterranean_empire = yes }
 		}
 		uses_district_set = standard
-		OR = {
-			has_district = district_mining
-			num_free_districts = { type = district_mining value > 0 }
-		}
+		can_have_district = { DISTRICT = district_mining }
 	}
 	
 	potential = { 
@@ -1193,10 +1142,7 @@ district_mining = {
 		uses_district_set = standard
 		exists = owner
 		do3f_mining_district_potential = yes
-		OR = {
-			has_district = district_mining
-			num_free_districts = { type = district_mining value > 0 }
-		}
+		can_have_district = { DISTRICT = district_mining }
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -1345,10 +1291,7 @@ district_m_unstable_mining = {
 			from = { is_subterranean_empire = yes }
 		}
 		uses_district_set = standard
-		OR = {
-			has_district = district_m_unstable_mining
-			num_free_districts = { type = district_m_unstable_mining value > 0 }
-		}
+		can_have_district = { DISTRICT = district_m_unstable_mining }
 	}
 	
 	potential = { 
@@ -1359,10 +1302,7 @@ district_m_unstable_mining = {
 		uses_district_set = standard
 		exists = owner
 		do3f_mining_district_potential = yes
-		OR = {
-			has_district = district_m_unstable_mining
-			num_free_districts = { type = district_m_unstable_mining value > 0 }
-		}
+		can_have_district = { DISTRICT = district_m_unstable_mining }
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -1487,10 +1427,7 @@ district_m_stable_mining = {
 			from = { is_subterranean_empire = yes }
 		}
 		uses_district_set = standard
-		OR = {
-			has_district = district_m_stable_mining
-			num_free_districts = { type = district_m_stable_mining value > 0 }
-		}
+		can_have_district = { DISTRICT = district_m_stable_mining }
 	}
 	
 	potential = { 
@@ -1501,10 +1438,7 @@ district_m_stable_mining = {
 		uses_district_set = standard
 		exists = owner
 		do3f_mining_district_potential = yes
-		OR = {
-			has_district = district_m_stable_mining
-			num_free_districts = { type = district_m_stable_mining value > 0 }
-		}
+		can_have_district = { DISTRICT = district_m_stable_mining }
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -1633,10 +1567,7 @@ district_m_surface_mining = {
 			from = { is_subterranean_empire = yes }
 		}
 		uses_district_set = standard
-		OR = {
-			has_district = district_m_surface_mining
-			num_free_districts = { type = district_m_surface_mining value > 0 }
-		}
+		can_have_district = { DISTRICT = district_m_surface_mining }
 	}
 	
 	potential = { 
@@ -1647,10 +1578,7 @@ district_m_surface_mining = {
 		uses_district_set = standard
 		exists = owner
 		do3f_mining_district_potential = yes
-		OR = {
-			has_district = district_m_surface_mining
-			num_free_districts = { type = district_m_surface_mining value > 0 }
-		}
+		can_have_district = { DISTRICT = district_m_surface_mining }
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -1780,10 +1708,7 @@ district_m_deep_mining = {
 			from = { is_subterranean_empire = yes }
 		}
 		uses_district_set = standard
-		OR = {
-			has_district = district_m_deep_mining
-			num_free_districts = { type = district_m_deep_mining value > 0 }
-		}
+		can_have_district = { DISTRICT = district_m_deep_mining }
 	}
 	
 	potential = { 
@@ -1797,10 +1722,7 @@ district_m_deep_mining = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
 		}
-		OR = {
-			has_district = district_m_deep_mining
-			num_free_districts = { type = district_m_deep_mining value > 0 }
-		}
+		can_have_district = { DISTRICT = district_m_deep_mining }
 	}
 
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -1957,10 +1879,7 @@ district_m_mountain_mining = {
 			from = { is_subterranean_empire = yes }
 		}
 		uses_district_set = standard
-		OR = {
-			has_district = district_m_mountain_mining
-			num_free_districts = { type = district_m_mountain_mining value > 0 }
-		}
+		can_have_district = { DISTRICT = district_m_mountain_mining }
 	}
 	
 	potential = { 
@@ -1974,10 +1893,7 @@ district_m_mountain_mining = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
 		}
-		OR = {
-			has_district = district_m_mountain_mining
-			num_free_districts = { type = district_m_mountain_mining value > 0 }
-		}
+		can_have_district = { DISTRICT = district_m_mountain_mining }
 	}
 
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -2108,20 +2024,14 @@ district_farming = {
 #### - Potentials -####
 	show_on_uncolonized = {
 		uses_district_set = standard
-		OR = {
-			has_district = district_farming
-			num_free_districts = { type = district_farming value > 0 }
-		}
+		can_have_district = { DISTRICT = district_farming }
 	}
 	
 	potential = {
 		uses_district_set = standard
 		exists = owner
 		do3f_farming_district_potential = yes
-		OR = {
-			has_district = district_farming
-			num_free_districts = { type = district_farming value > 0 }
-		}
+		can_have_district = { DISTRICT = district_farming }
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -2328,10 +2238,7 @@ district_f_nature_farms = {
 #### - Potentials -####
 	show_on_uncolonized = {
 		uses_district_set = standard
-		OR = {
-			has_district = district_f_nature_farms
-			num_free_districts = { type = district_f_nature_farms value > 0 }
-		}
+		can_have_district = { DISTRICT = district_f_nature_farms }
 	}
 	
 	potential = {
@@ -2341,10 +2248,7 @@ district_f_nature_farms = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
 		}
-		OR = {
-			has_district = district_f_nature_farms
-			num_free_districts = { type = district_f_nature_farms value > 0 }
-		}
+		can_have_district = { DISTRICT = district_f_nature_farms }
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -2523,10 +2427,7 @@ district_f_ocean_farms = {
 #### - Potentials -####	
 	show_on_uncolonized = {
 		uses_district_set = standard
-		OR = {
-			has_district = district_f_ocean_farms
-			num_free_districts = { type = district_f_ocean_farms value > 0 }
-		}
+		can_have_district = { DISTRICT = district_f_ocean_farms }
 	}
 	
 	potential = {
@@ -2536,10 +2437,7 @@ district_f_ocean_farms = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
 		}
-		OR = {
-			has_district = district_f_ocean_farms
-			num_free_districts = { type = district_f_ocean_farms value > 0 }
-		}
+		can_have_district = { DISTRICT = district_f_ocean_farms }
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -2718,10 +2616,7 @@ district_f_exotic_farms = {
 #### - Potentials -####
 	show_on_uncolonized = {
 		uses_district_set = standard
-		OR = {
-			has_district = district_f_exotic_farms
-			num_free_districts = { type = district_f_exotic_farms value > 0 }
-		}
+		can_have_district = { DISTRICT = district_f_exotic_farms }
 	}
 	
 	potential = {
@@ -2731,10 +2626,7 @@ district_f_exotic_farms = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
 		}
-		OR = {
-			has_district = district_f_exotic_farms
-			num_free_districts = { type = district_f_exotic_farms value > 0 }
-		}
+		can_have_district = { DISTRICT = district_f_exotic_farms }
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -2973,10 +2865,7 @@ district_f_oasis_farms = {
 #### - Potentials -####
 	show_on_uncolonized = {
 		uses_district_set = standard
-		OR = {
-			has_district = district_f_oasis_farms
-			num_free_districts = { type = district_f_oasis_farms value > 0 }
-		}
+		can_have_district = { DISTRICT = district_f_oasis_farms }
 	}
 	
 	potential = {
@@ -2986,10 +2875,7 @@ district_f_oasis_farms = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
 		}
-		OR = {
-			has_district = district_f_oasis_farms
-			num_free_districts = { type = district_f_oasis_farms value > 0 }
-		}
+		can_have_district = { DISTRICT = district_f_oasis_farms }
 	}
 
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -3134,20 +3020,14 @@ district_f_industrial_farms = {
 #### - Potentials -####
 	show_on_uncolonized = {
 		uses_district_set = standard
-		OR = {
-			has_district = district_f_industrial_farms
-			num_free_districts = { type = district_f_industrial_farms value > 0 }
-		}
+		can_have_district = { DISTRICT = district_f_industrial_farms }
 	}
 	
 	potential = {
 		uses_district_set = standard
 		exists = owner
 		do3f_farming_district_potential = yes
-		OR = {
-			has_district = district_f_industrial_farms
-			num_free_districts = { type = district_f_industrial_farms value > 0 }
-		}
+		can_have_district = { DISTRICT = district_f_industrial_farms }
 	}
 	
 	allow = { NOT = { has_modifier = resort_colony } }
@@ -3331,10 +3211,7 @@ district_f_cave_farms = {
 #### - Potentials -####
 	show_on_uncolonized = {
 		uses_district_set = standard
-		OR = {
-			has_district = district_f_cave_farms
-			num_free_districts = { type = district_f_cave_farms value > 0 }
-		}
+		can_have_district = { DISTRICT = district_f_cave_farms }
 	}
 	
 	potential = {
@@ -3344,10 +3221,7 @@ district_f_cave_farms = {
 			pd_aw_is_megaflora_planet = yes
 			do3f_generator_district_potential = yes
 		}
-		OR = {
-			has_district = district_f_cave_farms
-			num_free_districts = { type = district_f_cave_farms value > 0 }
-		}
+		can_have_district = { DISTRICT = district_f_cave_farms }
 	}
 	allow = { NOT = { has_modifier = resort_colony } }
 #### - Conversion -####

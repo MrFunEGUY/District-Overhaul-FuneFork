@@ -361,6 +361,14 @@ do3f_is_rural_planet = {
 	
 }
 
+### Triggers
+can_have_district = {
+	OR = {
+		has_district = $DISTRICT$
+		num_free_districts = { type = $DISTRICT$ value > 0 }
+	}
+}
+
 ###- Deposits -###
 #Housing
 	do3f_002_ocean_housing_deposits = {
