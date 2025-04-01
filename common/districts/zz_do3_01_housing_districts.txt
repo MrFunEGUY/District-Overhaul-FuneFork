@@ -911,19 +911,13 @@ district_01_ocean_housing = {
 #### - Potentials -####	
 	show_on_uncolonized = {
 		is_artificial = no
-		OR = {
-			has_district = district_01_ocean_housing
-			num_districts = { type = district_01_ocean_housing value > 0 }
-		}
+		can_have_district = { DISTRICT = district_01_ocean_housing }
 		do3f_is_special_exotic_farming_pc = no
 	}
 	potential = {
 		exists = owner
 		is_artificial = no
-		OR = {
-			has_district = district_01_ocean_housing
-			num_districts = { type = district_01_ocean_housing value > 0 }
-		}
+		can_have_district = { DISTRICT = district_01_ocean_housing }
 		do3f_is_special_exotic_farming_pc = no
 	}
 #### - Cost & Upkeep -####
@@ -975,18 +969,12 @@ district_01_ascended_housing = {
 	exempt_from_ai_planet_specialization = yes
 #### - Potentials -####	
 	show_on_uncolonized = {
-		OR = {
-			has_district = district_01_ascended_housing
-			num_districts = { type = district_01_ascended_housing value > 0 }
-		}
+		can_have_district = { DISTRICT = district_01_ascended_housing }
 		do3f_is_special_exotic_farming_pc = no
 	}
 	potential = {
 		exists = owner
-		OR = {
-			has_district = district_01_ascended_housing
-			num_districts = { type = district_01_ascended_housing value > 0 }
-		}
+		can_have_district = { DISTRICT = district_01_ascended_housing }
 		do3f_is_special_exotic_farming_pc = no
 	}
 #### - Cost & Upkeep -####
@@ -1035,19 +1023,13 @@ district_01_underground_city = {
 	exempt_from_ai_planet_specialization = yes
 #### - Potentials -####	
 	show_on_uncolonized = {
-		OR = {
-			has_district = district_01_underground_city
-			num_districts = { type = district_01_underground_city value > 0 }
-		}
+		can_have_district = { DISTRICT = district_01_underground_city }
 		is_artificial = no
 		do3f_is_special_exotic_farming_pc = no
 	}
 	potential = {
 		exists = owner
-		OR = {
-			has_district = district_01_underground_city
-			num_districts = { type = district_01_underground_city value > 0 }
-		}
+		can_have_district = { DISTRICT = district_01_underground_city }
 		is_artificial = no
 		do3f_is_special_exotic_farming_pc = no
 	}

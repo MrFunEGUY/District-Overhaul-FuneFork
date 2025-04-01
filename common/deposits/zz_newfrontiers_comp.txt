@@ -1124,6 +1124,8 @@ d_ancient_ruins = {
 	planet_modifier = {
 		planet_jobs_society_research_produces_mult = 0.25
 		pop_growth_from_immigration = 0.15
+		district_do3f_archeology_max = 1
+		district_01_ascended_housing_max = 1
 	}
 	
 	drop_weight = {

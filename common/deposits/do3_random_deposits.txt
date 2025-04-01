@@ -72,7 +72,7 @@ d_precurser_city = {
 	category = deposit_cat_rare
 
 	planet_modifier = {
-		district_01_ascended_housing_max = 1
+		district_01_ascended_housing_max = 2
 	}
 
 	potential = {
